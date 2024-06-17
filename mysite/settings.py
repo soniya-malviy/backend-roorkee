@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$b74%(0$==2e6jr41dpmzubmnclwhu=1ew&_94+^q=nwns(6^('
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = []
 
@@ -31,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'myapp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -79,15 +83,11 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': 'iitroorkeedatabase',
-
-        'USER': 'postgres',
-
-        'PASSWORD': 'Aryan@7081',
-
-        'HOST': 'localhost',
-
-        'PORT': '5432',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT'),
 
     }
 }
