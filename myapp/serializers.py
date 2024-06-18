@@ -1,30 +1,25 @@
-from myapp.models import Scheme, Department
+from myapp.models import Scheme, Criteria
 from rest_framework import serializers
+from django.utils import timezone
+import pytz
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Department
-        fields = (
-            "deprtment_id",
-            "department_name"
-        )
+        model = Criteria
+        fields = '__all__'
 
 
 class SchemeSerializer(serializers.ModelSerializer):
+    created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z')
+    updated_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z')
     class Meta:
         model = Scheme
-        fields = ( 
-            "scheme_id", 
-            "department",
-            "scheme_name",
-            "description",
-            "scheme_beneficiary",
-            "scheme_benefits",
-            "how_to_avail",
-            "sponsors",
-            "age_from",
-            "age_to",
+        fields = '__all__'
 
-            "scheme_link"
-        
-        )
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        # Convert UTC time to IST
+        ist_timezone = pytz.timezone('Asia/Kolkata')
+        data['created_at'] = instance.created_at.astimezone(ist_timezone).strftime('%Y-%m-%d %H:%M:%S %Z')
+        data['updated_at'] = instance.updated_at.astimezone(ist_timezone).strftime('%Y-%m-%d %H:%M:%S %Z')
+        return data
