@@ -13,7 +13,6 @@ class Scheme(models.Model):
     beneficiaries = models.CharField(max_length=255,default = "Unknown")
     benefits = models.CharField(max_length=255)
     how_to_avail = models.CharField(max_length=255,default = "Unknown")
-    sponsors = models.CharField(max_length=255,default = "Unknown")
     lower_age = models.IntegerField(default = 0)
     upper_age = models.IntegerField(default = 0)
     introduced_on = models.IntegerField(default = 0)
@@ -45,3 +44,8 @@ class Criteria(models.Model):
     age = models.IntegerField()
     community = models.CharField(max_length=255)
     other_details = models.CharField(max_length=255)
+
+
+class Sponsor(models.Model):
+    sponsor_id = models.IntegerField()
+    sponsor_name = models.CharField(max_length = 255)
