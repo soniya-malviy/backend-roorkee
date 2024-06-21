@@ -1,1 +1,5 @@
 .env
+myapp/migrations/
+myapp/__pycache__/
+mysite/__pycache__/
+
