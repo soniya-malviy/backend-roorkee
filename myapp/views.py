@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter
-from myapp.models import Scheme, Criteria, Sponsor
-from .serializers import SchemeSerializer, SponsorSerializer, CriteriaSerializer
+from myapp.models import Scheme, Criteria, Sponsor, SchemeDetail
+from .serializers import SchemeSerializer, SponsorSerializer, CriteriaSerializer, SchemeDetailSerializer
 
 class SchemeAPIView(generics.ListAPIView):
     queryset = Scheme.objects.all()
@@ -16,6 +16,10 @@ class SchemeAPIView(generics.ListAPIView):
         if department:
             return self.queryset.filter(department=department)  
         return self.queryset.all()  
+    
+class SchemeDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Scheme.objects.all()
+    serializer_class = SchemeSerializer
     
 class CriteriaAPIView(generics.ListAPIView):
     queryset = Criteria.objects.all()
@@ -39,4 +43,8 @@ class SponsorAPIView(generics.ListAPIView):
         if scheme_id:
             return self.queryset.filter(scheme__id=scheme_id)  
         return self.queryset.all()
+    
+class SchemeDetailRetrieveAPIView(generics.RetrieveAPIView):
+    queryset = SchemeDetail.objects.all()
+    serializer_class = SchemeDetailSerializer
     
