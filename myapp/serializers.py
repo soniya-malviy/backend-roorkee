@@ -1,4 +1,4 @@
-from myapp.models import Scheme, Criteria, Sponsor
+from myapp.models import Scheme, Criteria, Sponsor, SchemeDetail
 from rest_framework import serializers
 from django.utils import timezone
 import pytz
@@ -23,6 +23,11 @@ class SchemeSerializer(serializers.ModelSerializer):
         data['created_at'] = instance.created_at.astimezone(ist_timezone).strftime('%Y-%m-%d %H:%M:%S %Z')
         data['updated_at'] = instance.updated_at.astimezone(ist_timezone).strftime('%Y-%m-%d %H:%M:%S %Z')
         return data
+    
+class SchemeDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SchemeDetail
+        fields = '__all__'
     
 class SponsorSerializer(serializers.ModelSerializer):
     class Meta:
