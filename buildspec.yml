@@ -20,6 +20,7 @@ phases:
 
   post_build:
     commands:
+      - docker run --rm $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$GIT_COMMIT_HASH python manage.py migrate
       - echo Pushing Docker image to ECR...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$GIT_COMMIT_HASH
 
