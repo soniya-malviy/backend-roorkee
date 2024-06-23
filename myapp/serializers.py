@@ -1,35 +1,90 @@
-from myapp.models import Scheme, Criteria, Sponsor, SchemeDetail
 from rest_framework import serializers
+from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor
 from django.utils import timezone
 import pytz
 
-class CriteriaSerializer(serializers.ModelSerializer):
+class TimeStampedModelSerializer(serializers.ModelSerializer):
+    created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z', read_only=True)
+
+
+    def create(self, validated_data):
+        tz = pytz.timezone('Asia/Kolkata')
+        now = timezone.now()
+        now = timezone.localtime(now, tz)
+        validated_data['created_at'] = now
+        return super().create(validated_data)
+    
+    def to_representation(self, instance):
+        ret = super().to_representation(instance)
+        tz = pytz.timezone('Asia/Kolkata')
+        created_at = instance.created_at
+        if created_at:
+            created_at = timezone.localtime(created_at, tz)
+            ret['created_at'] = created_at.strftime('%Y-%m-%d %H:%M:%S %Z')
+        return ret
+
+
+class StateSerializer(TimeStampedModelSerializer):
     class Meta:
-        model = Criteria
+        model = State
         fields = '__all__'
 
+class DepartmentSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Department
+        fields = '__all__'
 
-class SchemeSerializer(serializers.ModelSerializer):
-    created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z')
-    updated_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z')
+class OrganisationSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Organisation
+        fields = '__all__'
+
+class SchemeSerializer(TimeStampedModelSerializer):
     class Meta:
         model = Scheme
         fields = '__all__'
 
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        # Convert UTC time to IST
-        ist_timezone = pytz.timezone('Asia/Kolkata')
-        data['created_at'] = instance.created_at.astimezone(ist_timezone).strftime('%Y-%m-%d %H:%M:%S %Z')
-        data['updated_at'] = instance.updated_at.astimezone(ist_timezone).strftime('%Y-%m-%d %H:%M:%S %Z')
-        return data
-    
-class SchemeDetailSerializer(serializers.ModelSerializer):
+class BeneficiarySerializer(TimeStampedModelSerializer):
     class Meta:
-        model = SchemeDetail
+        model = Beneficiary
         fields = '__all__'
-    
-class SponsorSerializer(serializers.ModelSerializer):
+
+class SchemeBeneficiarySerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = SchemeBeneficiary
+        fields = '__all__'
+
+class BenefitSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Benefit
+        fields = '__all__'
+
+class CriteriaSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Criteria
+        fields = '__all__'
+
+class ProcedureSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Procedure
+        fields = '__all__'
+
+class DocumentSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Document
+        fields = '__all__'
+
+class SchemeDocumentSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = SchemeDocument
+        fields = '__all__'
+
+class SponsorSerializer(TimeStampedModelSerializer):
     class Meta:
         model = Sponsor
+        fields = '__all__'
+
+class SchemeSponsorSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = SchemeSponsor
         fields = '__all__'
