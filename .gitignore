@@ -10,3 +10,12 @@ mysite/__pycache__/
 
 __pycache__/
 
+myapp/migrations/
+myapp/__pycache__/
+mysite/
+myapp/migrations/
+myapp/__pycache__/
+mysite/__pycache__/
+
+__pycache__/
+
