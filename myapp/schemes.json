@@ -1,0 +1,77 @@
+[
+    {
+        "scheme_id": "fddabc6d-79ef-45a0-9930-f7ff42a34b6e",
+        "department": "ministry",
+        "scheme_name": "Distribution of free house sites to Scheduled Caste/Other Economically Backward Classes",
+        "description": "To provide free house sites to homeless poor Scheduled Caste people and other Economically backward class people at the ratio of 80:20 to enable them to construct their own houses",
+        "beneficiaries": "Scheduled Caste/Other Economically Backward Classes",
+        "benefits": "Free house sites",
+        "eligibility_criteria": {
+            "income": "Annual Family Income shall not exceed Rs.200000/",
+            "age": "30",
+            "community": "Scheduled Caste and Economically backward class",
+            "other_details": "A citizen of India and a native or a permanent Resident of this U.T. of Pondicherry, A homeless person and no member of the family own a house/house site., Bona fide intention to construct house within a period of 2 years."
+        },
+        "how_to_avail": "Go to website",
+        "sponsors": "Puducherry Govt",
+        "lower_age": "10",
+        "upper_age": "65",
+        "category": "SC/ST",
+        "objective": "To provide free house sites to homeless poor Scheduled Caste people and other Economically backward class people at the ratio of 80:20 to enable them to construct their own houses",
+        "funding_pattern": "Government funded",
+        "application_process": "Click on the button",
+        "contact_office": "Puducherry Govt",
+        "scheme_link": "https://adwelfare.py.gov.in/distribution-free-house-sites-scheduled-casteother-economically-backward-classes",
+        "required_documents": "Proof of identity, Caste/Income/Residence-cum-nativity certificate issued by the competent authority."
+    },
+    {
+        "scheme_id": "a2e5b1c6-9ef8-4a60-892c-f7ff42a3457b",
+        "department": "health",
+        "scheme_name": "Free Health Check-up for Senior Citizens",
+        "description": "To provide free health check-ups to senior citizens above the age of 60",
+        "beneficiaries": "Senior Citizens",
+        "benefits": "Free health check-ups",
+        "eligibility_criteria": {
+            "income": "No income criteria",
+            "age": "60",
+            "community": "All communities",
+            "other_details": "Must be a resident of the U.T. of Pondicherry"
+        },
+        "how_to_avail": "Visit the nearest government hospital",
+        "sponsors": "Puducherry Govt",
+        "lower_age": "60",
+        "upper_age": "80",
+        "category": "Health",
+        "objective": "To provide free health check-ups to senior citizens",
+        "funding_pattern": "Government funded",
+        "application_process": "Visit the nearest government hospital",
+        "contact_office": "Puducherry Health Department",
+        "scheme_link": "https://health.py.gov.in/free-health-checkup-senior-citizens",
+        "required_documents": "Proof of identity, Age certificate"
+    },
+    {
+        "scheme_id": "b3d2c4a5-9fe8-4b30-8f0d-a4d3457b89cd",
+        "department": "education",
+        "scheme_name": "Scholarships for Meritorious Students",
+        "description": "To provide scholarships to meritorious students from economically backward classes",
+        "beneficiaries": "Students",
+        "benefits": "Scholarship amount",
+        "eligibility_criteria": {
+            "income": "Annual Family Income shall not exceed Rs.150000/",
+            "age": "15-25",
+            "community": "Economically backward class",
+            "other_details": "Must have scored at least 85% in the last examination"
+        },
+        "how_to_avail": "Apply online through the education department's website",
+        "sponsors": "Puducherry Govt",
+        "lower_age": "15",
+        "upper_age": "25",
+        "category": "Education",
+        "objective": "To provide financial assistance to meritorious students from economically backward classes",
+        "funding_pattern": "Government funded",
+        "application_process": "Apply online",
+        "contact_office": "Puducherry Education Department",
+        "scheme_link": "https://education.py.gov.in/scholarships-meritorious-students",
+        "required_documents": "Proof of identity, Income certificate, Mark sheets"
+    }
+]
