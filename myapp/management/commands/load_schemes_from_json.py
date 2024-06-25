@@ -43,6 +43,6 @@ class Command(BaseCommand):
                         step_description=procedure_data['step_description']
                     )
 
-                # Similar approach can be taken for scheme_documents, criteria, etc.
+           
 
             self.stdout.write(self.style.SUCCESS('Successfully imported data'))
