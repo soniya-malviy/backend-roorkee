@@ -28,20 +28,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-
-CELERY_BEAT_SCHEDULE = {
-    'load-schemes-every-day': {
-        'task': 'myapp.tasks.load_schemes',
-        'schedule': 86400.0,  # 24 hours in seconds
-    },
-}
-
 
 INSTALLED_APPS = [
     'rest_framework',
@@ -52,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -91,15 +80,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', '5432'),  # Default port for PostgreSQL is 5432
+
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT'),
+
     }
 }
-
 
 
 # Password validation
@@ -137,8 +128,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 STATIC_URL = '/static/'

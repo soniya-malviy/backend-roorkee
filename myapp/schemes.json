@@ -1,77 +1,393 @@
 [
     {
-        "scheme_id": "fddabc6d-79ef-45a0-9930-f7ff42a34b6e",
-        "department": "ministry",
-        "scheme_name": "Distribution of free house sites to Scheduled Caste/Other Economically Backward Classes",
-        "description": "To provide free house sites to homeless poor Scheduled Caste people and other Economically backward class people at the ratio of 80:20 to enable them to construct their own houses",
-        "beneficiaries": "Scheduled Caste/Other Economically Backward Classes",
-        "benefits": "Free house sites",
-        "eligibility_criteria": {
-            "income": "Annual Family Income shall not exceed Rs.200000/",
-            "age": "30",
-            "community": "Scheduled Caste and Economically backward class",
-            "other_details": "A citizen of India and a native or a permanent Resident of this U.T. of Pondicherry, A homeless person and no member of the family own a house/house site., Bona fide intention to construct house within a period of 2 years."
+      "title": "Abolition of Bonded Labour System",
+      "department": {
+        "state": {
+          "state_name": "Tamil Nadu"
         },
-        "how_to_avail": "Go to website",
-        "sponsors": "Puducherry Govt",
-        "lower_age": "10",
-        "upper_age": "65",
-        "category": "SC/ST",
-        "objective": "To provide free house sites to homeless poor Scheduled Caste people and other Economically backward class people at the ratio of 80:20 to enable them to construct their own houses",
-        "funding_pattern": "Government funded",
-        "application_process": "Click on the button",
-        "contact_office": "Puducherry Govt",
-        "scheme_link": "https://adwelfare.py.gov.in/distribution-free-house-sites-scheduled-casteother-economically-backward-classes",
-        "required_documents": "Proof of identity, Caste/Income/Residence-cum-nativity certificate issued by the competent authority."
+        "department_name": "Labour Welfare and Skill Development Department"
+      },
+      "introduced_on": null,
+      "valid_upto": null,
+      "funding_pattern": "State",
+      "description": "Persons kept as bonded labour are released and rehabilitated by providing financial assistance as grant, to the tune of Rs.20,000/- Of this, a sum of Rs.1000/- each will be given immediately on relief from Bondage. Remaining (Rs.19,000/-) amount will be given for the rehabilitation through various kinds. Moreover House site pattas, houses under group housing scheme through IRDP, drinking water facility and Bank loan assistance are provided to them. Released bonded labour without any caste and creed .\n",
+      "scheme_link": "https://www.tn.gov.in/scheme/data_view/106857",
+      "beneficiaries": [
+        {
+          "beneficiary_type": "SC/ST"
+        }
+      ],
+      "sponsors": [
+        {
+          "sponsor_type": "State"
+        }
+      ],
+      "benefits_types": [
+        {
+          "benefit_type": "Grants"
+        }
+      ],
+      "how_to_avail": "Collector / Sub Collector / RDO",
+      "documents": [],
+      "procedures": [
+        {
+          "step_description": "Collector / Sub Collector / RDO"
+        }
+      ],
+      "scheme_documents": [],
+      "scheme_sponsors": [],
+      "criteria": []
     },
     {
-        "scheme_id": "a2e5b1c6-9ef8-4a60-892c-f7ff42a3457b",
-        "department": "health",
-        "scheme_name": "Free Health Check-up for Senior Citizens",
-        "description": "To provide free health check-ups to senior citizens above the age of 60",
-        "beneficiaries": "Senior Citizens",
-        "benefits": "Free health check-ups",
-        "eligibility_criteria": {
-            "income": "No income criteria",
-            "age": "60",
-            "community": "All communities",
-            "other_details": "Must be a resident of the U.T. of Pondicherry"
+      "title": "Adi Dravidar and Tribal Welfare Department -Hostels - Special Guides",
+      "department": {
+        "state": {
+          "state_name": "Tamil Nadu"
         },
-        "how_to_avail": "Visit the nearest government hospital",
-        "sponsors": "Puducherry Govt",
-        "lower_age": "60",
-        "upper_age": "80",
-        "category": "Health",
-        "objective": "To provide free health check-ups to senior citizens",
-        "funding_pattern": "Government funded",
-        "application_process": "Visit the nearest government hospital",
-        "contact_office": "Puducherry Health Department",
-        "scheme_link": "https://health.py.gov.in/free-health-checkup-senior-citizens",
-        "required_documents": "Proof of identity, Age certificate"
+        "department_name": "Adi Dravidar and Tribal Welfare Department"
+      },
+      "introduced_on": null,
+      "valid_upto": null,
+      "funding_pattern": "State",
+      "description": "All Boys/ Girls Boarders studying upto XII Standard\n",
+      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83078",
+      "beneficiaries": [
+        {
+          "beneficiary_type": "Students"
+        }
+      ],
+      "sponsors": [
+        {
+          "sponsor_type": "State"
+        }
+      ],
+      "benefits_types": [
+        {
+          "benefit_type": "Hostel Facilities"
+        }
+      ],
+      "how_to_avail": "Warden/ Matron of the hostel\n",
+      "documents": [],
+      "procedures": [
+        {
+          "step_description": "Warden/ Matron of the hostel\n"
+        }
+      ],
+      "scheme_documents": [],
+      "scheme_sponsors": [],
+      "criteria": []
     },
     {
-        "scheme_id": "b3d2c4a5-9fe8-4b30-8f0d-a4d3457b89cd",
-        "department": "education",
-        "scheme_name": "Scholarships for Meritorious Students",
-        "description": "To provide scholarships to meritorious students from economically backward classes",
-        "beneficiaries": "Students",
-        "benefits": "Scholarship amount",
-        "eligibility_criteria": {
-            "income": "Annual Family Income shall not exceed Rs.150000/",
-            "age": "15-25",
-            "community": "Economically backward class",
-            "other_details": "Must have scored at least 85% in the last examination"
+      "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.",
+      "department": {
+        "state": {
+          "state_name": "Tamil Nadu"
         },
-        "how_to_avail": "Apply online through the education department's website",
-        "sponsors": "Puducherry Govt",
-        "lower_age": "15",
-        "upper_age": "25",
-        "category": "Education",
-        "objective": "To provide financial assistance to meritorious students from economically backward classes",
-        "funding_pattern": "Government funded",
-        "application_process": "Apply online",
-        "contact_office": "Puducherry Education Department",
-        "scheme_link": "https://education.py.gov.in/scholarships-meritorious-students",
-        "required_documents": "Proof of identity, Income certificate, Mark sheets"
-    }
-]
+        "department_name": "Adi Dravidar and Tribal Welfare Department"
+      },
+      "introduced_on": null,
+      "valid_upto": null,
+      "funding_pattern": "State",
+      "description": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.One Boy and One Girl each from Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity who have secured highest mark",
+      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83082",
+      "beneficiaries": [
+        {
+          "beneficiary_type": "Students"
+        }
+      ],
+      "sponsors": [
+        {
+          "sponsor_type": "State"
+        }
+      ],
+      "benefits_types": [
+        {
+          "benefit_type": "Incentives"
+        }
+      ],
+      "how_to_avail": "District Adi Dravidar and Tribal Welfare Officer",
+      "documents": [],
+      "procedures": [
+        {
+          "step_description": "District Adi Dravidar and Tribal Welfare Officer"
+        }
+      ],
+      "scheme_documents": [],
+      "scheme_sponsors": [],
+      "criteria": []
+    },
+    {
+      "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - For each subjects (c) plus2 Examination Rs.2000/- (d)10th Std Examination Rs.1000/-",
+      "department": {
+        "state": {
+          "state_name": "Tamil Nadu"
+        },
+        "department_name": "Adi Dravidar and Tribal Welfare Department"
+      },
+      "introduced_on": null,
+      "valid_upto": null,
+      "funding_pattern": "State",
+      "description": "One Student each from Adi Dravidar/Tribal/Adi Dravider converted to Christianity for each subject",
+      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83083",
+      "beneficiaries": [
+        {
+          "beneficiary_type": "Students"
+        }
+      ],
+      "sponsors": [
+        {
+          "sponsor_type": "State"
+        }
+      ],
+      "benefits_types": [
+        {
+          "benefit_type": "Incentives"
+        }
+      ],
+      "how_to_avail": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer",
+      "documents": [],
+      "procedures": [
+        {
+          "step_description": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer"
+        }
+      ],
+      "scheme_documents": [],
+      "scheme_sponsors": [],
+      "criteria": []
+    },
+    {
+      "title": "Adi Dravidar and Tribal Welfare Department -Scholarship - Free Education upto 12th Std. to all i.e. tuition fee will not be collected and the amount will be reimbursed by Government.",
+      "department": {
+        "state": {
+          "state_name": "Tamil Nadu"
+        },
+        "department_name": "Adi Dravidar and Tribal Welfare Department"
+      },
+      "introduced_on": null,
+      "valid_upto": null,
+      "funding_pattern": "State",
+      "description": "All Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity students are eligible with no income limit\n",
+      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83084",
+      "beneficiaries": [
+        {
+          "beneficiary_type": "Students"
+        }
+      ],
+      "sponsors": [
+        {
+          "sponsor_type": "State"
+        }
+      ],
+      "benefits_types": [
+        {
+          "benefit_type": "Education Benefits"
+        }
+      ],
+      "how_to_avail": "Headmaster of the School.",
+      "documents": [],
+      "procedures": [
+        {
+          "step_description": "Headmaster of the School."
+        }
+      ],
+      "scheme_documents": [],
+      "scheme_sponsors": [],
+      "criteria": []
+    },
+        {
+          "title": "Abolition of Bonded Labour System",
+          "department": {
+            "state": {
+              "state_name": "Tamil Nadu"
+            },
+            "department_name": "Labour Welfare and Skill Development Department"
+          },
+          "introduced_on": null,
+          "valid_upto": null,
+          "funding_pattern": "State",
+          "description": "Persons kept as bonded labour are released and rehabilitated by providing financial assistance as grant, to the tune of Rs.20,000/- Of this, a sum of Rs.1000/- each will be given immediately on relief from Bondage. Remaining (Rs.19,000/-) amount will be given for the rehabilitation through various kinds. Moreover House site pattas, houses under group housing scheme through IRDP, drinking water facility and Bank loan assistance are provided to them. Released bonded labour without any caste and creed .\n",
+          "scheme_link": "https://www.tn.gov.in/scheme/data_view/106857",
+          "beneficiaries": [
+            {
+              "beneficiary_type": "SC/ST"
+            }
+          ],
+          "sponsors": [
+            {
+              "sponsor_type": "State"
+            }
+          ],
+          "benefits_types": [
+            {
+              "benefit_type": "Grants"
+            }
+          ],
+          "how_to_avail": "Collector / Sub Collector / RDO",
+          "documents": [],
+          "procedures": [
+            {
+              "step_description": "Collector / Sub Collector / RDO"
+            }
+          ],
+          "scheme_documents": [],
+          "scheme_sponsors": [],
+          "criteria": []
+        },
+        {
+          "title": "Adi Dravidar and Tribal Welfare Department -Hostels - Special Guides",
+          "department": {
+            "state": {
+              "state_name": "Tamil Nadu"
+            },
+            "department_name": "Adi Dravidar and Tribal Welfare Department"
+          },
+          "introduced_on": null,
+          "valid_upto": null,
+          "funding_pattern": "State",
+          "description": "All Boys/ Girls Boarders studying upto XII Standard\n",
+          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83078",
+          "beneficiaries": [
+            {
+              "beneficiary_type": "Students"
+            }
+          ],
+          "sponsors": [
+            {
+              "sponsor_type": "State"
+            }
+          ],
+          "benefits_types": [
+            {
+              "benefit_type": "Hostel Facilities"
+            }
+          ],
+          "how_to_avail": "Warden/ Matron of the hostel\n",
+          "documents": [],
+          "procedures": [
+            {
+              "step_description": "Warden/ Matron of the hostel\n"
+            }
+          ],
+          "scheme_documents": [],
+          "scheme_sponsors": [],
+          "criteria": []
+        },
+        {
+          "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.",
+          "department": {
+            "state": {
+              "state_name": "Tamil Nadu"
+            },
+            "department_name": "Adi Dravidar and Tribal Welfare Department"
+          },
+          "introduced_on": null,
+          "valid_upto": null,
+          "funding_pattern": "State",
+          "description": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.One Boy and One Girl each from Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity who have secured highest mark",
+          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83082",
+          "beneficiaries": [
+            {
+              "beneficiary_type": "Students"
+            }
+          ],
+          "sponsors": [
+            {
+              "sponsor_type": "State"
+            }
+          ],
+          "benefits_types": [
+            {
+              "benefit_type": "Incentives"
+            }
+          ],
+          "how_to_avail": "District Adi Dravidar and Tribal Welfare Officer",
+          "documents": [],
+          "procedures": [
+            {
+              "step_description": "District Adi Dravidar and Tribal Welfare Officer"
+            }
+          ],
+          "scheme_documents": [],
+          "scheme_sponsors": [],
+          "criteria": []
+        },
+        {
+          "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - For each subjects (c) plus2 Examination Rs.2000/- (d)10th Std Examination Rs.1000/-",
+          "department": {
+            "state": {
+              "state_name": "Tamil Nadu"
+            },
+            "department_name": "Adi Dravidar and Tribal Welfare Department"
+          },
+          "introduced_on": null,
+          "valid_upto": null,
+          "funding_pattern": "State",
+          "description": "One Student each from Adi Dravidar/Tribal/Adi Dravider converted to Christianity for each subject",
+          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83083",
+          "beneficiaries": [
+            {
+              "beneficiary_type": "Students"
+            }
+          ],
+          "sponsors": [
+            {
+              "sponsor_type": "State"
+            }
+          ],
+          "benefits_types": [
+            {
+              "benefit_type": "Incentives"
+            }
+          ],
+          "how_to_avail": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer",
+          "documents": [],
+          "procedures": [
+            {
+              "step_description": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer"
+            }
+          ],
+          "scheme_documents": [],
+          "scheme_sponsors": [],
+          "criteria": []
+        },
+        {
+          "title": "Adi Dravidar and Tribal Welfare Department -Scholarship - Free Education upto 12th Std. to all i.e. tuition fee will not be collected and the amount will be reimbursed by Government.",
+          "department": {
+            "state": {
+              "state_name": "Tamil Nadu"
+            },
+            "department_name": "Adi Dravidar and Tribal Welfare Department"
+          },
+          "introduced_on": null,
+          "valid_upto": null,
+          "funding_pattern": "State",
+          "description": "All Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity students are eligible with no income limit\n",
+          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83084",
+          "beneficiaries": [
+            {
+              "beneficiary_type": "Students"
+            }
+          ],
+          "sponsors": [
+            {
+              "sponsor_type": "State"
+            }
+          ],
+          "benefits_types": [
+            {
+              "benefit_type": "Education Benefits"
+            }
+          ],
+          "how_to_avail": "Headmaster of the School.",
+          "documents": [],
+          "procedures": [
+            {
+              "step_description": "Headmaster of the School."
+            }
+          ],
+          "scheme_documents": [],
+          "scheme_sponsors": [],
+          "criteria": []
+        }
+  ]
+  

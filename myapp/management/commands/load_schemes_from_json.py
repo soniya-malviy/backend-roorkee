@@ -1,68 +1,48 @@
+
+# myapp/management/commands/import_data.py
 import json
-from datetime import datetime
 from django.core.management.base import BaseCommand
-from myapp.models import Scheme
-from myapp.models import SchemeDetail
+from myapp.models import State, Department, Scheme, Beneficiary, Sponsor, Procedure
 
 class Command(BaseCommand):
-    help = 'Load scheme data from JSON into database'
+    help = 'Import JSON data into the database'
 
     def handle(self, *args, **kwargs):
         with open('myapp/schemes.json', 'r') as file:
-            schemes = json.load(file)
+            data = json.load(file)
+            for item in data:
+                state_name = item['department']['state']['state_name']
+                state, created = State.objects.get_or_create(state_name=state_name)
 
-        for scheme_data in schemes:
-            try:
-               
+                department_name = item['department']['department_name']
+                department, created = Department.objects.get_or_create(state=state, department_name=department_name)
 
-                scheme, created = Scheme.objects.update_or_create(
-                    scheme_id=scheme_data['scheme_id'],
-                    defaults={
-                        'department': scheme_data['department'],
-                        'scheme_name': scheme_data['scheme_name'],
-                        'description': scheme_data['description'],
-                        'beneficiaries': scheme_data['beneficiaries'],
-                        'benefits': scheme_data['benefits'],
-                        'how_to_avail': scheme_data['how_to_avail'],
-                        'sponsors': scheme_data['sponsors'],
-                        'lower_age': scheme_data['lower_age'],
-                        'upper_age': scheme_data['upper_age'],
-        
-
-                        'category': scheme_data['category'],
-                        'objective': scheme_data['objective'],
-                        'funding_pattern': scheme_data['funding_pattern'],
-                        'application_process': scheme_data['application_process'],
-                        'contact_office': scheme_data['contact_office'],
-                        'scheme_link': scheme_data['scheme_link'],
-                        'required_documents': scheme_data['required_documents'],
-                    }
-                )
-                scheme_detail, created = SchemeDetail.objects.update_or_create(
-                    scheme=scheme,  # Associate with the corresponding Scheme instance
-                    defaults={
-                        'beneficiaries': scheme_data['beneficiaries'],
-                        'benefits': scheme_data['benefits'],
-                        'how_to_avail': scheme_data['how_to_avail'],
-                        'category': scheme_data['category'],
-                        'objective': scheme_data['objective'],
-                        'funding_pattern': scheme_data['funding_pattern'],
-                        'application_process': scheme_data['application_process'],
-                        'contact_office': scheme_data['contact_office'],
-                        'scheme_link': scheme_data['scheme_link'],
-                        'required_documents': scheme_data['required_documents'],
-                       
-                    }
+                scheme = Scheme.objects.create(
+                    title=item['title'],
+                    department=department,
+                    introduced_on=item.get('introduced_on'),
+                    valid_upto=item.get('valid_upto'),
+                    funding_pattern=item['funding_pattern'],
+                    description=item['description'],
+                    scheme_link=item['scheme_link']
                 )
 
-                if created:
-                    self.stdout.write(self.style.SUCCESS(f'Successfully added scheme: {scheme.scheme_name}'))
-                else:
-                    self.stdout.write(self.style.SUCCESS(f'Successfully updated scheme: {scheme.scheme_name}'))
-            except ValueError as e:
-                self.stdout.write(self.style.ERROR(f'Invalid date format in scheme data: {e}'))
-            except Exception as e:
-                self.stdout.write(self.style.ERROR(f'Error saving scheme: {e}'))
+                for beneficiary_data in item['beneficiaries']:
+                    beneficiary_type = beneficiary_data['beneficiary_type']
+                    beneficiary, created = Beneficiary.objects.get_or_create(beneficiary_type=beneficiary_type)
+                    scheme.beneficiaries.add(beneficiary)
 
-        self.stdout.write(self.style.SUCCESS('Successfully loaded scheme data'))
+                for sponsor_data in item['sponsors']:
+                    sponsor_type = sponsor_data['sponsor_type']
+                    sponsor, created = Sponsor.objects.get_or_create(sponsor_type=sponsor_type)
+                    scheme.sponsors.add(sponsor)
 
+                for procedure_data in item['procedures']:
+                    Procedure.objects.create(
+                        scheme=scheme,
+                        step_description=procedure_data['step_description']
+                    )
+
+                # Similar approach can be taken for scheme_documents, criteria, etc.
+
+            self.stdout.write(self.style.SUCCESS('Successfully imported data'))
