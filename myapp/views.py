@@ -21,6 +21,11 @@ class StateListAPIView(generics.ListAPIView):
     ordering_fields = ['created_at', 'state_name']
     ordering = ['-created_at']
 
+
+class StateDetailAPIView(generics.RetrieveAPIView):
+    queryset = State.objects.all()
+    serializer_class = StateSerializer
+
 class DepartmentListAPIView(generics.ListAPIView):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer 

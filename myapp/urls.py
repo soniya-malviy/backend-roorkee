@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     StateListAPIView,
+    StateDetailAPIView,
     DepartmentListAPIView,
     OrganisationListAPIView,
     SchemeListAPIView,
@@ -25,6 +26,7 @@ from .views import (
 
 urlpatterns = [
     path('states/', StateListAPIView.as_view(), name='state-list'),
+    path('states/<int:pk>/', StateDetailAPIView.as_view(), name='state-detail'),
     path('departments/', DepartmentListAPIView.as_view(), name='department-list'),
     path('organisations/', OrganisationListAPIView.as_view(), name='organisation-list'),
     path('schemes/', SchemeListAPIView.as_view(), name='scheme-list'),
