@@ -21,7 +21,15 @@ class StateListAPIView(generics.ListAPIView):
     ordering_fields = ['created_at', 'state_name']
     ordering = ['-created_at']
 
+class StateSchemesListAPIView(generics.ListAPIView):
+    serializer_class = SchemeSerializer
 
+    def get_queryset(self):
+        state_id = self.kwargs.get('state_id')
+        if state_id:
+            return Scheme.objects.filter(department__state_id=state_id)
+        return Scheme.objects.none() # or return an appropriate queryset when state_id is not provided
+    
 class StateDetailAPIView(generics.RetrieveAPIView):
     queryset = State.objects.all()
     serializer_class = StateSerializer
@@ -112,11 +120,16 @@ class DocumentListAPIView(generics.ListAPIView):
     ordering = ['-created_at']
 
 class SchemeDocumentListAPIView(generics.ListAPIView):
-    queryset = SchemeDocument.objects.all()
-    serializer_class = SchemeDocumentSerializer 
+    serializer_class = SchemeDocumentSerializer
     filter_backends = [OrderingFilter]
     ordering_fields = ['created_at']
     ordering = ['-created_at']
+
+    def get_queryset(self):
+        scheme_id = self.kwargs['scheme_id']
+        return SchemeDocument.objects.filter(scheme__id=scheme_id)
+
+    
 
 class SponsorListAPIView(generics.ListAPIView):
     queryset = Sponsor.objects.all()
