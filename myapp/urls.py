@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     StateListAPIView,
+    StateDetailAPIView,
     DepartmentListAPIView,
     OrganisationListAPIView,
     SchemeListAPIView,
@@ -20,11 +21,13 @@ from .views import (
     SchemeCriteriaListAPIView,  
     SchemeProceduresListAPIView,  
     SchemeDocumentsListAPIView,  
-    SchemeSponsorsListAPIView 
+    SchemeSponsorsListAPIView ,
+    StateSchemesListAPIView
 )
 
 urlpatterns = [
     path('states/', StateListAPIView.as_view(), name='state-list'),
+    path('states/<int:pk>/', StateDetailAPIView.as_view(), name='state-detail'),
     path('departments/', DepartmentListAPIView.as_view(), name='department-list'),
     path('organisations/', OrganisationListAPIView.as_view(), name='organisation-list'),
     path('schemes/', SchemeListAPIView.as_view(), name='scheme-list'),
@@ -45,5 +48,6 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/procedures/', SchemeProceduresListAPIView.as_view(), name='scheme-procedures-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/documents/', SchemeDocumentsListAPIView.as_view(), name='scheme-documents-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
+    path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
 ]
 

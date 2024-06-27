@@ -1,393 +1,492 @@
-[
-    {
-      "title": "Abolition of Bonded Labour System",
-      "department": {
-        "state": {
-          "state_name": "Tamil Nadu"
-        },
-        "department_name": "Labour Welfare and Skill Development Department"
-      },
-      "introduced_on": null,
-      "valid_upto": null,
-      "funding_pattern": "State",
-      "description": "Persons kept as bonded labour are released and rehabilitated by providing financial assistance as grant, to the tune of Rs.20,000/- Of this, a sum of Rs.1000/- each will be given immediately on relief from Bondage. Remaining (Rs.19,000/-) amount will be given for the rehabilitation through various kinds. Moreover House site pattas, houses under group housing scheme through IRDP, drinking water facility and Bank loan assistance are provided to them. Released bonded labour without any caste and creed .\n",
-      "scheme_link": "https://www.tn.gov.in/scheme/data_view/106857",
-      "beneficiaries": [
-        {
-          "beneficiary_type": "SC/ST"
-        }
-      ],
-      "sponsors": [
-        {
-          "sponsor_type": "State"
-        }
-      ],
-      "benefits_types": [
-        {
-          "benefit_type": "Grants"
-        }
-      ],
-      "how_to_avail": "Collector / Sub Collector / RDO",
-      "documents": [],
-      "procedures": [
-        {
-          "step_description": "Collector / Sub Collector / RDO"
-        }
-      ],
-      "scheme_documents": [],
-      "scheme_sponsors": [],
-      "criteria": []
-    },
-    {
-      "title": "Adi Dravidar and Tribal Welfare Department -Hostels - Special Guides",
-      "department": {
-        "state": {
-          "state_name": "Tamil Nadu"
-        },
-        "department_name": "Adi Dravidar and Tribal Welfare Department"
-      },
-      "introduced_on": null,
-      "valid_upto": null,
-      "funding_pattern": "State",
-      "description": "All Boys/ Girls Boarders studying upto XII Standard\n",
-      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83078",
-      "beneficiaries": [
-        {
-          "beneficiary_type": "Students"
-        }
-      ],
-      "sponsors": [
-        {
-          "sponsor_type": "State"
-        }
-      ],
-      "benefits_types": [
-        {
-          "benefit_type": "Hostel Facilities"
-        }
-      ],
-      "how_to_avail": "Warden/ Matron of the hostel\n",
-      "documents": [],
-      "procedures": [
-        {
-          "step_description": "Warden/ Matron of the hostel\n"
-        }
-      ],
-      "scheme_documents": [],
-      "scheme_sponsors": [],
-      "criteria": []
-    },
-    {
-      "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.",
-      "department": {
-        "state": {
-          "state_name": "Tamil Nadu"
-        },
-        "department_name": "Adi Dravidar and Tribal Welfare Department"
-      },
-      "introduced_on": null,
-      "valid_upto": null,
-      "funding_pattern": "State",
-      "description": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.One Boy and One Girl each from Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity who have secured highest mark",
-      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83082",
-      "beneficiaries": [
-        {
-          "beneficiary_type": "Students"
-        }
-      ],
-      "sponsors": [
-        {
-          "sponsor_type": "State"
-        }
-      ],
-      "benefits_types": [
-        {
-          "benefit_type": "Incentives"
-        }
-      ],
-      "how_to_avail": "District Adi Dravidar and Tribal Welfare Officer",
-      "documents": [],
-      "procedures": [
-        {
-          "step_description": "District Adi Dravidar and Tribal Welfare Officer"
-        }
-      ],
-      "scheme_documents": [],
-      "scheme_sponsors": [],
-      "criteria": []
-    },
-    {
-      "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - For each subjects (c) plus2 Examination Rs.2000/- (d)10th Std Examination Rs.1000/-",
-      "department": {
-        "state": {
-          "state_name": "Tamil Nadu"
-        },
-        "department_name": "Adi Dravidar and Tribal Welfare Department"
-      },
-      "introduced_on": null,
-      "valid_upto": null,
-      "funding_pattern": "State",
-      "description": "One Student each from Adi Dravidar/Tribal/Adi Dravider converted to Christianity for each subject",
-      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83083",
-      "beneficiaries": [
-        {
-          "beneficiary_type": "Students"
-        }
-      ],
-      "sponsors": [
-        {
-          "sponsor_type": "State"
-        }
-      ],
-      "benefits_types": [
-        {
-          "benefit_type": "Incentives"
-        }
-      ],
-      "how_to_avail": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer",
-      "documents": [],
-      "procedures": [
-        {
-          "step_description": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer"
-        }
-      ],
-      "scheme_documents": [],
-      "scheme_sponsors": [],
-      "criteria": []
-    },
-    {
-      "title": "Adi Dravidar and Tribal Welfare Department -Scholarship - Free Education upto 12th Std. to all i.e. tuition fee will not be collected and the amount will be reimbursed by Government.",
-      "department": {
-        "state": {
-          "state_name": "Tamil Nadu"
-        },
-        "department_name": "Adi Dravidar and Tribal Welfare Department"
-      },
-      "introduced_on": null,
-      "valid_upto": null,
-      "funding_pattern": "State",
-      "description": "All Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity students are eligible with no income limit\n",
-      "scheme_link": "https://www.tn.gov.in/scheme/data_view/83084",
-      "beneficiaries": [
-        {
-          "beneficiary_type": "Students"
-        }
-      ],
-      "sponsors": [
-        {
-          "sponsor_type": "State"
-        }
-      ],
-      "benefits_types": [
-        {
-          "benefit_type": "Education Benefits"
-        }
-      ],
-      "how_to_avail": "Headmaster of the School.",
-      "documents": [],
-      "procedures": [
-        {
-          "step_description": "Headmaster of the School."
-        }
-      ],
-      "scheme_documents": [],
-      "scheme_sponsors": [],
-      "criteria": []
-    },
-        {
-          "title": "Abolition of Bonded Labour System",
-          "department": {
-            "state": {
-              "state_name": "Tamil Nadu"
-            },
-            "department_name": "Labour Welfare and Skill Development Department"
-          },
-          "introduced_on": null,
-          "valid_upto": null,
-          "funding_pattern": "State",
-          "description": "Persons kept as bonded labour are released and rehabilitated by providing financial assistance as grant, to the tune of Rs.20,000/- Of this, a sum of Rs.1000/- each will be given immediately on relief from Bondage. Remaining (Rs.19,000/-) amount will be given for the rehabilitation through various kinds. Moreover House site pattas, houses under group housing scheme through IRDP, drinking water facility and Bank loan assistance are provided to them. Released bonded labour without any caste and creed .\n",
-          "scheme_link": "https://www.tn.gov.in/scheme/data_view/106857",
-          "beneficiaries": [
-            {
-              "beneficiary_type": "SC/ST"
-            }
-          ],
-          "sponsors": [
-            {
-              "sponsor_type": "State"
-            }
-          ],
-          "benefits_types": [
-            {
-              "benefit_type": "Grants"
-            }
-          ],
-          "how_to_avail": "Collector / Sub Collector / RDO",
-          "documents": [],
-          "procedures": [
-            {
-              "step_description": "Collector / Sub Collector / RDO"
-            }
-          ],
-          "scheme_documents": [],
-          "scheme_sponsors": [],
-          "criteria": []
-        },
-        {
-          "title": "Adi Dravidar and Tribal Welfare Department -Hostels - Special Guides",
-          "department": {
-            "state": {
-              "state_name": "Tamil Nadu"
-            },
-            "department_name": "Adi Dravidar and Tribal Welfare Department"
-          },
-          "introduced_on": null,
-          "valid_upto": null,
-          "funding_pattern": "State",
-          "description": "All Boys/ Girls Boarders studying upto XII Standard\n",
-          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83078",
-          "beneficiaries": [
-            {
-              "beneficiary_type": "Students"
-            }
-          ],
-          "sponsors": [
-            {
-              "sponsor_type": "State"
-            }
-          ],
-          "benefits_types": [
-            {
-              "benefit_type": "Hostel Facilities"
-            }
-          ],
-          "how_to_avail": "Warden/ Matron of the hostel\n",
-          "documents": [],
-          "procedures": [
-            {
-              "step_description": "Warden/ Matron of the hostel\n"
-            }
-          ],
-          "scheme_documents": [],
-          "scheme_sponsors": [],
-          "criteria": []
-        },
-        {
-          "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.",
-          "department": {
-            "state": {
-              "state_name": "Tamil Nadu"
-            },
-            "department_name": "Adi Dravidar and Tribal Welfare Department"
-          },
-          "introduced_on": null,
-          "valid_upto": null,
-          "funding_pattern": "State",
-          "description": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - District Level Prize plus2 Examination Rs.3000/- 10th Std First prize Rs.1000/- Second Prize Rs.500/- Third Prize Rs.300/.One Boy and One Girl each from Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity who have secured highest mark",
-          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83082",
-          "beneficiaries": [
-            {
-              "beneficiary_type": "Students"
-            }
-          ],
-          "sponsors": [
-            {
-              "sponsor_type": "State"
-            }
-          ],
-          "benefits_types": [
-            {
-              "benefit_type": "Incentives"
-            }
-          ],
-          "how_to_avail": "District Adi Dravidar and Tribal Welfare Officer",
-          "documents": [],
-          "procedures": [
-            {
-              "step_description": "District Adi Dravidar and Tribal Welfare Officer"
-            }
-          ],
-          "scheme_documents": [],
-          "scheme_sponsors": [],
-          "criteria": []
-        },
-        {
-          "title": "Adi Dravidar and Tribal Welfare Department -Incentive / Award of Prizes - For each subjects (c) plus2 Examination Rs.2000/- (d)10th Std Examination Rs.1000/-",
-          "department": {
-            "state": {
-              "state_name": "Tamil Nadu"
-            },
-            "department_name": "Adi Dravidar and Tribal Welfare Department"
-          },
-          "introduced_on": null,
-          "valid_upto": null,
-          "funding_pattern": "State",
-          "description": "One Student each from Adi Dravidar/Tribal/Adi Dravider converted to Christianity for each subject",
-          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83083",
-          "beneficiaries": [
-            {
-              "beneficiary_type": "Students"
-            }
-          ],
-          "sponsors": [
-            {
-              "sponsor_type": "State"
-            }
-          ],
-          "benefits_types": [
-            {
-              "benefit_type": "Incentives"
-            }
-          ],
-          "how_to_avail": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer",
-          "documents": [],
-          "procedures": [
-            {
-              "step_description": "Director of Adi Dravidar welfare, Chennai-5\nThrough the District Adi Dravidar and Tribal welfare officer"
-            }
-          ],
-          "scheme_documents": [],
-          "scheme_sponsors": [],
-          "criteria": []
-        },
-        {
-          "title": "Adi Dravidar and Tribal Welfare Department -Scholarship - Free Education upto 12th Std. to all i.e. tuition fee will not be collected and the amount will be reimbursed by Government.",
-          "department": {
-            "state": {
-              "state_name": "Tamil Nadu"
-            },
-            "department_name": "Adi Dravidar and Tribal Welfare Department"
-          },
-          "introduced_on": null,
-          "valid_upto": null,
-          "funding_pattern": "State",
-          "description": "All Adi Dravidar/Tribal / Adi Dravidar Converted to Christianity students are eligible with no income limit\n",
-          "scheme_link": "https://www.tn.gov.in/scheme/data_view/83084",
-          "beneficiaries": [
-            {
-              "beneficiary_type": "Students"
-            }
-          ],
-          "sponsors": [
-            {
-              "sponsor_type": "State"
-            }
-          ],
-          "benefits_types": [
-            {
-              "benefit_type": "Education Benefits"
-            }
-          ],
-          "how_to_avail": "Headmaster of the School.",
-          "documents": [],
-          "procedures": [
-            {
-              "step_description": "Headmaster of the School."
-            }
-          ],
-          "scheme_documents": [],
-          "scheme_sponsors": [],
-          "criteria": []
-        }
-  ]
+
+
+
+{
+  "states":[{
+  "state_name": "Meghalaya",
   
+  "departments": [
+    {
+      "department_name": "Agriculture and Farmers' Welfare Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Agriculture and Farmers' Welfare Department",
+          
+          "schemes": [
+            {
+              "title": "Agriculture Academic Studies",
+              "introduced_on": "2014-04-01T00:00:00Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "Sponsoring of seat for undergoing 4 years degree course in Agriculture/ Horticulture.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/35910",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Students"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [
+                {
+                  "description": "Passed 10+2 in Science",
+                  "value": ""
+                }
+              ],
+              "procedures": [
+                {
+                  "step_description": "Apply in prescribed form as advertised"
+                }
+              ]
+            },
+            {
+              "title": "Agriculture Census",
+              "introduced_on": "1970-01-01T00:00:00Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "Central Sector Scheme with 100% financial assistance",
+              "description": "Agricultural Census is the largest countrywide statistical quinquennial operation undertaken by Ministry of Agriculture, Govt. of India.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/36273",
+              "beneficiaries": [],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "Central"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Data can be accessed through Website of the Division"
+                }
+              ]
+            },
+            {
+              "title": "Agriculture Engineering (Mechanical)",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "To provide hiring of power tillers and paddy reapers to farmers at 60% subsidy.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/35875",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Farmers"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Apply in plain paper through nearest Agriculture Development Officer"
+                }
+              ]
+            },
+            {
+              "title": "Agriculture Information Unit",
+              "introduced_on": "2013-04-01T00:00:00Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "To strengthen agriculture extension programme by disseminating news on the latest scientific and farmer friendly methods of cultivation.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/22185",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Farmers"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Approach the nearest Agriculture Development Officer"
+                }
+              ]
+            },
+            {
+              "title": "Agriculture Research Stations And Laboratories",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "To conduct adaptive research trials on different crops in the Research Farms and in Farmers Field for adaptability and use of bio pesticides/bio agents.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/35902",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Farmers"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Apply in plain paper through nearest Agriculture Development Officer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Social Welfare Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Social Welfare Department",
+          
+          "schemes": [
+            {
+              "title": "Anganwadi Services (ICDS)",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "10:90",
+              "description": "Non formal pre school education, supplementary nutrition programme, immunization, health check up, nutrition and health education and referral service",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/15652",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "children within 6 months to 6 years of age, pregnant, nursing mothers and adolescent girls (11-19) years"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "Shared"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Applications through the office of the CDPO, ICDS Project"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Education Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Education Department",
+          
+          "schemes": [
+            {
+              "title": "Award for Meritorious Students of Meghalaya in the HSSLC Examination (Science Stream)",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "i) After declaration of HSSLC Examination result (Science Stream), list of students to be furnished by MBOSE ii) Screening of documents i.e Marksheets, ST Certificates etc by DERT iii) DERT transfer one time scholarship directly to student’s bank account through NEFT/RTGS",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/37590",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Students"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Offline from DERT"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Border Areas Development Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Border Areas Development Department",
+          
+          "schemes": [
+            {
+              "title": "Border Area Development Programme (BADP)",
+              "introduced_on": "1993-01-01T00:00:00Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "90:10, 90% Central, 10% State",
+              "description": "The Department of Border Management, Ministry of Home Affairs, Government of India has been implementing the Border Area Development Programme (BADP) through the State Governments as part of a comprehensive approach to Border Management.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/37481",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "People residing in the Notified Border Villages"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "Shared"
+                }
+              ],
+              "criteria": [],
+              "procedures": []
+            },
+            {
+              "title": "Border Areas Scholarship",
+              "introduced_on": "1973-01-01T00:00:00Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "100%",
+              "description": "The scheme aims to provide financial assistance to students hailing from international border areas to help them continue their education despite economic hardships.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/37489",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Students"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Offline applications submitted through Head of Educational Institutions"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Housing Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Housing Department",
+          
+          "schemes": [
+            {
+              "title": "Chief Minister Housing Assistance Programme",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "To provide durable roofing materials to improve existing houses of the Economically Weaker Section (EWS) and to provide dwelling houses to the Low Income Group (LIG) families living in the State.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/37229",
+              "beneficiaries": [],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Community & Rural Development Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Community & Rural Development Department",
+          
+          "schemes": [
+            {
+              "title": "Chief Ministers Special Rural Development Fund (CMSRDF)",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "The primary objective of the programme is to generate wage employment and creation of socially and economically useful public assets by involving peoples participation at the grassroot level.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/37322",
+              "beneficiaries": [],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "department_name": "Sports & Youth Affairs Department",
+      
+      "organisations": [
+        {
+          "organisation_name": "Sports & Youth Affairs Department",
+          
+          "schemes": [
+            {
+              "title": "Chief Minister's Youth Development Scheme (CMYDS) Guidelines",
+              "introduced_on": "2024-12-31T23:59:59Z",
+              "valid_upto": "2024-12-31T23:59:59Z",
+              "funding_pattern": "State",
+              "description": "To provide creative outlets to the Youth for positively channelling their energies and to strengthen the spirit of good citizenship, service to society and healthy social attitudes and orientation.",
+              "scheme_link": "https://meghalaya.gov.in/schemes/content/45829",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Physically Challenged [Differently abled], Unemployed, Students, Citizen, urban areas, rural youth, Rural/Urban Youth"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [
+                {
+                  "description": "Age between 14 and 29",
+                  "value": ""
+                }
+              ],
+              "procedures": [
+                {
+                  "step_description": "This scheme shall extend financial aid to registered entities through the office of the respective Deputy Commissioners"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
+
+{
+  "state_name": "Puducherry",
+  "created_at": "2024-06-25T12:00:00Z",
+  "departments": [
+    {
+      "department_name": "Adi Dravidar Welfare Department",
+      "created_at": "2024-06-25T12:00:00Z",
+      "organisations": [
+        {
+          "organisation_name": "Adi Dravidar Welfare Department",
+          "created_at": "2024-06-25T12:00:00Z",
+          "schemes": [
+            {
+              "title": "Distribution of free house sites to Scheduled Caste/Other Economically Backward Classes",
+              "introduced_on": "2014-04-01T00:00:00Z",
+              "valid_upto": "2014-04-01T00:00:00Z",
+              "funding_pattern": "State",
+              "description": "To provide free house sites to homeless poor Scheduled Caste people and other Economically backward class people at the ratio of 80:20 to enable them to construct their own houses.",
+              "scheme_link": "https://adwelfare.py.gov.in/distribution-free-house-sites-scheduled-casteother-economically-backward-classes",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Scheduled Caste, Other Economically Backward Classes"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Apply with proof of identity, caste/income/residence-cum-nativity certificate."
+                }
+              ]
+            },
+            {
+              "title": "Grant of House Construction Subsidy to Scheduled Caste people",
+              "introduced_on": "2014-04-01T00:00:00Z",
+              "valid_upto": "2014-04-01T00:00:00Z",
+              "funding_pattern": "State",
+              "description": "Subsidy to poor houseless Scheduled Caste/Other Economically Backward class people to construct house.",
+              "scheme_link": "https://adwelfare.py.gov.in/grant-house-construction-subsidy-scheduled-caste-people",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Scheduled Caste"
+                }
+              ],
+              "documents": [],
+              "sponsors": [
+                {
+                  "sponsor_type": "State"
+                }
+              ],
+              "criteria": [],
+              "procedures": [
+                {
+                  "step_description": "Apply with proof of identity, caste/income/residence-cum-nativity certificate, and original Patta document."
+                }
+              ]
+            },
+            {
+              "title": "Grant of financial assistance to poor S.C. pregnant & lactating women",
+              "introduced_on": "2014-04-01T00:00:00Z",
+              "valid_upto": "2014-04-01T00:00:00Z",
+              "funding_pattern": "State",
+              "description": "Financial Assistance to poor pregnant women and Lactating Scheduled Caste women.",
+              "scheme_link": "https://adwelfare.py.gov.in/grant-financial-assistance-poor-sc-pregnant-lactating-women",
+              "beneficiaries": [
+                {
+                  "beneficiary_type": "Scheduled Caste pregnant & lactating women"
+                }
+              ],
+              "documents": [],
+              "sponsors": [],
+              "criteria": [
+                {
+                  "description": "Applicant must be of Scheduled Caste, residing in Puducherry for at least 3 years.",
+                  "value": ""
+                },
+                {
+                  "description": "Annual income of the applicant and spouse should not exceed Rs. 200000/-",
+                  "value": ""
+                },
+                {
+                  "description": "Application should be made from 6 months of pregnancy and within 3 months from the date of delivery.",
+                  "value": ""
+                },
+                {
+                  "description": "Financial assistance is available only for 2 deliveries.",
+                  "value": ""
+                }
+              ],
+              "procedures": [
+                {
+                  "step_description": "Apply with Aadhar card, discharge summary/birth certificate, and certificate from the Medical Superintendent."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+]}

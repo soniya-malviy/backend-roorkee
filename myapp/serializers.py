@@ -69,15 +69,17 @@ class ProcedureSerializer(TimeStampedModelSerializer):
         model = Procedure
         fields = '__all__'
 
-class DocumentSerializer(TimeStampedModelSerializer):
+class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Document
-        fields = '__all__'
+        fields = ['id', 'document_name', 'created_at']
 
-class SchemeDocumentSerializer(TimeStampedModelSerializer):
+class SchemeDocumentSerializer(serializers.ModelSerializer):
+    document = DocumentSerializer()
+
     class Meta:
         model = SchemeDocument
-        fields = '__all__'
+        fields = ['id', 'created_at', 'scheme', 'document']
 
 class SponsorSerializer(TimeStampedModelSerializer):
     class Meta:
