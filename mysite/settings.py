@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'rest_framework',
+    'corsheaders',
     'myapp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,7 +53,36 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+
+
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Allow credentials (cookies, etc.)
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow specific headers
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    
+]
+
+# Allow specific methods
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    
+]
+
+
 
 ROOT_URLCONF = 'mysite.urls'
 
