@@ -130,3 +130,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#celeryconfig.py
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TIMEZONE = 'UTC'
+CELERY_ENABLE_UTC = True
+
+# mysite/settings.py
+from celery.schedules import crontab
+
+
+CELERY_BEAT_SCHEDULE = {
+    'run-every-30-minutes': {
+        'task': 'myapp.tasks.run_processing_task',
+        'schedule': crontab(minute='*/30'),  # Run every 30 minutes
+    },
+}
+
+CELERY_TIMEZONE = 'UTC'
+
