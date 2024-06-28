@@ -1,0 +1,67 @@
+{
+  "states": [
+    {
+      "state_name": "Tamil Nadu",
+      "created_at": "2024-06-25T12:00:00Z",
+      "departments": [
+        {
+          "department_name": "Department of Education",
+          "created_at": "2024-06-25T12:00:00Z",
+          "organisations": [
+            {
+              "organisation_name": "Educational Board",
+              "created_at": "2024-06-25T12:00:00Z",
+              "schemes": [
+                {
+                  "scheme_id": "ff28f57d-5857-491e-a5bc-ec0ca42b0ce0",
+                  "scheme_name": "Border Areas Scholarship",
+                  "description": "Consequent upon the partition of India in 1947, the people inhabiting the Indo-Bangladesh Border suffered acute economic distress due to closure of normal trade channels with our neighbouring country. The people of those areas have been experiencing great difficulty to give proper education to their children on account of economic hardships and many students had to give up their studies in between due to the economic hardships faced by their parents. It was obvious that majority of the students hailing from those areas wereeconomically handicapped and hence could not catch up with those living in non- border areas. With a view to removing this handicap, a scheme for giving financial assistance to the students hailing from the international border areas under the nomenclature “Border Areas Scholarship” was introduced by the Border Areas Development Department, Government of Meghalaya.",
+                  "scheme_beneficiary": "Students",
+                  "scheme_benefits": "Scholarship, Stipend",
+                  "how_to_avail": "Offline applications have to be submitted through Head of Educational Institutions to Directorate of Higher & Technical Education, Shillongon release of the advertisement every year.",
+                  "sponsors": "State",
+                  "lower_age": " -None- ",
+                  "upper_age": " -None- ",
+                  "funding": "100%",
+                  "undefined": "0",
+                  "introduced_on": "01 Jan 1973",
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37489"
+                },
+                {
+                  "scheme_id": "d72456fd-041e-425e-a4a8-2e90373f91a6",
+                  "department": "Education Department",
+                  "scheme_name": "National Talent Search Examination (NTSE)",
+                  "description": "NCERT’s aim is:\ni)\tTo identify talented students and nurture their talent\nii)\tAwarding candidates with scholarship in different stages of education",
+                  "scheme_beneficiary": "Students",
+                  "scheme_benefits": "Scholarship",
+                  "how_to_avail": "i)\tExamination is conducted every year at 2 (two) stages:\n        Stage I in November (State)(DERT)\n        Stage II in May (NCERT)\nii)\tStage 1 is conducted by DERT through written examination and recommended on the basis of merit and will be eligible \n        to appear for National level i.e Stage II examination which is conducted by NCERT\niii)\tState Quota 50\niv)\tThe selected 50 candidates have to appear for the National Level Examination (Stage II) which is conducted by NCERT\nv)\tAward of Scholarship is from Class XI upto higher qualifications",
+                  "sponsors": "Central",
+                  "lower_age": " -None- ",
+                  "upper_age": " -None- ",
+                  "funding": "100%",
+                  "introduced_on": "01 Jan 2008",
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37589"
+                },
+                {
+                  "scheme_id": "4dcd79a8-284d-4eb1-a393-953eea8ed457",
+                  "department": "Education Department",
+                  "scheme_name": " Primary School Scholarship and Upper Primary Scholarship",
+                  "description": "i)\tThe Examination cell of the Directorate of Educational Research and Training, conducts Scholarship Examinations for both Primary and Upper Primary students of the State since 2006. Interested students studying in class V and class VIII from all the schools of the state can appear for the examination.\nii)\tThe objectives are to identify and recognize students with academic talent, providing them a platform to appear in competitive examinations and to provide financial assistance to successful students. The examination is held in 63 centres in all the 15 sub divisions under the supervision of the Sub-Divisional School Education Officer (SDSEO).\niii)\t Advertisement regarding the conduct of the exam is widely published through leading newspapers of the State as well as through the office of the SDSEOs.\niv)\tThe tenure of the Primary/Upper Primary Scholarship is three years subject to good conduct and satisfactory progress.",
+                  "scheme_beneficiary": "Students",
+                  "scheme_benefits": "Scholarship",
+                  "how_to_avail": "i)\tStudents applies through schools to SDSEOs\nii)\tSDSEOs send Student list to DERT \niii)\tDERT conduct exam\niv)\tSelected candidates will be avail scholarship by DSEL",
+                  "sponsors": "State",
+                  "lower_age": " -None- ",
+                  "upper_age": " -None- ",
+                  "undefined": "ST",
+                  "funding": "100%",
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37593"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
