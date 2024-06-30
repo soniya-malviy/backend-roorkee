@@ -5,6 +5,8 @@ import json
 import google.generativeai as genai
 from dotenv import load_dotenv
 from celery import Celery
+from celery import shared_task
+from django.core.management import call_command
 
 load_dotenv()
 
@@ -113,3 +115,10 @@ def run_processing_task():
         print(f"Data successfully saved to {output_file_path}")
     except Exception as e:
         print(f"Error: Could not save data to file. {e}")
+
+
+@shared_task
+def load_data_task():
+    call_command('load_data')
+    print("Data loaded successfully.")
+
