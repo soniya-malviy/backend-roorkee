@@ -28,19 +28,33 @@
                   "scheme_link": "https://meghalaya.gov.in/schemes/content/37489"
                 },
                 {
-                  "scheme_id": "d72456fd-041e-425e-a4a8-2e90373f91a6",
+                  "scheme_id": "6629e566-90b3-48bb-857b-48a518191e07",
                   "department": "Education Department",
-                  "scheme_name": "National Talent Search Examination (NTSE)",
-                  "description": "NCERT’s aim is:\ni)\tTo identify talented students and nurture their talent\nii)\tAwarding candidates with scholarship in different stages of education",
+                  "scheme_name": "Mid Day Meal Scheme",
+                  "description": "The main objective of MDM Programme in the State is to boost universalization of Elementary Education in Government, Government Aided Primary and Upper Primary Schools. Mid Day Meal Programme was expected to attract more children to come to school and to increase enrolment, attendance, retention and bring down drop-out rate.",
+                  "scheme_beneficiary": "Students",
+                  "how_to_avail": "To avail all the entitlements under Mid Day meal, the schools category which are eligible are Govt, SSA and Govt aided",
+                  "sponsors": "Shared",
+                  "lower_age": "6",
+                  "upper_age": "14",
+                  "funding": "Central 90%: State 10%",
+                  "introduced_on": "01 Jan 2002",
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37522"
+                },
+                {
+                  "scheme_id": "bfb524f1-68a2-4adf-a273-c1625567e61c",
+                  "department": "Education Department",
+                  "scheme_name": "National Means Cum Merit Scholarship (NMMS)",
+                  "description": "MHRD’s aim is:\ni)\tTo provide Scholarship to meritorious students belonging to the economically weaker sections of the society\nii)\tArrest drop-out rates at Class VIII and encourage them to continue their studies at Secondary Stage",
                   "scheme_beneficiary": "Students",
                   "scheme_benefits": "Scholarship",
-                  "how_to_avail": "i)\tExamination is conducted every year at 2 (two) stages:\n        Stage I in November (State)(DERT)\n        Stage II in May (NCERT)\nii)\tStage 1 is conducted by DERT through written examination and recommended on the basis of merit and will be eligible \n        to appear for National level i.e Stage II examination which is conducted by NCERT\niii)\tState Quota 50\niv)\tThe selected 50 candidates have to appear for the National Level Examination (Stage II) which is conducted by NCERT\nv)\tAward of Scholarship is from Class XI upto higher qualifications",
+                  "how_to_avail": "i)\tOnly students from Govt, Govt. Aided and Local Body Schools can apply\nii)\tState Quota is 231\niii)\tSelection through written examination conducted by DERT\niv)\t50% for SC/ST, 55% for Gen, OBC & Others\nv)\tAward of Scholarship is for 4 years (Class IX t o XII)\nvi)\tSelected beneficiaries are to submit their applications On-line through National Scholarship Portal\nvii)\tSBI New Delhi transfer the scholarship directly to Students Account",
                   "sponsors": "Central",
                   "lower_age": " -None- ",
                   "upper_age": " -None- ",
                   "funding": "100%",
                   "introduced_on": "01 Jan 2008",
-                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37589"
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37588"
                 },
                 {
                   "scheme_id": "4dcd79a8-284d-4eb1-a393-953eea8ed457",
@@ -56,6 +70,16 @@
                   "undefined": "ST",
                   "funding": "100%",
                   "scheme_link": "https://meghalaya.gov.in/schemes/content/37593"
+                },
+                {
+                  "scheme_id": "d232a856-cb19-4924-b89b-bfecca52dbbb",
+                  "scheme_name": "The Meghalaya Street Vendors (Protection of Livelihood and Regulation of Street Vending) Scheme, 2023",
+                  "description": "The survey shall be carried out by forming area/ market wise teams consisting of Local authority and members of Town Vending Committee nominated or any such other agency/agencies as may be required for the purpose. The teams may be assisted by a technical data collection agency. Survey shall be done manually or through a mobile based application or a combination of both and might involve usage of one or more of the following tools:\n(i) GIS (Geographic Information System)\n(ii) Digitized photo census\n(iii) Capture of biometrics\nThe survey shall capture the primary data viz. name of the street vendor, gender, age, date of birth, place of birth, nature of trade/vending, period since start of vending on justifiable documentary evidence, address (present and permanent), contact number, whether Person with disability (PWD), identity proof (as specified below), application forms for additional information as prescribed by the local authority, and details of place, mode (stationary/ mobile/ other), nature and time of street vending as indicated in Form-I. For the purpose of identifying the street vendor, he/ she shall submit any one of the following documents:\n(i) Election Photo Identity Card issued by the Election Commission of India\n(ii) Aadhar Card\n(iii) Ration Card",
+                  "scheme_beneficiary": "Citizen",
+                  "sponsors": "State",
+                  "lower_age": " -None- ",
+                  "upper_age": " -None- ",
+                  "scheme_link": "https://meghalaya.gov.in/index.php/schemes/content/45431"
                 }
               ]
             }

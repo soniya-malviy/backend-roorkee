@@ -180,6 +180,10 @@ CELERY_BEAT_SCHEDULE = {
         'task': 'myapp.tasks.run_processing_task',
         'schedule': crontab(minute='*/30'),  # Run every 30 minutes
     },
+    'load-data-task': {
+        'task': 'myapp.tasks.load_data_task',
+        'schedule': crontab(minute='*/30'),
+    },
 }
 
 CELERY_TIMEZONE = 'UTC'
