@@ -170,4 +170,122 @@ class SchemeSponsor(TimeStampedModel):
         verbose_name_plural = "Scheme Sponsors"
         ordering = ['scheme', 'sponsor']
 
+
+# Temporary models for new data
+
     
+class TempState(TimeStampedModel):
+    state_name = models.CharField(max_length=255, default="Tamil Nadu")
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.state_name
+
+class TempDepartment(TimeStampedModel):
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='temp_departments', null=True, blank=True)
+    department_name = models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.department_name
+
+class TempOrganisation(TimeStampedModel):
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='temp_organisations', null=True, blank=True)
+    organisation_name = models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.organisation_name
+
+class TempScheme(TimeStampedModel):
+    title = models.TextField(null=True, blank=True)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='temp_schemes', null=True, blank=True)
+    introduced_on = models.DateTimeField(null=True, blank=True)
+    valid_upto = models.DateTimeField(null=True, blank=True)
+    funding_pattern = models.CharField(max_length=255, default="State")
+    description = models.TextField(null=True, blank=True)
+    scheme_link = models.URLField(null=True, blank=True)
+    beneficiaries = models.ManyToManyField('Beneficiary', related_name='temp_schemes', through='TempSchemeBeneficiary')
+    documents = models.ManyToManyField('Document', related_name='temp_schemes', through='TempSchemeDocument')
+    sponsors = models.ManyToManyField('Sponsor', related_name='temp_schemes', through='TempSchemeSponsor')
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.title
+
+class TempSchemeBeneficiary(TimeStampedModel):
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='temp_scheme_beneficiaries')
+    beneficiary = models.ForeignKey(Beneficiary, on_delete=models.CASCADE, related_name='temp_beneficiary_schemes')
+
+    class Meta:
+        abstract = True
+
+class TempBenefit(TimeStampedModel):
+    benefit_type = models.CharField(max_length=255, default="Grant")
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.benefit_type
+
+class TempCriteria(TimeStampedModel):
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='temp_criteria', null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    value = models.TextField(null=True, blank=True)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.description
+
+class TempProcedure(TimeStampedModel):
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='temp_procedures', null=True, blank=True)
+    step_description = models.TextField(null=True, blank=True)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.step_description
+
+class TempDocument(TimeStampedModel):
+    document_name = models.CharField(max_length=255, default="Aadhar Card")
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.document_name
+
+class TempSchemeDocument(TimeStampedModel):
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='temp_scheme_documents')
+    document = models.ForeignKey(Document, on_delete=models.CASCADE, related_name='temp_document_schemes')
+
+    class Meta:
+        abstract = True
+
+class TempSponsor(TimeStampedModel):
+    sponsor_type = models.CharField(max_length=255, default="State")
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.sponsor_type
+
+class TempSchemeSponsor(TimeStampedModel):
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='temp_scheme_sponsors')
+    sponsor = models.ForeignKey(Sponsor, on_delete=models.CASCADE, related_name='temp_sponsor_schemes')
+
+    class Meta:
+        abstract = True
