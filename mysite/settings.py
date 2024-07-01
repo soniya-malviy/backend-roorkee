@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
+   
     'myapp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.staticfiles.middleware.StaticFilesMiddleware',
 ]
 
 
@@ -160,6 +162,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #celeryconfig.py
 
@@ -187,4 +190,3 @@ CELERY_BEAT_SCHEDULE = {
 }
 
 CELERY_TIMEZONE = 'UTC'
-
