@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
+    'django_celery_beat',
    
     'myapp',
     'django.contrib.admin',
@@ -173,19 +174,21 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
-# mysite/settings.py
-from celery.schedules import crontab
+# # mysite/settings.py
+# from celery.schedules import crontab
 
 
-CELERY_BEAT_SCHEDULE = {
-    'run-every-30-minutes': {
-        'task': 'myapp.tasks.run_processing_task',
-        'schedule': crontab(minute='*/30'),  # Run every 30 minutes
-    },
-    'load-data-task': {
-        'task': 'myapp.tasks.load_data_task',
-        'schedule': crontab(minute='*/30'),
-    },
-}
+# CELERY_BEAT_SCHEDULE = {
+#     'run-every-30-minutes': {
+#         'task': 'myapp.tasks.run_processing_task',
+#         'schedule': crontab(minute='*/30'),  # Run every 30 minutes
+#     },
+#     'load-data-task': {
+#         'task': 'myapp.tasks.load_data_task',
+#         'schedule': crontab(minute='*/30'),
+#     },
+# }
 
-CELERY_TIMEZONE = 'UTC'
+# CELERY_TIMEZONE = 'UTC'
+# mysite/celery.py
+

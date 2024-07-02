@@ -80,3 +80,5 @@ class Command(BaseCommand):
                     SchemeDocument.objects.get_or_create(scheme=scheme, document=document)
 
         self.stdout.write(self.style.SUCCESS('Successfully scraped, processed, and saved schemes data'))
+
+Command.name = 'load_scrape_schemes'
