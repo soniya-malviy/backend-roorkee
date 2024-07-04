@@ -1,4 +1,8 @@
 from django.urls import path
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 from .views import (
     StateListAPIView,
     StateDetailAPIView,
@@ -22,10 +26,16 @@ from .views import (
     SchemeProceduresListAPIView,  
     SchemeDocumentsListAPIView,  
     SchemeSponsorsListAPIView ,
-    StateSchemesListAPIView
+    StateSchemesListAPIView,
+    UserRegistrationAPIView,
+    LoginView,
+    LogoutView,
+    ProtectedView
 )
 
+
 urlpatterns = [
+    
     path('states/', StateListAPIView.as_view(), name='state-list'),
     path('states/<int:pk>/', StateDetailAPIView.as_view(), name='state-detail'),
     path('departments/', DepartmentListAPIView.as_view(), name='department-list'),
@@ -49,5 +59,12 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/documents/', SchemeDocumentsListAPIView.as_view(), name='scheme-documents-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
     path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
+    path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('protected/', ProtectedView.as_view(), name='protected'),
+
 ]
 

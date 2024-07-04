@@ -1,17 +1,30 @@
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.views import APIView
 from rest_framework.filters import OrderingFilter
+from rest_framework.response import Response
+from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.exceptions import TokenError
+
+
+
+from .serializers import LoginSerializer
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
-    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor
+    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
-    SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer
+    SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer
 )
+
 from rest_framework.exceptions import NotFound
 from .filters import CustomOrderingFilter
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class StateListAPIView(generics.ListAPIView):
@@ -228,3 +241,56 @@ class SchemeSponsorsListAPIView(generics.ListAPIView):
         if not scheme_id:
             raise NotFound("Scheme ID not provided.")
         return SchemeSponsor.objects.filter(scheme_id=scheme_id)
+    
+
+# BELOW USER REGISTRATION VIEW
+    
+class UserRegistrationAPIView(generics.CreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserRegistrationSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            return Response({
+                "user": UserRegistrationSerializer(user).data,
+                "message": "User created successfully"
+            }, status=HTTP_201_CREATED)
+        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+    
+
+class LoginView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data['user']
+            refresh = RefreshToken.for_user(user)
+            tokens = {
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            }
+            return Response(tokens, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class LogoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        try:
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({"detail": "Successfully logged out."}, status=200)
+        except KeyError:
+            return Response({"error": "Refresh token not provided."}, status=400)
+        except TokenError as e:
+            return Response({"error": str(e)}, status=400)
+        
+
+class ProtectedView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        return Response(data={"message": "This is a protected view."}, status=status.HTTP_200_OK)
