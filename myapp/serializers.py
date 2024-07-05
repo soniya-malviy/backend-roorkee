@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor
+from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
 from django.utils import timezone
+from django.contrib.auth import authenticate
 import pytz
 
 class TimeStampedModelSerializer(serializers.ModelSerializer):
@@ -101,3 +102,32 @@ class SchemeSponsorSerializer(TimeStampedModelSerializer):
     class Meta:
         model = SchemeSponsor
         fields = '__all__'
+
+# BELOW USER REGISTRATION SERIALIZER
+        
+class UserRegistrationSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'password']
+
+    def create(self, validated_data):
+        user = CustomUser.objects.create_user(
+            username=validated_data['username'],
+            email=validated_data['email'],
+            password=validated_data['password']
+        )
+        return user
+    
+# BELOW USER LOGIN SERIALIZER
+    
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        user = authenticate(username=data['username'], password=data['password'])
+        if user and user.is_active:
+            return {'user': user}
+        raise serializers.ValidationError('Invalid credentials')
