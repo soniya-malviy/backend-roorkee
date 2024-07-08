@@ -101,3 +101,118 @@ class SchemeSponsorSerializer(TimeStampedModelSerializer):
     class Meta:
         model = SchemeSponsor
         fields = '__all__'
+
+
+# from django.contrib.auth.models import User
+# from .models import UserProfile
+
+# class UserProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserProfile
+#         fields = ['bio']
+
+# class UserSerializer(serializers.ModelSerializer):
+#     profile = UserProfileSerializer()
+
+#     class Meta:
+#         model = User
+#         fields = ['id', 'username', 'email', 'profile']
+
+#     def update(self, instance, validated_data):
+#         profile_data = validated_data.pop('profile')
+#         profile = instance.profile
+
+#         instance.username = validated_data.get('username', instance.username)
+#         instance.email = validated_data.get('email', instance.email)
+#         instance.save()
+
+#         profile.bio = profile_data.get('bio', profile.bio)
+#         profile.save()
+
+#         return instance
+# from rest_framework import serializers
+# from django.contrib.auth.models import User
+# from .models import UserProfile
+
+# class UserProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserProfile
+#         fields = ['bio', 'preferences', 'created_at', 'updated_at']
+#         read_only_fields = ['created_at', 'updated_at']  # These fields are read-only
+
+# class UserSerializer(serializers.ModelSerializer):
+#     profile = UserProfileSerializer()
+
+#     class Meta:
+#         model = User
+#         fields = ['id', 'username', 'email', 'profile']
+
+#     def update(self, instance, validated_data):
+#         profile_data = validated_data.pop('profile', None)
+#         profile = instance.profile
+
+#         instance.username = validated_data.get('username', instance.username)
+#         instance.email = validated_data.get('email', instance.email)
+#         instance.save()
+
+#         if profile_data:
+#             profile.bio = profile_data.get('bio', profile.bio)
+#             profile.preferences = profile_data.get('preferences', profile.preferences)
+#             profile.save()
+
+#         return instance
+
+# myapp/serializers.py
+
+from django.contrib.auth.models import User
+from .models import UserProfile
+from .models import UserPreferences
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ['bio', 'preferences', 'created_at', 'updated_at']
+        read_only_fields = ['created_at', 'updated_at']
+
+class UserPreferencesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserPreferences
+        fields = ['preferred_categories', 'dark_mode', 'language', 'browsing_history']
+
+class UserSerializer(serializers.ModelSerializer):
+    profile = UserProfileSerializer(required=False)
+    preferences = UserPreferencesSerializer(required=False)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'profile', 'preferences']
+
+    def update(self, instance, validated_data):
+        profile_data = validated_data.pop('profile', None)
+        preferences_data = validated_data.pop('preferences', None)
+
+        instance.username = validated_data.get('username', instance.username)
+        instance.email = validated_data.get('email', instance.email)
+        instance.save()
+
+        # Handle profile data
+        if profile_data:
+            UserProfile.objects.update_or_create(user=instance, defaults=profile_data)
+
+        # Handle preferences data
+        if preferences_data:
+            UserPreferences.objects.update_or_create(user=instance, defaults=preferences_data)
+
+        return instance
+
+
+# class BrowsingHistorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = BrowsingHistory
+#         fields = ['item_id', 'viewed_at']
+
+# class RecommendationSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Recommendation
+#         fields = ['item_id', 'recommended_at', 'score']

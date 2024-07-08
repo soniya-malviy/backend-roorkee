@@ -1,4 +1,8 @@
 from django.urls import path
+from .views import UserProfileAPIView
+from .views import RecommendationsAPIView
+
+
 from .views import (
     StateListAPIView,
     StateDetailAPIView,
@@ -49,5 +53,12 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/documents/', SchemeDocumentsListAPIView.as_view(), name='scheme-documents-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
     path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
+    path('profile/', UserProfileAPIView.as_view(), name='profile_api'),
+    path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
+
+   
+    # path('profile/', UserProfileDetail.as_view(), name='profile-detail'),
+    # path('profile/update/', UserProfileUpdate.as_view(), name='profile-update'),
+
 ]
 

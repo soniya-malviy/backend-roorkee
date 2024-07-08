@@ -17,7 +17,7 @@ class Command(BaseCommand):
         subprocess.run(["node", puppeteer_script_path])
 
         # Run the Gemini API script
-        subprocess.run(["python", gemini_api_script_path])
+        subprocess.run(["python3", gemini_api_script_path])
 
         # Load the processed data from the Gemini API output file
         with open(gemini_api_output_path) as f:
