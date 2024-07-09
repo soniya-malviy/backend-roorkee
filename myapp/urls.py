@@ -31,7 +31,8 @@ from .views import (
     LoginView,
     LogoutView,
     ProtectedView,
-    SchemeSearchView
+    SchemeSearchView,
+    SaveSchemeView
 )
 
 
@@ -67,6 +68,7 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('protected/', ProtectedView.as_view(), name='protected'),
     path('schemes/search/', SchemeSearchView.as_view(), name='scheme-search'),
+    path('save_scheme/', SaveSchemeView.as_view(), name='save_scheme'),
 
 ]
 

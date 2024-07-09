@@ -103,6 +103,17 @@ class SchemeSponsorSerializer(TimeStampedModelSerializer):
         model = SchemeSponsor
         fields = '__all__'
 
+class SaveSchemeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['saved_schemes']
+
+    def update(self, instance, validated_data):
+        saved_schemes = validated_data.get('saved_schemes')
+        instance.saved_schemes.set(saved_schemes)
+        instance.save()
+        return instance
+    
 # BELOW USER REGISTRATION SERIALIZER
         
 class UserRegistrationSerializer(serializers.ModelSerializer):
