@@ -10,6 +10,7 @@ from rest_framework_simplejwt.exceptions import TokenError
 
 
 
+
 from .serializers import LoginSerializer
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
@@ -294,3 +295,12 @@ class ProtectedView(APIView):
 
     def get(self, request):
         return Response(data={"message": "This is a protected view."}, status=status.HTTP_200_OK)
+    
+class SchemeSearchView(APIView):
+    def get(self, request, *args, **kwargs):
+        query = request.query_params.get('q', None)
+        if query:
+            schemes = Scheme.objects.filter(title__icontains=query)
+            serializer = SchemeSerializer(schemes, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response({"detail": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
