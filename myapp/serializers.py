@@ -1,8 +1,11 @@
 from rest_framework import serializers
-from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor
+from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
 from django.utils import timezone
+from django.contrib.auth import authenticate
 import pytz
-
+from django.contrib.auth.models import User
+from .models import UserProfile
+from .models import UserPreferences
 class TimeStampedModelSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z', read_only=True)
 
@@ -102,84 +105,19 @@ class SchemeSponsorSerializer(TimeStampedModelSerializer):
         model = SchemeSponsor
         fields = '__all__'
 
-
-# from django.contrib.auth.models import User
-# from .models import UserProfile
-
-# class UserProfileSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = UserProfile
-#         fields = ['bio']
-
-# class UserSerializer(serializers.ModelSerializer):
-#     profile = UserProfileSerializer()
-
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'email', 'profile']
-
-#     def update(self, instance, validated_data):
-#         profile_data = validated_data.pop('profile')
-#         profile = instance.profile
-
-#         instance.username = validated_data.get('username', instance.username)
-#         instance.email = validated_data.get('email', instance.email)
-#         instance.save()
-
-#         profile.bio = profile_data.get('bio', profile.bio)
-#         profile.save()
-
-#         return instance
-# from rest_framework import serializers
-# from django.contrib.auth.models import User
-# from .models import UserProfile
-
-# class UserProfileSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = UserProfile
-#         fields = ['bio', 'preferences', 'created_at', 'updated_at']
-#         read_only_fields = ['created_at', 'updated_at']  # These fields are read-only
-
-# class UserSerializer(serializers.ModelSerializer):
-#     profile = UserProfileSerializer()
-
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'email', 'profile']
-
-#     def update(self, instance, validated_data):
-#         profile_data = validated_data.pop('profile', None)
-#         profile = instance.profile
-
-#         instance.username = validated_data.get('username', instance.username)
-#         instance.email = validated_data.get('email', instance.email)
-#         instance.save()
-
-#         if profile_data:
-#             profile.bio = profile_data.get('bio', profile.bio)
-#             profile.preferences = profile_data.get('preferences', profile.preferences)
-#             profile.save()
-
-#         return instance
-
-# myapp/serializers.py
-
-from django.contrib.auth.models import User
-from .models import UserProfile
-from .models import UserPreferences
-
-
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = ['bio', 'preferences', 'created_at', 'updated_at']
         read_only_fields = ['created_at', 'updated_at']
 
+# UserPreferencesSerializer
 class UserPreferencesSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserPreferences
         fields = ['preferred_categories', 'dark_mode', 'language', 'browsing_history']
 
+# UserSerializer
 class UserSerializer(serializers.ModelSerializer):
     profile = UserProfileSerializer(required=False)
     preferences = UserPreferencesSerializer(required=False)
@@ -206,13 +144,41 @@ class UserSerializer(serializers.ModelSerializer):
 
         return instance
 
+# SaveSchemeSerializer
+class SaveSchemeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['saved_schemes']
 
-# class BrowsingHistorySerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = BrowsingHistory
-#         fields = ['item_id', 'viewed_at']
+    def update(self, instance, validated_data):
+        saved_schemes = validated_data.get('saved_schemes')
+        instance.saved_schemes.set(saved_schemes)
+        instance.save()
+        return instance
 
-# class RecommendationSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Recommendation
-#         fields = ['item_id', 'recommended_at', 'score']
+# UserRegistrationSerializer
+class UserRegistrationSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'password']
+
+    def create(self, validated_data):
+        user = CustomUser.objects.create_user(
+            username=validated_data['username'],
+            email=validated_data['email'],
+            password=validated_data['password']
+        )
+        return user
+
+# LoginSerializer
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        user = authenticate(username=data['username'], password=data['password'])
+        if user and user.is_active:
+            return {'user': user}
+        raise serializers.ValidationError('Invalid credentials')

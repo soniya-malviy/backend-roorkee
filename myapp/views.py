@@ -1,17 +1,32 @@
-from rest_framework import generics
+from rest_framework import generics, status
+from rest_framework.views import APIView
 from rest_framework.filters import OrderingFilter
+from rest_framework.response import Response
+from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.exceptions import TokenError
+
+
+
+
+from .serializers import LoginSerializer
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
-    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor
+    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
-    SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer
+    SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
+    SaveSchemeSerializer
 )
+
 from rest_framework.exceptions import NotFound
 from .filters import CustomOrderingFilter
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class StateListAPIView(generics.ListAPIView):
@@ -229,47 +244,6 @@ class SchemeSponsorsListAPIView(generics.ListAPIView):
             raise NotFound("Scheme ID not provided.")
         return SchemeSponsor.objects.filter(scheme_id=scheme_id)
 
-
-# from rest_framework import generics, permissions
-# from rest_framework.permissions import IsAuthenticated
-
-# from .models import UserProfile
-# from .serializers import UserSerializer, UserProfileSerializer
-# from django.contrib.auth.models import User
-
-# class UserProfileDetail(generics.RetrieveAPIView):
-#     serializer_class = UserProfileSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_object(self):
-#         return self.request.user.profile
-
-# class UserProfileUpdate(generics.UpdateAPIView):
-#     serializer_class = UserProfileSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_object(self):
-#         return self.request.user.profile
-
-# profiles/views.py
-
-# from rest_framework import generics, permissions
-# from django.contrib.auth.models import User
-# from .models import UserProfile
-# from .serializers import UserSerializer
-
-# class UserProfileAPIView(generics.RetrieveUpdateAPIView):
-#     serializer_class = UserSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_object(self):
-#         return self.request.user
-
-#     def put(self, request, *args, **kwargs):
-#         return self.update(request, *args, **kwargs)
-
-# myapp/views.py
-
 from rest_framework import generics, permissions
 from django.contrib.auth.models import User
 from .models import UserProfile
@@ -281,7 +255,6 @@ from .recommendation_algorithm import generate_recommendations
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.utils import timezone
-
 
 class UserProfileAPIView(generics.RetrieveUpdateAPIView):
     serializer_class = UserSerializer
@@ -296,62 +269,6 @@ class UserProfileAPIView(generics.RetrieveUpdateAPIView):
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
 
-# class UserPreferencesAPIView(generics.RetrieveUpdateAPIView):
-#     serializer_class = UserPreferencesSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_object(self):
-#         user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
-#         return user_preferences
-
-# class BrowsingHistoryAPIView(generics.ListCreateAPIView):
-#     serializer_class = BrowsingHistorySerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_queryset(self):
-#         return BrowsingHistory.objects.filter(user=self.request.user)
-
-#     def perform_create(self, serializer):
-#         serializer.save(user=self.request.user)
-
-# class RecommendationsAPIView(APIView):
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get(self, request):
-#         user_preferences = UserPreferences.objects.get(user=self.request.user)
-#         browsing_history = BrowsingHistory.objects.filter(user=self.request.user)
-        
-#         # Generate recommendations based on user preferences and browsing history
-#         recommended_items = generate_recommendations(user_preferences, browsing_history)
-        
-#         # Save recommendations in the database
-#         recommendations = []
-#         for item in recommended_items:
-#             recommendation = Recommendation(
-#                 user=self.request.user,
-#                 item_id=item['item_id'],
-#                 recommended_at=timezone.now(),
-#                 score=item['score']
-#             )
-#             recommendation.save()
-#             recommendations.append(recommendation)
-
-#         serializer = RecommendationSerializer(recommendations, many=True)
-#         return Response(serializer.data)
-
-# class RecommendationsAPIView(generics.ListAPIView):
-#     serializer_class = UserPreferencesSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_queryset(self):
-#         user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
-#         # For now, return the user preferences as the recommendation
-#         return [user_preferences]
-
-#     def get(self, request, *args, **kwargs):
-#         queryset = self.get_queryset()
-#         serializer = self.get_serializer(queryset, many=True)
-#         return Response(serializer.data)
 
 class RecommendationsAPIView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -363,3 +280,177 @@ class RecommendationsAPIView(generics.ListAPIView):
         user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
         recommendations = generate_recommendations(user_preferences)
         return Response({'recommendations': recommendations})
+
+# Views from origin/main branch
+class UserRegistrationAPIView(generics.CreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserRegistrationSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            return Response({
+                "user": UserRegistrationSerializer(user).data,
+                "message": "User created successfully"
+            }, status=HTTP_201_CREATED)
+        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+
+
+class LoginView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = LoginSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data['user']
+            refresh = RefreshToken.for_user(user)
+            tokens = {
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            }
+            return Response(tokens, status=HTTP_200_OK)
+        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+
+
+class LogoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        try:
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({"detail": "Successfully logged out."}, status=HTTP_200_OK)
+        except KeyError:
+            return Response({"error": "Refresh token not provided."}, status=HTTP_400_BAD_REQUEST)
+        except TokenError as e:
+            return Response({"error": str(e)}, status=HTTP_400_BAD_REQUEST)
+
+
+class ProtectedView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        return Response(data={"message": "This is a protected view."}, status=HTTP_200_OK)
+
+
+class SchemeSearchView(APIView):
+    def get(self, request, *args, **kwargs):
+        query = request.query_params.get('q', None)
+        if query:
+            schemes = Scheme.objects.filter(title__icontains=query)
+            serializer = SchemeSerializer(schemes, many=True)
+            return Response(serializer.data, status=HTTP_200_OK)
+        return Response({"detail": "Query parameter 'q' is required."}, status=HTTP_400_BAD_REQUEST)
+
+
+class SaveSchemeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        serializer = SaveSchemeSerializer(request.user, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'status': 'scheme saved'}, status=HTTP_200_OK)
+        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+
+
+
+# class UserProfileAPIView(generics.RetrieveUpdateAPIView):
+#     serializer_class = UserSerializer
+#     permission_classes = [permissions.IsAuthenticated]
+
+#     def get_object(self):
+#         user = self.request.user
+#         # Ensure user has a profile
+#         UserProfile.objects.get_or_create(user=user)
+#         return user
+
+#     def put(self, request, *args, **kwargs):
+#         return self.update(request, *args, **kwargs)
+
+
+# class RecommendationsAPIView(generics.ListAPIView):
+#     permission_classes = [permissions.IsAuthenticated]
+
+#     def get_queryset(self):
+#         return UserPreferences.objects.filter(user=self.request.user)
+
+#     def get(self, request, *args, **kwargs):
+#         user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
+#         recommendations = generate_recommendations(user_preferences)
+#         return Response({'recommendations': recommendations})
+# =======
+    
+
+# # BELOW USER REGISTRATION VIEW
+    
+# class UserRegistrationAPIView(generics.CreateAPIView):
+#     queryset = CustomUser.objects.all()
+#     serializer_class = UserRegistrationSerializer
+
+#     def post(self, request, *args, **kwargs):
+#         serializer = self.get_serializer(data=request.data)
+#         if serializer.is_valid():
+#             user = serializer.save()
+#             return Response({
+#                 "user": UserRegistrationSerializer(user).data,
+#                 "message": "User created successfully"
+#             }, status=HTTP_201_CREATED)
+#         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+    
+
+# class LoginView(APIView):
+#     def post(self, request, *args, **kwargs):
+#         serializer = LoginSerializer(data=request.data)
+#         if serializer.is_valid():
+#             user = serializer.validated_data['user']
+#             refresh = RefreshToken.for_user(user)
+#             tokens = {
+#                 'refresh': str(refresh),
+#                 'access': str(refresh.access_token),
+#             }
+#             return Response(tokens, status=status.HTTP_200_OK)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+# class LogoutView(APIView):
+#     permission_classes = (IsAuthenticated,)
+
+#     def post(self, request):
+#         try:
+#             refresh_token = request.data["refresh"]
+#             token = RefreshToken(refresh_token)
+#             token.blacklist()
+#             return Response({"detail": "Successfully logged out."}, status=200)
+#         except KeyError:
+#             return Response({"error": "Refresh token not provided."}, status=400)
+#         except TokenError as e:
+#             return Response({"error": str(e)}, status=400)
+        
+
+# class ProtectedView(APIView):
+#     permission_classes = (IsAuthenticated,)
+
+#     def get(self, request):
+#         return Response(data={"message": "This is a protected view."}, status=status.HTTP_200_OK)
+    
+# class SchemeSearchView(APIView):
+#     def get(self, request, *args, **kwargs):
+#         query = request.query_params.get('q', None)
+#         if query:
+#             schemes = Scheme.objects.filter(title__icontains=query)
+#             serializer = SchemeSerializer(schemes, many=True)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         return Response({"detail": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
+    
+
+# class SaveSchemeView(APIView):
+#     permission_classes = [IsAuthenticated]
+
+#     def post(self, request, *args, **kwargs):
+#         serializer = SaveSchemeSerializer(request.user, data=request.data, partial=True)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response({'status': 'scheme saved'}, status=status.HTTP_200_OK)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# >>>>>>> origin/main

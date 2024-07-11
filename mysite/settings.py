@@ -18,7 +18,6 @@ load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -32,15 +31,14 @@ ALLOWED_HOSTS = ["*"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
     'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'django_celery_beat',
-   
     'myapp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Ensure this is before CommonMiddleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,13 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
-
-
-
-
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -75,7 +68,6 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
-    
 ]
 
 # Allow specific methods
@@ -84,12 +76,36 @@ CORS_ALLOW_METHODS = [
     'POST',
     'PUT',
     'DELETE',
-    
 ]
 
-
-
 ROOT_URLCONF = 'mysite.urls'
+
+
+
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'VERIFYING_KEY': None,
+    'AUDIENCE': None,
+    'ISSUER': None,
+
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',
+
+    'JTI_CLAIM': 'jti',
+}
 
 TEMPLATES = [
     {
@@ -109,24 +125,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-
         'ENGINE': 'django.db.backends.postgresql',
-
         'NAME': os.getenv('DATABASE_NAME'),
         'USER': os.getenv('DATABASE_USER'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': os.getenv('DATABASE_PORT'),
-
     }
 }
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -146,6 +158,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'myapp.CustomUser'
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -160,15 +182,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#celeryconfig.py
-
+# Celery configuration
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_TASK_SERIALIZER = 'json'
@@ -177,9 +197,7 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
-# # mysite/settings.py
-# from celery.schedules import crontab
-
+# # from celery.schedules import crontab
 
 # CELERY_BEAT_SCHEDULE = {
 #     'run-every-30-minutes': {
