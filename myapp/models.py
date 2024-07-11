@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 import pytz
+from django.contrib.auth.models import User
+
 
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
@@ -16,6 +18,65 @@ class TimeStampedModel(models.Model):
             self.created_at = now
         super().save(*args, **kwargs)
 
+
+# UserProfile model
+
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+#     bio = models.TextField(null=True, blank=True)
+#     preferences = models.JSONField(null=True, blank=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+
+#     def __str__(self):
+#         return self.user.username
+
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         UserProfile.objects.create(user=instance)
+# profiles/models.py
+
+# myapp/models.py
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    bio = models.TextField(blank=True)
+    preferences = models.JSONField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.username
+
+class UserPreferences(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='preferences')
+    preferred_categories = models.JSONField(default=list, blank=True)
+    dark_mode = models.BooleanField(default=False)
+    language = models.CharField(max_length=50, default='en')
+    browsing_history = models.JSONField(default=list, blank=True)
+
+    def __str__(self):
+        return f"{self.user.username}'s Preferences"
+
+# class BrowsingHistory(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     item_id = models.IntegerField()  # ID of the item viewed
+#     viewed_at = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return f"{self.user.username} viewed item {self.item_id} at {self.viewed_at}"
+
+# class Recommendation(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     item_id = models.IntegerField()
+#     recommended_at = models.DateTimeField(auto_now_add=True)
+#     score = models.FloatField()  # Score for the recommendation
+
+#     def __str__(self):
+#         return f"Recommendation for {self.user.username} - Item {self.item_id}"
+
+    
+# Existing models
 class State(TimeStampedModel):
     state_name = models.CharField(max_length=255, default="Tamil Nadu")
 
@@ -25,6 +86,8 @@ class State(TimeStampedModel):
         ordering = ['state_name']
     def __str__(self):
         return self.state_name
+
+
 
 class Department(TimeStampedModel):
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=True, blank=True)

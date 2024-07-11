@@ -13,51 +13,22 @@
               "created_at": "2024-06-25T12:00:00Z",
               "schemes": [
                 {
-                  "scheme_id": "ff28f57d-5857-491e-a5bc-ec0ca42b0ce0",
-                  "scheme_name": "Border Areas Scholarship",
-                  "description": "Consequent upon the partition of India in 1947, the people inhabiting the Indo-Bangladesh Border suffered acute economic distress due to closure of normal trade channels with our neighbouring country. The people of those areas have been experiencing great difficulty to give proper education to their children on account of economic hardships and many students had to give up their studies in between due to the economic hardships faced by their parents. It was obvious that majority of the students hailing from those areas wereeconomically handicapped and hence could not catch up with those living in non- border areas. With a view to removing this handicap, a scheme for giving financial assistance to the students hailing from the international border areas under the nomenclature “Border Areas Scholarship” was introduced by the Border Areas Development Department, Government of Meghalaya.",
-                  "scheme_beneficiary": "Students",
-                  "scheme_benefits": "Scholarship, Stipend",
-                  "how_to_avail": "Offline applications have to be submitted through Head of Educational Institutions to Directorate of Higher & Technical Education, Shillongon release of the advertisement every year.",
-                  "sponsors": "State",
-                  "lower_age": " -None- ",
-                  "upper_age": " -None- ",
-                  "funding": "100%",
-                  "undefined": "0",
-                  "introduced_on": "01 Jan 1973",
-                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37489"
-                },
-                {
-                  "scheme_id": "6629e566-90b3-48bb-857b-48a518191e07",
-                  "department": "Education Department",
-                  "scheme_name": "Mid Day Meal Scheme",
-                  "description": "The main objective of MDM Programme in the State is to boost universalization of Elementary Education in Government, Government Aided Primary and Upper Primary Schools. Mid Day Meal Programme was expected to attract more children to come to school and to increase enrolment, attendance, retention and bring down drop-out rate.",
-                  "scheme_beneficiary": "Students",
-                  "how_to_avail": "To avail all the entitlements under Mid Day meal, the schools category which are eligible are Govt, SSA and Govt aided",
-                  "sponsors": "Shared",
-                  "lower_age": "6",
-                  "upper_age": "14",
-                  "funding": "Central 90%: State 10%",
-                  "introduced_on": "01 Jan 2002",
-                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37522"
-                },
-                {
-                  "scheme_id": "bfb524f1-68a2-4adf-a273-c1625567e61c",
-                  "department": "Education Department",
-                  "scheme_name": "National Means Cum Merit Scholarship (NMMS)",
-                  "description": "MHRD’s aim is:\ni)\tTo provide Scholarship to meritorious students belonging to the economically weaker sections of the society\nii)\tArrest drop-out rates at Class VIII and encourage them to continue their studies at Secondary Stage",
-                  "scheme_beneficiary": "Students",
-                  "scheme_benefits": "Scholarship",
-                  "how_to_avail": "i)\tOnly students from Govt, Govt. Aided and Local Body Schools can apply\nii)\tState Quota is 231\niii)\tSelection through written examination conducted by DERT\niv)\t50% for SC/ST, 55% for Gen, OBC & Others\nv)\tAward of Scholarship is for 4 years (Class IX t o XII)\nvi)\tSelected beneficiaries are to submit their applications On-line through National Scholarship Portal\nvii)\tSBI New Delhi transfer the scholarship directly to Students Account",
+                  "scheme_id": "18b72340-9e36-42f1-a23d-6805a057b973",
+                  "scheme_name": "Grants under Article 275 (1) of the Constitution of India",
+                  "description": "The objectives for programmes/activities funded with Grants-in-aid under Proviso to Art. 275(1) of the Constitution of India is to bridge the gap between Scheduled Tribe (ST) population and others by accelerating development of STs by ensuring:\n\na. Human resource development by enhancing their access to education and health services, \n\nb. Enhanced quality of life by raising the level of administration of the Scheduled Areas and also providing basic amenities in tribal areas / localities,\n\nc. Substantial reduction in poverty and unemployment through skill upgradation and other income generating opportunities, creation of backward and forward linkages and linkage with institutional finance for sustained income generation and creation of productive assets,\n\nd.Enhanced capacity to avail opportunities, gain rights &entitlements and improved facilities at par with other areas.",
+                  "scheme_beneficiary": "SC/ST",
+                  "scheme_benefits": "Other",
+                  "how_to_avail": "The State Government Departments submit proposals to Planning Department, which is the Nodal Department for this scheme and which in turn takes up the proposals so received with the Ministry of Tribal Affairs, Government of India for approval and sanction.",
                   "sponsors": "Central",
                   "lower_age": " -None- ",
                   "upper_age": " -None- ",
-                  "funding": "100%",
-                  "introduced_on": "01 Jan 2008",
-                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37588"
+                  "undefined": "ST",
+                  "funding": "100% Grant-in-aid",
+                  "introduced_on": "01 Mar 2003",
+                  "scheme_link": "https://meghalaya.gov.in/index.php/schemes/content/37485"
                 },
                 {
-                  "scheme_id": "4dcd79a8-284d-4eb1-a393-953eea8ed457",
+                  "scheme_id": "20a961f9-247d-402c-a223-b607af2ef112",
                   "department": "Education Department",
                   "scheme_name": " Primary School Scholarship and Upper Primary Scholarship",
                   "description": "i)\tThe Examination cell of the Directorate of Educational Research and Training, conducts Scholarship Examinations for both Primary and Upper Primary students of the State since 2006. Interested students studying in class V and class VIII from all the schools of the state can appear for the examination.\nii)\tThe objectives are to identify and recognize students with academic talent, providing them a platform to appear in competitive examinations and to provide financial assistance to successful students. The examination is held in 63 centres in all the 15 sub divisions under the supervision of the Sub-Divisional School Education Officer (SDSEO).\niii)\t Advertisement regarding the conduct of the exam is widely published through leading newspapers of the State as well as through the office of the SDSEOs.\niv)\tThe tenure of the Primary/Upper Primary Scholarship is three years subject to good conduct and satisfactory progress.",
@@ -69,17 +40,44 @@
                   "upper_age": " -None- ",
                   "undefined": "ST",
                   "funding": "100%",
-                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37593"
+                  "scheme_link": "https://meghalaya.gov.in/index.php/schemes/content/37593"
                 },
                 {
-                  "scheme_id": "d232a856-cb19-4924-b89b-bfecca52dbbb",
+                  "scheme_id": "5c847a1b-85b8-49c2-8b45-00babfa50054",
+                  "scheme_name": "Samagra Shiksha Abhiyan",
+                  "description": "The main outcomes of the Scheme are envisaged as Universal Access, Equity and Quality, promoting Vocationalisation of Education and strengthening of Teacher Education Institutions (TEIs)",
+                  "scheme_beneficiary": "Students, Teacher",
+                  "how_to_avail": "To avail all the entitlements under Samagra Shiksha Abhiyan, the schools category which are eligible are Govt, SSA and Govt aided. Except for salary of teachers, only SSA, RMSA teachers and Teachers Educator under DIETs are eligible",
+                  "sponsors": "Shared",
+                  "lower_age": "6",
+                  "upper_age": "17",
+                  "funding": "90% Central share, 10% State",
+                  "introduced_on": "01 Jan 2008",
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37524"
+                },
+                {
+                  "scheme_id": "04b3f140-a63e-42f8-83be-3e31007984d0",
+                  "scheme_name": "Scholarship to 2 Years Pre-Service Student Teachers undergoing D.El.Ed programme at DIETs and CTTC Sohra",
+                  "description": "i)\tAs per NCTE notification 1st December 2014, admission procedure for a 2-year D.El.Ed Course shall be made on merit on the basis of marks obtained in the qualifying examination and/or in the entrance test. The purpose of having the entrance test is to tap the interest of the candidates who wishes to pursue his/her profession in teaching. \nii)\tVide letter No.D.O.No.63-22/2016/NCTE/Legal/31872 dated 27th June 2016, states that entrance Test to be one of the component in the selection procedure into 2 Year D.El.Ed programme for pre-service student-teacher.\niii)\tStudents undergoing the programme are given scholarship for two years i.e 1st year and 2nd year",
+                  "scheme_beneficiary": "Students",
+                  "scheme_benefits": "Scholarship",
+                  "how_to_avail": "i)\tClass XII passed or it's equivalent from recognized Boards/Council with 50%  marks and 5% relaxation for ST/SC/OBC/PWD\nii)\tEntrance Test and Counselling are conducted",
+                  "sponsors": "State",
+                  "lower_age": "18",
+                  "upper_age": "27",
+                  "funding": "100%",
+                  "introduced_on": "01 Jan 2012",
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/37592"
+                },
+                {
+                  "scheme_id": "612ef675-c7ff-48f4-b24e-7cfaa05c1b63",
                   "scheme_name": "The Meghalaya Street Vendors (Protection of Livelihood and Regulation of Street Vending) Scheme, 2023",
                   "description": "The survey shall be carried out by forming area/ market wise teams consisting of Local authority and members of Town Vending Committee nominated or any such other agency/agencies as may be required for the purpose. The teams may be assisted by a technical data collection agency. Survey shall be done manually or through a mobile based application or a combination of both and might involve usage of one or more of the following tools:\n(i) GIS (Geographic Information System)\n(ii) Digitized photo census\n(iii) Capture of biometrics\nThe survey shall capture the primary data viz. name of the street vendor, gender, age, date of birth, place of birth, nature of trade/vending, period since start of vending on justifiable documentary evidence, address (present and permanent), contact number, whether Person with disability (PWD), identity proof (as specified below), application forms for additional information as prescribed by the local authority, and details of place, mode (stationary/ mobile/ other), nature and time of street vending as indicated in Form-I. For the purpose of identifying the street vendor, he/ she shall submit any one of the following documents:\n(i) Election Photo Identity Card issued by the Election Commission of India\n(ii) Aadhar Card\n(iii) Ration Card",
                   "scheme_beneficiary": "Citizen",
                   "sponsors": "State",
                   "lower_age": " -None- ",
                   "upper_age": " -None- ",
-                  "scheme_link": "https://meghalaya.gov.in/index.php/schemes/content/45431"
+                  "scheme_link": "https://meghalaya.gov.in/schemes/content/45431"
                 }
               ]
             }
