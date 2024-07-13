@@ -323,12 +323,64 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, username, password, **extra_fields)
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+    CATEGORY_CHOICES = [
+        ('General', 'General'),
+        ('OBC', 'OBC'),
+        ('SC', 'SC'),
+        ('ST', 'ST'),
+        
+    ]
+
+    STATE_CHOICES = [
+        ('Andhra Pradesh', 'Andhra Pradesh'),
+        ('Arunachal Pradesh', 'Arunachal Pradesh'),
+        ('Assam', 'Assam'),
+        ('Bihar', 'Bihar'),
+        ('Chhattisgarh', 'Chhattisgarh'),
+        ('Goa', 'Goa'),
+        ('Gujarat', 'Gujarat'),
+        ('Haryana', 'Haryana'),
+        ('Himachal Pradesh', 'Himachal Pradesh'),
+        ('Jharkhand', 'Jharkhand'),
+        ('Karnataka', 'Karnataka'),
+        ('Kerala', 'Kerala'),
+        ('Madhya Pradesh', 'Madhya Pradesh'),
+        ('Maharashtra', 'Maharashtra'),
+        ('Manipur', 'Manipur'),
+        ('Meghalaya', 'Meghalaya'),
+        ('Mizoram', 'Mizoram'),
+        ('Nagaland', 'Nagaland'),
+        ('Odisha', 'Odisha'),
+        ('Punjab', 'Punjab'),
+        ('Rajasthan', 'Rajasthan'),
+        ('Sikkim', 'Sikkim'),
+        ('Tamil Nadu', 'Tamil Nadu'),
+        ('Telangana', 'Telangana'),
+        ('Tripura', 'Tripura'),
+        ('Uttar Pradesh', 'Uttar Pradesh'),
+        ('Uttarakhand', 'Uttarakhand'),
+        ('West Bengal', 'West Bengal'),
+        
+    ]
     username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(unique=True)
     date_joined = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     saved_schemes = models.ManyToManyField('Scheme', related_name='saved_by_users')
+    # DETAILS BELOW
+    name = models.CharField(max_length=100, blank=True, null=True)
+    gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], blank=True, null=True)
+    age = models.PositiveIntegerField(blank=True, null=True)
+    occupation = models.CharField(max_length=100, blank=True, null=True)
+    income = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    education = models.CharField(max_length=100, choices=[('None', 'None'), ('High School', 'High School'), ('Bachelor', 'Bachelor'), ('Master', 'Master'), ('Doctorate', 'Doctorate')], blank=True, null=True)
+    government_employee = models.BooleanField(default=False)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, blank=True, null=True)
+    minority = models.BooleanField(default=False)
+    state_of_residence = models.CharField(max_length=50, choices=STATE_CHOICES, blank=True, null=True)
+    disability = models.BooleanField(default=False)
+    bpl_card_holder = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 

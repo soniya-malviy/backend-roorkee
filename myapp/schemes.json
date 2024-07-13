@@ -381,15 +381,15 @@
 
 {
   "state_name": "Puducherry",
-  "created_at": "2024-06-25T12:00:00Z",
+  
   "departments": [
     {
       "department_name": "Adi Dravidar Welfare Department",
-      "created_at": "2024-06-25T12:00:00Z",
+      
       "organisations": [
         {
           "organisation_name": "Adi Dravidar Welfare Department",
-          "created_at": "2024-06-25T12:00:00Z",
+          
           "schemes": [
             {
               "title": "Distribution of free house sites to Scheduled Caste/Other Economically Backward Classes",

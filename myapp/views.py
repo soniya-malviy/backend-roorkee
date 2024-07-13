@@ -7,11 +7,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.exceptions import TokenError
+from rest_framework.pagination import PageNumberPagination
 
-
-
-
-from .serializers import LoginSerializer
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
@@ -21,12 +18,15 @@ from .serializers import (
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer
+    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer
 )
 
 from rest_framework.exceptions import NotFound
 from .filters import CustomOrderingFilter
 from rest_framework_simplejwt.tokens import RefreshToken
+
+class SchemePagination(PageNumberPagination):
+    page_size_query_param = 'limit'
 
 
 class StateListAPIView(generics.ListAPIView):
@@ -38,12 +38,16 @@ class StateListAPIView(generics.ListAPIView):
 
 class StateSchemesListAPIView(generics.ListAPIView):
     serializer_class = SchemeSerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = ['introduced_on', 'title']
+    ordering = ['-introduced_on']
+    pagination_class = SchemePagination
 
     def get_queryset(self):
         state_id = self.kwargs.get('state_id')
         if state_id:
             return Scheme.objects.filter(department__state_id=state_id)
-        return Scheme.objects.none() # or return an appropriate queryset when state_id is not provided
+        return Scheme.objects.none() 
     
 class StateDetailAPIView(generics.RetrieveAPIView):
     queryset = State.objects.all()
@@ -63,12 +67,15 @@ class OrganisationListAPIView(generics.ListAPIView):
     ordering_fields = ['created_at', 'organisation_name']
     ordering = ['-created_at']
 
+
+
 class SchemeListAPIView(generics.ListAPIView):
     queryset = Scheme.objects.all()
     serializer_class = SchemeSerializer 
     filter_backends = [OrderingFilter]
     ordering_fields = ['introduced_on', 'title']
     ordering = ['-introduced_on']
+    pagination_class = SchemePagination
 
     def get_queryset(self):
         department_id = self.request.query_params.get('department_id')
@@ -257,9 +264,19 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             user = serializer.save()
             return Response({
                 "user": UserRegistrationSerializer(user).data,
-                "message": "User created successfully"
+                "message": "User created successfully",
+                "username": user.username
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+
+class UserProfileAPIView(generics.RetrieveUpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
     
 
 class LoginView(APIView):
@@ -316,3 +333,12 @@ class SaveSchemeView(APIView):
             serializer.save()
             return Response({'status': 'scheme saved'}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class UserSavedSchemesView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        saved_schemes = user.saved_schemes.all()
+        serializer = SchemeSerializer(saved_schemes, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

@@ -2,7 +2,12 @@ from rest_framework import serializers
 from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
 from django.utils import timezone
 from django.contrib.auth import authenticate
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError as DjangoValidationError
 import pytz
+from django.utils.text import slugify
+import random
+import string
 
 class TimeStampedModelSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z', read_only=True)
@@ -118,19 +123,75 @@ class SaveSchemeSerializer(serializers.ModelSerializer):
         
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
+    email = serializers.EmailField(required=True)
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'password']
+        fields = ['email', 'password']
+        extra_kwargs = {
+            
+            'password': {'write_only': True},
+        }
+
+    def validate_email(self, value):
+        if CustomUser.objects.filter(email=value).exists():
+            raise serializers.ValidationError("A user with this email already exists.")
+        return value
+
+    def validate_username(self, value):
+        if CustomUser.objects.filter(username=value).exists():
+            raise serializers.ValidationError("This username is already taken.")
+        if len(value) < 4:
+            raise serializers.ValidationError("The username must be at least 4 characters long.")
+        return value
+
+    def validate_password(self, value):
+        try:
+            validate_password(value)
+        except DjangoValidationError as e:
+            raise serializers.ValidationError(str(e))
+        return value
 
     def create(self, validated_data):
+        email = validated_data['email']
+        username_base = slugify(email.split('@')[0])
+
+        if len(username_base) < 4:
+            username_base += ''.join(random.choices(string.ascii_lowercase + string.digits, k=4-len(username_base)))
+
+        username = username_base
+
+        
+        if CustomUser.objects.filter(username=username).exists():
+            counter = 1
+            new_username = f"{username}{counter}"
+            while CustomUser.objects.filter(username=new_username).exists():
+                counter += 1
+                new_username = f"{username}{counter}"
+            username = new_username
+
         user = CustomUser.objects.create_user(
-            username=validated_data['username'],
-            email=validated_data['email'],
+            username=username,
+            email=email,
             password=validated_data['password']
         )
         return user
     
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = [
+            'name', 'gender', 'age', 'occupation', 'income', 'education', 'government_employee', 
+            'category', 'minority', 'state_of_residence', 'disability', 'bpl_card_holder'
+        ]
+
+    def update(self, instance, validated_data):
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
 # BELOW USER LOGIN SERIALIZER
     
 class LoginSerializer(serializers.Serializer):
