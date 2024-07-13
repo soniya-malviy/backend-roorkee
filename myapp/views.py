@@ -324,15 +324,22 @@ class SchemeSearchView(APIView):
         return Response({"detail": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
     
 
+
 class SaveSchemeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        serializer = SaveSchemeSerializer(request.user, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'status': 'scheme saved'}, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user = request.user
+        scheme_id = request.data.get('scheme_id', None)
+
+        if scheme_id is None:
+            return Response({"detail": "Scheme ID is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Add the scheme to the user's saved_schemes
+        user.saved_schemes.add(scheme_id)
+        user.save()
+
+        return Response({'status': 'scheme saved'}, status=status.HTTP_200_OK)
     
 class UserSavedSchemesView(APIView):
     permission_classes = [IsAuthenticated]
