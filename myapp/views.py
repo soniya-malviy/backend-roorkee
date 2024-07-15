@@ -349,3 +349,31 @@ class UserSavedSchemesView(APIView):
         saved_schemes = user.saved_schemes.all()
         serializer = SchemeSerializer(saved_schemes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+
+class UnsaveSchemeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        scheme_ids = request.data.get('scheme_ids', [])
+
+        if not isinstance(scheme_ids, list):
+            return Response({'error': 'scheme_ids must be a list'}, status=status.HTTP_400_BAD_REQUEST)
+
+        removed_schemes = []
+        for scheme_id in scheme_ids:
+            try:
+                scheme = Scheme.objects.get(id=scheme_id)
+                if scheme in user.saved_schemes.all():
+                    user.saved_schemes.remove(scheme)
+                    removed_schemes.append(scheme)
+                else:
+                    print(f"Scheme with id {scheme_id} is not saved by user {user.username}")
+            except Scheme.DoesNotExist:
+                print(f"Scheme with id {scheme_id} does not exist")
+                return Response({'error': f'Scheme with id {scheme_id} does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.save()
+        print(f"User {user.username} unsaved schemes: {[scheme.id for scheme in removed_schemes]}")
+        return Response({'status': 'Schemes unsaved successfully', 'removed_schemes': SchemeSerializer(removed_schemes, many=True).data}, status=status.HTTP_200_OK)

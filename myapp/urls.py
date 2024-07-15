@@ -34,7 +34,8 @@ from .views import (
     SchemeSearchView,
     SaveSchemeView,
     UserSavedSchemesView,
-    UserProfileAPIView
+    UserProfileAPIView,
+    UnsaveSchemeView
 )
 
 
@@ -71,6 +72,7 @@ urlpatterns = [
     path('protected/', ProtectedView.as_view(), name='protected'),
     path('schemes/search/', SchemeSearchView.as_view(), name='scheme-search'),
     path('save_scheme/', SaveSchemeView.as_view(), name='save_scheme'),
+    path('unsave_scheme/', UnsaveSchemeView.as_view(), name='unsave-scheme'),
     path('user/saved_schemes/', UserSavedSchemesView.as_view(), name='user-saved-schemes'),
     path('profile/', UserProfileAPIView.as_view(), name='profile'),
 
