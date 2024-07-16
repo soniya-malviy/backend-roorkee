@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
+from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner
 from django.utils import timezone
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
@@ -203,4 +203,11 @@ class LoginSerializer(serializers.Serializer):
         if user and user.is_active:
             return {'user': user}
         raise serializers.ValidationError('Invalid credentials')
+    
+# BANNER SER BELOW
+    
+class BannerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Banner
+        fields = ['title', 'description', 'image_url', 'is_active']
     

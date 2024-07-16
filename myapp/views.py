@@ -11,14 +11,15 @@ from rest_framework.pagination import PageNumberPagination
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
-    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
+    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
+    Banner
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer
+    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -377,3 +378,11 @@ class UnsaveSchemeView(APIView):
         user.save()
         print(f"User {user.username} unsaved schemes: {[scheme.id for scheme in removed_schemes]}")
         return Response({'status': 'Schemes unsaved successfully', 'removed_schemes': SchemeSerializer(removed_schemes, many=True).data}, status=status.HTTP_200_OK)
+    
+# BANNER VIEW BELOW
+    
+class BannerView(APIView):
+    def get(self, request, *args, **kwargs):
+        banners = Banner.objects.filter(is_active=True)
+        serializer = BannerSerializer(banners, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

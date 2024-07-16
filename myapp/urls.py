@@ -35,7 +35,8 @@ from .views import (
     SaveSchemeView,
     UserSavedSchemesView,
     UserProfileAPIView,
-    UnsaveSchemeView
+    UnsaveSchemeView,
+    BannerView
 )
 
 
@@ -75,6 +76,7 @@ urlpatterns = [
     path('unsave_scheme/', UnsaveSchemeView.as_view(), name='unsave-scheme'),
     path('user/saved_schemes/', UserSavedSchemesView.as_view(), name='user-saved-schemes'),
     path('profile/', UserProfileAPIView.as_view(), name='profile'),
+    path('banner/', BannerView.as_view(), name='banner'),
 
 ]
 
