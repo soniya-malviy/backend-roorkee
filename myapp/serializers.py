@@ -5,9 +5,11 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
 import pytz
+
 from django.utils.text import slugify
 import random
 import string
+
 
 class TimeStampedModelSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z', read_only=True)
@@ -108,6 +110,46 @@ class SchemeSponsorSerializer(TimeStampedModelSerializer):
         model = SchemeSponsor
         fields = '__all__'
 
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ['bio', 'preferences', 'created_at', 'updated_at']
+        read_only_fields = ['created_at', 'updated_at']
+
+# UserPreferencesSerializer
+class UserPreferencesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserPreferences
+        fields = ['preferred_categories', 'dark_mode', 'language', 'browsing_history']
+
+# UserSerializer
+class UserSerializer(serializers.ModelSerializer):
+    profile = UserProfileSerializer(required=False)
+    preferences = UserPreferencesSerializer(required=False)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'profile', 'preferences']
+
+    def update(self, instance, validated_data):
+        profile_data = validated_data.pop('profile', None)
+        preferences_data = validated_data.pop('preferences', None)
+
+        instance.username = validated_data.get('username', instance.username)
+        instance.email = validated_data.get('email', instance.email)
+        instance.save()
+
+        # Handle profile data
+        if profile_data:
+            UserProfile.objects.update_or_create(user=instance, defaults=profile_data)
+
+        # Handle preferences data
+        if preferences_data:
+            UserPreferences.objects.update_or_create(user=instance, defaults=preferences_data)
+
+        return instance
+
+# SaveSchemeSerializer
 class SaveSchemeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
@@ -118,9 +160,8 @@ class SaveSchemeSerializer(serializers.ModelSerializer):
         instance.saved_schemes.set(saved_schemes)
         instance.save()
         return instance
-    
-# BELOW USER REGISTRATION SERIALIZER
-        
+
+# UserRegistrationSerializer
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     email = serializers.EmailField(required=True)
@@ -176,6 +217,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+
     
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -193,7 +235,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         return instance
 
 # BELOW USER LOGIN SERIALIZER
-    
+
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True)
@@ -202,6 +244,7 @@ class LoginSerializer(serializers.Serializer):
         user = authenticate(username=data['username'], password=data['password'])
         if user and user.is_active:
             return {'user': user}
+
         raise serializers.ValidationError('Invalid credentials')
     
 # BANNER SER BELOW
@@ -211,3 +254,4 @@ class BannerSerializer(serializers.ModelSerializer):
         model = Banner
         fields = ['title', 'description', 'image_url', 'is_active']
     
+

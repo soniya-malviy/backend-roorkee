@@ -251,10 +251,45 @@ class SchemeSponsorsListAPIView(generics.ListAPIView):
         if not scheme_id:
             raise NotFound("Scheme ID not provided.")
         return SchemeSponsor.objects.filter(scheme_id=scheme_id)
-    
 
-# BELOW USER REGISTRATION VIEW
-    
+from rest_framework import generics, permissions
+from django.contrib.auth.models import User
+from .models import UserProfile
+from .models import UserPreferences
+
+from .serializers import UserSerializer
+from .serializers import UserPreferencesSerializer
+from .recommendation_algorithm import generate_recommendations
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from django.utils import timezone
+
+class UserProfileAPIView(generics.RetrieveUpdateAPIView):
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        user = self.request.user
+        # Ensure user has a profile
+        UserProfile.objects.get_or_create(user=user)
+        return user
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+
+class RecommendationsAPIView(generics.ListAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return UserPreferences.objects.filter(user=self.request.user)
+
+    def get(self, request, *args, **kwargs):
+        user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
+        recommendations = generate_recommendations(user_preferences)
+        return Response({'recommendations': recommendations})
+
+# Views from origin/main branch
 class UserRegistrationAPIView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserRegistrationSerializer
@@ -278,7 +313,7 @@ class UserProfileAPIView(generics.RetrieveUpdateAPIView):
     def get_object(self):
         return self.request.user
 
-    
+
 
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
@@ -290,9 +325,9 @@ class LoginView(APIView):
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
             }
-            return Response(tokens, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+            return Response(tokens, status=HTTP_200_OK)
+        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+
 
 class LogoutView(APIView):
     permission_classes = (IsAuthenticated,)
@@ -302,34 +337,36 @@ class LogoutView(APIView):
             refresh_token = request.data["refresh"]
             token = RefreshToken(refresh_token)
             token.blacklist()
-            return Response({"detail": "Successfully logged out."}, status=200)
+            return Response({"detail": "Successfully logged out."}, status=HTTP_200_OK)
         except KeyError:
-            return Response({"error": "Refresh token not provided."}, status=400)
+            return Response({"error": "Refresh token not provided."}, status=HTTP_400_BAD_REQUEST)
         except TokenError as e:
-            return Response({"error": str(e)}, status=400)
-        
+            return Response({"error": str(e)}, status=HTTP_400_BAD_REQUEST)
+
 
 class ProtectedView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
-        return Response(data={"message": "This is a protected view."}, status=status.HTTP_200_OK)
-    
+        return Response(data={"message": "This is a protected view."}, status=HTTP_200_OK)
+
+
 class SchemeSearchView(APIView):
     def get(self, request, *args, **kwargs):
         query = request.query_params.get('q', None)
         if query:
             schemes = Scheme.objects.filter(title__icontains=query)
             serializer = SchemeSerializer(schemes, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response({"detail": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
-    
+            return Response(serializer.data, status=HTTP_200_OK)
+        return Response({"detail": "Query parameter 'q' is required."}, status=HTTP_400_BAD_REQUEST)
+
 
 
 class SaveSchemeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
+
         user = request.user
         scheme_id = request.data.get('scheme_id', None)
 
