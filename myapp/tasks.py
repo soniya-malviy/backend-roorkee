@@ -44,15 +44,15 @@
 #         "states": [
 #             {
 #                 "state_name": "Tamil Nadu",
-#                 "created_at": "2024-06-25T12:00:00Z",
+#                 
 #                 "departments": [
 #                     {
 #                         "department_name": "Department of Education",
-#                         "created_at": "2024-06-25T12:00:00Z",
+#                         
 #                         "organisations": [
 #                             {
 #                                 "organisation_name": "Educational Board",
-#                                 "created_at": "2024-06-25T12:00:00Z",
+#                                 
 #                                 "schemes": []
 #                             }
 #                         ]

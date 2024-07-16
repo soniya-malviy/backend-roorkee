@@ -7,26 +7,27 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.exceptions import TokenError
+from rest_framework.pagination import PageNumberPagination
 
-
-
-
-from .serializers import LoginSerializer
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
-    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser
+    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
+    Banner
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer
+    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer
 )
 
 from rest_framework.exceptions import NotFound
 from .filters import CustomOrderingFilter
 from rest_framework_simplejwt.tokens import RefreshToken
+
+class SchemePagination(PageNumberPagination):
+    page_size_query_param = 'limit'
 
 
 class StateListAPIView(generics.ListAPIView):
@@ -38,12 +39,16 @@ class StateListAPIView(generics.ListAPIView):
 
 class StateSchemesListAPIView(generics.ListAPIView):
     serializer_class = SchemeSerializer
+    filter_backends = [OrderingFilter]
+    ordering_fields = ['introduced_on', 'title']
+    ordering = ['-introduced_on']
+    pagination_class = SchemePagination
 
     def get_queryset(self):
         state_id = self.kwargs.get('state_id')
         if state_id:
             return Scheme.objects.filter(department__state_id=state_id)
-        return Scheme.objects.none() # or return an appropriate queryset when state_id is not provided
+        return Scheme.objects.none() 
     
 class StateDetailAPIView(generics.RetrieveAPIView):
     queryset = State.objects.all()
@@ -63,12 +68,15 @@ class OrganisationListAPIView(generics.ListAPIView):
     ordering_fields = ['created_at', 'organisation_name']
     ordering = ['-created_at']
 
+
+
 class SchemeListAPIView(generics.ListAPIView):
     queryset = Scheme.objects.all()
     serializer_class = SchemeSerializer 
     filter_backends = [OrderingFilter]
     ordering_fields = ['introduced_on', 'title']
     ordering = ['-introduced_on']
+    pagination_class = SchemePagination
 
     def get_queryset(self):
         department_id = self.request.query_params.get('department_id')
@@ -292,9 +300,19 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             user = serializer.save()
             return Response({
                 "user": UserRegistrationSerializer(user).data,
-                "message": "User created successfully"
+                "message": "User created successfully",
+                "username": user.username
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+
+class UserProfileAPIView(generics.RetrieveUpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
 
 
 class LoginView(APIView):
@@ -343,114 +361,65 @@ class SchemeSearchView(APIView):
         return Response({"detail": "Query parameter 'q' is required."}, status=HTTP_400_BAD_REQUEST)
 
 
+
 class SaveSchemeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        serializer = SaveSchemeSerializer(request.user, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'status': 'scheme saved'}, status=HTTP_200_OK)
-        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
+        user = request.user
+        scheme_id = request.data.get('scheme_id', None)
 
+        if scheme_id is None:
+            return Response({"detail": "Scheme ID is required."}, status=status.HTTP_400_BAD_REQUEST)
 
-# class UserProfileAPIView(generics.RetrieveUpdateAPIView):
-#     serializer_class = UserSerializer
-#     permission_classes = [permissions.IsAuthenticated]
+        # Add the scheme to the user's saved_schemes
+        user.saved_schemes.add(scheme_id)
+        user.save()
 
-#     def get_object(self):
-#         user = self.request.user
-#         # Ensure user has a profile
-#         UserProfile.objects.get_or_create(user=user)
-#         return user
+        return Response({'status': 'scheme saved'}, status=status.HTTP_200_OK)
+    
+class UserSavedSchemesView(APIView):
+    permission_classes = [IsAuthenticated]
 
-#     def put(self, request, *args, **kwargs):
-#         return self.update(request, *args, **kwargs)
-
-
-# class RecommendationsAPIView(generics.ListAPIView):
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_queryset(self):
-#         return UserPreferences.objects.filter(user=self.request.user)
-
-#     def get(self, request, *args, **kwargs):
-#         user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
-#         recommendations = generate_recommendations(user_preferences)
-#         return Response({'recommendations': recommendations})
-# =======
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        saved_schemes = user.saved_schemes.all()
+        serializer = SchemeSerializer(saved_schemes, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 
-# # BELOW USER REGISTRATION VIEW
+class UnsaveSchemeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        scheme_ids = request.data.get('scheme_ids', [])
+
+        if not isinstance(scheme_ids, list):
+            return Response({'error': 'scheme_ids must be a list'}, status=status.HTTP_400_BAD_REQUEST)
+
+        removed_schemes = []
+        for scheme_id in scheme_ids:
+            try:
+                scheme = Scheme.objects.get(id=scheme_id)
+                if scheme in user.saved_schemes.all():
+                    user.saved_schemes.remove(scheme)
+                    removed_schemes.append(scheme)
+                else:
+                    print(f"Scheme with id {scheme_id} is not saved by user {user.username}")
+            except Scheme.DoesNotExist:
+                print(f"Scheme with id {scheme_id} does not exist")
+                return Response({'error': f'Scheme with id {scheme_id} does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.save()
+        print(f"User {user.username} unsaved schemes: {[scheme.id for scheme in removed_schemes]}")
+        return Response({'status': 'Schemes unsaved successfully', 'removed_schemes': SchemeSerializer(removed_schemes, many=True).data}, status=status.HTTP_200_OK)
     
-# class UserRegistrationAPIView(generics.CreateAPIView):
-#     queryset = CustomUser.objects.all()
-#     serializer_class = UserRegistrationSerializer
-
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         if serializer.is_valid():
-#             user = serializer.save()
-#             return Response({
-#                 "user": UserRegistrationSerializer(user).data,
-#                 "message": "User created successfully"
-#             }, status=HTTP_201_CREATED)
-#         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+# BANNER VIEW BELOW
     
-
-# class LoginView(APIView):
-#     def post(self, request, *args, **kwargs):
-#         serializer = LoginSerializer(data=request.data)
-#         if serializer.is_valid():
-#             user = serializer.validated_data['user']
-#             refresh = RefreshToken.for_user(user)
-#             tokens = {
-#                 'refresh': str(refresh),
-#                 'access': str(refresh.access_token),
-#             }
-#             return Response(tokens, status=status.HTTP_200_OK)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-
-# class LogoutView(APIView):
-#     permission_classes = (IsAuthenticated,)
-
-#     def post(self, request):
-#         try:
-#             refresh_token = request.data["refresh"]
-#             token = RefreshToken(refresh_token)
-#             token.blacklist()
-#             return Response({"detail": "Successfully logged out."}, status=200)
-#         except KeyError:
-#             return Response({"error": "Refresh token not provided."}, status=400)
-#         except TokenError as e:
-#             return Response({"error": str(e)}, status=400)
-        
-
-# class ProtectedView(APIView):
-#     permission_classes = (IsAuthenticated,)
-
-#     def get(self, request):
-#         return Response(data={"message": "This is a protected view."}, status=status.HTTP_200_OK)
-    
-# class SchemeSearchView(APIView):
-#     def get(self, request, *args, **kwargs):
-#         query = request.query_params.get('q', None)
-#         if query:
-#             schemes = Scheme.objects.filter(title__icontains=query)
-#             serializer = SchemeSerializer(schemes, many=True)
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response({"detail": "Query parameter 'q' is required."}, status=status.HTTP_400_BAD_REQUEST)
-    
-
-# class SaveSchemeView(APIView):
-#     permission_classes = [IsAuthenticated]
-
-#     def post(self, request, *args, **kwargs):
-#         serializer = SaveSchemeSerializer(request.user, data=request.data, partial=True)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response({'status': 'scheme saved'}, status=status.HTTP_200_OK)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-# >>>>>>> origin/main
+class BannerView(APIView):
+    def get(self, request, *args, **kwargs):
+        banners = Banner.objects.filter(is_active=True)
+        serializer = BannerSerializer(banners, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
