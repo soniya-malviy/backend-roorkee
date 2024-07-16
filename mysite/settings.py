@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cacheops',
 ]
 
 MIDDLEWARE = [
@@ -201,19 +202,21 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
-# # from celery.schedules import crontab
+# Cacheops settings
+CACHEOPS_REDIS = {
+    'host': 'localhost',  # Redis host
+    'port': 6379,         # Redis port
+    'db': 1,              # Redis database index
+    'socket_timeout': 3,  # Socket timeout in seconds
+}
 
-# CELERY_BEAT_SCHEDULE = {
-#     'run-every-30-minutes': {
-#         'task': 'myapp.tasks.run_processing_task',
-#         'schedule': crontab(minute='*/30'),  # Run every 30 minutes
-#     },
-#     'load-data-task': {
-#         'task': 'myapp.tasks.load_data_task',
-#         'schedule': crontab(minute='*/30'),
-#     },
-# }
+CACHEOPS_DEFAULTS = {
+    'timeout': 60*15  # 15 minutes
+}
 
-# CELERY_TIMEZONE = 'UTC'
-# mysite/celery.py
+CACHEOPS = {
+    'myapp.*': {'ops': 'all', 'timeout': 60*60},  # Cache all queries for myapp models for 1 hour
+    # Add more rules as needed
+}
+
 
