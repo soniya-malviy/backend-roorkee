@@ -257,6 +257,6 @@ class LoginSerializer(serializers.Serializer):
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banner
-        fields = ['title', 'description', 'image_url', 'is_active']
+        fields = ('id', 'title', 'description', 'image', 'is_active')
     
 

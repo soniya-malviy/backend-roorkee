@@ -460,7 +460,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 class Banner(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='banners/')
+    image = models.ImageField(upload_to='banners/',blank=True, null=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
