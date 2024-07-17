@@ -1,15 +1,10 @@
 from django.urls import path
-<<<<<<< HEAD
-from .views import UserProfileAPIView
-from .views import RecommendationsAPIView
 
-
-=======
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
->>>>>>> origin/main
+
 from .views import (
     StateListAPIView,
     StateDetailAPIView,
@@ -87,24 +82,4 @@ urlpatterns = [
     path('user/saved_schemes/', UserSavedSchemesView.as_view(), name='user-saved-schemes'),
     path('profile/', UserProfileAPIView.as_view(), name='profile'),
     path('banner/', BannerView.as_view(), name='banner'),
-
-# <<<<<<< HEAD
-#     path('profile/', UserProfileAPIView.as_view(), name='profile_api'),
-#     path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
-
-   
-#     # path('profile/', UserProfileDetail.as_view(), name='profile-detail'),
-#     # path('profile/update/', UserProfileUpdate.as_view(), name='profile-update'),
-# =======
-#     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
-#     path('login/', LoginView.as_view(), name='login'),
-#     path('logout/', LogoutView.as_view(), name='logout'),
-#     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-#     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-#     path('protected/', ProtectedView.as_view(), name='protected'),
-#     path('schemes/search/', SchemeSearchView.as_view(), name='scheme-search'),
-#     path('save_scheme/', SaveSchemeView.as_view(), name='save_scheme'),
-# >>>>>>> origin/main
-
 ]
-
