@@ -60,6 +60,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'myapp.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Allow credentials (cookies, etc.)

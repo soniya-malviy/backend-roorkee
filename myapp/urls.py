@@ -68,7 +68,7 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
     path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
     path('profile/', UserProfileAPIView.as_view(), name='profile_api'),
-    path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
+    # path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
 
     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
     path('login/', LoginView.as_view(), name='login'),
