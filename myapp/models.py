@@ -38,25 +38,25 @@ class TimeStampedModel(models.Model):
 
 # myapp/models.py
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    bio = models.TextField(blank=True)
-    preferences = models.JSONField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+#     bio = models.TextField(blank=True)
+#     preferences = models.JSONField(blank=True, null=True)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.user.username
+#     def __str__(self):
+#         return self.user.username
 
-class UserPreferences(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='preferences')
-    preferred_categories = models.JSONField(default=list, blank=True)
-    dark_mode = models.BooleanField(default=False)
-    language = models.CharField(max_length=50, default='en')
-    browsing_history = models.JSONField(default=list, blank=True)
+# class UserPreferences(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='preferences')
+#     preferred_categories = models.JSONField(default=list, blank=True)
+#     dark_mode = models.BooleanField(default=False)
+#     language = models.CharField(max_length=50, default='en')
+#     browsing_history = models.JSONField(default=list, blank=True)
 
-    def __str__(self):
-        return f"{self.user.username}'s Preferences"
+#     def __str__(self):
+#         return f"{self.user.username}'s Preferences"
 
 # class BrowsingHistory(models.Model):
 #     user = models.ForeignKey(User, on_delete=models.CASCADE)

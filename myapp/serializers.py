@@ -110,44 +110,44 @@ class SchemeSponsorSerializer(TimeStampedModelSerializer):
         model = SchemeSponsor
         fields = '__all__'
 
-class UserProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserProfile
-        fields = ['bio', 'preferences', 'created_at', 'updated_at']
-        read_only_fields = ['created_at', 'updated_at']
+# class UserProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserProfile
+#         fields = ['bio', 'preferences', 'created_at', 'updated_at']
+#         read_only_fields = ['created_at', 'updated_at']
 
 # UserPreferencesSerializer
-class UserPreferencesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserPreferences
-        fields = ['preferred_categories', 'dark_mode', 'language', 'browsing_history']
+# class UserPreferencesSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserPreferences
+#         fields = ['preferred_categories', 'dark_mode', 'language', 'browsing_history']
 
 # UserSerializer
-class UserSerializer(serializers.ModelSerializer):
-    profile = UserProfileSerializer(required=False)
-    preferences = UserPreferencesSerializer(required=False)
+# class UserSerializer(serializers.ModelSerializer):
+#     profile = UserProfileSerializer(required=False)
+#     preferences = UserPreferencesSerializer(required=False)
 
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email', 'profile', 'preferences']
+#     class Meta:
+#         model = User
+#         fields = ['id', 'username', 'email', 'profile', 'preferences']
 
-    def update(self, instance, validated_data):
-        profile_data = validated_data.pop('profile', None)
-        preferences_data = validated_data.pop('preferences', None)
+#     def update(self, instance, validated_data):
+#         profile_data = validated_data.pop('profile', None)
+#         preferences_data = validated_data.pop('preferences', None)
 
-        instance.username = validated_data.get('username', instance.username)
-        instance.email = validated_data.get('email', instance.email)
-        instance.save()
+#         instance.username = validated_data.get('username', instance.username)
+#         instance.email = validated_data.get('email', instance.email)
+#         instance.save()
 
-        # Handle profile data
-        if profile_data:
-            UserProfile.objects.update_or_create(user=instance, defaults=profile_data)
+#         # Handle profile data
+#         if profile_data:
+#             UserProfile.objects.update_or_create(user=instance, defaults=profile_data)
 
-        # Handle preferences data
-        if preferences_data:
-            UserPreferences.objects.update_or_create(user=instance, defaults=preferences_data)
+#         # Handle preferences data
+#         if preferences_data:
+#             UserPreferences.objects.update_or_create(user=instance, defaults=preferences_data)
 
-        return instance
+#         return instance
 
 # SaveSchemeSerializer
 class SaveSchemeSerializer(serializers.ModelSerializer):
@@ -236,15 +236,20 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 # BELOW USER LOGIN SERIALIZER
 
+
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
+    email = serializers.EmailField()
     password = serializers.CharField(write_only=True)
 
     def validate(self, data):
-        user = authenticate(username=data['username'], password=data['password'])
+        email = data.get('email')
+        password = data.get('password')
+
+        # Using email for authentication
+        user = authenticate(username=email, password=password)
         if user and user.is_active:
             return {'user': user}
-
+        
         raise serializers.ValidationError('Invalid credentials')
     
 # BANNER SER BELOW

@@ -254,40 +254,40 @@ class SchemeSponsorsListAPIView(generics.ListAPIView):
 
 from rest_framework import generics, permissions
 from django.contrib.auth.models import User
-from .models import UserProfile
-from .models import UserPreferences
+# from .models import UserProfile
 
-from .serializers import UserSerializer
-from .serializers import UserPreferencesSerializer
+
+# from .serializers import UserSerializer
+# from .serializers import UserPreferencesSerializer
 from .recommendation_algorithm import generate_recommendations
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.utils import timezone
 
-class UserProfileAPIView(generics.RetrieveUpdateAPIView):
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+# class UserProfileAPIView(generics.RetrieveUpdateAPIView):
+#     serializer_class = UserSerializer
+#     permission_classes = [permissions.IsAuthenticated]
 
-    def get_object(self):
-        user = self.request.user
-        # Ensure user has a profile
-        UserProfile.objects.get_or_create(user=user)
-        return user
+#     def get_object(self):
+#         user = self.request.user
+#         # Ensure user has a profile
+#         UserProfile.objects.get_or_create(user=user)
+#         return user
 
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
+#     def put(self, request, *args, **kwargs):
+#         return self.update(request, *args, **kwargs)
 
 
-class RecommendationsAPIView(generics.ListAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+# class RecommendationsAPIView(generics.ListAPIView):
+#     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
-        return UserPreferences.objects.filter(user=self.request.user)
+#     def get_queryset(self):
+#         return UserPreferences.objects.filter(user=self.request.user)
 
-    def get(self, request, *args, **kwargs):
-        user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
-        recommendations = generate_recommendations(user_preferences)
-        return Response({'recommendations': recommendations})
+#     def get(self, request, *args, **kwargs):
+#         user_preferences, created = UserPreferences.objects.get_or_create(user=self.request.user)
+#         recommendations = generate_recommendations(user_preferences)
+#         return Response({'recommendations': recommendations})
 
 # Views from origin/main branch
 class UserRegistrationAPIView(generics.CreateAPIView):
@@ -315,6 +315,7 @@ class UserProfileAPIView(generics.RetrieveUpdateAPIView):
 
 
 
+
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = LoginSerializer(data=request.data)
@@ -325,8 +326,8 @@ class LoginView(APIView):
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
             }
-            return Response(tokens, status=HTTP_200_OK)
-        return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
+            return Response(tokens, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class LogoutView(APIView):
