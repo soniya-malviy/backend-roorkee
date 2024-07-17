@@ -8,6 +8,7 @@ from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework.pagination import PageNumberPagination
+from rest_framework import viewsets
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
@@ -419,8 +420,17 @@ class UnsaveSchemeView(APIView):
     
 # BANNER VIEW BELOW
     
-class BannerView(APIView):
-    def get(self, request, *args, **kwargs):
-        banners = Banner.objects.filter(is_active=True)
-        serializer = BannerSerializer(banners, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+class BannerListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Banner.objects.all()
+    serializer_class = BannerSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = BannerSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class BannerDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Banner.objects.all()
+    serializer_class = BannerSerializer
