@@ -39,7 +39,9 @@ from .views import (
     UserProfileAPIView,
     UnsaveSchemeView,
     BannerListCreateAPIView,
-    BannerDetailAPIView
+    BannerDetailAPIView,
+    SavedFilterDetailView,
+    SavedFilterListCreateView
 )
 
 
@@ -84,4 +86,6 @@ urlpatterns = [
     path('profile/', UserProfileAPIView.as_view(), name='profile'),
     path('banners/', BannerListCreateAPIView.as_view(), name='banner-list-create'),
     path('banners/<int:pk>/', BannerDetailAPIView.as_view(), name='banner-detail'),
+    path('saved_filters/', SavedFilterListCreateView.as_view(), name='saved_filter_list_create'),
+    path('saved_filters/<int:pk>/', SavedFilterDetailView.as_view(), name='saved_filter_detail'),
 ]
