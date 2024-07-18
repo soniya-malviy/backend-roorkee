@@ -359,7 +359,7 @@ class SchemeSearchView(APIView):
         if query:
             schemes = Scheme.objects.filter(title__icontains=query)
             serializer = SchemeSerializer(schemes, many=True)
-            return Response(serializer.data, status=HTTP_200_OK)
+            return Response(serializer.data, status= status.HTTP_200_OK)
         return Response({"detail": "Query parameter 'q' is required."}, status=HTTP_400_BAD_REQUEST)
 
 
