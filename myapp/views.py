@@ -13,14 +13,14 @@ from rest_framework import viewsets
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner
+    Banner, SavedFilter
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer
+    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -434,3 +434,21 @@ class BannerListCreateAPIView(generics.ListCreateAPIView):
 class BannerDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Banner.objects.all()
     serializer_class = BannerSerializer
+
+
+class SavedFilterListCreateView(generics.ListCreateAPIView):
+    serializer_class = SavedFilterSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return SavedFilter.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class SavedFilterDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = SavedFilterSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return SavedFilter.objects.filter(user=self.request.user)
