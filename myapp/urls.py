@@ -41,7 +41,11 @@ from .views import (
     BannerListCreateAPIView,
     BannerDetailAPIView,
     SavedFilterDetailView,
-    SavedFilterListCreateView
+    SavedFilterListCreateView,
+    GenderChoicesView,
+    StateChoicesView,
+    EducationChoicesView,
+    CategoryChoicesView
 )
 
 
@@ -88,4 +92,8 @@ urlpatterns = [
     path('banners/<int:pk>/', BannerDetailAPIView.as_view(), name='banner-detail'),
     path('saved_filters/', SavedFilterListCreateView.as_view(), name='saved_filter_list_create'),
     path('saved_filters/<int:pk>/', SavedFilterDetailView.as_view(), name='saved_filter_detail'),
+    path('choices/gender/', GenderChoicesView.as_view(), name='gender-choices'),
+    path('choices/state/', StateChoicesView.as_view(), name='state-choices'),
+    path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
+    path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
 ]

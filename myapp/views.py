@@ -452,3 +452,23 @@ class SavedFilterDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return SavedFilter.objects.filter(user=self.request.user)
+    
+
+# choices views below
+    
+
+class GenderChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('gender').choices, status=status.HTTP_200_OK)
+
+class StateChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('state_of_residence').choices, status=status.HTTP_200_OK)
+
+class EducationChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('education').choices, status=status.HTTP_200_OK)
+
+class CategoryChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('category').choices, status=status.HTTP_200_OK)
