@@ -36,8 +36,8 @@ from .views import (
     SchemeSearchView,
     SaveSchemeView,
     UserSavedSchemesView,
-    PersonalDetailUpdateView,
-    ProfessionalDetailUpdateView,
+    PersonalDetailView,
+    ProfessionalDetailView,
     UnsaveSchemeView,
     BannerListCreateAPIView,
     BannerDetailAPIView,
@@ -75,8 +75,8 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/documents/', SchemeDocumentsListAPIView.as_view(), name='scheme-documents-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
     path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
-    path('profile/personal/', PersonalDetailUpdateView.as_view(), name='personal-detail-update'),
-    path('profile/professional/', ProfessionalDetailUpdateView.as_view(), name='professional-detail-update'),
+    path('profile/personal/', PersonalDetailView.as_view(), name='personal-detail-update'),
+    path('profile/professional/', ProfessionalDetailView.as_view(), name='professional-detail-update'),
     # path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
 
     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
