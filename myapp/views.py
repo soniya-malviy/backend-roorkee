@@ -306,19 +306,44 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
-class PersonalDetailUpdateView(generics.UpdateAPIView):
+class PersonalDetailView(generics.GenericAPIView):
     serializer_class = PersonalDetailSerializer
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return self.request.user
 
-class ProfessionalDetailUpdateView(generics.UpdateAPIView):
+    def get(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user)
+        return Response(serializer.data)
+
+    def put(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    
+
+class ProfessionalDetailView(generics.GenericAPIView):
     serializer_class = ProfessionalDetailSerializer
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return self.request.user
+
+    def get(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user)
+        return Response(serializer.data)
+
+    def put(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
 
 
 
