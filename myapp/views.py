@@ -20,7 +20,7 @@ from .serializers import (
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer
+    SaveSchemeSerializer, PersonalDetailSerializer, ProfessionalDetailSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -306,9 +306,15 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
-class UserProfileAPIView(generics.RetrieveUpdateAPIView):
-    queryset = CustomUser.objects.all()
-    serializer_class = UserProfileSerializer
+class PersonalDetailUpdateView(generics.UpdateAPIView):
+    serializer_class = PersonalDetailSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+class ProfessionalDetailUpdateView(generics.UpdateAPIView):
+    serializer_class = ProfessionalDetailSerializer
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
@@ -472,3 +478,5 @@ class EducationChoicesView(APIView):
 class CategoryChoicesView(APIView):
     def get(self, request):
         return Response(CustomUser._meta.get_field('category').choices, status=status.HTTP_200_OK)
+
+
