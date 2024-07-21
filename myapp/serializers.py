@@ -221,12 +221,12 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     
 
-class UserProfileSerializer(serializers.ModelSerializer):
+class PersonalDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = [
-            'name', 'gender', 'age', 'occupation', 'income', 'education', 'government_employee', 
-            'category', 'minority', 'state_of_residence', 'disability', 'bpl_card_holder'
+            'name', 'gender', 'age', 'category', 'minority', 'state_of_residence', 
+            'disability', 'bpl_card_holder'
         ]
 
     def update(self, instance, validated_data):
@@ -234,6 +234,19 @@ class UserProfileSerializer(serializers.ModelSerializer):
             setattr(instance, attr, value)
         instance.save()
         return instance
+    
+class ProfessionalDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['occupation', 'income', 'education', 'government_employee']
+
+    def update(self, instance, validated_data):
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+    
+
 
 # BELOW USER LOGIN SERIALIZER
 
