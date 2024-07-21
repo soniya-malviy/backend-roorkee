@@ -2,6 +2,12 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser, Banner
 
+
+
+admin.site.site_header = "Community Empowerment Portal Admin Panel"
+admin.site.site_title = "Admin Portal"
+admin.site.index_title = "Welcome to your Admin Panel"
+
 admin.site.register(State)
 admin.site.register(Department)
 admin.site.register(Organisation)
