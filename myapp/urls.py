@@ -36,10 +36,17 @@ from .views import (
     SchemeSearchView,
     SaveSchemeView,
     UserSavedSchemesView,
-    UserProfileAPIView,
+    PersonalDetailView,
+    ProfessionalDetailView,
     UnsaveSchemeView,
     BannerListCreateAPIView,
-    BannerDetailAPIView
+    BannerDetailAPIView,
+    SavedFilterDetailView,
+    SavedFilterListCreateView,
+    GenderChoicesView,
+    StateChoicesView,
+    EducationChoicesView,
+    CategoryChoicesView
 )
 
 
@@ -68,7 +75,8 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/documents/', SchemeDocumentsListAPIView.as_view(), name='scheme-documents-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
     path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
-    path('profile/', UserProfileAPIView.as_view(), name='profile_api'),
+    path('profile/personal/', PersonalDetailView.as_view(), name='personal-detail-update'),
+    path('profile/professional/', ProfessionalDetailView.as_view(), name='professional-detail-update'),
     # path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
 
     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
@@ -81,7 +89,12 @@ urlpatterns = [
     path('save_scheme/', SaveSchemeView.as_view(), name='save_scheme'),
     path('unsave_scheme/', UnsaveSchemeView.as_view(), name='unsave-scheme'),
     path('user/saved_schemes/', UserSavedSchemesView.as_view(), name='user-saved-schemes'),
-    path('profile/', UserProfileAPIView.as_view(), name='profile'),
     path('banners/', BannerListCreateAPIView.as_view(), name='banner-list-create'),
     path('banners/<int:pk>/', BannerDetailAPIView.as_view(), name='banner-detail'),
+    path('saved_filters/', SavedFilterListCreateView.as_view(), name='saved_filter_list_create'),
+    path('saved_filters/<int:pk>/', SavedFilterDetailView.as_view(), name='saved_filter_detail'),
+    path('choices/gender/', GenderChoicesView.as_view(), name='gender-choices'),
+    path('choices/state/', StateChoicesView.as_view(), name='state-choices'),
+    path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
+    path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
 ]

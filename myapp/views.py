@@ -13,14 +13,14 @@ from rest_framework import viewsets
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner
+    Banner, SavedFilter
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer
+    SaveSchemeSerializer, PersonalDetailSerializer, ProfessionalDetailSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -306,13 +306,44 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
-class UserProfileAPIView(generics.RetrieveUpdateAPIView):
-    queryset = CustomUser.objects.all()
-    serializer_class = UserProfileSerializer
+class PersonalDetailView(generics.GenericAPIView):
+    serializer_class = PersonalDetailSerializer
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
         return self.request.user
+
+    def get(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user)
+        return Response(serializer.data)
+
+    def put(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    
+
+class ProfessionalDetailView(generics.GenericAPIView):
+    serializer_class = ProfessionalDetailSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+    def get(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user)
+        return Response(serializer.data)
+
+    def put(self, request, *args, **kwargs):
+        user = self.get_object()
+        serializer = self.get_serializer(user, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
 
 
 
@@ -359,7 +390,7 @@ class SchemeSearchView(APIView):
         if query:
             schemes = Scheme.objects.filter(title__icontains=query)
             serializer = SchemeSerializer(schemes, many=True)
-            return Response(serializer.data, status=HTTP_200_OK)
+            return Response(serializer.data, status= status.HTTP_200_OK)
         return Response({"detail": "Query parameter 'q' is required."}, status=HTTP_400_BAD_REQUEST)
 
 
@@ -434,3 +465,43 @@ class BannerListCreateAPIView(generics.ListCreateAPIView):
 class BannerDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Banner.objects.all()
     serializer_class = BannerSerializer
+
+
+class SavedFilterListCreateView(generics.ListCreateAPIView):
+    serializer_class = SavedFilterSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return SavedFilter.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class SavedFilterDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = SavedFilterSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return SavedFilter.objects.filter(user=self.request.user)
+    
+
+# choices views below
+    
+
+class GenderChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('gender').choices, status=status.HTTP_200_OK)
+
+class StateChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('state_of_residence').choices, status=status.HTTP_200_OK)
+
+class EducationChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('education').choices, status=status.HTTP_200_OK)
+
+class CategoryChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('category').choices, status=status.HTTP_200_OK)
+
+

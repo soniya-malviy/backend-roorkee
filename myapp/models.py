@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 import pytz
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 
 class TimeStampedModel(models.Model):
@@ -95,7 +96,7 @@ class Department(TimeStampedModel):
 
     class Meta:
         verbose_name = "Department"
-        verbose_name_plural = "Departments"
+        verbose_name_plural = "State Department Mapping"
         ordering = ['department_name']
 
     def __str__(self):
@@ -107,7 +108,7 @@ class Organisation(TimeStampedModel):
 
     class Meta:
         verbose_name = "Organisation"
-        verbose_name_plural = "Organisations"
+        verbose_name_plural = "Department Organisation Mapping"
         ordering = ['organisation_name']
     
     def __str__(self):
@@ -127,7 +128,7 @@ class Scheme(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme"
-        verbose_name_plural = "Schemes"
+        verbose_name_plural = "Department Scheme Mapping"
         ordering = ['introduced_on']
 
     def __str__(self):
@@ -150,7 +151,7 @@ class SchemeBeneficiary(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme Beneficiary"
-        verbose_name_plural = "Scheme Beneficiaries"
+        verbose_name_plural = "Scheme Beneficiaries Mapping"
         ordering = ['scheme', 'beneficiary']
 
     
@@ -175,7 +176,7 @@ class Criteria(TimeStampedModel):
 
     class Meta:
         verbose_name = "Criteria"
-        verbose_name_plural = "Criteria"
+        verbose_name_plural = "Scheme Criteria Mapping"
         ordering = ['description']
 
     def __str__(self):
@@ -187,7 +188,7 @@ class Procedure(TimeStampedModel):
 
     class Meta:
         verbose_name = "Procedure"
-        verbose_name_plural = "Procedures"
+        verbose_name_plural = "Scheme Procedures Mapping"
         ordering = ['scheme']
 
     def __str__(self):
@@ -210,7 +211,7 @@ class SchemeDocument(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme Document"
-        verbose_name_plural = "Scheme Documents"
+        verbose_name_plural = "Scheme Documents Mapping"
         ordering = ['scheme', 'document']
 
 class Sponsor(TimeStampedModel):
@@ -230,7 +231,7 @@ class SchemeSponsor(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme Sponsor"
-        verbose_name_plural = "Scheme Sponsors"
+        verbose_name_plural = "Scheme Sponsors Mapping"
         ordering = ['scheme', 'sponsor']
 
 
@@ -465,3 +466,14 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+User = get_user_model()
+
+class SavedFilter(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    criteria = models.JSONField()  # Store filter criteria as JSON
+
+    def __str__(self):
+        return f"{self.name} ({self.user.username})"
