@@ -214,11 +214,22 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
 # Cacheops settings
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # Make sure this is correct
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
 CACHEOPS_REDIS = {
-    'host': REDIS_HOST,  # Redis host
-    'port': REDIS_PORT,  # Redis port
-    'db': 1,              # Redis database index
-    'socket_timeout': 3,  # Socket timeout in seconds
+    'host': '127.0.0.1',  # Redis host
+    'port': 6379,         # Redis port
+    'db': 1,              # Redis db
+    'password': None,     # Redis password if any
+    'socket_timeout': 3,
 }
 
 CACHEOPS_DEFAULTS = {
