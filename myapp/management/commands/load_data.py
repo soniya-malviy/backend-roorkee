@@ -506,7 +506,7 @@ class Command(BaseCommand):
     help = 'Load data from JSON file into database'
 
     def handle(self, *args, **kwargs):
-        with open('myapp/combined_schemes_data.json', 'r') as file:
+        with open('myapp/management/scrapedData/combined_schemes_data.json', 'r') as file:
             data = json.load(file)
             self.load_data(data)
         

@@ -2,6 +2,8 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.filters import OrderingFilter
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
@@ -9,6 +11,16 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import viewsets
+from django.shortcuts import render, redirect
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.auth import get_user_model
+from django.http import HttpResponse
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
@@ -20,12 +32,15 @@ from .serializers import (
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, PersonalDetailSerializer, ProfessionalDetailSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer
+    SaveSchemeSerializer, PersonalDetailSerializer, ProfessionalDetailSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
+    PasswordResetConfirmSerializer, PasswordResetRequestSerializer
 )
 
 from rest_framework.exceptions import NotFound
 from .filters import CustomOrderingFilter
 from rest_framework_simplejwt.tokens import RefreshToken
+
+User = get_user_model()
 
 class SchemePagination(PageNumberPagination):
     page_size_query_param = 'limit'
@@ -260,7 +275,7 @@ from django.contrib.auth.models import User
 
 # from .serializers import UserSerializer
 # from .serializers import UserPreferencesSerializer
-from .recommendation_algorithm import generate_recommendations
+
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.utils import timezone
@@ -301,7 +316,7 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             user = serializer.save()
             return Response({
                 "user": UserRegistrationSerializer(user).data,
-                "message": "User created successfully",
+                "message": "User created successfully. Please check your email to verify your account.",
                 "username": user.username
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
@@ -503,5 +518,54 @@ class EducationChoicesView(APIView):
 class CategoryChoicesView(APIView):
     def get(self, request):
         return Response(CustomUser._meta.get_field('category').choices, status=status.HTTP_200_OK)
+
+
+def verify_email(request, uidb64, token):
+    try:
+        user_id = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=user_id)
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_email_verified = True
+        user.save()
+        return HttpResponse('Email verified successfully')
+    else:
+        return HttpResponse('Verification link is invalid!')
+    
+class PasswordResetRequestView(APIView):
+    @method_decorator(csrf_exempt)
+    def post(self, request, *args, **kwargs):
+        serializer = PasswordResetRequestSerializer(data=request.data)
+        if serializer.is_valid():
+            user = CustomUser.objects.get(email=serializer.validated_data['email'])
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            token = default_token_generator.make_token(user)
+            reset_link = f"{settings.FRONTEND_URL}/reset-password-confirm/{uid}/{token}/"
+            message = render_to_string('password_reset_email.html', {
+                'user': user,
+                'reset_link': reset_link,
+            })
+            send_mail(
+                'Password Reset Request',
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [user.email],
+                fail_silently=False,
+            )
+            return Response({"message": "Password reset link has been sent to your email."}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class PasswordResetConfirmView(APIView):
+    @method_decorator(csrf_exempt)
+    def post(self, request, *args, **kwargs):
+        serializer = PasswordResetConfirmSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Password has been reset successfully."}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
 
 

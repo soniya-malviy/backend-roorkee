@@ -117,7 +117,7 @@ SIMPLE_JWT = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'myapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -143,6 +143,9 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': os.getenv('DATABASE_PORT'),
+        'OPTIONS': {
+            'sslmode': 'require',  # Use 'require' or 'prefer'
+        },
     }
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -211,11 +214,22 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
 # Cacheops settings
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # Make sure this is correct
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
 CACHEOPS_REDIS = {
-    'host': REDIS_HOST,  # Redis host
-    'port': REDIS_PORT,  # Redis port
-    'db': 1,              # Redis database index
-    'socket_timeout': 3,  # Socket timeout in seconds
+    'host': '127.0.0.1',  # Redis host
+    'port': 6379,         # Redis port
+    'db': 1,              # Redis db
+    'password': None,     # Redis password if any
+    'socket_timeout': 3,
 }
 
 CACHEOPS_DEFAULTS = {
@@ -223,7 +237,17 @@ CACHEOPS_DEFAULTS = {
 }
 
 CACHEOPS = {
-    'myapp.*': {'ops': 'all', 'timeout': 60*60},  # Cache all queries for myapp models for 1 hour
-    # Add more rules as needed
+    'myapp.*': {'ops': 'all', 'timeout': 60*60}, 
+    
 }
+SITE_URL = 'http://localhost:8000'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_PORT = 587 
+EMAIL_USE_TLS = True  
+EMAIL_HOST_USER = 'testemail7081@gmail.com'
+EMAIL_HOST_PASSWORD = 'Spiritual@punctual'
+DEFAULT_FROM_EMAIL = 'testemail7081@gmail.com'
+SITE_URL = "http://localhost:8000" 
 
