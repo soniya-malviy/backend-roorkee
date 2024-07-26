@@ -200,8 +200,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Celery configuration
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+REDIS_HOST = os.getenv('REDIS_HOST')
+REDIS_PORT = os.getenv('REDIS_PORT')
+CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL # TODO: Change this to a different redis instance
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
@@ -210,8 +212,8 @@ CELERY_ENABLE_UTC = True
 
 # Cacheops settings
 CACHEOPS_REDIS = {
-    'host': 'localhost',  # Redis host
-    'port': 6379,         # Redis port
+    'host': REDIS_HOST,  # Redis host
+    'port': REDIS_PORT,  # Redis port
     'db': 1,              # Redis database index
     'socket_timeout': 3,  # Socket timeout in seconds
 }
@@ -224,5 +226,4 @@ CACHEOPS = {
     'myapp.*': {'ops': 'all', 'timeout': 60*60},  # Cache all queries for myapp models for 1 hour
     # Add more rules as needed
 }
-
 
