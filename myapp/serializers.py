@@ -6,12 +6,24 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
 import pytz
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
+
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
+from django.contrib.auth import get_user_model
+from django.http import HttpResponse
 
 from django.utils.text import slugify
 import random
 import string
 
-
+User = get_user_model()
 class TimeStampedModelSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S %Z', read_only=True)
 
@@ -166,10 +178,11 @@ class SaveSchemeSerializer(serializers.ModelSerializer):
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     email = serializers.EmailField(required=True)
+    is_email_verified = serializers.BooleanField(read_only=True)
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'password']
+        fields = ['email', 'password', 'is_email_verified']
         extra_kwargs = {
             
             'password': {'write_only': True},
@@ -193,6 +206,18 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         except DjangoValidationError as e:
             raise serializers.ValidationError(str(e))
         return value
+    
+    def send_verification_email(self, user):
+        token = default_token_generator.make_token(user)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        verification_link = f"{settings.SITE_URL}/verify-email/{uid}/{token}/"
+
+        subject = 'Verify your email'
+        message = render_to_string('email_verification.html', {
+            'user': user,
+            'verification_link': verification_link,
+        })
+        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
 
     def create(self, validated_data):
         email = validated_data['email']
@@ -203,21 +228,26 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
         username = username_base
 
-        
-        if CustomUser.objects.filter(username=username).exists():
+        if User.objects.filter(username=username).exists():
             counter = 1
             new_username = f"{username}{counter}"
-            while CustomUser.objects.filter(username=new_username).exists():
+            while User.objects.filter(username=new_username).exists():
                 counter += 1
                 new_username = f"{username}{counter}"
             username = new_username
 
-        user = CustomUser.objects.create_user(
+        user = User.objects.create_user(
             username=username,
             email=email,
             password=validated_data['password']
         )
+
+        # Send verification email
+        self.send_verification_email(user)
+
         return user
+    
+    
 
     
 
@@ -277,5 +307,40 @@ class SavedFilterSerializer(serializers.ModelSerializer):
     class Meta:
         model = SavedFilter
         fields = ['id', 'name', 'criteria']
+
+
+
+class PasswordResetRequestSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+    def validate_email(self, value):
+        try:
+            user = CustomUser.objects.get(email=value)
+        except CustomUser.DoesNotExist:
+            raise serializers.ValidationError("User with this email does not exist.")
+        return value
+    
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    uid = serializers.CharField()
+    token = serializers.CharField()
+    new_password = serializers.CharField(write_only=True)
+
+    def validate(self, attrs):
+        try:
+            uid = force_text(urlsafe_base64_decode(attrs['uid']))
+            user = CustomUser.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+            raise serializers.ValidationError("Invalid UID.")
+        
+        if not default_token_generator.check_token(user, attrs['token']):
+            raise serializers.ValidationError("Invalid token.")
+        
+        return attrs
+
+    def save(self):
+        uid = force_text(urlsafe_base64_decode(self.validated_data['uid']))
+        user = CustomUser.objects.get(pk=uid)
+        user.set_password(self.validated_data['new_password'])
+        user.save()
     
 

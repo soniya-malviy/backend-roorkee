@@ -3,6 +3,9 @@ from django.utils import timezone
 import pytz
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
+import uuid
+from datetime import timedelta
+
 
 
 class TimeStampedModel(models.Model):
@@ -173,6 +176,7 @@ class Criteria(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='criteria', null=True, blank=True)
     description = models.TextField(null = True, blank = True)
     value = models.TextField(null = True, blank = True)
+    criteria_data = models.JSONField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Criteria"
@@ -386,6 +390,9 @@ class CustomUserManager(BaseUserManager):
 
         return self.create_user(email, username, password, **extra_fields)
 
+def default_verification_token_expiry():
+    return timezone.now() + timedelta(days=1)
+
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     CATEGORY_CHOICES = [
         ('General', 'General'),
@@ -446,6 +453,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     disability = models.BooleanField(default=False)
     bpl_card_holder = models.BooleanField(default=False)
 
+    is_email_verified = models.BooleanField(default=False)
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'username'
