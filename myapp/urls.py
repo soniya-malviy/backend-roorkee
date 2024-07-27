@@ -45,8 +45,12 @@ from .views import (
     SavedFilterListCreateView,
     GenderChoicesView,
     StateChoicesView,
-    EducationChoicesView,
-    CategoryChoicesView
+    EducationChoicesView, 
+    CategoryChoicesView,
+    verify_email,
+    PasswordResetRequestView,
+    PasswordResetConfirmView
+
 )
 
 
@@ -80,6 +84,7 @@ urlpatterns = [
     # path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
 
     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
+    path('verify-email/<uidb64>/<token>/', verify_email, name='verify_email'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -97,4 +102,6 @@ urlpatterns = [
     path('choices/state/', StateChoicesView.as_view(), name='state-choices'),
     path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
     path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
+    path('password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
+    path('password-reset-confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 ]

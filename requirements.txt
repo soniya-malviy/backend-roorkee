@@ -2,7 +2,6 @@ amqp==5.2.0
 annotated-types==0.7.0
 asgiref==3.8.1
 async-timeout==4.0.3
-
 beautifulsoup4==4.12.3
 billiard==4.2.0
 blinker==1.7.0
@@ -18,11 +17,14 @@ click-plugins==1.1.1
 click-repl==0.3.0
 cron-descriptor==1.4.3
 cryptography==42.0.5
-Django==3.2
+diff-match-patch==20230430
+Django==3.2.9
+django-allauth==0.63.6
 django-cacheops==7.0.2
 django-celery-beat==2.6.0
 django-cors-headers==4.4.0
-django-import-export
+django-import-export==4.1.1
+django-redis==5.4.0
 django-timezone-field==6.1.0
 djangorestframework==3.15.1
 djangorestframework-simplejwt==5.3.1
@@ -32,6 +34,8 @@ Flask-Cors==4.0.0
 funcy==2.0
 geographiclib==2.0
 geopy==2.4.1
+google==3.0.0
+google-ai-generativelanguage==0.1.0
 google-api-core==2.18.0
 google-api-python-client==2.125.0
 google-auth==2.29.0
@@ -40,6 +44,7 @@ google-cloud-core==2.4.1
 google-cloud-firestore==2.16.0
 google-cloud-storage==2.16.0
 google-crc32c==1.5.0
+google-generativeai==0.1.0rc1
 google-resumable-media==2.7.0
 googleapis-common-protos==1.63.0
 grpcio==1.62.1
@@ -80,6 +85,7 @@ rsa==4.9
 six==1.16.0
 soupsieve==2.5
 sqlparse==0.5.0
+tablib==3.5.0
 tqdm==4.66.4
 typing_extensions==4.12.2
 tzdata==2024.1
