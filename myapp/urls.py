@@ -14,7 +14,6 @@ from .views import (
     SchemeDetailAPIView,
     BeneficiaryListAPIView,
     SchemeBeneficiaryListAPIView,
-    BenefitListAPIView,
     CriteriaListAPIView,
     ProcedureListAPIView,
     DocumentListAPIView,
@@ -36,8 +35,7 @@ from .views import (
     SchemeSearchView,
     SaveSchemeView,
     UserSavedSchemesView,
-    PersonalDetailView,
-    ProfessionalDetailView,
+    UserProfileView,
     UnsaveSchemeView,
     BannerListCreateAPIView,
     BannerDetailAPIView,
@@ -49,7 +47,11 @@ from .views import (
     CategoryChoicesView,
     verify_email,
     PasswordResetRequestView,
-    PasswordResetConfirmView
+    PasswordResetConfirmView,
+    PreferenceView,
+    ScholarshipSchemesListView,
+    JobSchemesListView,
+    SchemeBenefitListAPIView
 
 )
 
@@ -62,9 +64,11 @@ urlpatterns = [
     path('organisations/', OrganisationListAPIView.as_view(), name='organisation-list'),
     path('schemes/', SchemeListAPIView.as_view(), name='scheme-list'),
     path('schemes/<int:pk>/', SchemeDetailAPIView.as_view(), name='scheme-detail'),
+    path('schemes/scholarship/', ScholarshipSchemesListView.as_view(), name='scholarship-schemes'),
+    path('schemes/job/', JobSchemesListView.as_view(), name='job-schemes'),
     path('beneficiaries/', BeneficiaryListAPIView.as_view(), name='beneficiary-list'),
     path('scheme-beneficiaries/', SchemeBeneficiaryListAPIView.as_view(), name='scheme-beneficiary-list'),
-    path('benefits/', BenefitListAPIView.as_view(), name='benefit-list'),
+    # path('benefits/', BenefitListAPIView.as_view(), name='benefit-list'),
     path('criteria/', CriteriaListAPIView.as_view(), name='criteria-list'),
     path('procedures/', ProcedureListAPIView.as_view(), name='procedure-list'),
     path('documents/', DocumentListAPIView.as_view(), name='document-list'),
@@ -79,8 +83,8 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/documents/', SchemeDocumentsListAPIView.as_view(), name='scheme-documents-list'),  # Add the new URL pattern
     path('schemes/<int:scheme_id>/sponsors/', SchemeSponsorsListAPIView.as_view(), name='scheme-sponsors-list'),  # Add the new URL pattern
     path('states/<int:state_id>/schemes/', StateSchemesListAPIView.as_view(), name='state-schemes-list'),  
-    path('profile/personal/', PersonalDetailView.as_view(), name='personal-detail-update'),
-    path('profile/professional/', ProfessionalDetailView.as_view(), name='professional-detail-update'),
+    path('user/profile/', UserProfileView.as_view(), name='user-profile'),
+    path('user/preferences/', PreferenceView.as_view(), name='user-preferences'),
     # path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
 
     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
@@ -104,4 +108,5 @@ urlpatterns = [
     path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
     path('password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('password-reset-confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('schemes/<int:scheme_id>/benefits/', SchemeBenefitListAPIView.as_view(), name='scheme-benefits'),
 ]

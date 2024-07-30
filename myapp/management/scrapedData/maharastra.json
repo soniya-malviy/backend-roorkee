@@ -9,8 +9,8 @@
             "Eligibility Criteria": [
                 {
                     "income_limit": {
-                        "rural": 98000.0,
-                        "urban": 120000.0
+                        "urban": 120000.0,
+                        "rural": 98000.0
                     },
                     "community": [
                         "Charmakar"
@@ -45,8 +45,8 @@
         },
         "id": "4fd4f806-c1e4-44d7-afa5-9f4852aeb5c1",
         "tags": [
-            "general",
-            "scholarship"
+            "scholarship",
+            "general"
         ]
     },
     {
@@ -60,8 +60,8 @@
             "Eligibility Criteria": [
                 {
                     "income_limit": {
-                        "rural": 98000.0,
-                        "urban": 120000.0
+                        "urban": 120000.0,
+                        "rural": 98000.0
                     },
                     "community": [
                         "Charmakar"
@@ -101,7 +101,7 @@
         },
         "id": "87b35798-93cd-476a-83c9-582cf5bb1896",
         "tags": [
-            "general scheme"
+            "scholarship"
         ]
     },
     {
@@ -115,6 +115,13 @@
                 {
                     "income_limit": {
                         "general": 200000.0
+                    },
+                    "community": [
+                        "B.C."
+                    ],
+                    "age_limit": {
+                        "lower_age": 10.0,
+                        "upper_age": 20.0
                     }
                 }
             ],
@@ -163,7 +170,11 @@
                         "VJNT",
                         "OBC",
                         "SBC"
-                    ]
+                    ],
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": 35.0
+                    }
                 }
             ],
             "Benefits Provided": "The scheme provides light and heavy motor driving, conductor training to the needy VJNT, OBC & SBC candidates. The training is given through private motor driving schools. The selected candidates are provided training with free lodging and boarding facility, License Fees etc.",
@@ -174,7 +185,7 @@
         "id": "464148f5-6803-4346-90e5-8959119e1cba",
         "tags": [
             "job",
-            "general scheme"
+            "general"
         ]
     },
     {
@@ -193,6 +204,10 @@
                     "education": {
                         "max_standard": "7th",
                         "min_standard": "5th"
+                    },
+                    "age_limit": {
+                        "lower_age": 10.0,
+                        "upper_age": 13.0
                     }
                 }
             ],
@@ -222,6 +237,10 @@
                     "education": {
                         "max_standard": "10th",
                         "min_standard": "5th"
+                    },
+                    "age_limit": {
+                        "lower_age": 5.0,
+                        "upper_age": 17.0
                     }
                 }
             ],
@@ -250,6 +269,10 @@
                     ],
                     "education": {
                         "school_type": "High School"
+                    },
+                    "age_limit": {
+                        "lower_age": 14.0,
+                        "upper_age": 18.0
                     }
                 }
             ],
@@ -260,7 +283,8 @@
         },
         "id": "21ca9e5c-4e9c-4ae8-8e12-a502c49c1200",
         "tags": [
-            "scholarship"
+            "scholarship",
+            "general"
         ]
     },
     {
@@ -278,7 +302,11 @@
                     "community": [
                         "V.J.N.T.",
                         "S.B.C."
-                    ]
+                    ],
+                    "age_limit": {
+                        "lower_age": 15.0,
+                        "upper_age": 25.0
+                    }
                 }
             ],
             "Benefits Provided": "Maintenance Allowance from Rs.40/- to Rs.100/- per month for 10 months is provided through concerned I.T.I.",
@@ -289,7 +317,7 @@
         "id": "e0f05062-8759-4195-a3e9-3e444c4e58eb",
         "tags": [
             "scholarship",
-            "job"
+            "general"
         ]
     },
     {
@@ -304,7 +332,11 @@
                     "community": [
                         "VJNT",
                         "SBC"
-                    ]
+                    ],
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": 35.0
+                    }
                 }
             ],
             "Benefits Provided": "The training fees Rs.400/- to Rs.2400/- (as per course) is paid to concerned I.T.I. After completion of training, one Tool Kit of Rs.1000/- is provided to trainee through concerned Govt. I.T.I.",
@@ -314,6 +346,7 @@
         },
         "id": "8eb7a230-881f-49bc-983b-66788c634de3",
         "tags": [
+            "general",
             "scholarship",
             "job"
         ]
@@ -327,15 +360,21 @@
             "Beneficiary Category": "V.J.N.T. & S.B.C.",
             "Eligibility Criteria": [
                 {
+                    "income_limit": null,
                     "community": [
                         "Vimukta Jatis",
                         "Nomadic Tribes",
                         "Special Backward Class"
                     ],
+                    "bpl_card_holder": null,
                     "education": {
                         "school_type": "Sainik School",
                         "max_standard": "12th",
                         "min_standard": "5th"
+                    },
+                    "age_limit": {
+                        "lower_age": null,
+                        "upper_age": null
                     }
                 }
             ],
@@ -346,7 +385,8 @@
         },
         "id": "fd8919c7-f433-4700-8b30-73c3994126f8",
         "tags": [
-            "scholarship"
+            "scholarship",
+            "general"
         ]
     },
     {
@@ -364,6 +404,10 @@
                     ],
                     "education": {
                         "school_type": "Professional"
+                    },
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": 30.0
                     }
                 }
             ],
@@ -374,7 +418,8 @@
         },
         "id": "ad2a9ad9-efbf-4192-b7f1-b0bd766df337",
         "tags": [
-            "scholarship"
+            "scholarship",
+            "general"
         ]
     },
     {
@@ -393,6 +438,10 @@
                     "education": {
                         "max_standard": "10th",
                         "min_standard": "8th"
+                    },
+                    "age_limit": {
+                        "lower_age": 13.0,
+                        "upper_age": 17.0
                     }
                 }
             ],
@@ -423,6 +472,10 @@
                     "education": {
                         "max_standard": "12th",
                         "min_standard": "11th"
+                    },
+                    "age_limit": {
+                        "lower_age": 11.0,
+                        "upper_age": 18.0
                     }
                 }
             ],
@@ -446,8 +499,8 @@
             "Eligibility Criteria": [
                 {
                     "income_limit": {
-                        "rural": 98000.0,
-                        "urban": 120000.0
+                        "urban": 120000.0,
+                        "rural": 98000.0
                     },
                     "community": [
                         "OBC"
@@ -465,8 +518,6 @@
         },
         "id": "5d80ea2b-fea0-4448-9575-f73799b74f55",
         "tags": [
-            "scholarship",
-            "job",
             "general"
         ]
     },
@@ -528,13 +579,7 @@
         "id": "9dd24359-20fa-4334-ae21-1acfe9574325",
         "tags": [
             "scholarship",
-            "free lodging",
-            "free boarding",
-            "medical facilities",
-            "bedding",
-            "clothing",
-            "uniforms",
-            "grant-in-aid"
+            "general"
         ]
     },
     {
@@ -548,7 +593,11 @@
                 {
                     "community": [
                         "VJNT"
-                    ]
+                    ],
+                    "age_limit": {
+                        "lower_age": null,
+                        "upper_age": null
+                    }
                 }
             ],
             "Benefits Provided": "In these schools along with the academic educational facility, free lodging and boarding is provided. Also medical facilities, bedding and clothing, uniforms are provided to the residential students. This scheme is implemented on grant-in-aid basis to voluntary organisations.100% Salary and non-salary grants of Teaching, Non-teaching and Hostel approved employees are paid by Government. Rs.900/- p.m. maintenance grant per residential student is admissible.",
@@ -558,18 +607,8 @@
         },
         "id": "e5d4ea3e-11cb-4739-945c-861e890a2bcb",
         "tags": [
-            "job openings",
-            "scholarship",
-            "residential program",
-            "free lodging",
-            "free boarding",
-            "medical facilities",
-            "free clothing",
-            "free uniforms",
-            "grant-in-aid",
-            "salary grant",
-            "non-salary grant",
-            "maintenance grant"
+            "general",
+            "scholarship"
         ]
     },
     {
@@ -579,13 +618,22 @@
             "Funding By": "State",
             "Scheme Objective": "To motivate VJNT students for Higher Education.",
             "Beneficiary Category": "V.J.N.T.",
-            "Eligibility Criteria": "Student should belong to VJNT category.Student should be First in State, or First in Board Examination of 10th or 12th.standard.First Boy and First Girl Student who stood first in state and board both are eligible for Award.",
+            "Eligibility Criteria": [
+                {
+                    "community": [
+                        "VJNT"
+                    ]
+                }
+            ],
             "Benefits Provided": "Award of Rs. 1.00 lakh trophy and Certificate for one Boy and one Girl Student who came First in State in S.S.C. Exam.Award of Rs. 0.51 lakh trophy and Certificate for one Boy and one Girl Student who came First in each Board in S.S.C. Exam.Award of Rs. 1.00 lakh trophy and Certificate for one Boy and one Girl Student who came First in State in H.S.C. Exam.Award of Rs. 0.51 lakh trophy and Certificate for one Boy and one Girl Student who came First in each Board in H.S.C. Exam",
             "Application Process": "A list of all VJNT students passing SSC and HSC Exams, in state is called for from the State Board of SSC/HSC by the Director, VJNT, OBC and SBC, M.S. Pune. The selection of students is made on the basis of marks obtained in SSC or HSC Exam.",
             "Category of Scheme": "Education.",
             "Contact Office": "Assistant Commissioner of Social Welfare concerned District.Director, VJNT, OBC, SBC. Welfare, M.S. Pune."
         },
-        "id": "c1b89276-5b39-48b7-9f47-2a89aacfa00d"
+        "id": "c1b89276-5b39-48b7-9f47-2a89aacfa00d",
+        "tags": [
+            "scholarship"
+        ]
     },
     {
         "title": "Tuition fees and examination fees to VJNT students.",
@@ -2155,8 +2203,12 @@
         },
         "id": "7c964b1b-3e77-4e37-ad7e-076f2192b00d",
         "tags": [
-            "job",
-            "general"
+            "job openings",
+            "scholarship",
+            "financial assistance",
+            "self-employment",
+            "loan",
+            "subsidy"
         ]
     },
     {
@@ -2212,7 +2264,7 @@
         },
         "id": "929ece5b-a849-4cec-9950-00400a158be7",
         "tags": [
-            "general scheme"
+            "scholarship"
         ]
     },
     {
@@ -2245,9 +2297,7 @@
         },
         "id": "5ac9e86d-1d79-47df-86e5-6aa8ac8d445c",
         "tags": [
-            "general",
-            "job",
-            "scholarship"
+            "general_scheme"
         ]
     },
     {
@@ -2261,8 +2311,8 @@
             "Eligibility Criteria": [
                 {
                     "income_limit": {
-                        "urban": 100000.0,
-                        "rural": 100000.0
+                        "rural": 100000.0,
+                        "urban": 100000.0
                     },
                     "community": [
                         "Matang Community"
@@ -2280,7 +2330,6 @@
         },
         "id": "e9fed205-51b9-499c-8035-31a248f9aa67",
         "tags": [
-            "job",
             "general"
         ]
     },
@@ -2344,9 +2393,7 @@
         },
         "id": "59e22083-1205-44e6-9eb7-938166225d3e",
         "tags": [
-            "general",
-            "job",
-            "scholarship"
+            "general"
         ]
     },
     {
@@ -2397,7 +2444,7 @@
         },
         "id": "c90f0411-5ab6-4d30-9727-c8e5fefe3f51",
         "tags": [
-            "general scheme"
+            "general"
         ]
     },
     {
@@ -2457,13 +2504,34 @@
             "Funding by": "State Sponsored",
             "Scheme Objective": "Financial Assistance / Pension Scheme",
             "Beneficiary Category": "All Category",
-            "Eligibility Criteria": "This scheme is applicable to destitute persons of age below 65 years, orphan children, all types of handicapped, person suffering from critical illness like T. B. cancer, AIDS and leprosy, destitute windows including those of farmers who committed suicide, destitute divorced women and women in process of divorce, women freed from prostitution and outraged women.",
+            "Eligibility Criteria": [
+                {
+                    "community": [
+                        "destitute persons",
+                        "orphan children",
+                        "handicapped",
+                        "person suffering from critical illness",
+                        "destitute windows",
+                        "destitute divorced women",
+                        "women in process of divorce",
+                        "women freed from prostitution",
+                        "outraged women"
+                    ],
+                    "age_limit": {
+                        "lower_age": 0.0,
+                        "upper_age": 65.0
+                    }
+                }
+            ],
             "Benefits  Provided": "Under this scheme, Rs. 600 per month is given to a single beneficiary and Rs. 900 per month if there are two or more beneficiaries in the family.  Whose family annual income is up to Rs. 21,000/-",
             "Application  Process": "Under this scheme application is submitted to Collector Office/Tahsildar/Talathi",
             "Category of  Scheme": "Special Assistance / Pension Scheme",
             "Contact  Office": "Collector Office / Tahsildar / Talathi"
         },
-        "id": "f3acc6e5-4030-4d56-8aca-73072d764409"
+        "id": "f3acc6e5-4030-4d56-8aca-73072d764409",
+        "tags": [
+            "general scheme"
+        ]
     },
     {
         "title": "Shravan Bal sea Rajya Nivruttivetan Yojana",
@@ -2513,7 +2581,7 @@
         },
         "id": "df22b34e-26d1-417f-9fd1-4f5a85430c11",
         "tags": [
-            "general scheme"
+            "scholarship"
         ]
     },
     {
@@ -2523,7 +2591,15 @@
             "Funding by": "CentrallySponsored",
             "Scheme Objective": "Financial Assistance",
             "Beneficiary Category": "All Category",
-            "Eligibility Criteria": "Under this Scheme in case of death of a primary bread winner in the BPL Family in the age group of 18 to 59 years, the affected family is provided with one time Lump sum Financial assistance of Rs. 20000/- from the central government.",
+            "Eligibility Criteria": [
+                {
+                    "bpl_card_holder": true,
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": 59.0
+                    }
+                }
+            ],
             "Benefits Provided": "One time Lump sum Financial assistance of Rs. 20000/-",
             "Application Process": "Under this scheme application is submitted to Collector Office/Tahsildar/Talathi",
             "Category of Scheme": "Financial Assistance",
@@ -2551,7 +2627,10 @@
                 }
             ]
         },
-        "id": "12757f00-0a4e-40a0-a394-a7dd1f1a76f6"
+        "id": "12757f00-0a4e-40a0-a394-a7dd1f1a76f6",
+        "tags": [
+            "general scheme"
+        ]
     },
     {
         "title": "Indira Gandhi National Old Age Pension Scheme",
@@ -2561,7 +2640,15 @@
             "Funding by": "Centrally Sponsored",
             "Scheme Objective": "Pension Scheme",
             "Beneficiary Category": "All Category",
-            "Eligibility Criteria": "Old aged person of 65 years & above belonging to BPL Family are eligible under this Scheme. Beneficiaries under this scheme receive Rs.200/- from Govt. of India & Rs.400/- from Govt. of Maharashtra under Shravanbal Seva Rajya Nivrutti vetan Yojana. In all the beneficiary receives Rs. 600/- per month.",
+            "Eligibility Criteria": [
+                {
+                    "bpl_card_holder": true,
+                    "age_limit": {
+                        "lower_age": 65.0,
+                        "upper_age": null
+                    }
+                }
+            ],
             "Benefits Provided": "Under this scheme, Rs. 600 per month is given to each beneficiary.",
             "Application Process": "Under this scheme application is submitted to Collector Office/Tahsildar/Talathi",
             "Category of Scheme": "Pension Scheme",
@@ -2589,7 +2676,10 @@
                 }
             ]
         },
-        "id": "1c812d33-2f2b-483e-898a-bdedd8da63e5"
+        "id": "1c812d33-2f2b-483e-898a-bdedd8da63e5",
+        "tags": [
+            "general scheme"
+        ]
     },
     {
         "title": "Aam Aadmi Bima Yojana",
@@ -2599,7 +2689,18 @@
             "Funding by": "Centrally Sponsored",
             "Scheme Objective": "Insurance & scholarship.",
             "Beneficiary Category": "All Category",
-            "Eligibility Criteria": "This scheme is meant for land less labourers in rural areas in the age Group of 18-59 years. The premium charged under the scheme will be Rs. 200/- per annum per member out of which 50% is subsidized by the State Govt. and Central Govt.",
+            "Eligibility Criteria": [
+                {
+                    "community": [
+                        "rural"
+                    ],
+                    "bpl_card_holder": true,
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": 59.0
+                    }
+                }
+            ],
             "Benefits Provided": "In case of natural death of a member, prior to terminal date, the sum assured Rs. 30,000/- under assurance, then in force, shall become payable to the nominee.        The following benefits are provided to the member in case of accident.        On death due to accident Rs. 75, 000/-            Permanent total disability, due to accident Rs. 75, 000/-        Loss of 2 eyes and 2 limbs in an accident Rs. 75, 000/-Loss of 1 eyes and 1 limbs in an accident Rs. 37, 500/-        Under this scheme, Scholarship of Rs. 100/- per month each is given to the children studying in 9th to 12th standards. The maximum 2 children are given scholarship.",
             "Application Process": "Under this scheme application is submitted to Collector Office/Tahsildar/Talathi",
             "Category of Scheme": "Insurance & scholarship.",
@@ -2627,7 +2728,11 @@
                 }
             ]
         },
-        "id": "29da3b35-7409-470e-8458-b9e7b9fb3ebf"
+        "id": "29da3b35-7409-470e-8458-b9e7b9fb3ebf",
+        "tags": [
+            "general",
+            "scholarship"
+        ]
     },
     {
         "title": "Special Education and Vocational Training through Government institutions",
@@ -2636,13 +2741,42 @@
             "Funding by": "State Government",
             "Scheme objective": "Special education is provided to disabled children between age group of 6 to 18 years in the government special schools. Vocational training is also provided to special children’s above the age of 18 years.",
             "Beneficiaries Category": "Visually Impaired, Hearing Impaired ,Orthopedically Handicapped",
-            "Eligibility Criteria": "1.Application in given format submitted to concern        Govt. Institution        2.Applicant should have minimum 40% disability.        3.Applicant should be Domicile in Maharashtra.",
+            "Eligibility Criteria": [
+                {
+                    "income_limit": null,
+                    "community": [
+                        "Maharashtra"
+                    ],
+                    "bpl_card_holder": null,
+                    "education": null,
+                    "age_limit": {
+                        "lower_age": 0.0,
+                        "upper_age": 18.0
+                    }
+                },
+                {
+                    "income_limit": null,
+                    "community": [
+                        "Maharashtra"
+                    ],
+                    "bpl_card_holder": null,
+                    "education": null,
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": null
+                    }
+                }
+            ],
             "Benefits Provided": "Child with a disability has access to free education in an appropriate environment till he / she attains the age of eighteen years & above 18 years vocational training given to special children. The free facilities of food, shelter, clothing and education are provided in these institutions",
             "Application process": "Application in prescribed form with necessary documents submitted to Concern Govt. Institute",
             "Category of Scheme": "Education and Vocational Training",
             "Contact Office": "Government Institution and District social welfare office Zillah Parishad/Assistant Commissioner Social welfare office Mumbai urban / Mumbai suburban"
         },
-        "id": "33a48614-b67d-4066-8660-b0b64461433f"
+        "id": "33a48614-b67d-4066-8660-b0b64461433f",
+        "tags": [
+            "general",
+            "scholarship"
+        ]
     },
     {
         "title": "Non-Governmental Aided organization (Special Schools and Vocational Training Centre) for Disable.",
@@ -2651,13 +2785,30 @@
             "Funding by": "State Government",
             "Scheme objective": "Special education is provided to disabled children below the age of 18 years in the special school which are run by Non-Governmental Aided organization. Vocational training is also given to special children above 18 yrs",
             "Beneficiaries Category": "Visually Impaired, Hearing Impaired ,Orthopedically Handicapped, Mentally Retarded",
-            "Eligibility Criteria": "1.Application in given format submitted to concern special        School / Vocational Training centre.        2. Applicant should have minimum 40% disability.        3.Applicant should be Domicile in Maharashtra",
+            "Eligibility Criteria": [
+                {
+                    "income_limit": null,
+                    "community": [
+                        "Maharashtra"
+                    ],
+                    "bpl_card_holder": null,
+                    "education": null,
+                    "age_limit": {
+                        "lower_age": 18.0,
+                        "upper_age": null
+                    }
+                }
+            ],
             "Benefits Provided": "Child with a disability has access to free education in an appropriate environment till he / she attains the age of eighteen years. Above 18 years vocational training is given to disabled children. Also free facilities of food, shelter and education are provided in residential institutions.",
             "Application process": "Application in given format attached with necessary documents submitted to Concern voluntary organization",
             "Category of Scheme": "Education and Vocational Training",
             "Contact Office": "voluntary organization and District social welfare office Zillah Parishad/Assistant Commissioner Social welfare office Mumbai urban / Mumbai suburban"
         },
-        "id": "98dc0399-17dc-489c-99c2-a1c9790dddb9"
+        "id": "98dc0399-17dc-489c-99c2-a1c9790dddb9",
+        "tags": [
+            "general",
+            "scholarship"
+        ]
     },
     {
         "title": "The Scheme of State Award for Disabled",
@@ -2666,7 +2817,18 @@
             "Funding by": "State Government",
             "Scheme objective": "Every year the State Government has felicitated awards to the Best Disabled Employees / Employers / Placement Agency who have done outstanding work in various fields.",
             "Beneficiaries Category": "visually handicapped, Low vision, hearing impaired, and orthopedically handicapped and Mentally Retarded",
-            "Eligibility Criteria": "1.Apply in prescribed form submitted to concern District Social Welfare Office, Zillah Parishad $ Assistant Commissioner Social Welfare Department ,Mumbai Urban & Mumbai Suburban        2..Applicant should have minimum 40% disability.        3.Applicant should be Domicile in Maharashtra.",
+            "Eligibility Criteria": [
+                {
+                    "income_limit": null,
+                    "community": null,
+                    "bpl_card_holder": null,
+                    "education": null,
+                    "age_limit": {
+                        "lower_age": null,
+                        "upper_age": null
+                    }
+                }
+            ],
             "Application process": "Application in prescribed form attached with necessary documents/bio data/outstanding work in the disability sector.",
             "Category of Scheme": "Social incentive",
             "Contact Office": "District Social Welfare Office, Zillah Parishad $ Assistant Commissioner Social Welfare Office ,Mumbai Urban & Mumbai Suburban",
@@ -2688,7 +2850,12 @@
                 }
             ]
         },
-        "id": "7d1a12c1-e5d0-4170-ba3f-1cf8ca68feb3"
+        "id": "7d1a12c1-e5d0-4170-ba3f-1cf8ca68feb3",
+        "tags": [
+            "general",
+            "scholarship",
+            "job"
+        ]
     },
     {
         "title": "Financial Assistance for Aids and Appliances for Disabled Persons",
@@ -2697,13 +2864,45 @@
             "Funding by": "State Government",
             "Scheme objective": "Assistance for purchase of aids and appliances to disabled persons as per their age group and disability.",
             "Beneficiaries Category": "visually handicapped, Low vision, hearing impaired, and orthopedically handicapped",
-            "Eligibility Criteria": "1.Application in given format submitted to concern District Social Welfare Office, Zillah Parishad & Assistant Commissioner Social Welfare Office ,Mumbai Urban & Mumbai Suburban        2.The monthly income of the applicant should be        a. less than Rs 1500/- 100% of the cost of the aids and appliances        b. Rs 1500/- to 2000 /- 50% of the cost of the aids and appliances.        3..Applicant should have minimum 40% disability.        4.Applicant should be Domicile in Maharashtra",
+            "Eligibility Criteria": [
+                {
+                    "income_limit": {
+                        "urban": null,
+                        "rural": null,
+                        "general": 1500.0
+                    },
+                    "community": null,
+                    "bpl_card_holder": null,
+                    "education": null,
+                    "age_limit": {
+                        "lower_age": null,
+                        "upper_age": null
+                    }
+                },
+                {
+                    "income_limit": {
+                        "rural": null,
+                        "urban": null,
+                        "general": 2000.0
+                    },
+                    "community": null,
+                    "bpl_card_holder": null,
+                    "education": null,
+                    "age_limit": {
+                        "lower_age": null,
+                        "upper_age": null
+                    }
+                }
+            ],
             "Benefits Provided": "Hearing aids for hearing handicapped, Crutches, Tricycle, Calipers, Wheel chair for orthopedically handicapped. Tape recorders and blank cassettes for visually handicapped for education purpose up to cost Rs 3000/-",
             "Application process": "Application in prescribed form attach with necessary documents.",
             "Category of Scheme": "Special Assistance",
             "Contact Office": "District Social Welfare Office ,Zillah Parishad & Assistant Commissioner Social Welfare Office ,Mumbai Urban & Mumbai Suburban"
         },
-        "id": "1a28bd8f-3097-4a0b-aa8a-999577b0cdb4"
+        "id": "1a28bd8f-3097-4a0b-aa8a-999577b0cdb4",
+        "tags": [
+            "general scheme"
+        ]
     },
     {
         "title": "Financial Assistance to Self-Employment for Trained Disabled Persons",

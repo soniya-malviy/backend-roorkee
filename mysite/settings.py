@@ -144,7 +144,7 @@ DATABASES = {
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': os.getenv('DATABASE_PORT'),
         'OPTIONS': {
-            'sslmode': 'require',  # Use 'require' or 'prefer'
+            'sslmode': 'prefer',  # Use 'require' or 'prefer'
         },
     }
 }
@@ -205,13 +205,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Celery configuration
 REDIS_HOST = os.getenv('REDIS_HOST')
 REDIS_PORT = os.getenv('REDIS_PORT')
-CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL # TODO: Change this to a different redis instance
+# CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+# CELERY_RESULT_BACKEND = CELERY_BROKER_URL # TODO: Change this to a different redis instance
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
+
+# settings.py
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
 
 # Cacheops settings
 CACHES = {
@@ -242,12 +247,14 @@ CACHEOPS = {
 }
 SITE_URL = 'http://localhost:8000'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'myapp.backends.CustomEmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True  
-EMAIL_HOST_USER = 'testemail7081@gmail.com'
-EMAIL_HOST_PASSWORD = 'Spiritual@punctual'
-DEFAULT_FROM_EMAIL = 'testemail7081@gmail.com'
-SITE_URL = "http://localhost:8000" 
+EMAIL_HOST_USER = 'haryan458@gmail.com'
+EMAIL_HOST_PASSWORD = 'esjrxdlwnxjrxdru'
+EMAIL_FROM = 'haryan458@gmail.com'
+SITE_URL = "http://localhost:8000"
+FRONTEND_URL = "http://localhost:3000"
 
+AUTH_USER_MODEL = 'myapp.CustomUser'

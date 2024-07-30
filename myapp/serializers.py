@@ -73,10 +73,16 @@ class SponsorSerializer(TimeStampedModelSerializer):
         model = Sponsor
         fields = '__all__'
 
+class BenefitSerializer(TimeStampedModelSerializer):
+    class Meta:
+        model = Benefit
+        fields = '__all__'
+
 class SchemeSerializer(TimeStampedModelSerializer):
     department = DepartmentSerializer()
     beneficiaries = BeneficiarySerializer(many=True)
     sponsors = SponsorSerializer(many=True)
+    benefits = BenefitSerializer(many=True, read_only=True)
     class Meta:
         model = Scheme
         fields = '__all__'
@@ -87,10 +93,7 @@ class SchemeBeneficiarySerializer(TimeStampedModelSerializer):
         model = SchemeBeneficiary
         fields = '__all__'
 
-class BenefitSerializer(TimeStampedModelSerializer):
-    class Meta:
-        model = Benefit
-        fields = '__all__'
+
 
 class CriteriaSerializer(TimeStampedModelSerializer):
     class Meta:
@@ -250,13 +253,13 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     
 
     
-
-class PersonalDetailSerializer(serializers.ModelSerializer):
+class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = [
             'name', 'gender', 'age', 'category', 'minority', 'state_of_residence', 
-            'disability', 'bpl_card_holder'
+            'disability', 'bpl_card_holder', 'occupation', 'income', 'education', 
+            'government_employee'
         ]
 
     def update(self, instance, validated_data):
@@ -264,17 +267,7 @@ class PersonalDetailSerializer(serializers.ModelSerializer):
             setattr(instance, attr, value)
         instance.save()
         return instance
-    
-class ProfessionalDetailSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CustomUser
-        fields = ['occupation', 'income', 'education', 'government_employee']
 
-    def update(self, instance, validated_data):
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
     
 
 

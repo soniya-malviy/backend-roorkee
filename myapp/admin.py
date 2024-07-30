@@ -5,7 +5,7 @@ from import_export.admin import ImportExportModelAdmin
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor,
-    SchemeSponsor, CustomUser, Banner
+    SchemeSponsor, CustomUser, Banner, Tag
 )
 
 admin.site.site_header = "Community Empowerment Portal Admin Panel"
@@ -13,6 +13,7 @@ admin.site.site_title = "Admin Portal"
 admin.site.index_title = "Welcome to your Admin Panel"
 
 admin.site.register(State)
+admin.site.register(Tag)
 admin.site.register(Department)
 admin.site.register(Organisation)
 admin.site.register(Beneficiary)

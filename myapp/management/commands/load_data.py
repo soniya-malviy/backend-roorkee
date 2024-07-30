@@ -499,14 +499,17 @@
 
 
 import json
+import os
 from django.core.management.base import BaseCommand
-from myapp.models import State, Department, Organisation, Scheme, Beneficiary, Document, Sponsor, SchemeBeneficiary, SchemeDocument, SchemeSponsor, Criteria, Procedure
+from myapp.models import State, Department, Organisation, Scheme, Beneficiary, Document, Sponsor, SchemeBeneficiary, SchemeDocument, SchemeSponsor, Criteria, Procedure,Tag, Benefit
 
 class Command(BaseCommand):
     help = 'Load data from JSON file into database'
 
     def handle(self, *args, **kwargs):
-        with open('myapp/management/scrapedData/combined_schemes_data.json', 'r') as file:
+        base_dir = os.path.abspath(os.path.dirname(__file__))
+        file_path = os.path.join(base_dir, '../scrapedData/combined_schemes_data.json')
+        with open(file_path, 'r') as file:
             data = json.load(file)
             self.load_data(data)
         
@@ -575,13 +578,16 @@ class Command(BaseCommand):
 
                         for document_data in scheme_data['documents']:
                             document_name = self.truncate(document_data['document_name'])
-                            document, created = Document.objects.get_or_create(
-                                document_name=document_name
+                            requirements = self.truncate(document_data.get('requirements'))
+                            document, created = Document.objects.update_or_create(
+                                document_name=document_name,
+                                defaults={'requirements': requirements}
                             )
                             SchemeDocument.objects.get_or_create(
                                 scheme=scheme,
                                 document=document
                             )
+
 
                         for sponsor_data in scheme_data['sponsors']:
                             sponsor_type = self.truncate(sponsor_data['sponsor_type'])
@@ -593,22 +599,36 @@ class Command(BaseCommand):
                                 sponsor=sponsor
                             )
 
+                        # for criteria_data in scheme_data['criteria']:
+                        #     description = self.truncate(criteria_data['description'])
+                        #     criteria, created = Criteria.objects.filter(
+                        #         scheme=scheme,
+                        #         description=description
+                        #     ).first(), False
+
+                        #     if criteria:
+                        #         criteria.value = self.truncate(criteria_data.get('value'))
+                        #         criteria.save()
+                        #     else:
+                        #         criteria = Criteria.objects.create(
+                        #             scheme=scheme,
+                        #             description=description,
+                        #             value=self.truncate(criteria_data.get('value'))
+                        #         )
+                            
                         for criteria_data in scheme_data['criteria']:
                             description = self.truncate(criteria_data['description'])
-                            criteria, created = Criteria.objects.filter(
-                                scheme=scheme,
-                                description=description
-                            ).first(), False
+                            value = self.truncate(criteria_data.get('value'))
+                            criteria_data_json = criteria_data.get('criteria_data', {})
 
-                            if criteria:
-                                criteria.value = self.truncate(criteria_data.get('value'))
-                                criteria.save()
-                            else:
-                                criteria = Criteria.objects.create(
-                                    scheme=scheme,
-                                    description=description,
-                                    value=self.truncate(criteria_data.get('value'))
-                                )
+                            criteria, created = Criteria.objects.update_or_create(
+                                scheme=scheme,
+                                description=description,
+                                defaults={
+                                    'value': value,
+                                    'criteria_data': criteria_data_json
+                                }
+                            )
 
                         for procedure_data in scheme_data['procedures']:
                             step_description = self.truncate(procedure_data['step_description'])
@@ -616,3 +636,21 @@ class Command(BaseCommand):
                                 scheme=scheme,
                                 step_description=step_description
                             )
+                        if 'benefits' in scheme_data:
+                            for benefit_data in scheme_data['benefits']:
+                                benefit_type = self.truncate(benefit_data.get('benefit_type'))
+                                if benefit_type:
+                                    benefit, created = Benefit.objects.get_or_create(
+                                        benefit_type=benefit_type
+                                    )
+                                    scheme.benefits.add(benefit)
+
+
+                        for tag_name in scheme_data['tags']:
+                            tag_name = self.truncate(tag_name)
+                            tag, created = Tag.objects.get_or_create(name=tag_name)
+                            scheme.tags.add(tag)
+
+
+                    
+                        
