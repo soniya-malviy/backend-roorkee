@@ -32,7 +32,7 @@ from .serializers import (
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, PersonalDetailSerializer, ProfessionalDetailSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
+    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
     PasswordResetConfirmSerializer, PasswordResetRequestSerializer
 )
 
@@ -118,12 +118,17 @@ class SchemeBeneficiaryListAPIView(generics.ListAPIView):
     ordering_fields = ['created_at']
     ordering = ['-created_at']
 
-class BenefitListAPIView(generics.ListAPIView):
-    queryset = Benefit.objects.all()
-    serializer_class = BenefitSerializer 
-    filter_backends = [OrderingFilter]
-    ordering_fields = ['created_at', 'benefit_type']
-    ordering = ['-created_at']
+class SchemeBenefitListAPIView(generics.ListAPIView):
+    serializer_class = BenefitSerializer
+
+    def get_queryset(self):
+        scheme_id = self.kwargs.get('scheme_id')
+        try:
+            # Ensure the Scheme exists before filtering Benefits
+            Scheme.objects.get(id=scheme_id)
+            return Benefit.objects.filter(schemes__id=scheme_id)
+        except Scheme.DoesNotExist:
+            return Benefit.objects.none()
 
 class CriteriaListAPIView(generics.ListAPIView):
     queryset = Criteria.objects.all()
@@ -321,8 +326,8 @@ class UserRegistrationAPIView(generics.CreateAPIView):
             }, status=HTTP_201_CREATED)
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
-class PersonalDetailView(generics.GenericAPIView):
-    serializer_class = PersonalDetailSerializer
+class UserProfileView(generics.GenericAPIView):
+    serializer_class = UserProfileSerializer
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
@@ -339,28 +344,6 @@ class PersonalDetailView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
-    
-
-class ProfessionalDetailView(generics.GenericAPIView):
-    serializer_class = ProfessionalDetailSerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_object(self):
-        return self.request.user
-
-    def get(self, request, *args, **kwargs):
-        user = self.get_object()
-        serializer = self.get_serializer(user)
-        return Response(serializer.data)
-
-    def put(self, request, *args, **kwargs):
-        user = self.get_object()
-        serializer = self.get_serializer(user, data=request.data, partial=True)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
-
-
 
 
 class LoginView(APIView):
@@ -566,6 +549,44 @@ class PasswordResetConfirmView(APIView):
             return Response({"message": "Password has been reset successfully."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+class PreferenceView(APIView):
+    def get(self, request):
+        try:
+            user_state = request.user.state_of_residence
+            state_instance = State.objects.get(state_name=user_state)
+            schemes = Scheme.objects.filter(department__state=state_instance)
+            serializer = SchemeSerializer(schemes, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
 
+        except State.DoesNotExist:
+            return Response({"error": "State not found."}, status=status.HTTP_404_NOT_FOUND)
 
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+class ScholarshipSchemesListView(generics.ListAPIView):
+    serializer_class = SchemeSerializer
+
+    def get_queryset(self):
+        return Scheme.objects.filter(tags__name='scholarship')
+
+class JobSchemesListView(generics.ListAPIView):
+    serializer_class = SchemeSerializer
+
+    def get_queryset(self):
+        return Scheme.objects.filter(tags__name='job')
+    
+class SchemeBenefitsView(generics.GenericAPIView):
+    serializer_class = BenefitSerializer
+
+    def get(self, request, scheme_id):
+        # Get the scheme object or return 404 if not found
+        try:
+            scheme = Scheme.objects.get(id=scheme_id)
+        except Scheme.DoesNotExist:
+            return Response({'error': 'Scheme not found'}, status=404)
+
+        # Get all benefits related to the scheme
+        benefits = scheme.benefits.all()
+        serializer = self.get_serializer(benefits, many=True)
+        return Response(serializer.data)

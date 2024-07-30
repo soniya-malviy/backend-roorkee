@@ -116,18 +116,34 @@ class Organisation(TimeStampedModel):
     
     def __str__(self):
         return self.organisation_name
+    
+class Tag(TimeStampedModel):
+    name = models.CharField(max_length=255, unique=True)
+
+    class Meta:
+        verbose_name = "Tag"
+        verbose_name_plural = "Tags"
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+
+     
 
 class Scheme(TimeStampedModel):
     title = models.TextField(null = True, blank = True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='schemes', null=True, blank=True)
     introduced_on = models.DateTimeField(null = True, blank = True)
     valid_upto = models.DateTimeField(null = True, blank = True)
-    funding_pattern = models.CharField(max_length=255, default="State")
+    funding_pattern = models.CharField(max_length=255, null = True, blank = True)
     description = models.TextField(null = True, blank = True)
     scheme_link = models.URLField(null = True, blank = True)
     beneficiaries = models.ManyToManyField('Beneficiary', related_name='schemes', through='SchemeBeneficiary')
     documents = models.ManyToManyField('Document', related_name='schemes', through='SchemeDocument')
     sponsors = models.ManyToManyField('Sponsor', related_name='schemes', through='SchemeSponsor')
+    tags = models.ManyToManyField('Tag', related_name='schemes', blank=True)  # Add this line
+    benefits = models.ManyToManyField('Benefit', related_name='schemes', blank=True)
 
     class Meta:
         verbose_name = "Scheme"
@@ -136,6 +152,18 @@ class Scheme(TimeStampedModel):
 
     def __str__(self):
         return self.title
+    
+class Benefit(TimeStampedModel):
+    benefit_type = models.CharField(max_length=255, default="Grant")
+    description = models.TextField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Benefit"
+        verbose_name_plural = "Benefits"
+        ordering = ['benefit_type']
+
+    def __str__(self):
+        return self.benefit_type
 
 class Beneficiary(TimeStampedModel):
     beneficiary_type = models.CharField(max_length=255, default="SC/ST")
@@ -157,18 +185,6 @@ class SchemeBeneficiary(TimeStampedModel):
         verbose_name_plural = "Scheme Beneficiaries Mapping"
         ordering = ['scheme', 'beneficiary']
 
-    
-
-class Benefit(TimeStampedModel):
-    benefit_type = models.CharField(max_length=255, default="Grant")
-
-    class Meta:
-        verbose_name = "Benefit"
-        verbose_name_plural = "Benefits"
-        ordering = ['benefit_type']
-
-    def __str__(self):
-        return self.benefit_type
 
 
 # DOUBT BELOW
@@ -200,6 +216,7 @@ class Procedure(TimeStampedModel):
 
 class Document(TimeStampedModel):
     document_name = models.CharField(max_length=255, default="Aadhar Card")
+    requirements = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name = "Document"

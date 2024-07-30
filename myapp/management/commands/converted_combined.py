@@ -20,7 +20,6 @@ def determine_tags(title, description):
         tags.append("scholarship")
     if "job" in text or "employment" in text:
         tags.append("job")
-    # Add more conditions for different types of schemes
     return tags
 
 def transform_and_add_meghalaya_data(original_data, combined_data):
@@ -385,6 +384,76 @@ def transform_and_add_maharashtra_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 
 
+def transform_and_add_uttar_pradesh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Uttar Pradesh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = "उत्तर प्रदेश सरकार"
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = item.get("title")
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": convert_date_format(item.get("valid_upto")),
+            "funding_pattern": item.get("funding_pattern"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary} for beneficiary in item.get("beneficiaries", [])
+            ],
+            "sponsors": [
+                {"sponsor_type": sponsor} for sponsor in item.get("sponsors", [])
+            ],
+            "criteria": [
+                {"description": criterion, "value": ""} for criterion in item.get("criteria", [])
+            ],
+            "procedures": [
+                {"step_description": step} for step in item.get("procedures", [])
+            ],
+            "tags": determine_tags(title, description),
+            "benefits": [
+                {"benefit_type": benefit} for benefit in item.get("benefits", [])
+            ],
+            "criteria": [
+                {"description": eligibility} for eligibility in item.get("eligibility", [])
+            ],
+            "application_process": [
+                {"step_description": step} for step in item.get("application_process", [])
+            ],
+            "documents": [
+                {"document_name": requirement} for requirement in item.get("requirements", [])
+            ]
+        }
+        organisation["schemes"].append(scheme)
+
+
 # Read data from JSON files
 with open(base_file_path+"/meghalaya.json", "r") as file:
     meghalaya_data = json.load(file)
@@ -404,6 +473,9 @@ with open(base_file_path+"/gujratschemes.json", "r") as file:
 with open(base_file_path+"/maharastra.json", "r") as file:
     maharashtra_data = json.load(file)
 
+with open(base_file_path+"/up/up_youth_welfare.json", "r") as file:
+    up_data = json.load(file)
+
 # Initialize the combined data structure
 combined_data = {
     "states": []
@@ -416,11 +488,12 @@ transform_and_add_puducherry_data(puducherry_data, combined_data)
 transform_and_add_jammukashmir_data(jammukashmir_data, combined_data)
 transform_and_add_gujarat_data(gujarat_data, combined_data)
 transform_and_add_maharashtra_data(maharashtra_data, combined_data)
+transform_and_add_uttar_pradesh_data(up_data,combined_data)
 
 
 
 # Save the combined data to a new JSON file
 with open(base_file_path+"/combined_schemes_data.json", "w") as file:
-    json.dump(combined_data, file, indent=4)
+    json.dump(combined_data, file,ensure_ascii=False, indent=4)
 
 print("Combined data has been successfully saved to combined_schemes_data.json")
