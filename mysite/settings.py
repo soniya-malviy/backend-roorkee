@@ -17,6 +17,7 @@ load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -196,11 +197,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(ROOT_DIR, '/static_files')
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(ROOT_DIR, '/media_files')
 
 # Celery configuration
 REDIS_HOST = os.getenv('REDIS_HOST')
@@ -214,15 +215,15 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
 # settings.py
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 
 
 # Cacheops settings
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',  # Make sure this is correct
+        'LOCATION':  f'redis://{REDIS_HOST}:{REDIS_PORT}/1',  # Make sure this is correct
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -230,8 +231,8 @@ CACHES = {
 }
 
 CACHEOPS_REDIS = {
-    'host': '127.0.0.1',  # Redis host
-    'port': 6379,         # Redis port
+    'host':  REDIS_HOST,  # Redis host
+    'port': REDIS_PORT,         # Redis port
     'db': 1,              # Redis db
     'password': None,     # Redis password if any
     'socket_timeout': 3,
