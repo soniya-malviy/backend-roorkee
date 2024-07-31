@@ -661,34 +661,45 @@ class SchemesByStateAndDepartmentAPIView(APIView):
             return Response({'error': 'Department not found in the given state'}, status=status.HTTP_404_NOT_FOUND)
 
 class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
+    pagination_class = SchemePagination
+
     def post(self, request, *args, **kwargs):
-        state_ids = request.data.get('state_ids', [])
-        department_ids = request.data.get('department_ids', [])
-        beneficiary_keywords = request.data.get('beneficiary_keywords', [])
-        sponsor_ids = request.data.get('sponsor_ids', [])
-        funding_pattern = request.data.get('funding_pattern', None)
-        
+        # Combine data from both request.data (POST body) and query_params (GET query)
+        state_ids = request.data.get('state_ids', request.query_params.getlist('state_ids', []))
+        department_ids = request.data.get('department_ids', request.query_params.getlist('department_ids', []))
+        beneficiary_keywords = request.data.get('beneficiary_keywords', request.query_params.getlist('beneficiary_keywords', []))
+        sponsor_ids = request.data.get('sponsor_ids', request.query_params.getlist('sponsor_ids', []))
+        funding_pattern = request.data.get('funding_pattern', request.query_params.get('funding_pattern', None))
+        search_query = request.data.get('search_query', request.query_params.get('q', None))
+
         scheme_filters = Q()
-        
+
         if state_ids:
             scheme_filters &= Q(department__state_id__in=state_ids)
         if department_ids:
             scheme_filters &= Q(department_id__in=department_ids)
         if beneficiary_keywords:
-            # Build a filter for beneficiary types
             beneficiary_filters = Q()
             for keyword in beneficiary_keywords:
-                # Ensure to match only the beneficiary_type field
                 beneficiary_filters |= Q(beneficiaries__beneficiary_type__icontains=keyword)
-            # Apply this filter to the schemes
             scheme_filters &= beneficiary_filters
         if sponsor_ids:
             scheme_filters &= Q(sponsors__id__in=sponsor_ids)
         if funding_pattern:
             scheme_filters &= Q(funding_pattern__icontains=funding_pattern)
-        
+        if search_query:
+            search_filters = Q(title__icontains=search_query) | Q(description__icontains=search_query)
+            scheme_filters &= search_filters
+
         schemes = Scheme.objects.filter(scheme_filters).distinct()
-        
-        # Serialize the queryset (assume you have a SchemeSerializer)
+
+        # Paginate the queryset
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(schemes, request)
+        if page is not None:
+            serializer = SchemeSerializer(page, many=True)
+            return paginator.get_paginated_response(serializer.data)
+
+        # Fallback if pagination is not applied
         serializer = SchemeSerializer(schemes, many=True)
         return Response(serializer.data)
