@@ -54,7 +54,8 @@ from .views import (
     SchemeBenefitListAPIView,
     SchemesByStatesAPIView,
     SchemesByStateAndDepartmentAPIView,
-    SchemesByMultipleStatesAndDepartmentsAPIView
+    SchemesByMultipleStatesAndDepartmentsAPIView,
+    CurrentUserDetailView
 
 )
 
@@ -115,4 +116,6 @@ urlpatterns = [
     path('schemes/by-states/', SchemesByStatesAPIView.as_view(), name='schemes-by-states'),
     path('schemes/by-state-and-department/', SchemesByStateAndDepartmentAPIView.as_view(), name='schemes-by-state-and-department'),
     path('schemes/multi-state-departments/', SchemesByMultipleStatesAndDepartmentsAPIView.as_view(), name='schemes-by-multiple-state-and-department'),
+    path('user/me/', CurrentUserDetailView.as_view(), name='current-user-detail'),
+
 ]

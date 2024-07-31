@@ -4,6 +4,7 @@ from rest_framework.filters import OrderingFilter
 from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
@@ -360,7 +361,17 @@ class LoginView(APIView):
             return Response(tokens, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class CurrentUserDetailView(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        # Access the currently authenticated user
+        user = request.user
+
+        # Serialize the user data
+        serializer = UserRegistrationSerializer(user)
+        return Response(serializer.data)
+    
 class LogoutView(APIView):
     permission_classes = (IsAuthenticated,)
 
@@ -507,7 +518,7 @@ class CategoryChoicesView(APIView):
 def verify_email(request, uidb64, token):
     try:
         user_id = force_str(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=user_id)
+        user = CustomUser.objects.get(pk=user_id)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
 
