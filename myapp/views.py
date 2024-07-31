@@ -590,3 +590,74 @@ class SchemeBenefitsView(generics.GenericAPIView):
         benefits = scheme.benefits.all()
         serializer = self.get_serializer(benefits, many=True)
         return Response(serializer.data)
+
+
+class SchemesByStatesAPIView(APIView):
+    def post(self, request, *args, **kwargs):
+        state_ids = request.data.get('state_ids', [])
+
+        if not isinstance(state_ids, list):
+            return Response({'error': 'state_ids must be a list'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Fetch schemes associated with the provided state IDs
+        schemes = Scheme.objects.filter(department__state__id__in=state_ids)
+
+        # Serialize the schemes data
+        serializer = SchemeSerializer(schemes, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class SchemesByStateAndDepartmentAPIView(APIView):
+    def post(self, request, *args, **kwargs):
+        state_id = request.data.get('state_id')
+        department_name = request.data.get('department')
+
+        if not state_id or not department_name:
+            return Response({'error': 'state_id and department are required fields'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Fetch the state and department objects
+            state = State.objects.get(id=state_id)
+            department = Department.objects.get(state=state, department_name__iexact=department_name)
+
+            # Fetch schemes associated with the department
+            schemes = Scheme.objects.filter(department=department)
+
+            # Serialize the schemes data
+            serializer = SchemeSerializer(schemes, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except State.DoesNotExist:
+            return Response({'error': 'State not found'}, status=status.HTTP_404_NOT_FOUND)
+        except Department.DoesNotExist:
+            return Response({'error': 'Department not found in the given state'}, status=status.HTTP_404_NOT_FOUND)
+
+class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
+    def post(self, request, *args, **kwargs):
+        state_ids = request.data.get('state_ids', [])
+        department_queries = request.data.get('departments', [])
+
+        if not state_ids or not department_queries:
+            return Response({'error': 'state_ids and departments are required fields'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Get states based on the provided IDs
+            states = State.objects.filter(id__in=state_ids)
+            if not states.exists():
+                return Response({'error': 'No valid states found'}, status=status.HTTP_404_NOT_FOUND)
+
+            # Initialize an empty queryset for schemes
+            schemes = Scheme.objects.none()
+
+            # Loop through each state and department query to filter schemes
+            for state in states:
+                for dept_query in department_queries:
+                    departments = Department.objects.filter(state=state, department_name__icontains=dept_query)
+                    if departments.exists():
+                        state_schemes = Scheme.objects.filter(department__in=departments)
+                        schemes = schemes | state_schemes  # Union of querysets
+
+            # Serialize the schemes data
+            serializer = SchemeSerializer(schemes.distinct(), many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
