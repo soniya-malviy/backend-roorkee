@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'cacheops',
     'import_export',
 ]
-
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Ensure this is before CommonMiddleware
     'django.middleware.security.SecurityMiddleware',
@@ -87,10 +86,6 @@ CORS_ALLOW_METHODS = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-
-
-
-
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -133,6 +128,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -179,7 +176,6 @@ REST_FRAMEWORK = {
     )
 
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -229,7 +225,6 @@ CACHES = {
         }
     }
 }
-
 CACHEOPS_REDIS = {
     'host':  REDIS_HOST,  # Redis host
     'port': REDIS_PORT,         # Redis port
@@ -243,18 +238,18 @@ CACHEOPS_DEFAULTS = {
 }
 
 CACHEOPS = {
-    'myapp.*': {'ops': 'all', 'timeout': 60*60}, 
-    
+    'myapp.*': {'ops': 'all', 'timeout': 60*60},
+
 }
 SITE_URL = 'http://localhost:8000'
 
-EMAIL_BACKEND = 'myapp.backends.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_PORT = 587 
-EMAIL_USE_TLS = True  
-EMAIL_HOST_USER = 'haryan458@gmail.com'
-EMAIL_HOST_PASSWORD = 'esjrxdlwnxjrxdru'
-EMAIL_FROM = 'haryan458@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_FROM = os.getenv('EMAIL_FROM')
 SITE_URL = "http://localhost:8000"
 FRONTEND_URL = "http://localhost:3000"
 
