@@ -570,14 +570,40 @@ class ScholarshipSchemesListView(generics.ListAPIView):
     pagination_class = SchemePagination
 
     def get_queryset(self):
-        return Scheme.objects.filter(tags__name='scholarship')
+        queryset = Scheme.objects.filter(tags__name='scholarship')
+        state_ids_param = self.request.query_params.get('state_ids', '[]')
+
+        try:
+            # Remove square brackets and split by commas
+            state_ids = state_ids_param.strip('[]').split(',')
+            state_ids = [int(id.strip()) for id in state_ids if id.strip().isdigit()]
+        except ValueError:
+            state_ids = []
+
+        if state_ids:
+            queryset = queryset.filter(department__state_id__in=state_ids)
+
+        return queryset
 
 class JobSchemesListView(generics.ListAPIView):
     serializer_class = SchemeSerializer
     pagination_class = SchemePagination
 
     def get_queryset(self):
-        return Scheme.objects.filter(tags__name='job')
+        queryset = Scheme.objects.filter(tags__name='job')
+        state_ids_param = self.request.query_params.get('state_ids', '[]')
+
+        try:
+            # Remove square brackets and split by commas
+            state_ids = state_ids_param.strip('[]').split(',')
+            state_ids = [int(id.strip()) for id in state_ids if id.strip().isdigit()]
+        except ValueError:
+            state_ids = []
+
+        if state_ids:
+            queryset = queryset.filter(department__state_id__in=state_ids)
+
+        return queryset
     
 class SchemeBenefitsView(generics.GenericAPIView):
     serializer_class = BenefitSerializer

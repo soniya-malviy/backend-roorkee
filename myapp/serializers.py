@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import (State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria
                      , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter )
 from django.utils import timezone
+from django.core.mail import EmailMessage
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
@@ -220,8 +221,15 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             'user': user,
             'verification_link': verification_link,
         })
-        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
 
+        email = EmailMessage(
+            subject=subject,
+            body=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[user.email]
+        )
+        email.content_subtype = 'html'  # Set the email content type to HTML
+        email.send(fail_silently=False)
 
     def create(self, validated_data):
         email = validated_data['email']
@@ -332,7 +340,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
         return attrs
 
     def save(self):
-        uid = force_text(urlsafe_base64_decode(self.validated_data['uid']))
+        uid = force_bytes(urlsafe_base64_decode(self.validated_data['uid']))
         user = CustomUser.objects.get(pk=uid)
         user.set_password(self.validated_data['new_password'])
         user.save()
