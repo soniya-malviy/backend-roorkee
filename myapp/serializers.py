@@ -3,6 +3,8 @@ from .models import (State, Department, Organisation, Scheme, Beneficiary, Schem
                      , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter )
 from django.utils import timezone
 from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
+from django.utils.html import strip_tags
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError as DjangoValidationError
@@ -211,24 +213,50 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(str(e))
         return value
     
+    # def send_verification_email(self, user):
+    #     token = default_token_generator.make_token(user)
+    #     uid = urlsafe_base64_encode(force_bytes(user.pk))
+    #     verification_link = f"{settings.SITE_URL}/verify-email/{uid}/{token}/"
+
+    #     subject = 'Verify your email'
+    #     message = render_to_string('email_verification.html', {
+    #         'user': user,
+    #         'verification_link': verification_link,
+    #     })
+
+    #     email = EmailMessage(
+    #         subject=subject,
+    #         body=message,
+    #         from_email=settings.DEFAULT_FROM_EMAIL,
+    #         to=[user.email]
+    #     )
+    #     email.content_subtype = 'html'  # Set the email content type to HTML
+    #     email.send(fail_silently=False)
+
     def send_verification_email(self, user):
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         verification_link = f"{settings.SITE_URL}/verify-email/{uid}/{token}/"
 
         subject = 'Verify your email'
-        message = render_to_string('email_verification.html', {
+        
+        # Render the HTML content from your template
+        html_content = render_to_string('email_verification.html', {
             'user': user,
             'verification_link': verification_link,
         })
+        
+        # Optionally, create a plain text alternative
+        text_content = strip_tags(html_content)  # Import strip_tags if not already done
 
-        email = EmailMessage(
+        # Create the email with both plain text and HTML content
+        email = EmailMultiAlternatives(
             subject=subject,
-            body=message,
+            body=text_content,  # This can be the plain text version
             from_email=settings.DEFAULT_FROM_EMAIL,
             to=[user.email]
         )
-        email.content_subtype = 'html'  # Set the email content type to HTML
+        email.attach_alternative(html_content, "text/html")  # Attach the HTML version
         email.send(fail_silently=False)
 
     def create(self, validated_data):
