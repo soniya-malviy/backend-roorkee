@@ -114,5 +114,5 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/benefits/', SchemeBenefitListAPIView.as_view(), name='scheme-benefits'),
     path('schemes/by-states/', SchemesByStatesAPIView.as_view(), name='schemes-by-states'),
     path('schemes/by-state-and-department/', SchemesByStateAndDepartmentAPIView.as_view(), name='schemes-by-state-and-department'),
-    path('schemes/multi-state-departments', SchemesByMultipleStatesAndDepartmentsAPIView.as_view(), name='schemes-by-multiple-state-and-department'),
+    path('schemes/multi-state-departments/', SchemesByMultipleStatesAndDepartmentsAPIView.as_view(), name='schemes-by-multiple-state-and-department'),
 ]
