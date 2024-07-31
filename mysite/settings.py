@@ -248,7 +248,7 @@ CACHEOPS = {
 }
 SITE_URL = 'http://localhost:8000'
 
-EMAIL_BACKEND = 'myapp.backends.CustomEmailBackend'
+EMAIL_BACKEND = 'myapp.backends.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True  

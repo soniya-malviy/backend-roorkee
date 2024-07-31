@@ -8,7 +8,7 @@ from django.core.exceptions import ValidationError as DjangoValidationError
 import pytz
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes
 
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -220,7 +220,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             'user': user,
             'verification_link': verification_link,
         })
-        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
+        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=True)
+
 
     def create(self, validated_data):
         email = validated_data['email']
@@ -320,7 +321,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         try:
-            uid = force_text(urlsafe_base64_decode(attrs['uid']))
+            uid = force_bytes(urlsafe_base64_decode(attrs['uid']))
             user = CustomUser.objects.get(pk=uid)
         except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
             raise serializers.ValidationError("Invalid UID.")
