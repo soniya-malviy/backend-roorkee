@@ -566,6 +566,7 @@ class PreferenceView(APIView):
 
 class ScholarshipSchemesListView(generics.ListAPIView):
     serializer_class = SchemeSerializer
+    pagination_class = SchemePagination
 
     def get_queryset(self):
         return Scheme.objects.filter(tags__name='scholarship')

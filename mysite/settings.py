@@ -17,7 +17,6 @@ load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROOT_DIR = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -144,9 +143,9 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': os.getenv('DATABASE_PORT'),
-        # 'OPTIONS': {
-        #     'sslmode': 'require',  # Use 'require' or 'prefer'
-        # },
+        'OPTIONS': {
+            'sslmode': 'prefer',  # Use 'require' or 'prefer'
+        },
     }
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -197,11 +196,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(ROOT_DIR, '/static_files')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, '/media_files')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Celery configuration
 REDIS_HOST = os.getenv('REDIS_HOST')
@@ -215,15 +214,15 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
 
 # settings.py
-CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 
 # Cacheops settings
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION':  f'redis://{REDIS_HOST}:{REDIS_PORT}/1',  # Make sure this is correct
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # Make sure this is correct
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -231,8 +230,8 @@ CACHES = {
 }
 
 CACHEOPS_REDIS = {
-    'host':  REDIS_HOST,  # Redis host
-    'port': REDIS_PORT,         # Redis port
+    'host': '127.0.0.1',  # Redis host
+    'port': 6379,         # Redis port
     'db': 1,              # Redis db
     'password': None,     # Redis password if any
     'socket_timeout': 3,
@@ -248,7 +247,7 @@ CACHEOPS = {
 }
 SITE_URL = 'http://localhost:8000'
 
-EMAIL_BACKEND = 'myapp.backends.CustomEmailBackend'
+EMAIL_BACKEND = 'myapp.backends.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True  
