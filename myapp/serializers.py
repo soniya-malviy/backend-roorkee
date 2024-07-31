@@ -220,7 +220,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             'user': user,
             'verification_link': verification_link,
         })
-        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=True)
+        send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email], fail_silently=False)
 
 
     def create(self, validated_data):

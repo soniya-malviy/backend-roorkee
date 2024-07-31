@@ -21,6 +21,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.db.models import Q
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
@@ -535,7 +536,7 @@ class PasswordResetRequestView(APIView):
                 message,
                 settings.DEFAULT_FROM_EMAIL,
                 [user.email],
-                fail_silently=False,
+                fail_silently=True,
             )
             return Response({"message": "Password reset link has been sent to your email."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -573,6 +574,7 @@ class ScholarshipSchemesListView(generics.ListAPIView):
 
 class JobSchemesListView(generics.ListAPIView):
     serializer_class = SchemeSerializer
+    pagination_class = SchemePagination
 
     def get_queryset(self):
         return Scheme.objects.filter(tags__name='job')
@@ -635,30 +637,32 @@ class SchemesByStateAndDepartmentAPIView(APIView):
 class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
     def post(self, request, *args, **kwargs):
         state_ids = request.data.get('state_ids', [])
-        department_queries = request.data.get('departments', [])
-
-        if not state_ids or not department_queries:
-            return Response({'error': 'state_ids and departments are required fields'}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            # Get states based on the provided IDs
-            states = State.objects.filter(id__in=state_ids)
-            if not states.exists():
-                return Response({'error': 'No valid states found'}, status=status.HTTP_404_NOT_FOUND)
-
-            # Initialize an empty queryset for schemes
-            schemes = Scheme.objects.none()
-
-            # Loop through each state and department query to filter schemes
-            for state in states:
-                for dept_query in department_queries:
-                    departments = Department.objects.filter(state=state, department_name__icontains=dept_query)
-                    if departments.exists():
-                        state_schemes = Scheme.objects.filter(department__in=departments)
-                        schemes = schemes | state_schemes  # Union of querysets
-
-            # Serialize the schemes data
-            serializer = SchemeSerializer(schemes.distinct(), many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        department_ids = request.data.get('department_ids', [])
+        beneficiary_keywords = request.data.get('beneficiary_keywords', [])
+        sponsor_ids = request.data.get('sponsor_ids', [])
+        funding_pattern = request.data.get('funding_pattern', None)
+        
+        scheme_filters = Q()
+        
+        if state_ids:
+            scheme_filters &= Q(department__state_id__in=state_ids)
+        if department_ids:
+            scheme_filters &= Q(department_id__in=department_ids)
+        if beneficiary_keywords:
+            # Build a filter for beneficiary types
+            beneficiary_filters = Q()
+            for keyword in beneficiary_keywords:
+                # Ensure to match only the beneficiary_type field
+                beneficiary_filters |= Q(beneficiaries__beneficiary_type__icontains=keyword)
+            # Apply this filter to the schemes
+            scheme_filters &= beneficiary_filters
+        if sponsor_ids:
+            scheme_filters &= Q(sponsors__id__in=sponsor_ids)
+        if funding_pattern:
+            scheme_filters &= Q(funding_pattern__icontains=funding_pattern)
+        
+        schemes = Scheme.objects.filter(scheme_filters).distinct()
+        
+        # Serialize the queryset (assume you have a SchemeSerializer)
+        serializer = SchemeSerializer(schemes, many=True)
+        return Response(serializer.data)
