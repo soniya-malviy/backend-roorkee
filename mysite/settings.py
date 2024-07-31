@@ -144,9 +144,9 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': os.getenv('DATABASE_PORT'),
-        'OPTIONS': {
-            'sslmode': 'prefer',  # Use 'require' or 'prefer'
-        },
+        # 'OPTIONS': {
+        #     'sslmode': 'require',  # Use 'require' or 'prefer'
+        # },
     }
 }
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

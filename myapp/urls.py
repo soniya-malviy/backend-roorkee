@@ -51,7 +51,10 @@ from .views import (
     PreferenceView,
     ScholarshipSchemesListView,
     JobSchemesListView,
-    SchemeBenefitListAPIView
+    SchemeBenefitListAPIView,
+    SchemesByStatesAPIView,
+    SchemesByStateAndDepartmentAPIView,
+    SchemesByMultipleStatesAndDepartmentsAPIView
 
 )
 
@@ -109,4 +112,7 @@ urlpatterns = [
     path('password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('password-reset-confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('schemes/<int:scheme_id>/benefits/', SchemeBenefitListAPIView.as_view(), name='scheme-benefits'),
+    path('schemes/by-states/', SchemesByStatesAPIView.as_view(), name='schemes-by-states'),
+    path('schemes/by-state-and-department/', SchemesByStateAndDepartmentAPIView.as_view(), name='schemes-by-state-and-department'),
+    path('schemes/multi-state-departments', SchemesByMultipleStatesAndDepartmentsAPIView.as_view(), name='schemes-by-multiple-state-and-department'),
 ]
