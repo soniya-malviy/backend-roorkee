@@ -429,24 +429,54 @@ class UserSavedSchemesView(APIView):
     def get(self, request, *args, **kwargs):
         user = request.user
         saved_schemes = user.saved_schemes.all()
-        search_query = request.query_params.get('q', None)
 
+        # Retrieve filters from query parameters
+        state_ids = request.query_params.getlist('state_ids', [])
+        department_ids = request.query_params.getlist('department_ids', [])
+        beneficiary_keywords = request.query_params.getlist('beneficiary_keywords', [])
+        sponsor_ids = request.query_params.getlist('sponsor_ids', [])
+        funding_pattern = request.query_params.get('funding_pattern', None)
+        search_query = request.query_params.get('q', None)
+        tag = request.query_params.get('tag', None)
+
+        scheme_filters = Q()
+
+        # Apply filters
+        if tag:
+            scheme_filters &= Q(tags__name=tag)
+        if state_ids:
+            scheme_filters &= Q(department__state_id__in=state_ids)
+        if department_ids:
+            scheme_filters &= Q(department_id__in=department_ids)
+        if beneficiary_keywords:
+            beneficiary_filters = Q()
+            for keyword in beneficiary_keywords:
+                beneficiary_filters |= Q(beneficiaries__beneficiary_type__icontains=keyword)
+            scheme_filters &= beneficiary_filters
+        if sponsor_ids:
+            scheme_filters &= Q(sponsors__id__in=sponsor_ids)
+        if funding_pattern:
+            scheme_filters &= Q(funding_pattern__icontains=funding_pattern)
         if search_query:
-            saved_schemes = saved_schemes.filter(
-                Q(title__icontains=search_query) | Q(description__icontains=search_query)
-            )
+            search_filters = Q()
+            search_filters |= Q(title__icontains=search_query) | Q(description__icontains=search_query)
+            scheme_filters &= search_filters
+
+        # Apply filters to saved schemes
+        filtered_saved_schemes = saved_schemes.filter(scheme_filters).distinct()
 
         # Apply pagination
         paginator = self.pagination_class()
-        page = paginator.paginate_queryset(saved_schemes, request)
+        page = paginator.paginate_queryset(filtered_saved_schemes, request)
         
         if page is not None:
             serializer = SchemeSerializer(page, many=True)
             return paginator.get_paginated_response(serializer.data)
 
         # Fallback if pagination is not applied
-        serializer = SchemeSerializer(saved_schemes, many=True)
+        serializer = SchemeSerializer(filtered_saved_schemes, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
     
 
 class UnsaveSchemeView(APIView):
