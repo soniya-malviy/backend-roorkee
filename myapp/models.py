@@ -104,6 +104,74 @@ class Department(TimeStampedModel):
 
     def __str__(self):
         return self.department_name
+    
+    def get_group(self):
+        department_name = self.department_name.lower()
+        
+        
+        EDUCATION_KEYWORDS = [
+            'education',
+            'scholarship',
+            'training',
+            'student',
+            'care and protection',
+            'vocational'
+        ]
+        AGRICULTURE_KEYWORDS = [
+            'agriculture',
+            'farmer',
+            'soil',
+            'water',
+            'conservation'
+        ]
+        HEALTH_KEYWORDS = [
+            'health',
+            'medical',
+            'family welfare'
+        ]
+        SOCIAL_WELFARE_KEYWORDS = [
+            'social welfare',
+            'women and child development',
+            'child development',
+            'welfare of sc/st/obc & minority',
+            'social'
+        ]
+        INFRASTRUCTURE_KEYWORDS = [
+            'public works',
+            'urban development',
+            'housing',
+            'rural development'
+        ]
+        EMPLOYMENT_KEYWORDS = [
+            'employment',
+            'labour',
+            'skill development',
+            'entrepreneurship'
+        ]
+        OTHER_KEYWORDS = [
+            'tourism',
+            'culture',
+            'information technology',
+            'science and technology'
+        ]
+
+        # Check for each group and return the appropriate classification
+        if any(keyword in department_name for keyword in HEALTH_KEYWORDS):
+            return "Health"
+        elif any(keyword in department_name for keyword in SOCIAL_WELFARE_KEYWORDS):
+            return "Social Welfare"
+        elif any(keyword in department_name for keyword in INFRASTRUCTURE_KEYWORDS):
+            return "Infrastructure"
+        elif any(keyword in department_name for keyword in EMPLOYMENT_KEYWORDS):
+            return "Employment"
+        elif any(keyword in department_name for keyword in AGRICULTURE_KEYWORDS):
+            return "Agriculture"
+        elif any(keyword in department_name for keyword in EDUCATION_KEYWORDS):
+            return "Education"
+        elif any(keyword in department_name for keyword in OTHER_KEYWORDS):
+            return "Other"
+        else:
+            return "Unclassified"
 
 class Organisation(TimeStampedModel):
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='organisations', null=True, blank=True)

@@ -55,9 +55,13 @@ class StateSerializer(TimeStampedModelSerializer):
 
 class DepartmentSerializer(TimeStampedModelSerializer):
     state = serializers.PrimaryKeyRelatedField(queryset=State.objects.all(), source='state.state_name')
+    group = serializers.SerializerMethodField()
     class Meta:
         model = Department
         fields = '__all__'
+
+    def get_group(self, obj):
+        return obj.get_group()
 
 class OrganisationSerializer(TimeStampedModelSerializer):
     class Meta:
