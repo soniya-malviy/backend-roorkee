@@ -12,9 +12,12 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import viewsets
+from django.utils.html import strip_tags
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import get_user_model
+from django.core.mail import EmailMultiAlternatives
 from django.http import HttpResponse
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -560,6 +563,10 @@ class CategoryChoicesView(APIView):
     def get(self, request):
         return Response(CustomUser._meta.get_field('category').choices, status=status.HTTP_200_OK)
 
+class EmploymentChoicesView(APIView):
+    def get(self, request):
+        return Response(CustomUser._meta.get_field('employment_status').choices, status=status.HTTP_200_OK)
+
 
 def verify_email(request, uidb64, token):
     try:
@@ -807,4 +814,38 @@ class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
         # Fallback if pagination is not applied
         serializer = SchemeSerializer(schemes, many=True)
         return Response(serializer.data)
+    
+class ResendVerificationEmailView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        user = request.user
+        if user.is_email_verified:  # Check if the user's email is already verified
+            return JsonResponse({"detail": "This email is already verified."}, status=400)
+        
+        # Send the verification email
+        self.send_verification_email(user)
+        return JsonResponse({"detail": "Verification email has been sent."}, status=200)
+    
+    def send_verification_email(self, user):
+        token = default_token_generator.make_token(user)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        verification_link = f"{settings.SITE_URL}/verify-email/{uid}/{token}/"
+
+        subject = 'Verify your email'
+        
+        html_content = render_to_string('email_verification.html', {
+            'user': user,
+            'verification_link': verification_link,
+        })
+        text_content = strip_tags(html_content)
+
+        email = EmailMultiAlternatives(
+            subject=subject,
+            body=text_content,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[user.email]
+        )
+        email.attach_alternative(html_content, "text/html")
+        email.send(fail_silently=False)
 

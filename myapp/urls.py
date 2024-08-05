@@ -55,7 +55,9 @@ from .views import (
     SchemesByStatesAPIView,
     SchemesByStateAndDepartmentAPIView,
     SchemesByMultipleStatesAndDepartmentsAPIView,
-    CurrentUserDetailView
+    CurrentUserDetailView,
+    ResendVerificationEmailView,
+    EmploymentChoicesView
 
 )
 
@@ -110,6 +112,7 @@ urlpatterns = [
     path('choices/state/', StateChoicesView.as_view(), name='state-choices'),
     path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
     path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
+    path('choices/employment/', EmploymentChoicesView.as_view(), name='category-choices'),
     path('password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('password-reset-confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('schemes/<int:scheme_id>/benefits/', SchemeBenefitListAPIView.as_view(), name='scheme-benefits'),
@@ -117,5 +120,6 @@ urlpatterns = [
     path('schemes/by-state-and-department/', SchemesByStateAndDepartmentAPIView.as_view(), name='schemes-by-state-and-department'),
     path('schemes/multi-state-departments/', SchemesByMultipleStatesAndDepartmentsAPIView.as_view(), name='schemes-by-multiple-state-and-department'),
     path('user/me/', CurrentUserDetailView.as_view(), name='current-user-detail'),
+    path('resend-verification-email/', ResendVerificationEmailView.as_view(), name='resend-verification-email'),
 
 ]
