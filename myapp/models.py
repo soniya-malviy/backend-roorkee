@@ -536,7 +536,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     minority = models.BooleanField(default=False)
     state_of_residence = models.CharField(max_length=50, choices=STATE_CHOICES, blank=True, null=True)
     disability = models.BooleanField(default=False)
-    bpl_card_holder = models.CharField(default = "NO")
+    bpl_card_holder = models.CharField(max_length=255, default = "NO")
 
     is_email_verified = models.BooleanField(default=False)
     objects = CustomUserManager()
