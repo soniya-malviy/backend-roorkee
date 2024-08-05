@@ -530,7 +530,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     age = models.PositiveIntegerField(blank=True, null=True)
     occupation = models.CharField(max_length=100, blank=True, null=True)
     income = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    education = models.CharField(max_length=100, choices=[('None', 'None'), ('High School', 'High School'), ('Undergraduate', 'Undergraduate'), ('Postgraduate', 'Postgraduate'), ('Doctoral', 'Doctoral'),('Pre-primary'), ('Secondary'), ('Higher Secondary'), ('Diploma/Certification')], blank=True, null=True)
+    education = models.CharField(max_length=100, choices=[('None', 'None'), ('High School', 'High School'), ('Undergraduate', 'Undergraduate'), ('Postgraduate', 'Postgraduate'), ('Doctoral', 'Doctoral'),('Pre-primary', 'Pre-primary'), ('Secondary', 'Secondary'), ('Higher Secondary', 'Higher Secondary'), ('Diploma/Certification', 'Diploma/Certification')], blank=True, null=True)
     government_employee = models.BooleanField(default=False)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, blank=True, null=True)
     minority = models.BooleanField(default=False)
