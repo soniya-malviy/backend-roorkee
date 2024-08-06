@@ -770,6 +770,8 @@ class SchemesByStateAndDepartmentAPIView(APIView):
         
 class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
     pagination_class = SchemePagination
+    ordering_fields = ['title']
+    # ordering = ['-introduced_on']
 
     def post(self, request, *args, **kwargs):
         state_ids = request.data.get('state_ids', [])
@@ -778,7 +780,8 @@ class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
         sponsor_ids = request.data.get('sponsor_ids', [])
         funding_pattern = request.data.get('funding_pattern', None)
         search_query = request.data.get('search_query', None)
-        tag = request.data.get('tag', None)  # Add this line to receive the tag
+        tag = request.data.get('tag', None)
+        ordering = request.data.get('ordering', self.ordering_fields)  # Get ordering from request or use default
 
         scheme_filters = Q()
 
@@ -803,6 +806,10 @@ class SchemesByMultipleStatesAndDepartmentsAPIView(APIView):
             scheme_filters &= search_filters
 
         schemes = Scheme.objects.filter(scheme_filters).distinct()
+
+        # Apply ordering
+        if ordering:
+            schemes = schemes.order_by(*ordering)
 
         # Paginate the queryset
         paginator = self.pagination_class()
