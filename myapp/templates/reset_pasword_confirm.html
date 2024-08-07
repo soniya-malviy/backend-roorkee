@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Password</title>
+</head>
+<body>
+    <h2>Reset Password</h2>
+    <form method="post" action="{% url 'password_reset_confirm' uidb64=uid token=token %}">
+        {% csrf_token %}
+        <label for="new_password1">New password:</label><br>
+        <input type="password" id="new_password1" name="new_password1"><br>
+        <label for="new_password2">Confirm new password:</label><br>
+        <input type="password" id="new_password2" name="new_password2"><br><br>
+        <input type="submit" value="Reset password">
+    </form>
+</body>
+</html>
