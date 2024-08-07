@@ -1,8 +1,13 @@
 import json
 from datetime import datetime
+import re
 
 base_file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/myapp/management/scrapedData"
 
+
+def remove_leading_numbers(title):
+    # Use a regular expression to remove leading numbers followed by a dot and whitespace
+    return re.sub(r'^\d+\.\s*', '', title)
 # Helper function to convert date format
 def convert_date_format(date_str):
     if date_str:
@@ -54,7 +59,7 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = item.get("Title: ").strip()
+        title = remove_leading_numbers(item.get("Title: ").strip())
         description = item.get("Description: ").strip()
         scheme = {
             "title": title,
@@ -85,7 +90,7 @@ def transform_and_add_tamilnadu_data(original_data, combined_data):
     for item in original_data:
         state_name = "Tamil Nadu"
         created_at = "2024-06-25T12:00:00Z"
-        department_name = item.get("Concerned Department")
+        department_name = item.get("Concerned Department").strip()
         organisation_name = item.get("Organisation Name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -114,8 +119,8 @@ def transform_and_add_tamilnadu_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = item.get("Title / Name")
-        description = item.get("Description")
+        title = item.get("Title / Name").strip()
+        description = item.get("Description").strip()
         scheme = {
             "title": title,
             "introduced_on": convert_date_format(item.get("Introduced On")),
@@ -173,8 +178,8 @@ def transform_and_add_puducherry_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = item.get("title")
-        description = " ".join(item["details"].get("Objective", []))
+        title = remove_leading_numbers(item.get("title").strip())
+        description = " ".join(item["details"].get("Objective", [])).strip()
         scheme = {
             "title": title,
             "introduced_on": "2024-06-25T12:00:00Z",
@@ -214,7 +219,7 @@ def transform_and_add_jammukashmir_data(original_data, combined_data):
             }
             combined_data["states"].append(state)
 
-        department_name = program.get("title")
+        department_name = program.get("title").strip()
         department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
 
         if not department:
@@ -233,8 +238,8 @@ def transform_and_add_jammukashmir_data(original_data, combined_data):
 
         organisation = department["organisations"][0]
         for item in program.get("schemes", []):
-            title = item.get("name")
-            description = item["details"].get("Description of the Scheme", "")
+            title = remove_leading_numbers(item.get("name").strip())
+            description = item["details"].get("Description of the Scheme", "").strip()
             scheme = {
                 "title": title,
                 "introduced_on": "2024-06-25T12:00:00Z",
@@ -291,7 +296,7 @@ def transform_and_add_gujarat_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = item.get("title")
+        title = remove_leading_numbers(item.get("title").strip())
         description = item["details"].get("Scheme Name")
         scheme = {
             "title": title,
@@ -326,7 +331,7 @@ def transform_and_add_maharashtra_data(original_data, combined_data):
     created_at = "2024-06-25T12:00:00Z"
 
     for item in original_data:
-        title = item["details"].get("Name of the Scheme", "").strip()
+        title = remove_leading_numbers(item["details"].get("Name of the Scheme", "").strip())
         scheme_id = item.get("id", "")
 
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
@@ -416,7 +421,7 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = item.get("title")
+        title = remove_leading_numbers(item.get("title").strip())
         description = item.get("description")
         scheme = {
             "title": title,
