@@ -7,6 +7,7 @@ from .models import (
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor,
     SchemeSponsor, CustomUser, Banner, Tag
 )
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 admin.site.site_header = "Community Empowerment Portal Admin Panel"
 admin.site.site_title = "Admin Portal"
@@ -27,18 +28,20 @@ admin.site.register(Sponsor)
 admin.site.register(SchemeSponsor)
 
 class CustomUserAdmin(UserAdmin):
+    add_form = CustomUserCreationForm
+    form = CustomUserChangeForm
     model = CustomUser
     list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
     list_filter = ('is_staff', 'is_active')
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active')}),
+        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active')}
+            'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
         ),
     )
     readonly_fields = ('date_joined',)

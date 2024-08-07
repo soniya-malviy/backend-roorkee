@@ -587,21 +587,34 @@ class PasswordResetRequestView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = PasswordResetRequestSerializer(data=request.data)
         if serializer.is_valid():
-            user = CustomUser.objects.get(email=serializer.validated_data['email'])
+            try:
+                user = CustomUser.objects.get(email=serializer.validated_data['email'])
+            except CustomUser.DoesNotExist:
+                return Response({"error": "User with this email does not exist."}, status=status.HTTP_400_BAD_REQUEST)
+            
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token = default_token_generator.make_token(user)
             reset_link = f"{settings.FRONTEND_URL}/reset-password-confirm/{uid}/{token}/"
-            message = render_to_string('password_reset_email.html', {
+
+            # Render the HTML content from your template
+            html_content = render_to_string('password_reset_email.html', {
                 'user': user,
                 'reset_link': reset_link,
             })
-            send_mail(
-                'Password Reset Request',
-                message,
-                settings.DEFAULT_FROM_EMAIL,
-                [user.email],
-                fail_silently=True,
+            
+            # Optionally, create a plain text alternative
+            text_content = strip_tags(html_content)
+
+            # Create the email with both plain text and HTML content
+            email = EmailMultiAlternatives(
+                subject='Password Reset Request',
+                body=text_content,  # This can be the plain text version
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[user.email]
             )
+            email.attach_alternative(html_content, "text/html")  # Attach the HTML version
+            email.send(fail_silently=False)
+
             return Response({"message": "Password reset link has been sent to your email."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
