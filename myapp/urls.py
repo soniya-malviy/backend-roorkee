@@ -57,7 +57,8 @@ from .views import (
     SchemesByMultipleStatesAndDepartmentsAPIView,
     CurrentUserDetailView,
     ResendVerificationEmailView,
-    EmploymentChoicesView
+    EmploymentChoicesView,
+    UserSavedSchemesFilterView
 
 )
 
@@ -121,5 +122,6 @@ urlpatterns = [
     path('schemes/multi-state-departments/', SchemesByMultipleStatesAndDepartmentsAPIView.as_view(), name='schemes-by-multiple-state-and-department'),
     path('user/me/', CurrentUserDetailView.as_view(), name='current-user-detail'),
     path('resend-verification-email/', ResendVerificationEmailView.as_view(), name='resend-verification-email'),
+    path('saved-schemes/filter/', UserSavedSchemesFilterView.as_view(), name='user-saved-schemes-filter'),
 
 ]

@@ -26,6 +26,9 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.db.models import Q
+import logging
+
+logger = logging.getLogger(__name__)
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
@@ -868,4 +871,75 @@ class ResendVerificationEmailView(APIView):
         )
         email.attach_alternative(html_content, "text/html")
         email.send(fail_silently=False)
+
+
+class UserSavedSchemesFilterView(APIView):
+    permission_classes = [IsAuthenticated]
+    pagination_class = SchemePagination
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        saved_schemes = user.saved_schemes.all()
+
+        logger.debug(f"User: {user}, Saved Schemes: {saved_schemes}")
+
+        search_query = request.data.get('q', None)
+        state_ids = request.data.get('state_ids', [])
+        department_ids = request.data.get('department_ids', [])
+        sponsor_ids = request.data.get('sponsor_ids', [])
+        beneficiary_keywords = request.data.get('beneficiary_keywords', [])
+
+        logger.debug(f"Search Query: {search_query}, State IDs: {state_ids}, Department IDs: {department_ids}, Sponsor IDs: {sponsor_ids}, Beneficiary Keywords: {beneficiary_keywords}")
+
+        # Convert state_ids and department_ids to integers if they are provided
+        if state_ids:
+            state_ids = [int(id) for id in state_ids]
+        if department_ids:
+            department_ids = [int(id) for id in department_ids]
+
+        # Filter by search query
+        if search_query:
+            saved_schemes = saved_schemes.filter(
+                Q(title__icontains=search_query) | 
+                Q(description__icontains=search_query) |
+                Q(sponsors__sponsor_type__icontains=search_query)
+            )
+            logger.debug(f"Filtered by Search Query: {saved_schemes}")
+
+        # Filter by state IDs
+        if state_ids:
+            saved_schemes = saved_schemes.filter(department__state_id__in=state_ids)
+            logger.debug(f"Filtered by State IDs: {saved_schemes}")
+
+        # Filter by department IDs
+        if department_ids:
+            saved_schemes = saved_schemes.filter(department_id__in=department_ids)
+            logger.debug(f"Filtered by Department IDs: {saved_schemes}")
+        
+        # Filter by sponsor IDs
+        if sponsor_ids:
+            saved_schemes = saved_schemes.filter(sponsors__id__in=sponsor_ids)
+            logger.debug(f"Filtered by Sponsor IDs: {saved_schemes}")
+
+        # Filter by beneficiary keywords
+        if beneficiary_keywords:
+            beneficiary_filters = Q()
+            for keyword in beneficiary_keywords:
+                beneficiary_filters |= Q(beneficiaries__beneficiary_type__icontains=keyword)
+            saved_schemes = saved_schemes.filter(beneficiary_filters)
+            logger.debug(f"Filtered by Beneficiary Keywords: {saved_schemes}")
+
+        # Apply pagination
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(saved_schemes, request)
+        
+        if page is not None:
+            serializer = SchemeSerializer(page, many=True)
+            logger.debug(f"Paginated Data: {serializer.data}")
+            return paginator.get_paginated_response(serializer.data)
+
+        # Fallback if pagination is not applied
+        serializer = SchemeSerializer(saved_schemes, many=True)
+        logger.debug(f"Non-Paginated Data: {serializer.data}")
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
