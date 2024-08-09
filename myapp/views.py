@@ -581,9 +581,9 @@ def verify_email(request, uidb64, token):
     if user is not None and default_token_generator.check_token(user, token):
         user.is_email_verified = True
         user.save()
-        return HttpResponse('Email verified successfully')
+        return render(request, 'email_verified.html')
     else:
-        return HttpResponse('Verification link is invalid!')
+        return render(request, 'email_verification_failed.html')
     
 class PasswordResetRequestView(APIView):
     @method_decorator(csrf_exempt)
