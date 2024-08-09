@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+            
+        }
+        .error {
+            color: #F44336;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .redirect-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3431BB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .redirect-button:hover {
+            background-color: #4745c2;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <p class="error">Verification link is invalid!</p>
+    </div> -->
+    <div className="flex flex-col items-center justify-center h-screen">
+        <div className="flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" fill="none">
+                <path d="M69.3717 6.39031C72.358 2.99976 77.642 2.99976 80.6283 6.39031L91.6097 18.8587C93.2962 20.7734 95.8405 21.6995 98.3632 21.3167L114.79 18.8242C119.257 18.1463 123.305 21.5429 123.413 26.0597L123.811 42.6698C123.872 45.2206 125.226 47.5654 127.404 48.8937L141.59 57.5433C145.448 59.8954 146.365 65.0992 143.545 68.6288L133.173 81.6086C131.58 83.6019 131.11 86.2683 131.925 88.6862L137.232 104.431C138.675 108.712 136.033 113.288 131.604 114.179L115.315 117.455C112.813 117.958 110.739 119.699 109.81 122.075L103.755 137.547C102.108 141.754 97.1428 143.562 93.1771 141.397L78.5934 133.436C76.3538 132.214 73.6462 132.214 71.4066 133.436L56.8229 141.397C52.8572 143.562 47.8918 141.754 46.2453 137.547L40.1905 122.075C39.2606 119.699 37.1865 117.958 34.685 117.455L18.3964 114.179C13.967 113.288 11.3249 108.712 12.7681 104.431L18.0753 88.6862C18.8903 86.2683 18.4202 83.6019 16.8273 81.6086L6.45531 68.6288C3.63482 65.0992 4.55238 59.8954 8.40998 57.5433L22.5958 48.8937C24.7744 47.5654 26.1281 45.2206 26.1892 42.6698L26.587 26.0597C26.6952 21.5429 30.743 18.1463 35.21 18.8242L51.6368 21.3167C54.1595 21.6995 56.7038 20.7734 58.3902 18.8587L69.3717 6.39031Z" fill="#FF0000" />
+                <path d="M48 48 L102 102 M102 48 L48 102" stroke="black" stroke-width="8" />
+            </svg>
+            
+            
+        </div>
+
+        <div className="text-center mt-4">
+            <h1>Verification link is invalid!</h1>
+            <button class="redirect-button" onclick="window.location.href='http://65.0.103.91/homepage';">Go to Home Page</button>
+        </div>
+    </div>
+
+</body>
+</html>
