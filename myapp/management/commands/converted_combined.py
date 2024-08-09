@@ -370,7 +370,7 @@ def transform_and_add_maharashtra_data(original_data, combined_data):
             "valid_upto": None if item["details"].get("Valid Upto", "").strip() == "" else item["details"]["Valid Upto"].strip(),
             "funding_pattern": item["details"].get("Funding by", "").strip(),
             "description": description,
-            "scheme_link": "",  # This data is not provided in the example, adjust as needed
+            "scheme_link": item["details"].get("scheme_link"),  # This data is not provided in the example, adjust as needed
             "beneficiaries": [
                 {"beneficiary_type": item["details"].get("Beneficiary Category", "").strip()}
             ],

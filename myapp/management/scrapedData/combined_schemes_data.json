@@ -12566,7 +12566,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central Government Schemes  National Scheduled Castes Finance and Development Corporation, New Delhi (NSFDC)",
                                     "description": "The main object of the Corporation is to implement various schemes to uplift lifestyle of Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically weak and below poverty line and with an intention to develop them educationally, economically and socially so as to give them respectable place in Society. Also production of various types of Footwear  Leather Articles  supply to Government Departments  sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC - Charmakar."
@@ -12579,8 +12579,8 @@
                                             "description": [
                                                 {
                                                     "income_limit": {
-                                                        "urban": 120000.0,
-                                                        "rural": 98000.0
+                                                        "rural": 98000.0,
+                                                        "urban": 120000.0
                                                     },
                                                     "community": [
                                                         "Charmakar"
@@ -12608,7 +12608,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "OBC students should have access to national protection Prabodhini, military forces to be recruited them students, students in the discipline, confidence, courage, leadership, patriotism has been launched to cultivate these qualities, etc.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -12622,13 +12622,6 @@
                                                 {
                                                     "income_limit": {
                                                         "general": 200000.0
-                                                    },
-                                                    "community": [
-                                                        "B.C."
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 10.0,
-                                                        "upper_age": 20.0
                                                     }
                                                 }
                                             ],
@@ -12649,7 +12642,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "For encouraging the enrollment and presently of VJNT / SBC girl students studying in 5th to 7th standard, Government has introduced this scheme.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -12662,16 +12655,12 @@
                                             "description": [
                                                 {
                                                     "community": [
-                                                        "V.J.N.T",
-                                                        "S.B.C"
+                                                        "VJNT",
+                                                        "SBC"
                                                     ],
                                                     "education": {
                                                         "max_standard": "7th",
                                                         "min_standard": "5th"
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 10.0,
-                                                        "upper_age": 13.0
                                                     }
                                                 }
                                             ],
@@ -12694,7 +12683,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "This scheme is introduced to complete the education of V.J.N.T and S.B.C students who are the student of professional courses.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -12712,10 +12701,6 @@
                                                     ],
                                                     "education": {
                                                         "school_type": "Professional"
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 30.0
                                                     }
                                                 }
                                             ],
@@ -12736,7 +12721,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "For encouraging the enrollment and presently of VJNT / SBC girl students studying in 8th to 10th standard, Government has introduced this scheme from the academic year 2003-04.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -12749,16 +12734,12 @@
                                             "description": [
                                                 {
                                                     "community": [
-                                                        "VJNT",
-                                                        "SBC"
+                                                        "V.J.N.T.",
+                                                        "S.B.C."
                                                     ],
                                                     "education": {
                                                         "max_standard": "10th",
                                                         "min_standard": "8th"
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 13.0,
-                                                        "upper_age": 17.0
                                                     }
                                                 }
                                             ],
@@ -12781,7 +12762,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To provide loan to the Students studying in Profession and Technical courses in Government recognised Institutes.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -12823,7 +12804,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Under the scheme, all the students belonging to V.J. and N.T. are being reimbursed of the payment of (i) Tuition Fees, (ii) Admission Fees (iii) Term Fees (iv) Library Fees, (v) Laboratory Fees, (vi) Gymkhana Fees, and (vii) Examination Fees at Post Matriculation education in recognized educational institutions. Student with one failure and those not covered under Government of India Scholarship are also held eligible for such reimbursement.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Vimukta Jatis & Nomedic Tribes."
@@ -12833,7 +12814,13 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "He should belongs to VJNT category.Reimbursement will be sanctioned to the students,whose parents income is between 1.00 lakh to 4.50Lakhs.",
+                                            "description": [
+                                                {
+                                                    "income_limit": {
+                                                        "general": 100000.0
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -12853,7 +12840,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "In order to encourage the VJNT students to undergo Post-Matric Courses, the Government of Maharashtra has introduced a scheme known as the Government of Maharashtra Post-Matric Scholarship to V.J.N.T. students.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Vimukta Jatis & Nomedic Tribes."
@@ -12883,7 +12870,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -12893,7 +12880,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "(1) Application in given  format submitted to concern Govt.Institution        (2) Applicant should have minimum 40% disability.        (3) Applicant should be Domicile in Maharashtra.",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -12911,7 +12898,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Under the scheme, the students belonging to O.B.C. are being reimbursed of the payment of (i) Tuition Fees, (ii) Admission Fees (iii) Term Fees (iv) Library Fees, (v) Laboratory Fees, (vi) Gymkhana Fees, and (vii) Examination Fees at Post Matriculation education in recognized educational institutions. Student with one failure and those not covered under Government of India Scholarship are also held eligible for such reimbursement.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Classes."
@@ -12941,7 +12928,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "In order to encourage the O.B.C. students to undergo Post-Matric Courses, the Government of Maharashtra has introduced a scheme known as the Government of Maharashtra Post-Matric Scholarship to O.B.C. students.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Classes."
@@ -12955,6 +12942,10 @@
                                                 {
                                                     "income_limit": {
                                                         "general": 100000.0
+                                                    },
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
                                                     }
                                                 }
                                             ],
@@ -12977,7 +12968,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "The existing Centrally Sponsored Scheme of Book Banks for SC Students stand merged with the Centrally Sponsored Scheme of Post-Matric Scholarship for SC students.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13007,7 +12998,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "From this scheme the Technical training is given to Scheduled Caste students in ITI. for their job opportunities",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13037,7 +13028,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Through this scheme Government has decided to provide short term technical courses training to less  educated Scheduled Caste students through ITI. and other training institutes. Due to this training student will get a benefit of self-employment.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13067,7 +13058,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "The students of Medical, engineering, agriculture, etc. are given an allowance and subsistence to  scheduled caste students who are attached to the commercial college and hostel",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13095,7 +13086,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "In order to encourage the Backward Class Students to undergo Post-Matric Courses, the Government of India has introduced a scheme known as the Government of India Post-Matric Scholarship to Scheduled Castes students.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13125,7 +13116,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "The students of Scheduled Caste of Std 5th and 7th as well as 8th and 10th first two students are eligible for this scheme.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled caste"
@@ -13155,7 +13146,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13165,7 +13156,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Student should be        1. Studying after 10th std. to H.S.C., Degree, Professional, Technical, Medical, and Engineering etc.        2. Should not be failed in last standard.        3. should have minimum 40% disability        4. Should be Domicile in Maharashtra.        5. No income limit.",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -13185,7 +13176,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13195,7 +13186,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Disabled students should be        1.studying in 1st std. to 10th std        and should not be failed in last year        2. should have minimum 40% disability        3. Should be Domicile in Maharashtra.        4. No income limit.",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -13215,7 +13206,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "In order to encourage the Backward Class Students to undergo Post-Matric Courses, the Government of India has introduced a scheme known as the Government of India Post-Matric Scholarship to Scheduled Castes students.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13245,7 +13236,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "The scheme named as Savitribai Phule Scholarship for Scheduled Caste Girls is introduced.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13275,7 +13266,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "10th and 12th of the special examination of the Scheduled Castes Students are provided for backward pronounced success getting Boys and girls Rajarshi Chatrapati Shahu Maharaj Quality Award",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13303,7 +13294,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To develop and enhance in the merit as well as to encourage the Scheduled Caste students this new scheme is introduced by the government vide G.R. EBC 2003/C No. 115/BCW-2 dated 11th June 2003",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13333,7 +13324,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Due to weak economic and financial condition Scheduled Caste students cannot afford the higher education in prominent universities in the foreign countries.  To overcome this difficulty Government of Maharashtra has introduced this scheme as per G.R. No. EBC-2003/C No. 115/BC-2, dated 11th June 2003.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13363,7 +13354,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Scheduled Caste students must get the essential knowledge and skill, as well as they can face the competition, it is essential for Scheduled Caste students to provide free higher education in the prominent institutions in the India.  Taking into consideration the fact State Government has introduced the new scheme 100 Scheduled Caste students studying in the countrywide higher educational institutions.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Scheduled Caste"
@@ -13393,7 +13384,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "The Scheme is under Centrally Sponsored Scheme.  The children of those parents who are engaged in unclean occupation in sweeping, scavenging, Tanning and Flaying are given scholarship from Std. I to Std. X",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category"
@@ -13423,7 +13414,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "In order to encourage the S.B.C. students to undergo Post-Matric Courses, the Government of Maharashtra has introduced a scheme known as the Government of Maharashtra Post-Matric Scholarship & Free ship to S.B.C. students.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Special Backward Classes."
@@ -13453,7 +13444,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13463,7 +13454,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1. Beneficiaries who top in the S.S.C. and H.S.C. exam in their respective divisional board of education.",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -13481,7 +13472,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13491,7 +13482,14 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Student should be        1. Studying after 10th std. to H.S.C., Degree, Professional, Technical, Medical, and Engineering etc.        2. Should not be failed in last standard.        3. should have minimum 40% disability        4. Should be Domicile in Maharashtra.        5. No income limit.",
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -13511,7 +13509,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13521,7 +13519,14 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Disabled students should be        1.studying in 1st std. to 10th std        and should not be failed in last year        2. should have minimum 40% disability        3. Should be Domicile in Maharashtra.        4. No income limit.",
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -13553,7 +13558,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government Schemes",
                                     "description": "The main object of the Corporation is to implement various schemes to uplift lifestyle of Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically weak and below poverty line and with an intention to develop them educationally, economically and socially so as to give them respectable place in Society. Also production of various types of Footwear ,  Leather Articles ,  supply to Government Departments ,  sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC - Charmakar."
@@ -13595,7 +13600,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13623,7 +13628,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13651,7 +13656,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13679,7 +13684,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -13707,7 +13712,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State  Government Schemes",
                                     "description": "The main object of the  Corporation is to implement various schemes to uplift lifestyle of  Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically  weak and below poverty line and with an intention to develop them  educationally, economically and socially so as to give them  respectable place in Society. Also production of various types of  Footwear & Leather Articles & supply to Government  Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -13735,7 +13740,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "In order to improve the financial condition of the scheduled castes and Nav-Buddhists Self Help Group.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC"
@@ -13763,7 +13768,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "To promote the spinning mills of scheduled caste members",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC"
@@ -13791,7 +13796,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government.",
                                     "description": "Provide loan on nominal rate of interest to the economically weak people who belongs to Vimukta Jatis (Denotified Tribes), Nomadic Tribes and Special Backward Class for their financial, educational and social upliftment.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Vimukta Jatis (Denotified Tribes) / Nomadic Tribes / Special Backward Class."
@@ -13819,7 +13824,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "This scheme is meant for the social and economic upliftment of SC Persons who are involved in the Leather footwear work and preparing of leather goods and to protect them from heat, rain and wind.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC"
@@ -13847,7 +13852,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "In order to improve the financial condition of the scheduled castes and Nav-Buddhists Self Help Group.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC"
@@ -13875,7 +13880,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central  Government Schemes      National Scheduled  Castes Finance and Development Corporation, New Delhi (NSFDC)",
                                     "description": "The main object of the  Corporation is to implement various schemes to uplift lifestyle of  Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically  weak and below poverty line and with an intention to develop them  educationally, economically and socially so as to give them  respectable place in Society. Also production of various types of  Footwear & Leather Articles & supply to Government  Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -13903,7 +13908,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central  Government Schemes      National Scheduled  Castes Finance and Development Corporation, New Delhi (NSFDC)",
                                     "description": "The main object of the Corporation is to implement various schemes to uplift lifestyle of Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically  weak and below poverty line and with an intention to develop them educationally, economically and socially so as to give them respectable place in Society. Also production of various types of Footwear & Leather Articles & supply to Government Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -13931,7 +13936,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central  Government Schemes     National Scheduled Castes Finance and Development  Corporation, New Delhi (NSFDC)",
                                     "description": "The main object of the  Corporation is to implement various schemes to uplift lifestyle of  Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically  weak and below poverty line and with an intention to develop them  educationally, economically and socially so as to give them  respectable place in Society. Also production of various types of  Footwear & Leather Articles & supply to Government  Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -13941,7 +13946,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -13959,7 +13964,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central  Government Schemes  National Scheduled  Castes Finance and Development Corporation, New Delhi (NSFDC)",
                                     "description": "The main object of the  Corporation is to implement various schemes to uplift lifestyle of  Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically  weak and below poverty line and with an intention to develop them  educationally, economically and socially so as to give them  respectable place in Society. Also production of various types of  Footwear & Leather Articles & supply to Government  Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -13969,14 +13974,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -13994,7 +13992,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State  Government Schemes",
                                     "description": "The main object of the  Corporation is to implement various schemes to uplift lifestyle of  Charmakars (Dhor, Chambhar, Holar,Mochi etc.) who are economically  weak and below poverty line and with an intention to develop them  educationally, economically and socially so as to give them  respectable place in Society. Also production of various types of  Footwear & Leather Articles & supply to Government  Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -14004,14 +14002,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -14029,7 +14020,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State  Government Schemes",
                                     "description": "The  main object of the Corporation is to implement various schemes to  uplift lifestyle of Charmakars (Dhor, Chambhar, Holar,Mochi etc.)  who are economically weak and below poverty line and with an  intention to develop them educationally, economically and socially  so as to give them respectable place in Society. Also production  of various types of Footwear & Leather Articles & supply  to Government Departments & sale in Open Market.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC  - Charmakar."
@@ -14039,7 +14030,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -14057,7 +14048,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government.",
                                     "description": "Provide loan on nominal rate of interest to the economically weak people who belongs to Vimukta Jatis (Denotified Tribes), Nomadic Tribes and Special Backward Class for their financial, educational and social upliftment.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Vimukta Jatis (Denotified Tribes) / Nomadic Tribes / Special Backward Class."
@@ -14067,23 +14058,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "rural": 98000.0,
-                                                        "urban": 120000.0
-                                                    },
-                                                    "community": [
-                                                        "Vimukta Jatis",
-                                                        "Nomadic Tribes",
-                                                        "Special Backward Class"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 45.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be a resident of Maharashtra State.     Applicant must be from Vimukta Jatis, Nomadic Tribes and Special Backward Class.     Age of applicant should be between 18 to 45 years.     Unpaid debt of Government or any other financial corporation / foundation should not remain with an applicant.     For the State Corporation scheme applicant belonging from Urban and Rural sector should have their family income of Rs. 1,00,000/- and for Central Corporation schemes, applicant from Urban sector must Rs. 1,20,000/- and that of Rural sector must be Rs. 98,000/-.     Under this Corporation’s scheme, applicant will not get any sort of loan / subsidy from governmental activities for more than one time.     Terms mentioned by the Corporation are mandatory for the beneficiaries, time to time.     Only one member of the each family will get the lone for once.",
                                             "value": ""
                                         }
                                     ],
@@ -14101,7 +14076,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central State        Central corporation scheme NSFDC             Term Loan             Micro Finance Scheme(MCF)             Mahila Samruddhi Scheme (MSY)             Mahila Kisan Scheme (MKY)             Education Loan         State Govt.Scheme            Special Central Assistance (subsidy Scheme)                 50% Subsidy Scheme Training            Share Capital                Margin Money Loan Scheme                Direct Loan Scheme",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "In Scheduled  caste Matang community  there are 12 Sub caste  are as follows      Mang, Madari, Matang, Radhemang, Mini, Madig, Mang, Garudi, Mading, Dankhani, Mang, Madgi, Mang, Mahashi, Madiga"
@@ -14111,21 +14086,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 100000.0,
-                                                        "rural": 100000.0
-                                                    },
-                                                    "community": [
-                                                        "Matang"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "The applicant should be Domiciled resident of Maharashtra State.          The applicant should have completed 18 years of age.          The applicant should be a member of one of the 12 Sub-caste of the Matang Community.          The applicant must have Knowledge & experience of the Occupation / Business selected by him          The limit of annual income of the applicants family in urban & rural areas should be Rs.1,00,000/-          The applicant should not have availed of financial benefit from this corporation or from any other Govt. undertaking.          Terms & conditions laid down by the corporation from time to  time  shall be binding on the applicant.",
                                             "value": ""
                                         }
                                     ],
@@ -14143,7 +14104,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Central State        Central corporation scheme NSFDC             Term Loan             Micro Finance Scheme(MCF)             Mahila Samruddhi Scheme (MSY)             Mahila Kisan Scheme (MKY)             Education Loan         State Govt.Scheme            Special Central Assistance (subsidy Scheme)                 50% Subsidy Scheme Training            Share Capital                Margin Money Loan Scheme                Direct Loan Scheme",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "In Scheduled  caste Matang community  there are 12 Sub caste  are as follows      Mang, Madari, Matang, Radhemang, Mini, Madig, Mang, Garudi, Mading, Dankhani, Mang, Madgi, Mang, Mahashi, Madiga"
@@ -14153,21 +14114,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "rural": 100000.0,
-                                                        "urban": 100000.0
-                                                    },
-                                                    "community": [
-                                                        "Matang Community"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "The applicant should be Domiciled resident of Maharashtra State.          The applicant should have completed 18 years of age.          The applicant should be a member of one of the 12 Sub-caste of the Matang Community.          The applicant must have Knowledge & experience of the Occupation / Business selected by him          The limit of annual income of the applicants family in urban & rural areas should be Rs.1,00,000/-          The applicant should not have availed of financial benefit from this corporation or from any other Govt. undertaking.          Terms & conditions laid down by the corporation from time to  time  shall be binding on the applicant.",
                                             "value": ""
                                         }
                                     ],
@@ -14185,7 +14132,93 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Govt Scheme- Direct Loan Scheme        National Handicapped finance Corporation Delhi -  Term Loan & Other Scheme",
                                     "description": "To undertake, carry on, assist to carry on and promote economic development activities including self employment and other ventures for benefit and economic rehabilitation of handicapped persons regardless of their religion, sex, caste and age, in collaboration with State Government Ministries/Departments, extend financial assistance/loans/concessional finance to handicapped persons for implementing economically and financially viable schemes /projects, to grant loans to the handicapped for pursuing education at graduation and higher levels, to assist in up gradation/ improvement of technical and entrepreneurial skills, to set up training, quality control, process development and other infrastructural development activities aimed to achieve economic rehabilitation/upliftment of handicapped persons, to assist other organizations engaged in rehabilitation of the handicapped by providing financial assistance, to assist businesses run by handicapped persons in procuring raw materials and marketing finished goods and to work as an Apex Institution for the State  of Maharashtra for channelizing the funds received from State Finance Corporation or the Central Government",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "Physically Disabled"
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": "Any Disabled person who fulfills the following criteria is eligible to avail financial assistance        a) Any Indian Citizen with 40% or more disability.        b) Age above 18 years.        c) Relevant educational / technical / vocational qualification/ experience and background.",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [
+                                        "job"
+                                    ],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "Sanjay Gandhi Niradhar Anudan Yojana",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "State Sponsored",
+                                    "description": "Financial Assistance / Pension Scheme",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "All Category"
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": "This scheme is applicable to destitute persons of age below 65 years, orphan children, all types of handicapped, person suffering from critical illness like T. B. cancer, AIDS and leprosy, destitute windows including those of farmers who committed suicide, destitute divorced women and women in process of divorce, women freed from prostitution and outraged women.",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "Shravan bal seva  rajya Nivruttivetan Yojana",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "State Sponsored",
+                                    "description": "Pension Scheme",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "All Category"
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": "Category - (A) Under this Scheme every destitute person of age 65 years & above &whose annual family income is below Rs. 21000/- & whose name is not included in the BPL List get Rs.600/- per month from the state Govt.  Category - (B)Also under this scheme, every destitute person of age 65 years and above and belonging to BPL  family is eligible to get pension of Rs. 400/- per month from the state Govt. and the same beneficiary also receives pension of Rs.200/- per month from the Central Govt., under Indira Gandhi National Old Age pension Scheme.",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "Term Loan          Education Loan          Micro Credit Scheme          Scheme for NGOs          Direct Loan Scheme",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "State Govt Scheme- Direct Loan Scheme        National Handicapped finance Corporation Delhi -  Term Loan & Other Scheme",
+                                    "description": "To undertake, carry on, assist to carry on and promote economic development activities including self employment and other ventures for benefit and economic rehabilitation of handicapped persons regardless of their religion, sex, caste and age, in collaboration with State Government Ministries/Departments, extend financial assistance/loans/concessional finance to handicapped persons for implementing economically and financially viable schemes /projects, to grant loans to the handicapped for pursuing education at graduation and higher levels, to assist in up gradation/ improvement of technical and entrepreneurial skills, to set up training, quality control, process development and other infrastructural development activities aimed to achieve economic rehabilitation/upliftment of handicapped persons, to assist other organizations engaged in rehabilitation of the handicapped by providing financial assistance, to assist businesses run by handicapped persons in procuring raw materials and marketing finished goods and to work as an Apex Institution for the State  of Maharashtra for channelizing the funds received from State Finance Corporation or the Central Government",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Physically Disabled"
@@ -14221,15 +14254,15 @@
                                     "statistical_summary": []
                                 },
                                 {
-                                    "title": "Sanjay Gandhi Niradhar Anudan Yojana",
+                                    "title": "",
                                     "introduced_on": null,
                                     "valid_upto": null,
-                                    "funding_pattern": "State Sponsored",
-                                    "description": "Financial Assistance / Pension Scheme",
-                                    "scheme_link": "",
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-integration",
                                     "beneficiaries": [
                                         {
-                                            "beneficiary_type": "All Category"
+                                            "beneficiary_type": ""
                                         }
                                     ],
                                     "documents": [],
@@ -14238,58 +14271,8 @@
                                         {
                                             "description": [
                                                 {
-                                                    "community": [
-                                                        "destitute persons",
-                                                        "orphan children",
-                                                        "handicapped",
-                                                        "person suffering from critical illness",
-                                                        "destitute windows",
-                                                        "destitute divorced women",
-                                                        "women in process of divorce",
-                                                        "women freed from prostitution",
-                                                        "outraged women"
-                                                    ],
                                                     "age_limit": {
-                                                        "lower_age": 0.0,
-                                                        "upper_age": 65.0
-                                                    }
-                                                }
-                                            ],
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "Shravan bal seva  rajya Nivruttivetan Yojana",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "State Sponsored",
-                                    "description": "Pension Scheme",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": "All Category"
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "general": 21000.0
-                                                    },
-                                                    "bpl_card_holder": false,
-                                                    "age_limit": {
-                                                        "lower_age": 65.0,
+                                                        "lower_age": null,
                                                         "upper_age": null
                                                     }
                                                 }
@@ -14306,22 +14289,29 @@
                                     "statistical_summary": []
                                 },
                                 {
-                                    "title": "Term Loan          Education Loan          Micro Credit Scheme          Scheme for NGOs          Direct Loan Scheme",
+                                    "title": "",
                                     "introduced_on": null,
                                     "valid_upto": null,
-                                    "funding_pattern": "State Govt Scheme- Direct Loan Scheme        National Handicapped finance Corporation Delhi -  Term Loan & Other Scheme",
-                                    "description": "To undertake, carry on, assist to carry on and promote economic development activities including self employment and other ventures for benefit and economic rehabilitation of handicapped persons regardless of their religion, sex, caste and age, in collaboration with State Government Ministries/Departments, extend financial assistance/loans/concessional finance to handicapped persons for implementing economically and financially viable schemes /projects, to grant loans to the handicapped for pursuing education at graduation and higher levels, to assist in up gradation/ improvement of technical and entrepreneurial skills, to set up training, quality control, process development and other infrastructural development activities aimed to achieve economic rehabilitation/upliftment of handicapped persons, to assist other organizations engaged in rehabilitation of the handicapped by providing financial assistance, to assist businesses run by handicapped persons in procuring raw materials and marketing finished goods and to work as an Apex Institution for the State  of Maharashtra for channelizing the funds received from State Finance Corporation or the Central Government",
-                                    "scheme_link": "",
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-integration",
                                     "beneficiaries": [
                                         {
-                                            "beneficiary_type": "Physically Disabled"
+                                            "beneficiary_type": ""
                                         }
                                     ],
                                     "documents": [],
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Any Disabled person who fulfills the following criteria is eligible to avail financial assistance        a) Any Indian Citizen with 40% or more disability.        b) Age above 18 years.        c) Relevant educational / technical / vocational qualification/ experience and background.",
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -14330,9 +14320,7 @@
                                             "step_description": ""
                                         }
                                     ],
-                                    "tags": [
-                                        "job"
-                                    ],
+                                    "tags": [],
                                     "statistical_summary": []
                                 },
                                 {
@@ -14341,7 +14329,175 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-integration",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": ""
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-integration",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": ""
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": ""
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": ""
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": ""
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": "unknown",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -14369,203 +14525,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -14593,7 +14553,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "To improve the financial condition of the scheduled castes and Nav-Buddhists who are landless workers and under the below poverty line.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/awards",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC"
@@ -14633,7 +14593,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To create employment chances for VJNT, OBC & SBC youth.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T., OBC &S.B.C."
@@ -14649,11 +14609,7 @@
                                                         "VJNT",
                                                         "OBC",
                                                         "SBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 35.0
-                                                    }
+                                                    ]
                                                 }
                                             ],
                                             "value": ""
@@ -14675,7 +14631,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To provide loan amount to Male & Female beneficiaries through NGO or directly for self employment activities.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14685,21 +14641,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "rural": 98000.0,
-                                                        "urban": 120000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.He should be domicile of Maharashtra State.Age between 18 to 50 yrs.Annual Income of the family for Rural Area Rs.98,000/- and for Urban Area Rs.1,20,000/-",
                                             "value": ""
                                         }
                                     ],
@@ -14719,7 +14661,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To provide loan amount to Male & Female beneficiaries through NGO or directly for self employment activities.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14729,21 +14671,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 120000.0,
-                                                        "rural": 98000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.He should be domicile of Maharashtra State.Age between 18 to 50 yrs.Annual Income of the family for Rural Area Rs.98,000/- and for Urban Area Rs.1,20,000/-",
                                             "value": ""
                                         }
                                     ],
@@ -14763,7 +14691,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To provide loan amount to female beneficiaries of Self- Helped Group or directly for self employment activities.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14773,21 +14701,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 120000.0,
-                                                        "rural": 98000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.He should be domicile of Maharashtra State.Age between 18 to 50 yrs.Annual Income of the family for Rural Area Rs.98,000/- and for Urban Area Rs.1,20,000/-",
                                             "value": ""
                                         }
                                     ],
@@ -14807,7 +14721,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To provide loan amount to female beneficiaries for self employment activity.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14817,21 +14731,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 120000.0,
-                                                        "rural": 98000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.He should be domicile of Maharashtra State.Age between 18 to 50 yrs.Annual Income of the family for Rural Area Rs.98,000/- and for Urban Area Rs.1,20,000/-",
                                             "value": ""
                                         }
                                     ],
@@ -14851,7 +14751,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To provide loan amount for the business activities which will create assets i.e. mainly for Transport Sector related business activities.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14861,21 +14761,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 120000.0,
-                                                        "rural": 98000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.      He should be domicile of Maharashtra State.      Age between 18 to 50 yrs.      Annual Income of the family for Rural Area Rs.98,000/- and for Urban Area Rs.1,20,000/-.",
                                             "value": ""
                                         }
                                     ],
@@ -14893,7 +14779,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "National Backward Classes Finance & Development Corporation, New Delhi & State Corporation jointly.",
                                     "description": "To Provide loan amount for Self Employment to eligible beneficiaries",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14903,23 +14789,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 120000.0,
-                                                        "rural": 98000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.     He should be domicile of Maharashtra State.      Age between 18 to 50 yrs.      Annual Income of the family for Rural Area Rs.98,000/- and for Urban Area Rs.1,20,000/-.",
                                             "value": ""
                                         }
                                     ],
@@ -14939,7 +14809,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government through Share Capital of the Corporation.",
                                     "description": "To provide loan for miscellaneous activities at minimum period and documents.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Other Backward Class (OBC)"
@@ -14949,21 +14819,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": 100000.0,
-                                                        "rural": 100000.0
-                                                    },
-                                                    "community": [
-                                                        "OBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Applicant should be OBC Category.He should be domicile of Maharashtra State.Age between 18 to 50 yrs.Annual Income of the family Rs.1.00 lakh p.a. for rural and urban areas.",
                                             "value": ""
                                         }
                                     ],
@@ -14993,7 +14849,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To motivate Backward Class students for education.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -15012,10 +14868,6 @@
                                                     "education": {
                                                         "max_standard": "10th",
                                                         "min_standard": "5th"
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 5.0,
-                                                        "upper_age": 17.0
                                                     }
                                                 }
                                             ],
@@ -15038,7 +14890,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To improve the interests of VJNT/SBC students in High Schools. To help and encourage the VJNT/SBC parents/ guardians for their children education.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -15056,10 +14908,6 @@
                                                     ],
                                                     "education": {
                                                         "school_type": "High School"
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 14.0,
-                                                        "upper_age": 18.0
                                                     }
                                                 }
                                             ],
@@ -15080,7 +14928,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To encourage V.J.N.T. & S.B.C. students and promote the interest in Technical education.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -15098,11 +14946,7 @@
                                                     "community": [
                                                         "V.J.N.T.",
                                                         "S.B.C."
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 15.0,
-                                                        "upper_age": 25.0
-                                                    }
+                                                    ]
                                                 }
                                             ],
                                             "value": ""
@@ -15122,7 +14966,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "The State Government has introduced in 2003-04 the scheme to create self-employment for unemployed youths and students of VJNT and SBC who apply for a Vocational Training. He will be given the Vocational Training in Government I.T.I and undergo short duration vocational training courses. The short duration vocational courses will enable the youths to create their own employment in service sector.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -15137,11 +14981,7 @@
                                                     "community": [
                                                         "VJNT",
                                                         "SBC"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 35.0
-                                                    }
+                                                    ]
                                                 }
                                             ],
                                             "value": ""
@@ -15163,7 +15003,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "VJNT and SBC students are paid maintenance so that a maximum number of students can take admission to Sainik School with a view to seek admission in N.D.A.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -15175,21 +15015,18 @@
                                         {
                                             "description": [
                                                 {
-                                                    "income_limit": null,
                                                     "community": [
                                                         "Vimukta Jatis",
                                                         "Nomadic Tribes",
                                                         "Special Backward Class"
                                                     ],
-                                                    "bpl_card_holder": null,
                                                     "education": {
-                                                        "school_type": "Sainik School",
                                                         "max_standard": "12th",
                                                         "min_standard": "5th"
                                                     },
                                                     "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
+                                                        "lower_age": 10.0,
+                                                        "upper_age": 18.0
                                                     }
                                                 }
                                             ],
@@ -15210,7 +15047,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To create competition spirit among VJNT and SBC students, Government has introduced this scheme from the academic year 2003-04, vide G.R no.EBC-204/CR-2004/BCW-3, dated 25th July 2003.This scholarship is separate from Post Matric Scholarship. No income limit is applicable.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. & S.B.C."
@@ -15230,10 +15067,6 @@
                                                     "education": {
                                                         "max_standard": "12th",
                                                         "min_standard": "11th"
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 11.0,
-                                                        "upper_age": 18.0
                                                     }
                                                 }
                                             ],
@@ -15256,7 +15089,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Government has granted permission to voluntary organization to run the Public School (Vidya Niketan) on grant-in-aid basis at Kamlewadi, Taluka Mukhed, District Nanded for the needy, brilliant and talented students belonging to VJNT Category. In this public school, students gets education from 5th to 12th standard on merit basis.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T."
@@ -15297,7 +15130,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "For educational and social development of VJNT students Govt. vide G.R. dated 26/6/2008 has started (11th and 12th class) Junior College education by upgrading the 148 secondary Ashram Schools in existence. Free lodging and boarding facilities along with necessary educational goods, stationary is being provided as per norms.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T."
@@ -15335,45 +15168,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "As a special measure for providing educational facilities to the pupils belonging to Vimukta Jatis and Nomadic Tribes, Government has encouraged the establishment of Ashram Schools with residential facilities to the children since 1954 through recognized NGO’s. Permission to open Ashram Schools is granted to such voluntary agencies which show interest in conducting schools for Vimukta Jatis / Nomadic Tribes etc., and are prepared to maintain the Ashram School as per terms and conditions prescribed by Government.",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": "V.J.N.T."
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": [
-                                                {
-                                                    "community": [
-                                                        "VJNT"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": "Admissions are finalised by the Head Master of the concerned Ashram School Head Master."
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "Vasantrao Naik Merit Awards to the VJNT students who came First in State or First in Board of 10th and 12th Standard Examination.",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "",
-                                    "description": "To motivate VJNT students for Higher Education.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T."
@@ -15395,6 +15190,34 @@
                                     ],
                                     "procedures": [
                                         {
+                                            "step_description": "Admissions are finalised by the Head Master of the concerned Ashram School Head Master."
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "Vasantrao Naik Merit Awards to the VJNT students who came First in State or First in Board of 10th and 12th Standard Examination.",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "",
+                                    "description": "To motivate VJNT students for Higher Education.",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "V.J.N.T."
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": "Student should belong to VJNT category.Student should be First in State, or First in Board Examination of 10th or 12th.standard.First Boy and First Girl Student who stood first in state and board both are eligible for Award.",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
                                             "step_description": "A list of all VJNT students passing SSC and HSC Exams, in state is called for from the State Board of SSC/HSC by the Director, VJNT, OBC and SBC, M.S. Pune. The selection of students is made on the basis of marks obtained in SSC or HSC Exam."
                                         }
                                     ],
@@ -15407,7 +15230,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "Sugarcane cutting labour migrates for their work for 4 to 5 months anywhere in Maharashtra. To avoid the gap in education of their children, and to protect their educational career Govt. has sanctioned 2 residential Ashram Schools for Sugarcane cutting labour Children in Beed District.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Children of Sugarcane cutting labour"
@@ -15447,7 +15270,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15457,18 +15280,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": null,
-                                                    "community": null,
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -15486,7 +15298,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15496,32 +15308,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": null,
-                                                    "community": [
-                                                        "Maharashtra"
-                                                    ],
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": 0.0,
-                                                        "upper_age": 18.0
-                                                    }
-                                                },
-                                                {
-                                                    "income_limit": null,
-                                                    "community": [
-                                                        "Maharashtra"
-                                                    ],
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -15539,7 +15326,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15549,20 +15336,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": null,
-                                                    "community": [
-                                                        "Maharashtra"
-                                                    ],
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -15592,7 +15366,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15602,7 +15376,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1.Admission through child welfare committee of the district form under Juvenile Justice (Care & Protection of children) Act 2000        2. Applicant should have minimum 40% disability and should be orphan or in need of care and protection.        3. Applicant should be Domicile in Maharashtra.",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -15620,7 +15394,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15630,7 +15404,14 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1.Admission through child welfare committee of the district form under Juvenile Justice (Care & Protection of children) Act 2000        2. Applicant should have minimum 40% disability and should be orphan or in need of care and protection.        3. Applicant should be Domicile in Maharashtra.",
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": 0.0,
+                                                        "upper_age": 18.0
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -15660,7 +15441,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State government",
                                     "description": "The scheme is started since 1996-97 on the VJNT ashram school basis, specifically  low literacy rate District, to promote education rate SC community",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Backward students specifically Scheduled caste students"
@@ -15688,7 +15469,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State government",
                                     "description": "Provide living, boarding facility for backward students",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC/ST/VJ/NT/OBC/PWD"
@@ -15728,7 +15509,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "The scheme is started  since 1966 for the purpose of  promote social work education, also develop trained human resource, & increase their Quality. Etc.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All category students"
@@ -15768,7 +15549,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "To trained Scheduled Castes and Nav-Buddha Candidates for Solder & police recruitment.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/education-training",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC and Nav-Buddha"
@@ -15808,7 +15589,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/economic-upliftment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15818,7 +15599,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1.Application in prescribed format submitted to concern District Social Welfare Office, Zillah Parishad & Assistant Commissioner Social Welfare Office ,Mumbai Urban & Mumbai Suburban        2.Applicant must completed their vocational training in Government or Government recognized institution        3.Applicant should have minimum 40% disability.        3.Applicant should be Domicile in Maharashtra.        4.Applicant should submit their proposal with proposed project cost.",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -15838,7 +15619,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15848,7 +15629,22 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1.Application in prescribed format submitted to concern District Social Welfare Office, Zillah Parishad & Assistant Commissioner Social Welfare Office ,Mumbai Urban & Mumbai Suburban        2.Applicant must completed their vocational training in Government or Government recognized institution        3.Applicant should have minimum 40% disability.        3.Applicant should be Domicile in Maharashtra.        4.Applicant should submit their proposal with proposed project cost.",
+                                            "description": [
+                                                {
+                                                    "income_limit": {
+                                                        "rural": null,
+                                                        "urban": null,
+                                                        "general": null
+                                                    },
+                                                    "community": [
+                                                        "general"
+                                                    ],
+                                                    "age_limit": {
+                                                        "lower_age": 18.0,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -15880,7 +15676,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/employment",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15890,17 +15686,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "general": 100000.0
-                                                    },
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 50.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -15920,7 +15706,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -15930,7 +15716,14 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1.Application in given format submitted to concern District Social Welfare Officer, Zillah Parishad & Assistant Commissioner Social Welfare Office ,Mumbai Urban & Mumbai Suburban        2. Applicant should have minimum 40% disability.        3. Applicant should be Domicile in Maharashtra.        4. Applicant age criteria between 18 to 50 years.        5.Applicant annual income should be below the Rs 100000/-",
+                                            "description": [
+                                                {
+                                                    "age_limit": {
+                                                        "lower_age": 18.0,
+                                                        "upper_age": 60.0
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -15962,7 +15755,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Centrally Sponsored",
                                     "description": "Pension Scheme",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category Widow"
@@ -15972,18 +15765,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "community": [
-                                                        "widow"
-                                                    ],
-                                                    "bpl_card_holder": true,
-                                                    "age_limit": {
-                                                        "lower_age": 40.0,
-                                                        "upper_age": 65.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "A widow in age group of 40 to 65 years whose family falls under Below Poverty Line is eligible under this Scheme. She is initialed to receive Rs 200/- per month under this scheme. She also receives Rs 400/- per month under state sponsored Sanjay Gandhi Niradhar Anudan Yojana.",
                                             "value": ""
                                         }
                                     ],
@@ -16001,7 +15783,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Centrally Sponsored",
                                     "description": "Pension Scheme",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category Disable Persons"
@@ -16011,17 +15793,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "community": [
-                                                        "Disable person"
-                                                    ],
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 65.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "A Disable person in the age group of 18 to 65 years and having 80 percent disability is eligible under this Scheme. He / She is entitled to receive Rs. 200/- per month under this Scheme. He / She also receives Rs 400/- per month under State sponsored Sanjay Gandhi Niradhar Anudan Yojana",
                                             "value": ""
                                         }
                                     ],
@@ -16039,7 +15811,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Centrally Sponsored",
                                     "description": "Pension Scheme",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category"
@@ -16049,15 +15821,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "bpl_card_holder": true,
-                                                    "age_limit": {
-                                                        "lower_age": 65.0,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Old aged person of 65 years & above belonging to BPL Family are eligible under this Scheme. Beneficiaries under this scheme receive Rs.200/- from Govt. of India & Rs.400/- from Govt. of Maharashtra under Shravanbal Seva Rajya Nivrutti vetan Yojana. In all the beneficiary receives Rs. 600/- per month.",
                                             "value": ""
                                         }
                                     ],
@@ -16075,7 +15839,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Centrally Sponsored",
                                     "description": "Pension Scheme",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category Disable Persons"
@@ -16085,7 +15849,18 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "A Disable person in the age group of 18 to 65 years and having 80 percent disability is eligible under this Scheme. He / She is entitled to receive Rs. 200/- per month under this Scheme. He / She also receives Rs 400/- per month under State sponsored Sanjay Gandhi Niradhar Anudan Yojana",
+                                            "description": [
+                                                {
+                                                    "income_limit": null,
+                                                    "community": null,
+                                                    "bpl_card_holder": null,
+                                                    "education": null,
+                                                    "age_limit": {
+                                                        "lower_age": 18.0,
+                                                        "upper_age": 65.0
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -16115,7 +15890,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "CentrallySponsored",
                                     "description": "Financial Assistance",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category"
@@ -16125,15 +15900,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "bpl_card_holder": true,
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 59.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "Under this Scheme in case of death of a primary bread winner in the BPL Family in the age group of 18 to 59 years, the affected family is provided with one time Lump sum Financial assistance of Rs. 20000/- from the central government.",
                                             "value": ""
                                         }
                                     ],
@@ -16163,7 +15930,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "Centrally Sponsored",
                                     "description": "Insurance & scholarship.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/special-assistance",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Category"
@@ -16173,18 +15940,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "community": [
-                                                        "rural"
-                                                    ],
-                                                    "bpl_card_holder": true,
-                                                    "age_limit": {
-                                                        "lower_age": 18.0,
-                                                        "upper_age": 59.0
-                                                    }
-                                                }
-                                            ],
+                                            "description": "This scheme is meant for land less labourers in rural areas in the age Group of 18-59 years. The premium charged under the scheme will be Rs. 200/- per annum per member out of which 50% is subsidized by the State Govt. and Central Govt.",
                                             "value": ""
                                         }
                                     ],
@@ -16216,7 +15972,35 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": ""
+                                        }
+                                    ],
+                                    "documents": [],
+                                    "sponsors": [],
+                                    "criteria": [
+                                        {
+                                            "description": "",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "procedures": [
+                                        {
+                                            "step_description": ""
+                                        }
+                                    ],
+                                    "tags": [],
+                                    "statistical_summary": []
+                                },
+                                {
+                                    "title": "Matrimonial Incentives.",
+                                    "introduced_on": null,
+                                    "valid_upto": null,
+                                    "funding_pattern": "State Government",
+                                    "description": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -16228,13 +16012,9 @@
                                         {
                                             "description": [
                                                 {
-                                                    "income_limit": null,
-                                                    "community": null,
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
                                                     "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
+                                                        "lower_age": 18.0,
+                                                        "upper_age": 60.0
                                                     }
                                                 }
                                             ],
@@ -16255,7 +16035,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -16265,35 +16045,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "1.Apply in prescribed form to concern District Social Welfare Office, Zillah Parishad $ Assistant Commissioner Social Welfare Department ,Mumbai Urban & Mumbai Suburban        2. Either wife or husband of the couple should be disabled.        3. Should have minimum 40% disability        4. Should be Domicile in Maharashtra",
-                                            "value": ""
-                                        }
-                                    ],
-                                    "procedures": [
-                                        {
-                                            "step_description": ""
-                                        }
-                                    ],
-                                    "tags": [],
-                                    "statistical_summary": []
-                                },
-                                {
-                                    "title": "Matrimonial Incentives.",
-                                    "introduced_on": null,
-                                    "valid_upto": null,
-                                    "funding_pattern": "State Government",
-                                    "description": "",
-                                    "scheme_link": "",
-                                    "beneficiaries": [
-                                        {
-                                            "beneficiary_type": ""
-                                        }
-                                    ],
-                                    "documents": [],
-                                    "sponsors": [],
-                                    "criteria": [
-                                        {
-                                            "description": "1.Apply in prescribed form to concern District Social Welfare Office, Zillah Parishad $ Assistant Commissioner Social Welfare Department ,Mumbai Urban & Mumbai Suburban        2. Either wife or husband of the couple should be disabled.        3. Should have minimum 40% disability        4. Should be Domicile in Maharashtra",
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -16323,7 +16075,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State Government",
                                     "description": "",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": ""
@@ -16333,36 +16085,7 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": [
-                                                {
-                                                    "income_limit": {
-                                                        "urban": null,
-                                                        "rural": null,
-                                                        "general": 1500.0
-                                                    },
-                                                    "community": null,
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
-                                                    }
-                                                },
-                                                {
-                                                    "income_limit": {
-                                                        "rural": null,
-                                                        "urban": null,
-                                                        "general": 2000.0
-                                                    },
-                                                    "community": null,
-                                                    "bpl_card_holder": null,
-                                                    "education": null,
-                                                    "age_limit": {
-                                                        "lower_age": null,
-                                                        "upper_age": null
-                                                    }
-                                                }
-                                            ],
+                                            "description": "",
                                             "value": ""
                                         }
                                     ],
@@ -16392,7 +16115,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "Old men and women who have completed 55 years of age through 60 years, the destitute, the disabled victims food, accommodation, resort, etc. facilities providing grants to NGOs for Old age Home.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/disability-welfare",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "General"
@@ -16402,7 +16125,17 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Beneficiaries should be resident in the State of Maharashtra.Old men age should be less than 60 years and women's age 55 years of age",
+                                            "description": [
+                                                {
+                                                    "community": [
+                                                        "Maharashtra"
+                                                    ],
+                                                    "age_limit": {
+                                                        "lower_age": null,
+                                                        "upper_age": 60.0
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -16420,7 +16153,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "Old men and women who have completed 55 years of age through 60 years, the destitute, the disabled victims food, accommodation, resort, etc. facilities providing grants to NGOs for Old age Home.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "General"
@@ -16448,7 +16181,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "To raised Stranded of living of SC and Nav-Buddha people in rural & urban areas. Their problem of dwelling may be solve, therefore on their own place, or raw houses up on build erection hard feet 269 square houses.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC and Nav-Buddha"
@@ -16488,7 +16221,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State & Central (50:50)",
                                     "description": "As a part of the eradication of untouchability, to promote & encouragement to Inter Caste marriages between Savarna, Hindu, and SC/ST/VJ/NT/SBC.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-integration",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "The upper permanent resident of Maharashtra, Hindu, Jain lingayat, Sikh and Scheduled Castes and Scheduled tribes, nomadic castes, nomadic tribes and to special backward category."
@@ -16498,7 +16231,20 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "The person/couple should be the permanent resident of Maharashtra.Beneficiaries / married couple,  one should be belongs to  SC ST, VJNT and SBC. (Caste certificates need to)Beneficiary / married couple should submit marriage registration certificate.The married couple, Male age should not be less than 21 years and female should not be below 18 years. (On / Brides of school leaving certificate)Two Honble persons recommendation letters.Joint photo of the Couple.In this regards the definition of inter Caste Marriage is Marriages between SC/ST/VJ/NT/SBC persons and the other person should belongs to Savarna, Hidu Lingayat, Jain, Sikh Community.",
+                                            "description": [
+                                                {
+                                                    "community": [
+                                                        "SC",
+                                                        "ST",
+                                                        "VJNT",
+                                                        "SBC"
+                                                    ],
+                                                    "age_limit": {
+                                                        "lower_age": 18.0,
+                                                        "upper_age": null
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -16516,7 +16262,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "Raising the standard of living of schedule Caste people to maintain, cleanliness in Dalit Vasti & their participations in abolishing social inequality  And get involved in the inhabitants of the slums to sanitation and social inequality and work in rural areas to combat the problems of Dalits involved enthusiastically to destroy the village, such as giving the awards to the panchayats.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "All Grampanchayat work for Backward Class."
@@ -16544,7 +16290,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "Backward class family (SC/VJ/NT/SBC) may attract Collective wedding event & Various NGOs come forward to arrange Collective wedding Ceremony.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC/NB/VJ/NT/SBC"
@@ -16572,7 +16318,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "To inspire the social worker & Organizations and they should continue their social activities in the state of Maharashtra especial for SC/ST & Backward class and weaker section of society. The Dr. Babasaheb Ambedkar Samaj Bhushan Award, Sahityaratna Lokshahir Anna Bhau Sathe Award, & Sant Ravidas Awards are given by State.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Dr. Babasaheb Ambedkar Samaj Bhushan Award- To All          Sahityaratna Lokshahir Anna Bhau Sathe Award- Artists& Literary Author& Social Organization from Matang Community.          Sant Ravidas Awards- Artists& Literary Author& Social Organization from Charka Community."
@@ -16600,7 +16346,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "The award is given to the use against tradition and untouchable against individuals and organizations that work for workers and social movement and landless farm Worker.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/awards",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Category for all"
@@ -16628,7 +16374,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "Maharashtra sector organizations working in various fields of social justice in the state of Maharashtra, National and International level is taken forward as a social reformist State. Organizations working in the field of social justice to Ambedkar, Phule, Shahu prize.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/awards",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "Social Justice sector institutions of the State of Maharashtra"
@@ -16668,7 +16414,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To provide basic amenities to Tandas and Basties of Vimukta Jatis and Nomadic Tribes, such as drinking water, electrification, construction of latrines, drainages and approach roads etc.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T. Tandas and Bastis."
@@ -16678,7 +16424,17 @@
                                     "sponsors": [],
                                     "criteria": [
                                         {
-                                            "description": "Tanda or Basti of VJNT having minimum 50 population.",
+                                            "description": [
+                                                {
+                                                    "community": [
+                                                        "VJNT"
+                                                    ],
+                                                    "age_limit": {
+                                                        "lower_age": 0.0,
+                                                        "upper_age": 150.0
+                                                    }
+                                                }
+                                            ],
                                             "value": ""
                                         }
                                     ],
@@ -16708,7 +16464,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "",
                                     "description": "To increase the living standards of VJNT families. To create and uplift income sources and get stability to VJNT families.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "V.J.N.T."
@@ -16748,7 +16504,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State & Central (50:50)",
                                     "description": "Abolition of untouchability and to the awakening of society",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC/ST/OBC/VJNT/Physically Disabled/Persons working in Unclean Occupation"
@@ -16788,7 +16544,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State & Central (50:50)",
                                     "description": "To rehabilitate the victimized SC/ ST family members by providing financial assistance the them.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC and ST"
@@ -16828,7 +16584,7 @@
                                     "valid_upto": null,
                                     "funding_pattern": "State",
                                     "description": "And in the slums of factors are anucita Nav-Buddha payabhuta water feature is to make available through the scheme, water supply, Jodaraste, and the construction of roads under the SC and to the development of the neighborhood community house etc. and Nav-Buddha factors.",
-                                    "scheme_link": "",
+                                    "scheme_link": "https://sjsa.maharashtra.gov.in/en/scheme-category/social-remedies",
                                     "beneficiaries": [
                                         {
                                             "beneficiary_type": "SC and Nav-Buddha"
