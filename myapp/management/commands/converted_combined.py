@@ -304,7 +304,7 @@ def transform_and_add_gujarat_data(original_data, combined_data):
             "valid_upto": "2024-12-31T23:59:59Z",
             "funding_pattern": "State",
             "description": description,
-            "scheme_link": item["details"].get("Assistance Details", "").split("\n(Portal: ")[-1][:-1],
+            "scheme_link": item["details"].get("scheme_link"),
 
             "beneficiaries": [
                 {"beneficiary_type": "SC"}
