@@ -422,6 +422,7 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
 
         organisation = department["organisations"][0]
         title = remove_leading_numbers(item.get("title").strip())
+        scheme_link = item.get("scheme_link")
         description = item.get("description")
         scheme = {
             "title": title,
@@ -429,7 +430,8 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
             "valid_upto": convert_date_format(item.get("valid_upto")),
             "funding_pattern": item.get("funding_pattern"),
             "description": description,
-            "scheme_link": item.get("scheme_link"),
+            "scheme_link": scheme_link,
+            
             "beneficiaries": [
                 {"beneficiary_type": beneficiary} for beneficiary in item.get("beneficiaries", [])
             ],
