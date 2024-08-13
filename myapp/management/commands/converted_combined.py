@@ -460,6 +460,65 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
         }
         organisation["schemes"].append(scheme)
 
+def transform_and_add_himachal_pradesh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Himachal Pradesh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = "other"
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("name").strip())
+        description = item.get("objective")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("Introduced on: ")),
+            "valid_upto": "2024-12-31T23:59:59Z",
+            "funding_pattern": item.get("Sponsors: "),
+            "description": description,
+            "scheme_link": item.get("applyOnlineLink"),
+            "beneficiaries": [
+                {"beneficiary_type": item.get("Scheme Beneficiaries: ").strip()}
+            ] if item.get("Scheme Beneficiaries: ") else [],
+            "documents": [],
+            "sponsors": [
+                {"sponsor_type": item.get("Sponsors: ")}
+            ],
+            "criteria": [
+                {"description": item.get("eligibility")}
+                ],
+            "procedures": [
+                {"step_description": item.get("process")}
+                ],
+            "tags": determine_tags(title, description)
+        }
+        organisation["schemes"].append(scheme)
+
+
 
 # Read data from JSON files
 with open(base_file_path+"/meghalaya.json", "r") as file:
@@ -483,6 +542,9 @@ with open(base_file_path+"/maharastra.json", "r") as file:
 with open(base_file_path+"/up/up_youth_welfare.json", "r") as file:
     up_data = json.load(file)
 
+with open(base_file_path+"/himachalPradesh.json", "r") as file:
+    himachal_data = json.load(file)
+
 # Initialize the combined data structure
 combined_data = {
     "states": []
@@ -496,6 +558,7 @@ transform_and_add_jammukashmir_data(jammukashmir_data, combined_data)
 transform_and_add_gujarat_data(gujarat_data, combined_data)
 transform_and_add_maharashtra_data(maharashtra_data, combined_data)
 transform_and_add_uttar_pradesh_data(up_data,combined_data)
+transform_and_add_himachal_pradesh_data(himachal_data,combined_data)
 
 
 
