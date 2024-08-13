@@ -250,6 +250,6 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_FROM = os.getenv('EMAIL_FROM')
 SITE_URL = "http://65.0.103.91:80/api"
-FRONTEND_URL = "http://65.0.103.91:80/api"
+FRONTEND_URL = "http://65.0.103.91:80"
 
 AUTH_USER_MODEL = 'myapp.CustomUser'

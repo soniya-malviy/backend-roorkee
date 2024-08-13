@@ -21,68 +21,10 @@ class TimeStampedModel(models.Model):
             now = timezone.localtime(now, tz)
             self.created_at = now
         super().save(*args, **kwargs)
-
-
-# UserProfile model
-
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-#     bio = models.TextField(null=True, blank=True)
-#     preferences = models.JSONField(null=True, blank=True)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-
-#     def __str__(self):
-#         return self.user.username
-
-# def create_user_profile(sender, instance, created, **kwargs):
-#     if created:
-#         UserProfile.objects.create(user=instance)
-# profiles/models.py
-
-# myapp/models.py
-
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-#     bio = models.TextField(blank=True)
-#     preferences = models.JSONField(blank=True, null=True)
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-
-#     def __str__(self):
-#         return self.user.username
-
-# class UserPreferences(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='preferences')
-#     preferred_categories = models.JSONField(default=list, blank=True)
-#     dark_mode = models.BooleanField(default=False)
-#     language = models.CharField(max_length=50, default='en')
-#     browsing_history = models.JSONField(default=list, blank=True)
-
-#     def __str__(self):
-#         return f"{self.user.username}'s Preferences"
-
-# class BrowsingHistory(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     item_id = models.IntegerField()  # ID of the item viewed
-#     viewed_at = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return f"{self.user.username} viewed item {self.item_id} at {self.viewed_at}"
-
-# class Recommendation(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     item_id = models.IntegerField()
-#     recommended_at = models.DateTimeField(auto_now_add=True)
-#     score = models.FloatField()  # Score for the recommendation
-
-#     def __str__(self):
-#         return f"Recommendation for {self.user.username} - Item {self.item_id}"
-
     
 # Existing models
 class State(TimeStampedModel):
-    state_name = models.CharField(max_length=255, default="Tamil Nadu")
+    state_name = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = "State"
@@ -222,7 +164,7 @@ class Scheme(TimeStampedModel):
         return self.title
     
 class Benefit(TimeStampedModel):
-    benefit_type = models.CharField(max_length=255, default="Grant")
+    benefit_type = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
     class Meta:
@@ -234,7 +176,7 @@ class Benefit(TimeStampedModel):
         return self.benefit_type
 
 class Beneficiary(TimeStampedModel):
-    beneficiary_type = models.CharField(max_length=255, default="SC/ST")
+    beneficiary_type = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = "Beneficiary"
@@ -283,7 +225,7 @@ class Procedure(TimeStampedModel):
         return self.step_description
 
 class Document(TimeStampedModel):
-    document_name = models.CharField(max_length=255, default="Aadhar Card")
+    document_name = models.CharField(max_length=255, null=True, blank=True)
     requirements = models.TextField(null=True, blank=True)
 
     class Meta:
@@ -304,7 +246,7 @@ class SchemeDocument(TimeStampedModel):
         ordering = ['scheme', 'document']
 
 class Sponsor(TimeStampedModel):
-    sponsor_type = models.CharField(max_length=255, default="State")
+    sponsor_type = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = "Sponsor"
@@ -328,7 +270,7 @@ class SchemeSponsor(TimeStampedModel):
 
     
 class TempState(TimeStampedModel):
-    state_name = models.CharField(max_length=255, default="Tamil Nadu")
+    state_name = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         abstract = True
@@ -361,7 +303,7 @@ class TempScheme(TimeStampedModel):
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='temp_schemes', null=True, blank=True)
     introduced_on = models.DateTimeField(null=True, blank=True)
     valid_upto = models.DateTimeField(null=True, blank=True)
-    funding_pattern = models.CharField(max_length=255, default="State")
+    funding_pattern = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     scheme_link = models.URLField(null=True, blank=True)
     beneficiaries = models.ManyToManyField('Beneficiary', related_name='temp_schemes', through='TempSchemeBeneficiary')
@@ -382,7 +324,7 @@ class TempSchemeBeneficiary(TimeStampedModel):
         abstract = True
 
 class TempBenefit(TimeStampedModel):
-    benefit_type = models.CharField(max_length=255, default="Grant")
+    benefit_type = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         abstract = True
@@ -412,7 +354,7 @@ class TempProcedure(TimeStampedModel):
         return self.step_description
 
 class TempDocument(TimeStampedModel):
-    document_name = models.CharField(max_length=255, default="Aadhar Card")
+    document_name = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         abstract = True
@@ -428,7 +370,7 @@ class TempSchemeDocument(TimeStampedModel):
         abstract = True
 
 class TempSponsor(TimeStampedModel):
-    sponsor_type = models.CharField(max_length=255, default="State")
+    sponsor_type = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         abstract = True
