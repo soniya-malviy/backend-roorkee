@@ -518,6 +518,135 @@ def transform_and_add_himachal_pradesh_data(original_data, combined_data):
         }
         organisation["schemes"].append(scheme)
 
+def transform_and_add_manipur_data(original_data, combined_data):
+    state_name = "Manipur"
+    created_at = "2024-06-25T12:00:00Z"
+
+    for item in original_data:
+        title = remove_leading_numbers(item.get("title", "").strip())
+        scheme_id = item.get("id", "")
+
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department_name = item.get("Category of Scheme", "").strip()
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        description = item.get("Scheme Objective", "").strip()
+
+        scheme = {
+            "title": title,
+            "introduced_on": None,
+            "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
+            "funding_pattern": item.get("Funding by", "").strip(),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),  
+            "beneficiaries": [
+                {"beneficiary_type": item.get("beneficiary", "").strip()}
+            ],
+            "documents": [], 
+            "sponsors": [],  
+            "criteria": [
+                {"description": item.get("Eligibility Criteria", ""), 
+                 "value": ""}
+            ],
+            "procedures": [
+                {"step_description": item.get("howToApply", "").strip()}
+            ],
+            "benefits": [
+                {"benefit_type": item.get("benefits", [])} 
+            ],
+            "tags": determine_tags(title, description),  # Implement determine_tags function
+            "statistical_summary": []  # Exclude 'year' field from statistical summary
+        }
+        organisation["schemes"].append(scheme)
+
+def transform_and_add_kerela_data(original_data, combined_data):
+    state_name = "Kerela"
+    created_at = "2024-06-25T12:00:00Z"
+
+    for item in original_data:
+        title = remove_leading_numbers(item.get("title", "").strip())
+
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department_name = item.get("Category of Scheme", "").strip()
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        description = item.get("description", "").strip()
+
+        scheme = {
+            "title": title,
+            "introduced_on": None,
+            "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
+            "funding_pattern": item.get("Funding by", "").strip(),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),  
+            "beneficiaries": [
+                {"beneficiary_type": item.get("beneficiary", "").strip()}
+            ],
+            "documents": [], 
+            "sponsors": [],  
+            "criteria": [
+                {"description": item.get("Eligibility Criteria", ""), 
+                 "value": ""}
+            ],
+            "procedures": [
+                {"step_description": item.get("howToApply", "").strip()}
+            ],
+            "benefits": [
+                {"benefit_type": item.get("benefits", [])} 
+            ],
+            "tags": determine_tags(title, description),  # Implement determine_tags function
+            "statistical_summary": []  # Exclude 'year' field from statistical summary
+        }
+        organisation["schemes"].append(scheme)
+
 
 
 # Read data from JSON files

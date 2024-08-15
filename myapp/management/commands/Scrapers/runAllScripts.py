@@ -50,10 +50,14 @@ class Command(BaseCommand):
 
         base_dir = os.path.abspath(os.path.dirname(__file__))
         scripts = [
-            "node index.js",
+            "node maharastra_scraper.js",
             "python maharastra_gemini.py",
-
-            
+            "node gujarat_scraper.js",
+            "node jammu_kashmir_scraper.js",
+            "node meghalaya_scraper.js",
+            "node puducherry_scraper.js",
+            "node tamilNadu_scraper.js",
+            "node up_youthWelfare.js"
             f"python {os.path.join(base_dir, '../converted_combined.py')}",
             f"python {os.path.join(base_dir, '../../../../manage.py load_data')}"
             # Add other scripts as needed
