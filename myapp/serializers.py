@@ -300,7 +300,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         fields = [
             'name', 'gender', 'age', 'category', 'minority', 'state_of_residence', 
             'disability', 'bpl_card_holder', 'occupation', 'income', 'education', 
-            'government_employee'
+            'government_employee', 'employment_status'
         ]
 
     def update(self, instance, validated_data):
