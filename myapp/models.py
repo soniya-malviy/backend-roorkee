@@ -41,7 +41,7 @@ class Department(TimeStampedModel):
 
     class Meta:
         verbose_name = "Department"
-        verbose_name_plural = "State Department Mapping"
+        verbose_name_plural = "Departments"
         ordering = ['department_name']
 
     def __str__(self):
@@ -121,7 +121,7 @@ class Organisation(TimeStampedModel):
 
     class Meta:
         verbose_name = "Organisation"
-        verbose_name_plural = "Department Organisation Mapping"
+        verbose_name_plural = "Organisations"
         ordering = ['organisation_name']
     
     def __str__(self):
@@ -157,7 +157,7 @@ class Scheme(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme"
-        verbose_name_plural = "Department Scheme Mapping"
+        verbose_name_plural = "Schemes"
         ordering = ['introduced_on']
 
     def __str__(self):
@@ -192,7 +192,7 @@ class SchemeBeneficiary(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme Beneficiary"
-        verbose_name_plural = "Scheme Beneficiaries Mapping"
+        verbose_name_plural = "Scheme Beneficiaries"
         ordering = ['scheme', 'beneficiary']
 
 
@@ -206,7 +206,7 @@ class Criteria(TimeStampedModel):
 
     class Meta:
         verbose_name = "Criteria"
-        verbose_name_plural = "Scheme Criteria Mapping"
+        verbose_name_plural = "Criteria"
         ordering = ['description']
 
     def __str__(self):
@@ -218,7 +218,7 @@ class Procedure(TimeStampedModel):
 
     class Meta:
         verbose_name = "Procedure"
-        verbose_name_plural = "Scheme Procedures Mapping"
+        verbose_name_plural = "Procedures"
         ordering = ['scheme']
 
     def __str__(self):
@@ -242,7 +242,7 @@ class SchemeDocument(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme Document"
-        verbose_name_plural = "Scheme Documents Mapping"
+        verbose_name_plural = "Scheme Documents"
         ordering = ['scheme', 'document']
 
 class Sponsor(TimeStampedModel):
@@ -262,7 +262,7 @@ class SchemeSponsor(TimeStampedModel):
 
     class Meta:
         verbose_name = "Scheme Sponsor"
-        verbose_name_plural = "Scheme Sponsors Mapping"
+        verbose_name_plural = "Scheme Sponsors"
         ordering = ['scheme', 'sponsor']
 
 
