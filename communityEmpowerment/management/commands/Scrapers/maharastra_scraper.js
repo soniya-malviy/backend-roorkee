@@ -144,7 +144,7 @@ async function main() {
       console.log(`Scraped ${urlSchemes.length} schemes from ${url}`);
     }
 
-    const targetDir = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/myapp/management/scrapedData";
+    const targetDir = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData";
     if (!fs.existsSync(targetDir)) {
       fs.mkdirSync(targetDir, { recursive: true });
     }

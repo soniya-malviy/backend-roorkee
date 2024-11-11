@@ -30,7 +30,7 @@
 #     main()
 
 
-# myapp/management/commands/Scrapers/runAllScripts.py
+# communityEmpowerment/management/commands/Scrapers/runAllScripts.py
 import subprocess
 import os
 import sys
@@ -60,7 +60,6 @@ class Command(BaseCommand):
             "node up_youthWelfare.js"
             f"python {os.path.join(base_dir, '../converted_combined.py')}",
             f"python {os.path.join(base_dir, '../../../../manage.py load_data')}"
-            # Add other scripts as needed
         ]
 
         for script in scripts:

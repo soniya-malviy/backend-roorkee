@@ -1,4 +1,4 @@
-# myapp/management/commands/run_all_scripts_proxy.py
+# communityEmpowerment/management/commands/run_all_scripts_proxy.py
 import subprocess
 import os
 from django.core.management.base import BaseCommand

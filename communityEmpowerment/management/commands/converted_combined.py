@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 import re
 
-base_file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/myapp/management/scrapedData"
+base_file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData"
 
 
 def remove_leading_numbers(title):

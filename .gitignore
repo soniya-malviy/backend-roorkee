@@ -1,24 +1,24 @@
 .env
-myapp/migrations/
-myapp/__pycache__/
+communityEmpowerment/migrations/
+communityEmpowerment/__pycache__/
 mysite/*
 __pycache__/
 
-myapp/migrations/
-myapp/__pycache__/
+communityEmpowerment/migrations/
+communityEmpowerment/__pycache__/
 mysite/__pycache__/
 
 __pycache__/
 
-myapp/migrations/
-myapp/__pycache__/
+communityEmpowerment/migrations/
+communityEmpowerment/__pycache__/
 
-myapp/migrations/
-myapp/__pycache__/
+communityEmpowerment/migrations/
+communityEmpowerment/__pycache__/
 mysite/__pycache__/
 
 __pycache__/
 
-env/
+myenv/
 
 

@@ -14,7 +14,7 @@ genai.configure(api_key=os.environ['GENAI_API_KEY'])
 
 # TRYING TO WRITE OWN ACTUAL SCHEMA
 
-file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/myapp/management/scrapedData/maharastra.json"
+file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData/maharastra.json"
 
 
 

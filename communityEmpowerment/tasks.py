@@ -15,7 +15,7 @@
 
 # @app.task
 # def run_processing_task():
-#     file_path = 'myapp/management/commands/mappedSchemesData.json'
+#     file_path = 'communityEmpowerment/management/commands/mappedSchemesData.json'
 
 #     data = None
 
@@ -123,7 +123,7 @@
 #     print("Data loaded successfully.")
 
 
-# myapp/tasks.py
+# communityEmpowerment/tasks.py
 from celery import shared_task
 from django.core.management import call_command
 

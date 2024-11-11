@@ -26,7 +26,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'django_celery_beat',
-    'myapp',
+    'communityEmpowerment',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,7 +63,7 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'myapp.backends.EmailBackend',
+    'communityEmpowerment.backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
@@ -114,7 +114,7 @@ SIMPLE_JWT = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'myapp/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'communityEmpowerment/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -167,7 +167,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'myapp.CustomUser'
+AUTH_USER_MODEL = 'communityEmpowerment.CustomUser'
 
 REST_FRAMEWORK = {
 
@@ -201,45 +201,45 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(ROOT_DIR, '/media_files')
 
 # Celery configuration
-REDIS_HOST = os.getenv('REDIS_HOST')
-REDIS_PORT = os.getenv('REDIS_PORT')
-CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0' # CELERY_RESULT_BACKEND = CELE>
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TIMEZONE = 'UTC'
-CELERY_ENABLE_UTC = True
+# REDIS_HOST = os.getenv('REDIS_HOST')
+# REDIS_PORT = os.getenv('REDIS_PORT')
+# CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0' # CELERY_RESULT_BACKEND = CELE>
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_ACCEPT_CONTENT = ['json']
+# CELERY_TIMEZONE = 'UTC'
+# CELERY_ENABLE_UTC = True
 
- # settings.py
-CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+#  # settings.py
+# CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+# CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 
-# Cacheops settings
-CACHES = {
-     'default': {
-         'BACKEND': 'django_redis.cache.RedisCache',
-         'LOCATION':  f'redis://{REDIS_HOST}:{REDIS_PORT}/1',  # Make sure this is correct
-         'OPTIONS': {
-             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
-CACHEOPS_REDIS = {
-     'host': REDIS_HOST,  # Redis host
-     'port': REDIS_PORT,         # Redis port
-     'db': 1,              # Redis db
-     'password': None,     # Redis password if any
-     'socket_timeout': 3,
-}
+# # Cacheops settings
+# CACHES = {
+#      'default': {
+#          'BACKEND': 'django_redis.cache.RedisCache',
+#          'LOCATION':  f'redis://{REDIS_HOST}:{REDIS_PORT}/1',  # Make sure this is correct
+#          'OPTIONS': {
+#              'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
+# CACHEOPS_REDIS = {
+#      'host': REDIS_HOST,  # Redis host
+#      'port': REDIS_PORT,         # Redis port
+#      'db': 1,              # Redis db
+#      'password': None,     # Redis password if any
+#      'socket_timeout': 3,
+# }
 
-CACHEOPS_DEFAULTS = {
-     'timeout': 60*15  # 15 minutes
-}
+# CACHEOPS_DEFAULTS = {
+#      'timeout': 60*15  # 15 minutes
+# }
 
-CACHEOPS = {
-     'myapp.*': {'ops': 'all', 'timeout': 60*60},
+# CACHEOPS = {
+#      'communityEmpowerment.*': {'ops': 'all', 'timeout': 60*60},
 
-}
+# }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -251,4 +251,4 @@ EMAIL_FROM = os.getenv('EMAIL_FROM')
 SITE_URL = "http://65.0.103.91:80/api"
 FRONTEND_URL = "http://65.0.103.91:80"
 
-AUTH_USER_MODEL = 'myapp.CustomUser'
+AUTH_USER_MODEL = 'communityEmpowerment.CustomUser'
