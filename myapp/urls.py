@@ -93,7 +93,7 @@ urlpatterns = [
     path('user/profile/', UserProfileView.as_view(), name='user-profile'),
     path('user/preferences/', PreferenceView.as_view(), name='user-preferences'),
     # path('recommendations/', RecommendationsAPIView.as_view(), name='recommendations'),
-
+ 
     path('register/', UserRegistrationAPIView.as_view(), name='user-register'),
     path('verify-email/<uidb64>/<token>/', verify_email, name='verify_email'),
     path('login/', LoginView.as_view(), name='login'),
