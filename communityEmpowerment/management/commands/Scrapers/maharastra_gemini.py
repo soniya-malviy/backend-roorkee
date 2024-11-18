@@ -14,8 +14,8 @@ genai.configure(api_key=os.environ['GENAI_API_KEY'])
 
 # TRYING TO WRITE OWN ACTUAL SCHEMA
 
-file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData/maharastra.json"
-
+# file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData/maharastra.json"
+file_path = os.path.join(os.path.dirname(__file__), '..', '..','scrapedData', 'maharastra.json')
 
 
 class Age_limit(TypedDict):

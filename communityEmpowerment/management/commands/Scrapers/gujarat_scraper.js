@@ -1,6 +1,10 @@
 const puppeteer = require('puppeteer');
 const { v4: uuidv4 } = require('uuid');
-const fs = require('fs/promises'); // Using fs.promises for async file operations
+const fs = require('fs/promises');
+const path = require('path');
+const targetDir = path.join(__dirname, '..','..','scrapedData');
+const filePath = path.join(targetDir, 'gujratschemes.json');
+
 
 const config = {
   baseUrl: "https://sje.gujarat.gov.in/dscw/Schemes?lang=English",
@@ -87,12 +91,14 @@ async function main() {
       // Write scraped data to JSON file
       
     }
-    const fileName = 'gujratschemes.json';
-    await fs.writeFile(fileName, JSON.stringify(scrapedData, null, 2));
-    console.log(`Scraped data saved to ${fileName}`);
+    
+    await fs.writeFile(filePath, JSON.stringify(scrapedData, null, 2));
+    console.log(`Scraped data saved to ${filePath}`);
   } catch (error) {
     console.error("Error in main function:", error);
   }
 }
+
+
 
 main();

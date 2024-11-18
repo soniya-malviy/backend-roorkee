@@ -1,9 +1,11 @@
-import puppeteer from "puppeteer";
-import fs from "fs";
-import path from "path";
-import { v4 as uuidv4 } from "uuid";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+const puppeteer = require("puppeteer");
+const fs = require("fs");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+const { fileURLToPath } = require('url');
+const { dirname } = require('path');
+const path = require('path');
+
 
 const config = {
   baseUrl: "https://sjsa.maharashtra.gov.in/en/schemes-categories",
@@ -143,8 +145,8 @@ async function main() {
       allSchemes = allSchemes.concat(urlSchemes);
       console.log(`Scraped ${urlSchemes.length} schemes from ${url}`);
     }
-
-    const targetDir = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData";
+    
+    const targetDir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','..','scrapedData'))
     if (!fs.existsSync(targetDir)) {
       fs.mkdirSync(targetDir, { recursive: true });
     }

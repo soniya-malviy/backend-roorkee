@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+const path = require('path');
 
 async function scrapeHaryana(){
     const browser = await puppeteer.launch();
@@ -57,9 +58,11 @@ async function main(){
         await browser.close()
     }
     
-    fs.writeFileSync('haryanaSchemes.json', JSON.stringify(schemes, null, 2), 'utf-8');
+    const targetDir = path.join(__dirname, '..','..', 'scrapedData');
+    const filePath = path.join(targetDir, 'haryanaSchemes.json');
+    fs.writeFile(filePath, JSON.stringify(schemes, null, 2), 'utf-8');
 
-    console.log('Data has been saved to schemes.json');
+    console.log('Data has been saved to haryanaSchemes.json');
 }
 main()
 

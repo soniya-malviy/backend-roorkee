@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const { v4 } = require('uuid');
+const path = require('path');
 async function getLinks(linkToScrape) {
   const browser = await puppeteer.launch( {headless: true} );
   const page = await browser.newPage();
@@ -58,7 +59,14 @@ async function scrapeData() {
 
 async function writeData() {
   const res = await scrapeData();
-  fs.writeFileSync('file.json', JSON.stringify(res, null, 2));
+  const targetDir = path.join(__dirname, '..','..','scrapedData');
+  const filePath = path.join(targetDir, 'tamilnadu.json');
+
+
+
+  fs.writeFileSync(filePath, JSON.stringify(res, null, 2));
+  console.log(`Data saved to ${filePath}`);
 }
+
 
 writeData();

@@ -1,9 +1,10 @@
 import json
 from datetime import datetime
 import re
+import os
 
-base_file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData"
-
+# base_file_path = "/Users/gangadgaryadav/iitroorkeebackend/backend-roorkee/communityEmpowerment/management/scrapedData"
+base_file_path = os.path.join(os.path.dirname(__file__), '..','scrapedData')
 
 def remove_leading_numbers(title):
     # Use a regular expression to remove leading numbers followed by a dot and whitespace
