@@ -26,9 +26,9 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["13.201.99.1"]
+ALLOWED_HOSTS = ["3.109.208.148",'*']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -248,7 +248,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_FROM = os.getenv('EMAIL_FROM')
-SITE_URL = "http://65.0.103.91:80/api"
-FRONTEND_URL = "http://65.0.103.91:80"
+SITE_URL = "http://3.109.208.148/api"
+FRONTEND_URL = "http://3.109.208.148:3000"
 
 AUTH_USER_MODEL = 'myapp.CustomUser'
