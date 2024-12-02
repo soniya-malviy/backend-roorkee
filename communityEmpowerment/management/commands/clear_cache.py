@@ -1,4 +1,4 @@
-# myapp/management/commands/clearcache.py
+# communityEmpowerment/management/commands/clearcache.py
 
 from django.core.management.base import BaseCommand
 from django.core.cache import cache
