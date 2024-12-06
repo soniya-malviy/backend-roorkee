@@ -71,7 +71,6 @@ async function scrapeSchemes(url) {
     let allData = [];
 
     for (const url of urls) {
-        console.log(`Scraping URL: ${url}`);
         try {
             const data = await scrapeSchemes(url);
             allData = allData.concat(data);
@@ -80,7 +79,6 @@ async function scrapeSchemes(url) {
         }
     }
 
-    console.log(allData);
 
     // Save data to assam_schemes.json
     const targetDir = path.join(__dirname, '..','..','scrapedData');

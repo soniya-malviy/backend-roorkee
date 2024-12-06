@@ -82,7 +82,6 @@ class Command(BaseCommand):
                                 )
 
                         for document_data in scheme_data['documents']:
-                            print("see",document_data)
                             document_name = self.truncate(document_data['document_name'])
                             requirements = self.truncate(document_data.get('requirements'))
                             document, created = Document.objects.update_or_create(
@@ -128,7 +127,6 @@ class Command(BaseCommand):
                         if 'benefits' in scheme_data:
                             
                             for benefit_data in scheme_data['benefits']:
-                                print(benefit_data)
                                 benefit_type = self.truncateDescription(benefit_data.get('benefit_type'))
                                 if benefit_type:
                                     benefit, created = Benefit.objects.get_or_create(
@@ -136,11 +134,12 @@ class Command(BaseCommand):
                                     )
                                     scheme.benefits.add(benefit)
 
-
-                        for tag_name in scheme_data['tags']:
-                            tag_name = self.truncate(tag_name)
-                            tag, created = Tag.objects.get_or_create(name=tag_name)
-                            scheme.tags.add(tag)
+                        if scheme_data["tags"] is not None:
+                            for tag_name in scheme_data['tags']:
+                                
+                                tag_name = self.truncate(tag_name)
+                                tag, created = Tag.objects.get_or_create(name=tag_name)
+                                scheme.tags.add(tag)
 
 
                     

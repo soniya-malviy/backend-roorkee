@@ -81,7 +81,6 @@ async function scrapeSchemes(url) {
     let allData = [];
 
     for (const url of urls) {
-        console.log(`Scraping URL: ${url}`);
         try {
             const data = await scrapeSchemes(url);
             allData = allData.concat(data);
@@ -90,7 +89,7 @@ async function scrapeSchemes(url) {
         }
     }
 
-    console.log(allData);
+
 
     // Save Kerala data to kerala.json
     const targetDir = path.join(__dirname, '..','..','scrapedData');

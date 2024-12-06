@@ -26,7 +26,6 @@ async function scrapeArunachalSchemeDeatils(){
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     const schemeUrls = await scrapeArunachalSchemeUrls()
-    console.log("ye scheme urls",schemeUrls)
     const schemes = []
     for (const url of schemeUrls){
         await page.goto(url)
@@ -67,14 +66,11 @@ async function scrapeArunachalSchemeDeatils(){
         }, url)
         const updatedScheme = {...result,id: uuidv4()}
         schemes.push(updatedScheme)
-        console.log(result)
     }
     await browser.close()
     const targetDir = path.join(__dirname, '..','..','scrapedData');
     const filePath = path.join(targetDir, 'arunachalPradesh.json');
     fs.writeFileSync(filePath, JSON.stringify(schemes, null, 2), 'utf-8');
-
-    console.log('Data has been saved to arunachalPradeshSchemes.json');
 
 }
 

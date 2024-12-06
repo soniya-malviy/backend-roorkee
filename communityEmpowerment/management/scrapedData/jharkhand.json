@@ -1,215 +1,11 @@
 [
     {
-        "description": "Financial assistance for people with disabilities as per Rights of Persons with Disabilities Act, 2016.  Categories of Disabilities:\\n\\n1. Locomotor disability (including leprosy cured person, cerebral palsy, dwarfism, muscular dystrophy, acid attack victims)\\n2. Visual impairment (blindness, low-vision)\\n3. Hearing impairment (deaf, hard of hearing)\\n4. Speech and language disability\\n5. Intellectual disability (specific learning disabilities, autism spectrum disorder)\\n6. Mental illness\\n7. Disability caused due to chronic neurological conditions (multiple sclerosis, parkinson's disease)\\n8. Blood disorder (haemophilia, thalassemia, sickle cell disease)\\n9. Multiple Disabilities (more than one of the above specified disabilities) including deaf blindness\\n10. Any other category as may be notified by the Central Government",
-        "beneficiaries": [
-            {
-                "beneficiary_type": "Person with disabilities"
-            }
-        ],
-        "tags": [
-            "disability",
-            "financial aid",
-            "accessibility",
-            "healthcare"
-        ],
-        "procedures": [
-            {
-                "step_description": "Apply online or offline."
-            },
-            {
-                "step_description": "Submit required documents."
-            },
-            {
-                "step_description": "Payment through ABPS/PFMS"
-            }
-        ],
-        "sponsors": [
-            {
-                "sponsor_type": "Central Government"
-            },
-            {
-                "sponsor_type": "State Government"
-            }
-        ],
-        "valid_upto": "Not specified in text",
-        "funding_pattern": "Up to 300 to 1000 rupees as per disability category.",
-        "introduced_on": "Not specified in text",
-        "title": "Financial Assistance for Disabilities",
-        "scheme_link": "Not specified in text",
-        "criteria": [
-            {
-                "description": "80% or more disability"
-            },
-            {
-                "description": "Income criteria may apply"
-            },
-            {
-                "description": "Disability certificate needed"
-            }
-        ],
-        "documents": [
-            "Aadhaar card",
-            "Disability Certificate",
-            "Income certificate",
-            "Residential proof"
-        ]
+        "title": "वर्ष 2016-17 का प्रगति प्रतिवेदन एवं वार्षिक कार्य योजना 2017-18",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D016DO00601012019121506222",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5cedfc034ccdad75d58a0fa1875d396a"
     },
     {
-        "description": "fo\u00d9kh; o\\\"kZ 2014&15 esa d.kkZafdr mn~O;; ds fo:) v|ru fo\u00d9kh; izxfr izfrosnu ls lacaf/kr fooj.kh\\nfoHkkx dk uke & i;ZVu foHkkx",
-        "tags": [],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "",
-        "funding_pattern": "State Share\\nCentral Share",
-        "introduced_on": "2014&15",
-        "title": "Schemes under Central Assistance to State Plan",
-        "scheme_link": "",
-        "criteria": [],
-        "documents": []
-    },
-    {
-        "description": "q{g,{ fuurrqclo E|dq q{_zqu",
-        "tags": [],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "46tO8.02.2012",
-        "scheme_link": "q{g,{ fuurrqclo E|dq q{_zqu=12. 2!tz t!-2o1P ra .g =e 1 1 4 of - 2o1a,1g--22-oo1i-s5-- l1o,.^ ?2oQ11,Q--= i 1 -t-2o1L-18 \\\\q 2 o- 1- g: -1g qd-qo gE ilqtr( qtq+r^qT of f++s\\\"RiD-qIiD qlqcl .FI ;trrl Tf,r6cqre{r \u20acto,eqreYI 3Trs-d{reYr 3Tr.fd;TrlYr qlqcr at",
-        "introduced_on": "09t12 05 2011",
-        "title": "iD-qIiD qlqcl .FI ;trrl Tf,r6cqre{r \u20acto,eqreYI 3Trs-d{reYr 3Tr.fd;TrlYr qlqcr at",
-        "funding_pattern": "nqu-fttq eqcriTlrwfr9/E-$-dq enfr 09t12 05 2011 700000.00 46tO8.02.2012 700000 00",
-        "criteria": [],
-        "documents": [],
-        "department_name": "suqr gE ftlq of {rRr qsr gE frlq 6t {rRr sr\u20ackT;r dfufi"
-    },
-    {
-        "description": "fo\u00d9kh; o\\\"kZ 2015&16 esa d.kkZafdr mn~O;; ds fo:) v|ru fo\u00d9kh; izxfr izfrosnu ls lacaf/kr fooj.kh\\nfoHkkx dk uke & i;ZVu foHkkx\\n\u00d8ekad ;kstuk dk uke d.kkZafdr mn~O;; iz\u0152Lohd`R;kns'k fuxZr vkoaVukns'k vo'ks\\\"k jkf'k DDO }kjk izR;kfiZr dqy izR;kfiZr jkf'k dqy fudklh dh xbZ\\ndh jkf'k dh jkf'k jkf'k \u00bc6$7\u00bd jkf'k \u00bc3&8\u00bd",
-        "tags": [],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "",
-        "funding_pattern": "State Share",
-        "introduced_on": "2016",
-        "title": "Schemes under Central Assistance to State Plan",
-        "scheme_link": "",
-        "criteria": [],
-        "documents": [],
-        "department_name": "Tourism Publicity"
-    },
-    {
-        "description": "ItrqTO qtq{r 6-r qFr \u20actocqrdsr \u20acffrcqRYr srrffisr 3rrEe_{-aqr qtu-qr oT\\nHw1 gq ftlq of vrfu rlsr \\\\rE ftfu of {rRr 3f,\u20ackr;r d\\\"fu6 ftqft",
-        "beneficiaries": [],
-        "tags": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "oTd Wf\\ntr{\\n-5452- Td-cq Tfr qRq=q q-+qifr'q\\nffi\\nw+q-rT-f,rtd fucTr furd df-fl d\\nTq-dT\\nqqq qTrffq gEqT d< 'ErfA qars' d Mrr",
-        "introduced_on": "26t05.12.2012",
-        "funding_pattern": "Xq-an ffiq q{ q 1 qzo -drz -- {r g q { { fr- fq i fq q-q kT q -c qw ,\\ne gcarvfi{ 44t02 03 2013 4300000.00 55/04.03.2013 4300000.00 oTd Wt\\n-s4s2- G!-wtd-q sqq)-q-rTf,fu ftrsr<.f-o gIft q-s-s Rard\\nXq-dT qffiIq qrqr er-{frflar rrrs rerd or fr-mTrr ig\\ned 4s.26.s34.o0 $drd-s arq ud-s EcTrt",
-        "title": "4s.26.s34.o0",
-        "scheme_link": "2 fffiq e{ zorz-rs fr gt-q +siT e-we gc< vft{ ilq qlq-{r",
-        "criteria": [],
-        "documents": [],
-        "department_name": "tg ei-qtq {rRT e0,s3,oo0.0o"
-    },
-    {
-        "description": "Tourism Publicity etc",
-        "tags": [
-            "Tourism"
-        ],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "",
-        "introduced_on": "",
-        "scheme_link": "",
-        "title": "Tourism Publicity",
-        "funding_pattern": "OSP 90000000.0c, TSP 63100000.00",
-        "criteria": [],
-        "documents": []
-    },
-    {
-        "description": "qdrc fuqr.r ifiBfd Edq q{ zo11-L2. za1z 1L 2-a' 14; 2e14 15- zlo15 1E. 2e16 11- anlz 1s (i 2a1E 1s i\\nlD-qT(D qlqqt 6I ;ITII \u20acfoeor{qr ffioeqrdcl orFrd:;rraYr 3ilrs-d-{reYr qlqcr dl\\n*rqr ys ftlq of vrRr rrwr g{ ftlq o1 {rRr cr\u20acrtr?r q)fu6",
-        "tags": [],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "892511.00",
-        "scheme_link": "null",
-        "funding_pattern": "cITrTot-sT",
-        "title": "fudr",
-        "introduced_on": "56t13.O3.2012",
-        "criteria": [],
-        "documents": []
-    },
-    {
-        "description": "Page 1 of6\\n-Wxr fffi}\\\\rE qfi ergttt lrem{m $I{\\ni5-T qFI 'lq1 ' frlq trilq {r { q l qilt irq'q lrrfi qtf re \\\" cT qr( { fT tfu S fT rI tT F {rIT R( rqI qcrffi n\\\"'a3r /\u20aclT |1 i|\\\"I s,rs\\nB-{,\\n61 Td tlRr\\ndrqcqretr\\nq,t {rf{r\\n5 6 7 I I 70\\nffi qqe gcq ffi-3a52-{:l-d{, 01107.o3.2017 04124.O4.2017 42000000.0[ f+err6, 41266074.00 733926.0C\\no12n ft|vtrao.\\n1 - grrsrs r-q + rrQ-q (fiofroTdo) fff\\nd4q-sqdsqT<'fd sREw.\\nr .R\\n*\\n*t G; a \\\" i\\\"H q\\na\\nd q 3r rw -<q\\nr\\n)e\\ns\\nq Ifr o <Zq rtr \\\"ff {i -o\\n?\\nFy {a\\nri\\ntF gR E r\\\" ys\\n*,r0.*.ooo* f*- -t= d-s 6rs 6o) q5a *1 qqnsF-6 ffi\\nd .4qtr t\\nI\\nffiq{ i qrq qrq\\\"il qsre 5s] {llc-115'^\\\"",
-        "beneficiaries": [],
-        "tags": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "",
-        "introduced_on": "",
-        "funding_pattern": "",
-        "title": "",
-        "scheme_link": "",
-        "documents": [],
-        "criteria": []
-    },
-    {
-        "description": "Construction of Welcome gate, Construction of Yatri Shed, Construction of Public Utility",
-        "beneficiaries": [],
-        "tags": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "null",
-        "funding_pattern": "Construction of Administrative Block, Dharamshala, Meditation cum Yoga Centre, gate Complex, Service Block etc.",
-        "scheme_link": "",
-        "title": "Construction of Welcome Gate, Yatri Shed, Public Utility",
-        "introduced_on": "2012-09-12",
-        "documents": [],
-        "criteria": []
-    },
-    {
-        "description": "Publicity",
-        "tags": [
-            "Festival",
-            "Exhibition"
-        ],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "74 21 06 06 06",
-        "introduced_on": "5003",
-        "scheme_link": "71 55 00 00 00 00 00 00",
-        "title": "Fair",
-        "funding_pattern": "OTS SP P",
-        "criteria": [],
-        "documents": []
-    },
-    {
-        "description": "qd-{ f{qFr sd( fd-fiq Ed zors-rg { ffioa qE orrEEo q)-qqrsr} of fffirft\\nwte gqE{Et - 160.00\\nd-il-{r 6T nrq \u20acrEqr{cr \u20acrEcrr{vr qrrg{F{qr arm-ffirt{r fW Vq tsqn\\nHtqr vs frfq 6t trfrr qrqr gq ftfq 01$Ri qsrffi",
-        "beneficiaries": [],
-        "tags": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "null",
-        "scheme_link": "null",
-        "introduced_on": "01$Ri",
-        "title": "sqrgffi",
-        "funding_pattern": "gq ftfq",
-        "criteria": [],
-        "documents": []
-    },
-    {
-        "description": "e-Nagrik Service, Computerized Registry offices, Video conferencing in courts and jails, e-Procurement scheme, Computerized Treasuries and Sub-treasuries, CCTVs in jails, e-MULAKAT solution, Electronic publication of Gazette, Electronic Service Delivery rule, Jharkhand Space Application Center, NKN & Jharnet - NICNet integration, Aadhaar Based Attendance System, Computerization of Law Department & AG Office, Jharkhand Innovation Lab, Common Service Centre (CSC), PMGDISHA, Empowerment of DeGS Society, DigiDhan Mission, JharNet , WAMIS, STPI, Online submission of Application for Mobile Tower and OFC, Skill Development, City Wi-Fi , BharatNet , SMS Gateway, Payment Gateway, E-Office , IT/ITeS Investment Promotion",
-        "tags": [
-            "Information Technology",
-            "e-Governance",
-            "Digital India",
-            "Cashless Jharkhand"
-        ],
+        "description": "The Department of Information Technology & e-Governance of the State has been functioning as an independent entity since June 2003.",
         "beneficiaries": [
             {
                 "beneficiary_type": "General public"
@@ -221,220 +17,786 @@
                 "beneficiary_type": "Prisoners"
             },
             {
-                "beneficiary_type": "Tenderers"
-            },
-            {
-                "beneficiary_type": "Visitors of prisoners"
-            },
-            {
-                "beneficiary_type": "SC/ST Candidates"
-            },
-            {
-                "beneficiary_type": "Youth"
-            },
-            {
-                "beneficiary_type": "TSPs/IPs"
+                "beneficiary_type": "Tenderer"
             }
+        ],
+        "tags": [
+            "e-Governance",
+            "Information Technology",
+            "JharNet",
+            "Pragya Kendras",
+            "Video conferencing",
+            "Land registration",
+            "Treasury offices",
+            "Commercial taxes",
+            "e-Nagarik",
+            "e-District",
+            "Birth certificates",
+            "Death certificates",
+            "Income certificates",
+            "Residential certificates",
+            "Panchayat Bank",
+            "e-Procurement",
+            "Digital signatures",
+            "CCTVs",
+            "e-MULAKAT",
+            "NKN",
+            "Gazette",
+            "Electronic Service Delivery",
+            "Jharkhand Space Application Center (JSAC)",
+            "Geo Data base",
+            "Village Profile",
+            "Ground Water Prospect Map",
+            "Land records",
+            "Crop status",
+            "ePanchayat",
+            "Aadhaar Based Attendance System",
+            "Computerization of Law Department & AG Office",
+            "Jharkhand Innovation Lab (JIL)",
+            "Common Service Centre (CSC)",
+            "PMGDISHA",
+            "Digidhan Mission",
+            "WAMIS",
+            "STPI",
+            "Online submission of Application for Mobile Tower and OFC",
+            "Skill Development",
+            "City Wi-Fi",
+            "BharatNet",
+            "SMS Gateway",
+            "Payment Gateway",
+            "e-Office",
+            "IT/ITeS Investment Promotion"
         ],
         "procedures": [],
         "sponsors": [],
         "valid_upto": "",
-        "funding_pattern": "State Plan, Central Assistance to State Plan",
-        "introduced_on": "2018-19",
-        "title": "Key Achievements of Information Technology & e-Governance Department",
+        "funding_pattern": "",
         "scheme_link": "",
+        "title": "WRITE-UP (2018-19) Information Technology & e-Governance",
+        "introduced_on": "2003",
+        "criteria": [],
         "documents": [],
-        "criteria": []
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5cedfc034ccdad75d58a0fa1875d396a"
     },
     {
-        "description": "IT Publicity",
+        "title": "EXPENDITURE REPORT 2017-18",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D016DO00601012019121215891",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5cedfc034ccdad75d58a0fa1875d396a"
+    },
+    {
+        "description": "The Department of Information Technology and e-Governance has received several awards for its e-Governance initiatives, including the E-Governance Initiative Award (2005), Silver Icon Award for Vahan (2006), CSI-e-Nilhant Award for Best e-Governance (2007), e-India 2008 Award for Exhibitor, Best e-Governance Award for Integrated Prison Management System (2008), The Manthan Award, Silver Icon for Best Content Management in National Portal Award (2010), Web Ratna Award (2009), National e-Governance Award – Financial Inclusion (CSC Banking Services) (2012), Silver Award for EBT through BC Model at Pragya Kendras, e-India 2013 for e-District, SKOCH Award for Emerging State Jharkhand 2013, SKOCH award for e-Kalyan, e-Nibandhan, Co-Operative, File Traker, IGF Award for e-Rahat 2014, SKOCH Award 2013 for e-Panchayat application, and World Bank Audit-Ease of Doing Business ranking (3rd). The department also highlighted budget allocations and expenditure for various schemes from 2013-14 to 2017-18. Several projects and initiatives were also mentioned, such as JAP-IT, JSAC, NIC, SeMT, e-Procurement, WAMIS, STPI, OFC connectivity, SMS Gateway, Skill Development, City Wi-Fi, IT/ITeS Policy, ESDM Policy, BPO/BPM Policy, Startup Policy, HkkjrusV project with BBNL, JharCert, LVkVZvi Hkspa j dSfiVy QaM with GVFL, and paperless initiatives.",
         "beneficiaries": [],
         "tags": [
-            "IT",
-            "Publicity"
-        ],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "31.03.2018",
-        "introduced_on": "2017-18",
-        "scheme_link": "",
-        "title": "IT Publicity",
-        "funding_pattern": "State Plan",
-        "criteria": [],
-        "documents": [],
-        "department_name": "Department of Information Technology & e-Governance"
-    },
-    {
-        "description": "okZ 2017&18 dk \u00e7xfr \u00e7frosnu\\n,oa\\nOkkf\\\"kZd dk;Z ;kstuk 2018&19\\nlwpuk \u00e7kS|kfs xdh ,oa bZ&xous\u00b1l foHkkx\\n>kj[k.M ljdkj\\n1foHkkx }kjk jk\\\"V\u00aah; Lrj ij Js\\\"B \u00e7n'kZu ds fy, \u00e7kIr fd;s\\nx;s iqjLdkj@lEeku dk C;kSjk &\\n1. E-Governance Initiative Award, 2005\\n2. Silver Icon Award, 2006 for Vahan\\n3. CSI-e- Nilhant Award for Best e-Governance, 2007.\\n4. e-India 2008 Award for Exhibitor\\n5. Best e-Governance Award for Integrated Prison Management System, 2008\\n6. The Manthan Award, Celebration of e-Content and Development in South Asia\\n7. Silver Icon for Best Content Management in National Portal Award, 2010\\n8. Web Ratna Award, 2009\\n9. National e-Governance Award \u2013 Financial Inclusion (CSC Banking Services)-2012\\n10. Silver Award for EBT through BC Model at Pragya Kendras\\n11. e-India 2013 for e-District for Electronic Service Delivery of Cit\u00e7en Centric Services in\\nRanchi.\\n12. SKOCH Award for Emerging State Jharkhand 2013.\\n13. SKOCH award for e-Kalyan, e-Nibandhan, Co-Operative, File Traker,\\n14. IGF Award for e-Rahat 2014\\n15. SKOCH Award 2013 for e-Panchayat application.\\n16. World Bank Audit-Ease of Doing Business \u2013 Enabled Jharkhand to secure 3rd Rank.",
-        "tags": [],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "dqy 19172-57",
-        "scheme_link": "https://planning.jharkhand.gov.in/documents/10180/116791/IT-Policy-2017-18.pdf/a87f98e9-4d7b-4979-9c4a-5f1c341744e5",
-        "introduced_on": "tutkrh; {ks=h; fo'k\\\"s k vaxhHkwr vU; {ks=h;",
-        "title": "lwpuk \u00e7kS|kfs xdh ,oa bZ&xous\u00b1l foHkkx",
-        "funding_pattern": "okZ ;kstuk&xSj;kstuk",
-        "criteria": [],
-        "documents": []
-    },
-    {
-        "description": "Cf5ITCI?- 03/ 34P\\\"i~lii\\\"i / 203/ 2017 /\\n$ll ''H5I 0\\\\5 tiX<t> IX\\n~, cnm\\n-qct 3TfCfGT ~ frt+rm\\n'{ji!jl~q ftffi,\\ncfi\\nfl'<Cfjlx 3m ~ ~ I\\niit5IPt~~I\u00a2 W iifjlfliil~~I,\\n'I5 cnf%-;fr ~\\nX-aIT 34fT.i~Iii\\\"i -wrr,\\nxTm\\nSOllx~o\\\\5, I\\nxTm, ~- /\\n/2020 ~o I\\n~:- ~ ~ qtf 2019-20 ~ ~ ~ afcpffi .~ ~ ~ 3lfT.i~IISiIC'l~\\nt41'firct\\nW~lql~~ ~ ~ ~' ~ ~ ~ IHllflPl\u00a2 ~o\\n~\u00b7tMRT ~ GT~~)\\n3,60,35,200/-~ ~ 'ffiO lll?T ~ ~ ~\\nGT ~ ~) c6\\n~ ~o 1,60,35,200/-(-qcp ~ ~ ~ ~ ~ lll?T\\n~c6~~1\\nTR",
-        "beneficiaries": [],
-        "tags": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "19/1/2020",
-        "introduced_on": "09-Jan-2020",
-        "funding_pattern": "StateScheme",
-        "title": "SCHEME FORSTRENGTHENING OFFIRESERVICE",
-        "scheme_link": "NA",
-        "documents": [],
-        "criteria": [],
-        "department_name": "Jail and Disaster Management Department (Home Division)"
-    },
-    {
-        "description": "The Central Sector Scheme \u2018Mass Media Support to Agriculture Extension\u2019 has been launched to revamp extension services using electronic media (Doordarshan and All India Radio) for technology and information transfer to farmers. The scheme utilizes the existing infrastructure of Doordarshan and All India Radio to educate farmers on modern technologies and research in agriculture and allied areas. A 30-minute program is telecast 5-6 days a week on Doordarshan's national, regional, and high/low power transmitters. All India Radio's 96 rural FM stations broadcast a 30-minute program 6 days a week.  The Department of Agriculture & Cooperation also launched a \u2018Focused Advertisement Campaign\u2019 to raise awareness of assistance available under various schemes through short audio and video spots on AIR, DD, and private channels.",
-        "beneficiaries": [
-            {
-                "beneficiary_type": "farmers"
-            }
-        ],
-        "tags": [
-            "agriculture extension",
-            "mass media",
-            "electronic media",
-            "doordarshan",
-            "all india radio",
-            "technology transfer",
-            "farmers"
+            "E-Governance",
+            "Awards",
+            "IT initiatives",
+            "Budget allocation",
+            "Schemes",
+            "Projects"
         ],
         "procedures": [],
         "sponsors": [],
         "valid_upto": "",
-        "introduced_on": "Tenth Plan Period",
-        "funding_pattern": "Central Sector Scheme",
-        "title": "Central Sector Scheme for \u2018Mass Media Support to Agriculture Extension\u2019",
+        "introduced_on": "2005",
+        "funding_pattern": "The department also highlighted budget allocations and expenditure for various schemes from 2013-14 to 2017-18.",
+        "title": "Department of Information Technology and e-Governance Initiatives",
         "scheme_link": "",
         "criteria": [],
-        "documents": [
-            "You tube Link for krishidarshan Programmes",
-            "List of Narrowcasting & Regional Doordarshan Kendras and FM Kisan Vani Stations under the Schemes",
-            "Print Advertisments/Audio Spots/ Video Spots",
-            "Portal of krishidarshan Programmes"
-        ]
-    },
-    {
-        "description": "Market information is needed by farmers in planning production and marketing, and equally needed by other market participants in arriving at optimal trading decisions. The existence and dissemination of complete and accurate marketing information is the key to achieve both operational and pricing efficiency in the marketing system. Advancement in Information and Communication Technology (ICT) has made the world a smaller place and a larger market at one go. To fully utilize the new emerging trade opportunities for the benefit of farming community, there is a felt need to establish an ICT based 'Agricultural Marketing Information Network' in the country.",
-        "tags": [
-            "Market Information",
-            "Pricing Efficiency",
-            "ICT",
-            "Agricultural Marketing"
-        ],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "2008-07-31",
-        "introduced_on": "2000-03",
-        "scheme_link": "http://agmarknet.nic.in",
-        "title": "MARKETING RESEARCH AND INFORMATION NETWORK",
-        "funding_pattern": "CENTRAL SECTOR SCHEME",
         "documents": [],
-        "criteria": [],
-        "department_name": "Department of Agriculture and Cooperation"
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5cedfc034ccdad75d58a0fa1875d396a"
     },
     {
-        "description": "PROGRESS REPORT OF AMIGS SCHEME (As on 31-03-2013)\\nYEAR-WISE STATUS OF PROJECTS SANCTIONED\\nPHYSICAL\\nPLAN YEAR NUMBER OF PROJECTS SANCTIONED\\nBy By Of TOTAL\\nNABARD NCDC STATE AGENCY\\nY\\n2005-06 178 01 00 179 E\\nXth PLAN\\n2006-07 1362 62 45 1469 A\\nTOTAL 1540 63 45 1648 R\\nXIth PLAN 2007-08 1161 514 144 1819\\n-\\n2008-09 564 207 62 833\\nW\\n2009-10 473 206 24 703\\nI\\n2010-11 754 419 0 1173\\n2011-12 798 475 44 1317 S\\nTOTAL 3750 1821 274 5845 E\\nXIIth PLAN 2012-13 841 418 0 1259\\nGrand Total 6131 2302 319 8752 S\\nTATUS OF SUBSIDY RELEASED\\nFINANCIAL\\n(Rs. in Crore)\\nAGENCY INVOLVED IN RELEASE OF SUBSIDY\\nPLAN\\nYEAR TOTAL ROG\\nThrough Through To\\nNABARD NCDC STATE AGENCY RESS\\n2005-06 4.00 0.15 0.00 4.15 REPO\\nXth PLAN\\n2006-07 23.97 1.07 17.29 42.33 RT\\nTOTAL 27.97 1.22 17.29 46.48\\nOF\\nXIth PLAN 2007-08 51.00 3.28 56.64 110.92\\nSCHE\\n2008-09 62.04 5.00 9.76 76.80\\nME\\n2009-10 49.89 10.00 14.48 74.37\\nAS\\n2010-11 83.13 11.41 15.94 110.48\\n2011-12 166.81 10.09 0.38 177.28 ON\\nTOTAL 412.87 39.78 97.20 549.85 31.03.\\nXIIth PLAN 2012-13 178.05 09.69 13.15 200.89 2013\\nGrand Total 618.89 50.69 127.64 797.22 SINC\\nE INCEPTION",
-        "tags": [],
-        "beneficiaries": [],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "2013-03-31",
-        "scheme_link": "None",
-        "introduced_on": "2005-06",
-        "title": "AMIGS SCHEME",
-        "funding_pattern": "Subsidy",
-        "documents": [],
-        "criteria": []
-    },
-    {
-        "description": "The Central Sector Scheme \u2018Mass Media Support to Agriculture Extension\u2019 has been launched to revamp extension services using electronic media (Doordarshan and All India Radio) for technology transfer to farmers. It leverages TV and Radio's wide reach at low cost. Existing infrastructure is utilized to educate farmers on modern agricultural technologies. A 30-minute program airs 5-6 days/week on National, 18 Regional Kendras, and 180 Doordarshan Transmitters. 96 Rural FM stations broadcast 30-minute programs 6 days/week.  DAC produces films for Doordarshan showcasing success stories and innovations. A focused ad campaign creates awareness of assistance schemes through 30-60 second audio/video spots on AIR, DD, and private channels.",
-        "beneficiaries": [
-            {
-                "beneficiary_type": "farmers"
-            }
-        ],
+        "description": "The Central Sector Scheme ‘Mass Media Support to Agriculture Extension’ has been launched to revamp extension services using electronic media (Doordarshan and All India Radio) for technology and information transfer to farmers. The scheme aims to leverage TV and Radio's wide reach for extension at low cost. It utilizes Doordarshan and All India Radio's infrastructure to educate farmers on modern agricultural technologies and research. A 30-minute program airs 5-6 days/week on National, 18 Regional Kendras, and 180 Doordarshan transmitters. 96 Rural FM Radio Stations broadcast 30-minute programs 6 days/week. DAC produces films for Doordarshan's National Channel showcasing success stories, innovations, and farming practices, highlighting positive aspects of Indian agriculture. A 'Focused Advertisement Campaign' creates awareness of assistance schemes through 30-60 second audio/video spots on AIR, DD, and private channels during peak viewership.",
         "tags": [
-            "agriculture extension",
+            "agriculture",
+            "extension",
             "mass media",
             "electronic media",
-            "technology transfer",
             "Doordarshan",
             "All India Radio",
-            "farmers"
+            "technology transfer",
+            "information dissemination",
+            "farmers",
+            "modern technologies",
+            "research",
+            "success stories",
+            "innovations",
+            "farming practices",
+            "advertisement campaign"
         ],
+        "beneficiaries": [],
         "procedures": [],
         "sponsors": [],
         "valid_upto": "",
-        "funding_pattern": "Central Sector Scheme",
         "introduced_on": "Tenth Plan Period",
-        "title": "Central Sector Scheme for \u2018Mass Media Support to Agriculture Extension\u2019",
         "scheme_link": "",
+        "title": "Central Sector Scheme for ‘Mass Media Support to Agriculture Extension’",
+        "funding_pattern": "Central Sector Scheme",
         "documents": [
             "You tube Link for krishidarshan Programmes",
             "List of Narrowcasting & Regional Doordarshan Kendras and FM Kisan Vani Stations under the Schemes",
             "Print Advertisments/Audio Spots/ Video Spots",
             "Portal of krishidarshan Programmes"
         ],
-        "criteria": []
+        "criteria": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=d5cbf528f740b502b79241ff873ce6c5"
     },
     {
-        "description": "AGMARKNET is a Central Sector Scheme launched by the Ministry of Agriculture in March 2000 to create a nationwide information network for agricultural marketing. It aims to disseminate market information to farmers and other stakeholders for better decision-making in production and marketing. The scheme uses ICT to connect agricultural produce markets, State Agricultural Marketing Boards, and Directorates across the country. It provides information on prices, market trends, arrivals, dispatches, and other relevant data through a web portal and other means.  The scheme also aims to improve market efficiency through training and extension activities, and by promoting nationally and internationally acceptable standards of grading, packaging, and quality certification.",
+        "description": "The Marketing Research and Information Network (AGMARKNET) is a Central Sector Scheme launched in March 2000 to connect major agricultural markets across India with State Agricultural Marketing Boards and Directorates.  It aims to empower farmers with market information for production planning and optimal trading decisions. The scheme disseminates information on market requirements, export documentation, contract farming, and warehousing facilities, among others. It also provides training and extension services to farmers and market functionaries.  AGMARKNET is implemented by the Directorate of Marketing and Inspection (DMI) with technical support from the National Informatics Centre (NIC).",
+        "beneficiaries": [],
+        "tags": [
+            "Market Information",
+            "Agricultural Marketing",
+            "ICT",
+            "Farmers Empowerment",
+            "Market Access"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "2011-12",
+        "funding_pattern": "Central Sector Scheme",
+        "introduced_on": "2000-03",
+        "title": "Marketing Research and Information Network (AGMARKNET)",
+        "scheme_link": "http://agmarknet.nic.in",
+        "documents": [],
+        "criteria": [],
+        "department_name": "Department of Agriculture and Cooperation",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=d5cbf528f740b502b79241ff873ce6c5"
+    },
+    {
+        "title": "INTEGRATED SCHEME FOR AGRICULTURAL MARKETING (only for testing, not for official use)",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D001DO00605092019032404330",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=d5cbf528f740b502b79241ff873ce6c5"
+    },
+    {
+        "description": "PROGRESS REPORT OF AMIGS SCHEME",
+        "tags": [],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "Subsidy through NABARD, NCDC, and State Agencies",
+        "introduced_on": "",
+        "title": "AMIGS SCHEME",
+        "scheme_link": "",
+        "criteria": [],
+        "documents": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=d5cbf528f740b502b79241ff873ce6c5"
+    },
+    {
+        "description": "The scheme provides employment-oriented vocational training to workers. Key features include training aligned with the National Skill Qualification Framework (NSQF), partnership with Sector Skill Councils (SSCs), and a corpus fund for training costs. Eligible beneficiaries include construction workers registered with the Building and Other Construction Workers Welfare Board. Training programs cover various trades like Civil Work, Electrical Work, Plumbing, and Welding. The scheme aims to enhance employability through skill development and continuous candidate flow. It also includes monitoring of trained manpower data and employment status.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Workers"
+            }
+        ],
+        "tags": [
+            "vocational training",
+            "employment",
+            "skill development",
+            "construction workers",
+            "corpus fund"
+        ],
+        "procedures": [
+            {
+                "step_description": "Candidates apply for training programs through the Construction Sector Skill Council."
+            },
+            {
+                "step_description": "Training is conducted by Construction Sector Skill Council."
+            },
+            {
+                "step_description": "Employment opportunities are facilitated through the Construction Sector Skill Council."
+            }
+        ],
+        "sponsors": [
+            {
+                "sponsor_type": "Government"
+            },
+            {
+                "sponsor_type": "Sponsoring Agency"
+            }
+        ],
+        "valid_upto": "og. o7-2018",
+        "scheme_link": "",
+        "introduced_on": "08.02.2011",
+        "title": "Employment Oriented Vocational Training",
+        "funding_pattern": "The corpus involves contributions from various sources, including candidates, sponsors, and government programs. A 100% corpus utilization is targeted.",
+        "criteria": [],
+        "documents": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=420c0ede70cff1d160c862004a7bfee0"
+    },
+    {
+        "description": "Skill development of human resources and placement of youth in the Construction Sector",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "youth"
+            }
+        ],
+        "tags": [
+            "skill development",
+            "employment",
+            "construction"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "2013-07-13",
+        "scheme_link": "",
+        "title": "MOU between Department of Industries, Jharkhand and Construction Industry Development Council (CIDC)",
+        "funding_pattern": "Rs.9000/- per candidate per month. The First Party shall release a one-time advance payment of 15% of the targeted work for the first year. For subsequent years, the fees shall be paid as follows:\\n\\nFor the first year:\\n1. 50% of the fees upon confirmed registration and verification.\\n2. 25% of the fees after one month of training.\\n3. 10% of the fees after training and employment of students.\\n\\nFor subsequent years:\\n1. 50% of the fees upon confirmed registration and verification.\\n2. 40% of the fees after one month of training.\\n3. 10% of the fees after training and employment of students.",
+        "criteria": [],
+        "documents": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=420c0ede70cff1d160c862004a7bfee0"
+    },
+    {
+        "title": "Allotment",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D012DO00616012020042741258",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=1bc964f6f1e70dcba774fd80fe1118e0"
+    },
+    {
+        "description": "National Voters Day was celebrated in Jharkhand.",
+        "beneficiaries": [],
+        "tags": [
+            "National Voters Day"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "2022-01-25",
+        "scheme_link": "",
+        "title": "National Voters’ Day",
+        "funding_pattern": "",
+        "criteria": [],
+        "documents": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=22d164d469bfc0bc0f2aefe67dd2806e"
+    },
+    {
+        "title": "2",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D010DO00612072019031721727",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=0f9d76428568fcad70cb130b20f4638e"
+    },
+    {
+        "title": "3",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D010DO00612072019032620280",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=0f9d76428568fcad70cb130b20f4638e"
+    },
+    {
+        "title": "Action Plan on Climate Change",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D010DO00612072019032958119",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=0f9d76428568fcad70cb130b20f4638e"
+    },
+    {
+        "title": "Greening India Scheme",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D010DO00612072019033250104",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=0f9d76428568fcad70cb130b20f4638e"
+    },
+    {
+        "title": "National Afforestation Programme",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D010DO00612072019033356277",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=0f9d76428568fcad70cb130b20f4638e"
+    },
+    {
+        "title": "Approval of state scheme for financial year 2023-24",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D019DO00617052023035308689",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5e78d6d7d6b97e07863f2b2ac6c72c49"
+    },
+    {
+        "description": "The XII Five Year Plan (2012-2017) by the Jharkhand Department of Mines & Geology focuses on enhancing capacity for growth, skill development, and employment generation by increasing mineral production from 150 million tons to 200 million tons. Key thrust areas include mineral exploration (Iron ore, Bauxite, Limestone, Kyanite, Graphite, Soapstone, Manganese, Phosphorite, Dolomite, Mica, Quartzite, Quartz, and Coal), revenue collection, and mineral administration through e-governance and infrastructure development. Specific objectives involve geological investigations, remote sensing, and report publication for various minerals, along with transparent concession procedures, illegal mining checks, and human resource development. The Directorate of Geology will execute mineral exploration activities, while the Directorate of Mines will handle mineral administration and revenue collection.",
+        "tags": [
+            "Mineral exploration",
+            "e-governance",
+            "revenue collection",
+            "infrastructure development",
+            "capacity building",
+            "skill development",
+            "employment generation",
+            "mining",
+            "geology"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "2017",
+        "funding_pattern": "Government Funding",
+        "scheme_link": "",
+        "title": "XII Five Year Plan Proposal of Department of Mines & Geology",
+        "introduced_on": "2012",
+        "criteria": [],
+        "documents": [],
+        "department_name": "Department of Mines & Geology",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5e78d6d7d6b97e07863f2b2ac6c72c49"
+    },
+    {
+        "title": "Training Geologist",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D019DO00615052019040312055",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5e78d6d7d6b97e07863f2b2ac6c72c49"
+    },
+    {
+        "title": "Extended Field Programme 2017-18",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D019DO00615052019040403253",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=5e78d6d7d6b97e07863f2b2ac6c72c49"
+    },
+    {
+        "title": "Timeline for Year 2023 for Marang Gomke Jaipal Singh Munda Overseas Scholarship",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D030DO00615032023103211264",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=9b4444362f0552972f13bf5536751e75"
+    },
+    {
+        "title": "Scheme of Coaching & Allied for SC Guidelines",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D030DO00616012019010943594",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=9b4444362f0552972f13bf5536751e75"
+    },
+    {
+        "title": "Scheme of Coaching & Allied for ST Guidelines",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D030DO00616012019011213271",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=9b4444362f0552972f13bf5536751e75"
+    },
+    {
+        "title": "2014-15_HEADWISE PLAN WITH EXPENDITURE",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D026DO00611072019060211641",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "title": "2011-12 to 2018-19 PLAN (GUMLA,JAMSHEDPUR,CHAIBASA,KHUNTI, HAZARIBAGH & CHATRA",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D026DO00611072019054100642",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "title": "2015-16_HEADWISE PLAN WITH EXPENDITURE",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D026DO00612072019122333324",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "title": "2011-12 to 2018-19 PLAN (JAMTARA, LOHARDAGA,PALAMU,PAKUR,SIMDEGA & LATEHAR)",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D026DO00611072019054646768",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "description": "Tourism Publicity etc",
+        "tags": [
+            "tourism"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "",
+        "funding_pattern": "OSP 90000000.0c\\nTSP 631 00000.00",
+        "title": "Tourism Publicity",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "description": "Construction of Welcome Gate, Construction of Yatri Shed, Construction of Public Utility",
+        "beneficiaries": [],
+        "tags": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "31.05.2013",
+        "funding_pattern": "82550.00",
+        "scheme_link": "",
+        "title": "Construction of Welcome gate",
+        "introduced_on": "05.03.2012",
+        "criteria": [],
+        "documents": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "title": "2017-18 PLAN_TOURISM DIRECTOR",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D026DO00612072019123614447",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "description": "Publicity",
+        "beneficiaries": [],
+        "tags": [
+            "Festival/Exhibition"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "None",
+        "funding_pattern": "OTS SP P",
+        "scheme_link": "None",
+        "title": "Fair",
+        "introduced_on": "None",
+        "documents": [],
+        "criteria": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "title": "2018-19 PLAN_UPTO NOV 2018",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D026DO00612072019125736373",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=ec6d0d0555498e764280158310986e87"
+    },
+    {
+        "description": "The Central Sector Scheme ‘Mass Media Support to Agriculture Extension’ has been launched to revamp extension services using electronic media (Doordarshan and All India Radio) for technology and information transfer to farmers. It utilizes the existing infrastructure of DD and AIR to educate farmers on modern technologies and research in agriculture and allied areas. A 30-minute program airs 5-6 days/week on National, 18 Regional Kendras, and 180 High/Low Power Transmitters of DD. 96 Rural FM Radio Stations of AIR broadcast 30-minute programs 6 days/week. DAC produces films for DD National's Saturday slot showcasing success stories, innovations, and farming practices.  A focused ad campaign creates awareness about assistance under various schemes via 30-60 second audio/video spots on AIR, DD, and private channels.",
+        "tags": [
+            "Agriculture Extension",
+            "Mass Media",
+            "Doordarshan",
+            "All India Radio",
+            "Technology Transfer",
+            "Farmer Education"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "farmers"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "",
+        "funding_pattern": "Central Sector Scheme",
+        "title": "Central Sector Scheme for ‘Mass Media Support to Agriculture Extension’",
+        "introduced_on": "Tenth Plan Period",
+        "documents": [
+            "You tube Link for krishidarshan Programmes",
+            "List of Narrowcasting & Regional Doordarshan Kendras and FM Kisan Vani Stations under the Schemes",
+            "Print Advertisments/Audio Spots/ Video Spots",
+            "Portal of krishidarshan Programmes"
+        ],
+        "criteria": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department="
+    },
+    {
+        "description": "The Marketing Research and Information Network (AGMARKNET) aims to empower farmers through market information by establishing a nationwide network for speedy collection and dissemination of market information. It facilitates better price realization for farmers by providing information on market fees, charges, methods of sale, prices, arrivals, dispatches, marketing costs, infrastructure, standards, grades, labeling, sanitary and phyto-sanitary requirements, pledge finance, and new marketing opportunities. The scheme also sensitizes farmers to new challenges in agricultural marketing by using ICT, improves marketing efficiency through training and extension, and provides assistance for marketing research. It involves Directorate of Marketing and Inspection (DMI), National Informatics Centre (NIC), State Governments, and market committees.",
         "tags": [
             "Agriculture",
-            "Marketing",
-            "Information Network",
+            "Market Information",
             "ICT",
             "Farmers",
-            "Traders"
+            "Empowerment"
         ],
         "beneficiaries": [
             {
                 "beneficiary_type": "Farmers"
-            },
-            {
-                "beneficiary_type": "Traders"
             }
         ],
-        "procedures": [],
-        "sponsors": [],
-        "valid_upto": "Present",
+        "procedures": [
+            {
+                "step_description": "State Agricultural Marketing Boards/Directorates identify markets and forward them to DMI for sanction."
+            },
+            {
+                "step_description": "Selected markets provide site for installation and operator."
+            },
+            {
+                "step_description": "Market committees collect data, feed it into the system, and transmit it."
+            },
+            {
+                "step_description": "NIC trains personnel at each node."
+            },
+            {
+                "step_description": "Incentives are paid for regular data reporting."
+            },
+            {
+                "step_description": "SAMB/State Department nominates a nodal officer to coordinate."
+            },
+            {
+                "step_description": "Proposals for CDs, Atlas, research, etc., are routed through DMI for funds."
+            },
+            {
+                "step_description": "Implementing agency furnishes an undertaking to maintain the system."
+            }
+        ],
+        "sponsors": [
+            {
+                "sponsor_type": "Ministry of Agriculture, Department of Agriculture and Cooperation"
+            }
+        ],
+        "valid_upto": "2011-12",
         "scheme_link": "http://agmarknet.nic.in",
-        "introduced_on": "2000-03",
-        "title": "AGMARKNET (Agricultural Marketing Information Network)",
         "funding_pattern": "Central Sector Scheme",
+        "title": "MARKETING RESEARCH AND INFORMATION NETWORK (AGMARKNET)",
+        "introduced_on": "2000-03",
+        "documents": [],
         "criteria": [],
-        "documents": []
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department="
     },
     {
-        "description": "The Agricultural Marketing Infrastructure Grading and Standardization (AMIGS) scheme, as of 31-03-2013, has sanctioned a total of 8752 projects and released a total subsidy of Rs. 797.23 crores since its inception.  The progress report details the year-wise and plan-wise status of projects sanctioned and the financial status of subsidy released through various agencies like NABARD, NCDC, and State Agencies. States like Andhra Pradesh, Madhya Pradesh, Punjab, Kerala, Tamil Nadu, Rajasthan, Chattisgarh, Himachal Pradesh, Maharashtra, Odisha, Gujarat, Sikkim, Karnataka, Assam, Nagaland, West Bengal, and Bihar have benefitted from the scheme. However, states like Daman and Diu, Dadra and Nagar Haveli, Lakshadweep, Arunachal Pradesh, Chandigarh, Manipur, Tripura, Andaman and Nicobar Islands, Goa, Jharkhand, Mizoram & Uttarakhand are also permitted, though no projects have been sanctioned there yet. States / UTs not permitted are Delhi, Haryana, Uttar Pradesh, West Bengal, J & K, Meghalaya, and Puducherry.",
-        "beneficiaries": [],
+        "title": "INTEGRATED SCHEME FOR AGRICULTURAL MARKETING (only for testing, not for official use)",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D001DO00605092019032404330",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department="
+    },
+    {
+        "title": "Progress Report Of AMIGS Scheme (only for testing, not for official use)",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D001DO00605092019032440255",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department="
+    },
+    {
+        "title": "संकल्प",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D031DO00605032024051350646",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=01f00daeed1418fb5cf6d8988d8a8fab"
+    },
+    {
+        "description": "Scheme for differently abled persons.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Differently abled"
+            }
+        ],
         "tags": [
-            "agriculture",
-            "marketing infrastructure",
-            "grading",
-            "standardization",
-            "subsidy"
+            "disability",
+            "Accessibility",
+            "welfare"
         ],
         "procedures": [],
         "sponsors": [],
-        "valid_upto": "31-03-2013",
-        "introduced_on": "",
-        "funding_pattern": "Subsidy through NABARD, NCDC, and State Agencies.",
-        "title": "AMIGS Scheme Progress Report",
+        "valid_upto": "",
+        "scheme_link": "https://www.google.com/",
+        "funding_pattern": "full funding",
+        "title": "Financial assistance for the Differently Abled",
+        "introduced_on": "03/08/2020",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "80% or more disability"
+            },
+            {
+                "description": "Having 70 DB hearing loss in speech frequencies in both ears."
+            },
+            {
+                "description": "60 DB to 70 DB hearing loss in speech frequencies in both ears."
+            },
+            {
+                "description": "loss of sensation in hands or feet as well as loss of sensation and paresis in the eye and eye-lid but with no manifestdeformity."
+            },
+            {
+                "description": "manifest deformity and paresis but having sufficient mobility in their hands and feet to enable them to engage in normaleconomic activity"
+            },
+            {
+                "description": "extreme physical deformity as well as advanced age which prevents him/her from undertaking any gainful occupation"
+            },
+            {
+                "description": "total absence ofsight"
+            },
+            {
+                "description": "visual acuity less than 3/60 or less than 10/200 (Snellen) in the better eye with best possible correction"
+            },
+            {
+                "description": "limitation of the field of vision subtending an angle of less than 10 degree"
+            },
+            {
+                "description": "visual acuity not exceeding 6/18 or less than 20/60 rpto 3 /60 or upto 10/200 (Snellen) in the better eye with best possible corrections"
+            },
+            {
+                "description": "limitation of the field of vision subtending an angle of less than 40 degree up to 10 degree."
+            },
+            {
+                "description": "A permanent disability arising out of conditions such as laryngectomy or aphasia affecting one or more components of speech and language due to organic or neurological causes"
+            },
+            {
+                "description": "A deficit in processing language, spoken or written, that may manifest itself as a difficulty to comprehend, speak, read, write, spell, or to do mathematical calculations and includes such conditions as perceptual disabilities, dyslexia, dysgraphia, dyscalculia, dyspraxia and developmental aphasia"
+            },
+            {
+                "description": "A neuro-developmental condition typically appearing in the first three years of life that significantly affects a person's ability to communicate, understand relationships and relate to others, and is frequently associated with unusal or stereotypical rituals or behaviours"
+            },
+            {
+                "description": "A substantial disorder of thinking, mood, perception, orientation or memory that grossly impairs judgment, behaviour, capacity to recogrise reality or ability to meet the ordinary demands oflife, but does not include retardation which is a conditon of arrested or incomplete development of mind of a person, specially characterised by subnormality of intelligence"
+            },
+            {
+                "description": "An inflammatory, nervous system disease in which the myelin sheaths around the axons ofnerve cells ofthe brain and spinal cord are damaged, leading to demyelination and affecting the ability of nerve cells in the brain and spinal cord to communicate with each other"
+            },
+            {
+                "description": "A progressive disease of the nervous system marked by tremor, muscular rigidity, and slow imprecise movement, chiefly affecting middle-aged and elderly people associated with degeneration of the basal ganglia of the brain and a deficiency of the neu rotransm itter dopamine"
+            },
+            {
+                "description": "An inheritable disease, usually affecting only male but transmitted by women to their male children, characterised by loss or impairment of the normal clotting ability of blood so that a minor would may result in fatal bleeding"
+            },
+            {
+                "description": "A group of inherited disorders characterised by reduced or absent amounts of haemoglobin"
+            },
+            {
+                "description": "A hemolytic disorder characterised by chronic anemia, painful events, and various complications due to associated tissue and organ damage"
+            },
+            {
+                "description": "A condition in which a person may have combination of hearing and visual impairments causing severe communication, developmental, and educational problems."
+            }
+        ],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=01f00daeed1418fb5cf6d8988d8a8fab"
+    },
+    {
+        "title": "राष्ट्रीय सामाजिक सहायता कार्यक्रम अन्तर्गत केन्द्र प्रायोजित पेंशन योजनाओं हेतु परिक्रामी निधि के गठन एवं राज्य योजनान्तर्गत संचालित सामाजिक सुरक्षा पेंशन योजनाओं के मार्ग निर्देश में संशोधन की स्वीकृति।",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D031DO00628062023124410458",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=01f00daeed1418fb5cf6d8988d8a8fab"
+    },
+    {
+        "title": "राज्य योजनान्तर्गत स्वस्थ्य हो चुके मानसिक दिव्यांगजनो के पुनर्वास एवं देखभाल हेतु Halfway Home के संचालन की स्वीकृति।",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D031DO00628062023011545167",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=01f00daeed1418fb5cf6d8988d8a8fab"
+    },
+    {
+        "description": "Re-Construction of Road from Jagannathpur (Mongra) on MDR-181 to Swamba-Milpi-Barkela on MDR-186",
+        "tags": [
+            "Road Construction"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "State Plan",
+        "introduced_on": "2017-18",
+        "title": "Re-Construction of Road from Jagannathpur to Swamba-Milpi-Barkela",
         "scheme_link": "",
         "criteria": [],
-        "documents": []
+        "documents": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Reconstruction of Padma to Chak Via Manatu Missing Link Road for the year 2022-23.",
+        "beneficiaries": [],
+        "tags": [
+            "ROAD CONSTRUCTION"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "03.07.2024",
+        "introduced_on": "04.01.2024",
+        "funding_pattern": "State Plan",
+        "title": "Reconstruction of Padma to Chak Via Manatu Missing Link Road",
+        "scheme_link": "",
+        "documents": [],
+        "criteria": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Reconstruction and Widening/Strengthening of Road from Nonihathwari Bridge-Sitphari (on Sitphari-Sigri-Harko PWD Road) Road (Total Length – 7.550 Km) for the year 2022-23.",
+        "beneficiaries": [],
+        "tags": [
+            "road construction"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "None",
+        "scheme_link": "None",
+        "introduced_on": "2022-23",
+        "title": "Reconstruction and Widening/Strengthening of Road from Nonihathwari Bridge-Sitphari",
+        "funding_pattern": "State Plan",
+        "documents": [],
+        "criteria": [],
+        "department_name": "ROAD CONSTRUCTION DEPARTMENT",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "title": "PROGRESS REPORT OF ROAD CIRCLE HAZARIBAGH OCTOBER 2024",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D023DO00602122024052806010",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Construction of road starting from Shaheed Gorkha Chowk near Nepal House to backside of Ranchi Railway station (Platform No.- 5 length 1.50 KM). Construction of road from Rajendra Chowk situated on Mahatma Gandhi Road to Panchwati chowk (Situated in back side of Ranchi Railway Station - Length 1.05KM) (Including Bridge construction) (Grand Total length-2.57KM) for the year 2017-18.",
+        "beneficiaries": [],
+        "tags": [
+            "Roads-Plan",
+            "On-going works"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "State Plan",
+        "introduced_on": "2017-18",
+        "title": "In Ranchi Town second approach road of Ranchi Railway station",
+        "scheme_link": "",
+        "documents": [],
+        "criteria": [],
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Re-Construction of Road from Jagannathpur (Mongra) on MDR- Road 181 to Swamba-Milpi-Barkela on MDR-186 Singhbhum Jharkhand",
+        "beneficiaries": [],
+        "tags": [
+            "Roads-Plan",
+            "State Plan Road Works",
+            "On-going"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "17.01.2020",
+        "scheme_link": "3/6 HS Tower L 2434(S)",
+        "funding_pattern": "State Plan",
+        "title": "Re-Construction of Road from Jagannathpur (Mongra) on MDR- Road 181 to Swamba-Milpi-Barkela on MDR-186 Singhbhum Jharkhand",
+        "introduced_on": "2017-18",
+        "documents": [],
+        "criteria": [],
+        "department_name": "ROAD CONSTRUCTION DEPARTMENT, JHARKHAND (State Highways Wing)",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Reconstruction of Padma to Chak Bypass Via Manatu Missing Link Road for the year 2022-23.",
+        "tags": [
+            "Roads-Plan",
+            "On-going works"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "03.07.24",
+        "scheme_link": "4249 (S)",
+        "funding_pattern": "State Plan",
+        "title": "Reconstruction of Padma to Chak Bypass Road",
+        "introduced_on": "22.11.22",
+        "documents": [],
+        "criteria": [],
+        "department_name": "ROAD CONSTRUCTION DEPARTMENT, JHARKHAND (State Highways Wing)",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Reconstruction and Widening/Strengthening of Road from Nonihathwari Bridge-Sitphari (on Sitphari-Sigri-Harko PWD Road) Road (Total Length – 7.550 Km) for the year 2022-23.",
+        "beneficiaries": [],
+        "tags": [],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Secretary, Jharkhand, Ranchi"
+            }
+        ],
+        "valid_upto": "September, 2024",
+        "funding_pattern": "Joint agreement",
+        "scheme_link": "Value -2035.634 and Link Road - 3.40 Km Date (CE lt 1059\\n(Revised) 31.03.2022 dt-16.06.23)",
+        "title": "Reconstruction and Widening/Strengthening of Road",
+        "introduced_on": "21.10.2022",
+        "criteria": [],
+        "documents": [],
+        "department_name": "PWD",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "title": "PROGRESS REPORT OF ROAD CIRCLE HAZARIBAGH SEPTEMBER 2024",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D023DO00621102024030700225",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "description": "Construction of road starting from Shaheed Gorkha Chowk nearNepalHousetobacksideof Ranchi Railway station (Platform No.- 5 length 1.50 KM) (2) Construction of road from Rajendra Chowk situated on Mahatma Gandhi Road to P.O.+ P.S.-Panchwati chowk (Situated in back side of Ranchi Railway Station - Length 1.05KM) (Including Bridge construction) (GrandTotallength-2.57KM) for the year 2017-18.",
+        "beneficiaries": [],
+        "tags": [
+            "Road Works"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "None",
+        "funding_pattern": "State Plan",
+        "introduced_on": "31-10-22",
+        "title": "InRanchiTownsecondapproach roadofRanchiRailwaystation(1)",
+        "scheme_link": "None",
+        "documents": [],
+        "criteria": [],
+        "department_name": "ROAD CONSTRUCTION DEPARTMENT, JHARKHAND (State Highways Wing)",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=f2da24cc2c612a0002eb7f07ec02801b"
+    },
+    {
+        "title": "Financial Year 2017- 2018.",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D027DO00627062019121310857",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=b7ea2ca01a87777825bc151ebf8f8e2b"
+    },
+    {
+        "title": "Financial Year 2018- 2019.",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D027DO00627062019121333315",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=b7ea2ca01a87777825bc151ebf8f8e2b"
+    },
+    {
+        "title": "Schemes of Transport Department, Jharkhand",
+        "pdfUrl": "https://jharkhand.gov.in/Home/ViewDoc?id=D027DO00627062019121401678",
+        "schemeUrl": "https://jharkhand.gov.in/Home/SearchSchemes?department=b7ea2ca01a87777825bc151ebf8f8e2b"
     }
     ]

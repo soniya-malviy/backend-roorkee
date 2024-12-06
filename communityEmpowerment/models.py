@@ -210,7 +210,7 @@ class Criteria(TimeStampedModel):
         ordering = ['description']
 
     def __str__(self):
-        return self.description
+        return self.description if self.description else "Unnamed Criteria"
 
 class Procedure(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='procedures', null=True, blank=True)

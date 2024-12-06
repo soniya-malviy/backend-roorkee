@@ -14,7 +14,6 @@ async function scrapeDelhiSchemeUrls(){
         })
         return schemeUrlList
     })
-    console.log(result)
     await browser.close()
     return result
     
@@ -40,7 +39,6 @@ async function scrapeDelhiSchemes(){
         schemes.push({...result, id: uuidv4()})
     }
     await browser.close()
-    console.log(schemes)
     return schemes
     
 }
@@ -50,7 +48,6 @@ async function main(){
     const targetDir = path.join(__dirname, '..','..','scrapedData');
     const filePath = path.join(targetDir, 'delhi.json');
     fs.writeFileSync(filePath, JSON.stringify(schemes, null, 2), 'utf-8');
-    console.log('Data has been saved to delhiSchemes.json');
 }
 
 main()

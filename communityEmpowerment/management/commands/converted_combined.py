@@ -810,7 +810,7 @@ def transform_and_add_goa_data(original_data, combined_data):
             "benefits": [
                 {"benefit_type": item.get("benefits", [])} 
             ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
+            "tags": item.get("tags"),  # Implement determine_tags function
             "statistical_summary": []  # Exclude 'year' field from statistical summary
         }
         organisation["schemes"].append(scheme)
@@ -864,7 +864,7 @@ def transform_and_add_jharkhand_data(original_data, combined_data):
             "benefits": [
                 {"benefit_type": item.get("benefits", [])} 
             ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
+            "tags": item.get("tags"),  # Implement determine_tags function
             "statistical_summary": []  # Exclude 'year' field from statistical summary
         }
         organisation["schemes"].append(scheme)
