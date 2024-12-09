@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const path = require('path');
 
 async function scrapper() {
     const browser = await puppeteer.launch();
@@ -82,7 +83,11 @@ async function scrapper() {
     });
 
     console.log(response);
-    fs.writeFileSync("districtLevel.json", JSON.stringify(response, null, 2));
+    const targetDir = path.join(__dirname, '..', '..','scrapedData');
+    const filePath = path.join(targetDir, 'jammukashmir.json');
+    
+    fs.writeFileSync(filePath, JSON.stringify(response, null, 2), 'utf-8');
+    console.log('Data has been saved to jammuKashmir.json');
     await browser.close();
 }
 

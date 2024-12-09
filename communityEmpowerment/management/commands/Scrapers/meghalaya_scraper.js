@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer')
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
+const path = require('path');
 
 async function getSchemes() {
     const browser = await puppeteer.launch();
@@ -112,8 +113,11 @@ async function main() {
 
 
     const allData = await getSchemesDetail(urlsArray);
-    console.log(allData)
-    fs.writeFileSync('schemesData.json', JSON.stringify(allData, null, 2));
+    const filePath = path.join(__dirname, '..', '..','scrapedData', 'meghalaya.json');
+
+    fs.writeFileSync(filePath, JSON.stringify(allData, null, 2));
+
+    console.log('Data has been scraped and saved to meghalayaSchemes.json');
 
 }
 

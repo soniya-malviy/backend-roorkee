@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timezone
 import re
 import os
+
 base_file_path = os.path.join(os.path.dirname(__file__),'..','scrapedData')
 # base_file_path_Scraped_data = os.path.join(os.path.dirname(__file__),'..','Scraped Data')
 from django.core.management.base import BaseCommand
@@ -16,9 +17,6 @@ class Command(BaseCommand):
             json.dump(combined_data, outfile, indent=4)
         self.stdout.write(self.style.SUCCESS('Combined data has been successfully saved to combined_schemes_data.json'))
 
-
-# def current_date():
-#     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 def remove_leading_numbers(title):
     # Use a regular expression to remove leading numbers followed by a dot and whitespace
