@@ -26,7 +26,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
 
 ALLOWED_HOSTS = ["3.109.208.148",'*']
 
@@ -193,6 +193,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+if ROOT_DIR.endswith('/'):
+    ROOT_DIR = ROOT_DIR.rstrip('/')
+else:
+    ROOT_DIR = ROOT_DIR + '/'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, 'staticfiles')

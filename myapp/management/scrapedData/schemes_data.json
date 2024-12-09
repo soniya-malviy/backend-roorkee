@@ -1,0 +1,537 @@
+{
+    "states": [
+        {
+            "state_name": "Andaman and Nicobar",
+            "created_at": "2024-06-25T12:00:00Z",
+            "departments": [
+                {
+                    "department_name": "Financial inclusion",
+                    "created_at": "2024-06-25T12:00:00Z",
+                    "organisations": [
+                        {
+                            "organisation_name": "",
+                            "created_at": "2024-06-25T12:00:00Z",
+                            "schemes": [
+                                {
+                                    "id": "84c2491b-1aaf-4fee-bcf3-fbea78b1e6d5",
+                                    "title": "Pradhan Mantri Jan Dhan Yojana",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "Pradhan Mantri Jan-Dhan Yojana (PMJDY) is National Mission for Financial Inclusion to ensure access to financial services, namely, Banking/ Savings & Deposit Accounts, Remittance, Credit, Insurance, Pension in an affordable manner. Account can be opened in any bank branch or Business Correspondent (Bank Mitr) outlet. Accounts opened under PMJDY are being opened with Zero balance. However, if the account-holder wishes to get cheque book, he/she will have to fulfill minimum balance criteria.",
+                                    "scheme_link": "https://pmjdy.gov.in/",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "People"
+                                        }
+                                    ],
+                                    "documents": [
+                                        "https://cdn.s3waas.gov.in/s382489c9737cc245530c7a6ebef3753ec/uploads/2018/07/2018090436.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "department_name": "RURAL EMPLOYMENT",
+                    "created_at": "2024-06-25T12:00:00Z",
+                    "organisations": [
+                        {
+                            "organisation_name": "",
+                            "created_at": "2024-06-25T12:00:00Z",
+                            "schemes": [
+                                {
+                                    "id": "e02916f2-931a-4a60-94bd-cdb7bb7d028a",
+                                    "title": "Mahatma Gandhi National Rural Employment Guarantee Act",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "The MGNREGA was initiated with the objective of “enhancing livelihood security in rural areas by providing at least 100 days of guaranteed wage employment in a financial year, to every household whose adult members volunteer to do unskilled manual work”. Another aim of MGNREGA is to create durable assets (such as roads, canals, ponds and wells). Employment is to be provided within 5 km of an applicant’s residence, and minimum wages are to be paid. If work is not provided within 15 days of applying, applicants are entitled to an unemployment allowance. Thus, employment under MGNREGA is a legal entitlement.",
+                                    "scheme_link": "http://nrega.nic.in/netnrega/home.aspx",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "Rural household"
+                                        }
+                                    ],
+                                    "documents": [
+                                        []
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": [
+                                        "job"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "department_name": "Health Care",
+                    "created_at": "2024-06-25T12:00:00Z",
+                    "organisations": [
+                        {
+                            "organisation_name": "",
+                            "created_at": "2024-06-25T12:00:00Z",
+                            "schemes": [
+                                {
+                                    "id": "85deecc5-01ec-44f3-9c7f-feddb9080058",
+                                    "title": "National Rural Health Mission (NRHM)",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "The National Rural Health Mission (NRHM), now under National Health Mission[1] is an initiative undertaken by the government of India to address the health needs of under-served rural areas. Basic objectives for implementation of NRHM are: To reduce infant mortality rate and maternal mortality rate To ensure population stabilization To prevent and control of communicable and non-communicable diseases To upgrade AYUSH(Aurvedic Yoga Unani Siddh and Homopath) for promotion of healthy life style",
+                                    "scheme_link": "http://nhm.gov.in/",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "Better Health Care to Community, Specially Women and child"
+                                        }
+                                    ],
+                                    "documents": [
+                                        []
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "department_name": "Education",
+                    "created_at": "2024-06-25T12:00:00Z",
+                    "organisations": [
+                        {
+                            "organisation_name": "",
+                            "created_at": "2024-06-25T12:00:00Z",
+                            "schemes": [
+                                {
+                                    "id": "f4fe77bc-4c37-4e5f-9dd9-fb0a1d69c46f",
+                                    "title": "Beti Bachao Beti Padhao",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "The Overall Goal of the Beti Bachao, Beti Padhao(BBBP) Scheme is to Celebrate the Girl Child & Enable her Education . The objectives of the Scheme are as under :- – Prevent gender biased sex selective elimination Ensure survival & protection of the girl child Ensure education of the girl child",
+                                    "scheme_link": "https://nicobars.andaman.nic.in/scheme/beti-bachao-beti-padhao-yojana/",
+                                    "beneficiaries": [
+                                        {
+                                            "beneficiary_type": "Girl Child"
+                                        }
+                                    ],
+                                    "documents": [
+                                        "https://cdn.s3waas.gov.in/s382489c9737cc245530c7a6ebef3753ec/uploads/2018/07/2018090425.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "state_name": "Chandigarh",
+            "created_at": "2024-06-25T12:00:00Z",
+            "departments": [
+                {
+                    "department_name": "",
+                    "created_at": "2024-06-25T12:00:00Z",
+                    "organisations": [
+                        {
+                            "organisation_name": "",
+                            "created_at": "2024-06-25T12:00:00Z",
+                            "schemes": [
+                                {
+                                    "id": "080a440c-1b5b-4f50-a181-4db079560deb",
+                                    "title": "National Programme for Rehabilitation of Persons with Disabilities (NPRPD)",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "The aim of the scheme is to extend financial assistance to the NGOs, Trusts and Institutions working for the cause of Persons with Disabilities.",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1620810602-NPRPD_Application_form.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1620810602-NPRPD_Application_form.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "caffc10d-6fb1-4851-8266-b56496d75392",
+                                    "title": "Issuing of Identity Cards to Disabled Persons",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1604742422-UDID_Form.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1604742422-UDID_Form.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "a47efeaf-ef42-4196-a2ed-651748278ceb",
+                                    "title": "Unemployment Allowance to Disabled Persons",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "The aim of the scheme is to given unemployment allowance to the unemployed Handicapped Person waiting for the employment for unduly long period and belongs to poor section of the society and required to be assisted till their gainful employment. The eligibility criteria under the scheme is as under:-",
+                                    "scheme_link": "https://serviceonline.gov.in/",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "https://serviceonline.gov.in/"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": [
+                                        "job"
+                                    ]
+                                },
+                                {
+                                    "id": "8caf486a-d9ef-47f5-81a0-94b7284b86b2",
+                                    "title": "Inter-Caste Marriage",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To remove caste consciousness among the people and to encourage inter-caste marriage.",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1631247774-icm.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1631247774-icm.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "2be206bf-16b2-4b23-b7fa-d1dae9532d0e",
+                                    "title": "Financial Assistance for the Marriage of Daughters of Widows/Destitute Women belonging to the Scheduled Caste",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To provide financial assistance for meeting the marriage expenses of daughters of widow/ destitute women belonging to Schedule Caste.",
+                                    "scheme_link": "https://serviceonline.gov.in/",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "https://serviceonline.gov.in/"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "52585a7e-ab90-4164-967a-547701a22c07",
+                                    "title": "National Family Benefit Scheme",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To provide financial assistance to the family on the death of Bread Winner.",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1604740166-NFBS_0.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1604740166-NFBS_0.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "55148fbc-8486-43bc-afe2-f26abce5ae97",
+                                    "title": "The Financial Assistance To Dependent Children of Widows And Destitute Women",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To extend financial assistance to such children who are fatherless or whose parents (both mother and father) have died.",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1604739785-THE_FINANCIAL_ASSISTANCE_TO_DEPENDENT_CHILDREN_OF_WIDOWS_AND_DESTITUTE_WOMEN.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1604739785-THE_FINANCIAL_ASSISTANCE_TO_DEPENDENT_CHILDREN_OF_WIDOWS_AND_DESTITUTE_WOMEN.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "7ab28288-5d7b-41a1-b56e-9424e6047fe4",
+                                    "title": "Petrol Subsidy To Persons With Disability",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://serviceonline.gov.in/",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "https://serviceonline.gov.in/"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "80b5ff52-d68b-4b9d-b1dd-9b1563fcf587",
+                                    "title": "Assistance For Purchase of Aids/Appliances",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "https://serviceonline.gov.in/",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "https://serviceonline.gov.in/"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "1d810e6a-5359-4b79-90db-c6a0886a38f4",
+                                    "title": "Pension To The Disabled Persons",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "- Disability pension to disabled person is granted to Physically Handicapped person. Persons who are disabled to the extent of 40% and are residents of Union Territory of Chandigarh and fulfill the income criteria i.e. family income does not exceed Rs.1.50 lacs p.a. are eligible for grant of pension. The quantum of assistance is as under",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1604736707-Pension_Disabled.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1604736707-Pension_Disabled.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "c27eb8f9-a161-46d3-a1ac-17d8457404ae",
+                                    "title": "Pension To Widows And Destitute Women",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To provide financial assistance to Widows and Destitute Women.",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1604736234-Pension_WidowDestitute.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1604736234-Pension_WidowDestitute.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "4f62b4a3-f63d-4afa-8636-f51775f043f3",
+                                    "title": "Old Age Pension",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To provide financial assistance to elderly people.",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1602674701-Pension_Old.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1602674701-Pension_Old.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "6e38687d-0799-45fe-aab5-781d8340e5f1",
+                                    "title": "ICDS (Integrated Child Development Scheme)",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "Integrated Child Development Services (ICDS)",
+                                    "scheme_link": "http://chdsw.gov.in/uploads/media/1626332162-Activity_Book_for_3-4_years_Children_1.pdf",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        "http://chdsw.gov.in/uploads/media/1626332162-Activity_Book_for_3-4_years_Children_1.pdf"
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "523bfbd1-a76b-4899-94f8-f0d24fa082ef",
+                                    "title": "Sponsorship Scheme -A financial assistance to promote family based care with a view to improve the quality of life of children",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "Sponsorship is the provision of supplementary support to families to meet the needs of their children to improve their quality of life. The focus of the scheme is to promote family based care & deinstitutionalization of children with financial support of Rs. 4000/- pm per child. Benefits under sponsorship scheme will be provided for maximum upto 18 years of age.",
+                                    "scheme_link": "http://chdsw.gov.in/index.php/scheme/Sponsorship-Scheme",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        []
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "6a1f078f-ff5e-409a-a207-32cac8959bbd",
+                                    "title": "Foster Care Scheme",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "Foster Care Scheme; “Be a Foster Parent-  Foster  a Child, Foster Dreams”",
+                                    "scheme_link": "http://chdsw.gov.in/index.php/scheme/Foster-Care",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        []
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "9430c0d5-585b-4b69-8d78-ddb73670aceb",
+                                    "title": "POSHAN Abhiyaan",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "",
+                                    "scheme_link": "http://chdsw.gov.in/index.php/scheme/POSHAN-Abhiyaan",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        []
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                },
+                                {
+                                    "id": "0a2dba4a-3184-44d9-88a3-52c39dd77f83",
+                                    "title": "PARVARISH scheme for the development of children affected/orphaned due to COVID.",
+                                    "introduced_on": "2024-06-25T12:00:00Z",
+                                    "valid_upto": "2024-12-31T23:59:59Z",
+                                    "funding_pattern": "",
+                                    "description": "To ensure holistic development of children affected/orphaned due to COVID and to provide an additional & comprehensive support for their well being.",
+                                    "scheme_link": "http://chdsw.gov.in/index.php/scheme/PARVARISH_scheme",
+                                    "beneficiaries": [],
+                                    "documents": [
+                                        []
+                                    ],
+                                    "sponsors": [
+                                        {
+                                            "sponsor_type": "Yet to be updated"
+                                        }
+                                    ],
+                                    "criteria": [],
+                                    "procedures": [],
+                                    "tags": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
