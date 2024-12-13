@@ -109,7 +109,8 @@ for scheme in data:
             scheme['tags'] = final_converted_data["tags"]
         except Exception as e:
             print("Error",e)
-            print(description)
+            # print(description)
+            
 
 with open(file_path, 'w') as file:
     json.dump(data, file, ensure_ascii=False, indent=4)

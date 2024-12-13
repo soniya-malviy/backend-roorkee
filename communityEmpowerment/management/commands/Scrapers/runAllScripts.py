@@ -42,5 +42,5 @@ if __name__ == "__main__":
     try:
         Command().handle()
     except Exception as e:
-        print(f"Error: {str(e)}", file=sys.stderr)
+        # print(f"Error: {str(e)}", file=sys.stderr)
         sys.exit(1)

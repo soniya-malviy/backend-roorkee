@@ -151,6 +151,7 @@ class Scheme(TimeStampedModel):
     scheme_link = models.URLField(null = True, blank = True)
     beneficiaries = models.ManyToManyField('Beneficiary', related_name='schemes', through='SchemeBeneficiary')
     documents = models.ManyToManyField('Document', related_name='schemes', through='SchemeDocument')
+    pdf_url = models.URLField(null=True, blank=True)
     sponsors = models.ManyToManyField('Sponsor', related_name='schemes', through='SchemeSponsor')
     tags = models.ManyToManyField('Tag', related_name='schemes', blank=True)  # Add this line
     benefits = models.ManyToManyField('Benefit', related_name='schemes', blank=True)

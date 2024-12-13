@@ -16,21 +16,21 @@ try:
         content = f.read()
         data = json.loads(content.decode('utf-8', errors='replace'))  # Replace undecodable characters
 except UnicodeDecodeError:
-    print("Error: Could not decode JSON file.")
+    # print("Error: Could not decode JSON file.")
     exit()
 except FileNotFoundError:
-    print("Error: File not found.")
+    # print("Error: File not found.")
     exit()
 
 if data is None:
-    print("Error: Could not read JSON file.")
+    # print("Error: Could not read JSON file.")
     exit()
 
 # Check if the data is a non-empty list
 if isinstance(data, list) and len(data) > 0:
     raw_json = data
 else:
-    print("Error: JSON data does not contain a list or is empty.")
+    # print("Error: JSON data does not contain a list or is empty.")
     exit()
 
 # Define the template for the formatted data
@@ -77,7 +77,7 @@ def process_chunk(chunk):
 
     # Check if response contains valid content
     if not response or not response.candidates:
-        print("Error: No valid response received from the model.")
+        # print("Error: No valid response received from the model.")
         return None
 
     # Extract the JSON text
@@ -91,8 +91,8 @@ def process_chunk(chunk):
     try:
         response_json = json.loads(response_text)
     except json.JSONDecodeError as e:
-        print(f"Error: Could not decode the response as JSON. {e}")
-        print(response_text)
+        # print(f"Error: Could not decode the response as JSON. {e}")
+        # print(response_text)
         return None
 
     return response_json
@@ -120,6 +120,6 @@ output_file_path = './formattedSchemesData.json'
 try:
     with open(output_file_path, 'w', encoding='utf-8') as f:
         json.dump(final_result, f, ensure_ascii=False, indent=2)
-    print(f"Data successfully saved to {output_file_path}")
+    # print(f"Data successfully saved to {output_file_path}")
 except Exception as e:
     print(f"Error: Could not save data to file. {e}")

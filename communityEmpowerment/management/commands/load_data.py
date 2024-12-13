@@ -51,6 +51,7 @@ class Command(BaseCommand):
                         description = self.truncateDescription(scheme_data.get('description'))
                         scheme_link = self.truncate(scheme_data.get('scheme_link'))
                         funding_pattern = self.truncate(scheme_data.get('funding_pattern', 'State'))
+                        pdf_url = self.truncate(scheme_data.get('pdf_url'))
                         scheme, created = Scheme.objects.get_or_create(
                             title=title,
                             department=department,
@@ -59,7 +60,8 @@ class Command(BaseCommand):
                                 'valid_upto': scheme_data.get('valid_upto'),
                                 'funding_pattern': funding_pattern,
                                 'description': description,
-                                'scheme_link': scheme_link
+                                'scheme_link': scheme_link,
+                                'pdf_url': pdf_url
                             }
                         )
                         if not created:
@@ -68,6 +70,7 @@ class Command(BaseCommand):
                             scheme.funding_pattern = funding_pattern
                             scheme.description = description
                             scheme.scheme_link = scheme_link
+                            scheme.pdf_url = pdf_url
                             scheme.save()
 
                         for beneficiary_data in scheme_data['beneficiaries']:

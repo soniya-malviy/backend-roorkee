@@ -797,7 +797,8 @@ def transform_and_add_goa_data(original_data, combined_data):
             "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
             "funding_pattern": item.get("funding_pattern", "").strip(),
             "description": description,
-            "scheme_link": item.get("schemeUrl"),  
+            "scheme_link": item.get("schemeUrl"),
+            "pdf_url": item.get("pdfUrl"),
             "beneficiaries": [
                 {"beneficiary_type": item.get("beneficiary", "").strip()}
             ],
@@ -1288,4 +1289,4 @@ transform_and_add_ladakh_data(ladakh_data,combined_data)
 with open(base_file_path+"/combined_schemes_data.json", "w") as file:
     json.dump(combined_data, file,ensure_ascii=False, indent=4)
 
-print("Combined data has been successfully saved to combined_schemes_data.json")
+# print("Combined data has been successfully saved to combined_schemes_data.json")

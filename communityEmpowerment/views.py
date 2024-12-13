@@ -504,11 +504,11 @@ class UnsaveSchemeView(APIView):
                 else:
                     print(f"Scheme with id {scheme_id} is not saved by user {user.username}")
             except Scheme.DoesNotExist:
-                print(f"Scheme with id {scheme_id} does not exist")
+                # print(f"Scheme with id {scheme_id} does not exist")
                 return Response({'error': f'Scheme with id {scheme_id} does not exist'}, status=status.HTTP_400_BAD_REQUEST)
 
         user.save()
-        print(f"User {user.username} unsaved schemes: {[scheme.id for scheme in removed_schemes]}")
+        # print(f"User {user.username} unsaved schemes: {[scheme.id for scheme in removed_schemes]}")
         return Response({'status': 'Schemes unsaved successfully', 'removed_schemes': SchemeSerializer(removed_schemes, many=True).data}, status=status.HTTP_200_OK)
     
 # BANNER VIEW BELOW
