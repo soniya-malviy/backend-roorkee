@@ -144,13 +144,14 @@ class Tag(TimeStampedModel):
 class Scheme(TimeStampedModel):
     title = models.TextField(null = True, blank = True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, related_name='schemes', null=True, blank=True)
-    introduced_on = models.DateTimeField(null = True, blank = True)
-    valid_upto = models.DateTimeField(null = True, blank = True)
+    introduced_on = models.TextField(null = True, blank = True)
+    valid_upto = models.TextField(null = True, blank = True)
     funding_pattern = models.CharField(max_length=255, null = True, blank = True)
     description = models.TextField(null = True, blank = True)
     scheme_link = models.URLField(null = True, blank = True)
     beneficiaries = models.ManyToManyField('Beneficiary', related_name='schemes', through='SchemeBeneficiary')
     documents = models.ManyToManyField('Document', related_name='schemes', through='SchemeDocument')
+    pdf_url = models.URLField(null=True, blank=True)
     sponsors = models.ManyToManyField('Sponsor', related_name='schemes', through='SchemeSponsor')
     tags = models.ManyToManyField('Tag', related_name='schemes', blank=True)  # Add this line
     benefits = models.ManyToManyField('Benefit', related_name='schemes', blank=True)
@@ -164,7 +165,7 @@ class Scheme(TimeStampedModel):
         return self.title
     
 class Benefit(TimeStampedModel):
-    benefit_type = models.CharField(max_length=255, null=True, blank=True)
+    benefit_type = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 
     class Meta:
@@ -210,7 +211,7 @@ class Criteria(TimeStampedModel):
         ordering = ['description']
 
     def __str__(self):
-        return self.description
+        return self.description if self.description else "Unnamed Criteria"
 
 class Procedure(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='procedures', null=True, blank=True)

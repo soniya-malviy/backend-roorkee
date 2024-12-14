@@ -198,7 +198,7 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '/static_files')
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, '/media_files')
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'media_files')
 
 # Celery configuration
 # REDIS_HOST = os.getenv('REDIS_HOST')
@@ -240,6 +240,12 @@ MEDIA_ROOT = os.path.join(ROOT_DIR, '/media_files')
 #      'communityEmpowerment.*': {'ops': 'all', 'timeout': 60*60},
 
 # }
+
+
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME= os.getenv('AWS_S3_REGION_NAME')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
