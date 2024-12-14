@@ -6,6 +6,11 @@ from django.contrib.auth import get_user_model
 import uuid
 from datetime import timedelta
 
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class MediaStorage(S3Boto3Storage):
+    location = 'media'
+    file_overwrite = False
 
 
 class TimeStampedModel(models.Model):
@@ -494,17 +499,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
 # BANNER BELOW
     
-
 class Banner(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='banners/',blank=True, null=True)
+    image = models.ImageField(storage=MediaStorage(), upload_to='banners/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
-
     def __str__(self):
         return self.title
     
-
 User = get_user_model()
 
 class SavedFilter(models.Model):

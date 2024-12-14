@@ -703,7 +703,7 @@ def transform_and_add_andhra_pradesh_data(original_data, combined_data):
             "valid_upto": '2024-12-31T23:59:59Z',
             "funding_pattern":"Yet to be updated",
             "description": description,
-            "scheme_link": "",
+            "scheme_link": item.get('scheme_url',''),
             "beneficiaries":  [
                 {"beneficiary_type": item.get("Beneficiaries")}
             ] if item.get("Beneficiaries") else [],
@@ -765,7 +765,7 @@ def transform_and_add_assam_data(original_data, combined_data):
             "valid_upto": '2024-12-31T23:59:59Z',
             "funding_pattern":"Yet to be updated",
             "description": description,
-            "scheme_link": "Yet to be updated",
+            "scheme_link": item.get('scheme_url',''),
             "beneficiaries":  [
                 {"beneficiary_type": item.get("Beneficiaries")}
             ] if item.get("Beneficiaries") else [],
@@ -882,7 +882,7 @@ def transform_and_add_punjab_data(original_data, combined_data):
             "valid_upto": "2024-12-31T23:59:59Z",
             "funding_pattern": item.get("FUNDING PATTERN"),
             "description": description,
-            "scheme_link": '',
+            "scheme_link": item.get('scheme_url',''),
             "beneficiaries": [
                 {"beneficiary_type": item.get("Beneficiaries")}
             ] if item.get("Beneficiaries") else [],
@@ -1294,13 +1294,13 @@ combined_data = {
 # transform_and_add_andhra_pradesh_data(andhra_pradesh_data,combined_data)
 # transform_and_add_assam_data(assam_data, combined_data)
 # transform_and_add_haryana_data(haryana_data, combined_data)
-# transform_and_add_punjab_data(punjab_data, combined_data)
+transform_and_add_punjab_data(punjab_data, combined_data)
 # transform_and_add_odisha_data(odisha_data, combined_data)
 # transform_and_add_arunachal_pradesh_data(arunachal_pradesh_data,combined_data)
 # transform_and_add_dadar_nagar_haveli_data(dadar_nagar_haveli_data,combined_data)
 # combined_data['states'].append(madhya_pradesh_data)
-transform_and_add_nicobar_data(nicobar_data, combined_data)
-transform_and_add_chandigarh_data(chandigarh_data, combined_data)
+# transform_and_add_nicobar_data(nicobar_data, combined_data)
+# transform_and_add_chandigarh_data(chandigarh_data, combined_data)
 # Save the combined data to a new JSON file
 with open(base_file_path+"/schemes_data.json", "w") as file:
     json.dump(combined_data, file,ensure_ascii=False, indent=4)

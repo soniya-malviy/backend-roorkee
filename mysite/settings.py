@@ -26,7 +26,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = True
 
 ALLOWED_HOSTS = ["3.109.208.148",'*']
 
@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cacheops',
     'import_export',
+    'storages'
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Ensure this is before CommonMiddleware,
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -199,12 +199,22 @@ if ROOT_DIR.endswith('/'):
 else:
     ROOT_DIR = ROOT_DIR + '/'
 
+# AWS Settings
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+# Use S3 for media files
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+# Media files
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+
+# Static files (local storage)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, 'media_files')
 
 # Celery configuration
 # REDIS_HOST = os.getenv('REDIS_HOST')
