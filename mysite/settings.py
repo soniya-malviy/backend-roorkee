@@ -26,7 +26,10 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if(os.getenv('ENVIRONMENT') == 'development'):
+    DEBUG = True
+elif(os.getenv('ENVIRONMENT') == 'production'):
+    DEBUG = False
 
 ALLOWED_HOSTS = ["3.109.208.148",'*']
 
@@ -193,28 +196,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-if ROOT_DIR.endswith('/'):
-    ROOT_DIR = ROOT_DIR.rstrip('/')
-else:
-    ROOT_DIR = ROOT_DIR + '/'
-
 # AWS Settings
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_MEDIA_STORAGE_BUCKET_NAME = os.getenv('AWS_MEDIA_STORAGE_BUCKET_NAME')
+AWS_PDF_STORAGE_BUCKET_NAME = os.getenv('AWS_PDF_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_MEDIA_CUSTOM_DOMAIN = f'https://{AWS_MEDIA_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_PDF_CUSTOM_DOMAIN = f'https://{AWS_PDF_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-# Use S3 for media files
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
-# Media files
-MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
-
-# Static files (local storage)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(ROOT_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static_files')
+
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+MEDIA_URL = f"https://{AWS_S3_MEDIA_CUSTOM_DOMAIN}/media/"
 
 # Celery configuration
 # REDIS_HOST = os.getenv('REDIS_HOST')
@@ -289,6 +285,10 @@ STATIC_ROOT = os.path.join(ROOT_DIR, 'staticfiles')
 # }
 # }
 
+
+
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -298,7 +298,7 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_FROM = os.getenv('EMAIL_FROM')
 
 SITE_URL = "http://3.109.208.148:8000/api"
-FRONTEND_URL = "http://3.109.208.148:3000"
+FRONTEND_URL = "http://3.109.208.148:80"
 
 
 AUTH_USER_MODEL = 'communityEmpowerment.CustomUser'

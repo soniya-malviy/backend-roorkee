@@ -5,10 +5,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 import uuid
 from datetime import timedelta
+from django.conf import settings
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
 class MediaStorage(S3Boto3Storage):
+    bucket_name = settings.AWS_MEDIA_STORAGE_BUCKET_NAME
     location = 'media'
     file_overwrite = False
 
@@ -157,6 +159,7 @@ class Scheme(TimeStampedModel):
     scheme_link = models.URLField(null = True, blank = True)
     beneficiaries = models.ManyToManyField('Beneficiary', related_name='schemes', through='SchemeBeneficiary')
     documents = models.ManyToManyField('Document', related_name='schemes', through='SchemeDocument')
+    pdf_url = models.URLField(null=True, blank=True)
     sponsors = models.ManyToManyField('Sponsor', related_name='schemes', through='SchemeSponsor')
     tags = models.ManyToManyField('Tag', related_name='schemes', blank=True)  # Add this line
     benefits = models.ManyToManyField('Benefit', related_name='schemes', blank=True)
@@ -216,7 +219,7 @@ class Criteria(TimeStampedModel):
         ordering = ['description']
 
     def __str__(self):
-        return self.description or "N/A"
+        return self.description if self.description else "Unnamed Criteria"
 
 class Procedure(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='procedures', null=True, blank=True)
