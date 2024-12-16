@@ -19,6 +19,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir gunicorn
 
+# Copy the .env file into the container (ensure .env exists in the project root)
+COPY .env /app/.env
 # Pass build arguments
 ARG ENV=production
 ARG DATABASE_NAME

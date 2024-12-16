@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Ensure this is before CommonMiddleware,
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -207,6 +208,7 @@ AWS_S3_PDF_CUSTOM_DOMAIN = f'https://{AWS_PDF_STORAGE_BUCKET_NAME}.s3.amazonaws.
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(ROOT_DIR, 'static_files')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
