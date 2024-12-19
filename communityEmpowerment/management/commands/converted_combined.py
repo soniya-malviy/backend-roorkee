@@ -430,7 +430,9 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = remove_leading_numbers(item.get("title").strip())
+        if not item.get("title",""):
+            continue
+        title = remove_leading_numbers(item.get("title",""))
         scheme_link = item.get("scheme_link")
         description = item.get("description")
         scheme = {
@@ -631,7 +633,7 @@ def transform_and_add_kerala_data(original_data, combined_data):
             "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
             "funding_pattern": item.get("Funding by", "").strip(),
             "description": description,
-            "scheme_link": item.get("scheme_link"),  
+            "scheme_link": item.get("schemeUrl"),  
             "beneficiaries": [
                 {"beneficiary_type": item.get("beneficiary", "").strip()}
             ],
@@ -802,7 +804,7 @@ def transform_and_add_jharkhand_data(original_data, combined_data):
             "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
             "funding_pattern": item.get("funding_pattern", "").strip(),
             "description": description,
-            "scheme_link": item.get("schemeUrl"),  
+            "scheme_link": item.get("scheme_url"),  
             "beneficiaries": [
                 {"beneficiary_type": item.get("beneficiary", "").strip()}
             ],
@@ -1495,7 +1497,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
             "valid_upto": '2024-12-31T23:59:59Z',
             "funding_pattern":"",
             "description": description,
-            "scheme_link": item.get('scheme_url',''),
+            "scheme_link": item.get('schemeUrl',''),
             "beneficiaries":  [
                 {"beneficiary_type": item.get("Beneficiaries")}
             ] if item.get("Beneficiaries") else [],
