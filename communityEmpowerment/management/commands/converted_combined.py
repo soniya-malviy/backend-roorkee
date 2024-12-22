@@ -341,6 +341,7 @@ def transform_and_add_maharashtra_data(original_data, combined_data):
 
     for item in original_data:
         title = remove_leading_numbers(item.get("title", "").strip())
+        title = remove_leading_numbers(item.get("title", "").strip())
         scheme_id = item.get("id", "")
 
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
@@ -569,6 +570,7 @@ def transform_and_add_manipur_data(original_data, combined_data):
             "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
             "funding_pattern": item.get("Funding by", "").strip(),
             "description": description,
+            "scheme_link": item.get("schemeUrl"),  
             "scheme_link": item.get("schemeUrl"),  
             "beneficiaries": [
                 {"beneficiary_type": item.get("beneficiary", "").strip()}
@@ -1712,6 +1714,7 @@ with open(base_file_path+"/puducherry.json", "r") as file:
 with open(base_file_path+"/jammukashmir.json", "r") as file:
     jammukashmir_data = json.load(file)
 
+
 with open(base_file_path+"/gujrat.json", "r") as file:
     gujarat_data = json.load(file)
 
@@ -1824,4 +1827,5 @@ transform_and_add_chandigarh_data(chandigarh_data, combined_data)
 with open(base_file_path+"/combined_schemes_data.json", "w") as file:
     json.dump(combined_data, file,ensure_ascii=False, indent=4)
 
+# print("Combined data has been successfully saved to combined_schemes_data.json")
 # print("Combined data has been successfully saved to combined_schemes_data.json")
