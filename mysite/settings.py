@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,9 +26,12 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if(os.getenv('ENVIRONMENT') == 'development'):
+    DEBUG = True
+elif(os.getenv('ENVIRONMENT') == 'production'):
+    DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["3.109.208.148",'*']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -49,10 +52,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cacheops',
     'import_export',
+    'storages'
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # Ensure this is before CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware',  # Ensure this is before CommonMiddleware,
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -192,13 +197,22 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+# AWS Settings
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_MEDIA_STORAGE_BUCKET_NAME = os.getenv('AWS_MEDIA_STORAGE_BUCKET_NAME')
+AWS_PDF_STORAGE_BUCKET_NAME = os.getenv('AWS_PDF_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
+AWS_S3_MEDIA_CUSTOM_DOMAIN = f'https://{AWS_MEDIA_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_PDF_CUSTOM_DOMAIN = f'https://{AWS_PDF_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(ROOT_DIR, '/static_files')
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static_files')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(ROOT_DIR, 'media_files')
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+MEDIA_URL = f"https://{AWS_S3_MEDIA_CUSTOM_DOMAIN}/media/"
 
 # Celery configuration
 # REDIS_HOST = os.getenv('REDIS_HOST')
@@ -209,7 +223,18 @@ MEDIA_ROOT = os.path.join(ROOT_DIR, 'media_files')
 # CELERY_ACCEPT_CONTENT = ['json']
 # CELERY_TIMEZONE = 'UTC'
 # CELERY_ENABLE_UTC = True
+# REDIS_HOST = os.getenv('REDIS_HOST')
+# REDIS_PORT = os.getenv('REDIS_PORT')
+# CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0' # CELERY_RESULT_BACKEND = CELE>
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_ACCEPT_CONTENT = ['json']
+# CELERY_TIMEZONE = 'UTC'
+# CELERY_ENABLE_UTC = True
 
+#  # settings.py
+# CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+# CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 #  # settings.py
 # CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
 # CELERY_RESULT_BACKEND = CELERY_BROKER_URL
@@ -231,15 +256,40 @@ MEDIA_ROOT = os.path.join(ROOT_DIR, 'media_files')
 #      'password': None,     # Redis password if any
 #      'socket_timeout': 3,
 # }
+# # Cacheops settings
+# CACHES = {
+#      'default': {
+#          'BACKEND': 'django_redis.cache.RedisCache',
+#          'LOCATION':  f'redis://{REDIS_HOST}:{REDIS_PORT}/1',  # Make sure this is correct
+#          'OPTIONS': {
+#              'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
+# CACHEOPS_REDIS = {
+#      'host': REDIS_HOST,  # Redis host
+#      'port': REDIS_PORT,         # Redis port
+#      'db': 1,              # Redis db
+#      'password': None,     # Redis password if any
+#      'socket_timeout': 3,
+# }
 
+# CACHEOPS_DEFAULTS = {
+#      'timeout': 60*15  # 15 minutes
+# }
 # CACHEOPS_DEFAULTS = {
 #      'timeout': 60*15  # 15 minutes
 # }
 
 # CACHEOPS = {
-#      'communityEmpowerment.*': {'ops': 'all', 'timeout': 60*60},
+#      'myapp.*': {'ops': 'all', 'timeout': 60*60},
 
 # }
+# }
+
+
+
+
 
 
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
@@ -254,7 +304,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_FROM = os.getenv('EMAIL_FROM')
-SITE_URL = "http://65.0.103.91:80/api"
-FRONTEND_URL = "http://65.0.103.91:80"
+
+SITE_URL = "http://65.0.122.213:8000/api"
+FRONTEND_URL = "http://65.0.122.213:80"
+
 
 AUTH_USER_MODEL = 'communityEmpowerment.CustomUser'

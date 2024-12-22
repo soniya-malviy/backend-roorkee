@@ -85,6 +85,8 @@ class Command(BaseCommand):
                                 )
 
                         for document_data in scheme_data['documents']:
+                            if 'document_name' not in document_data:
+                                continue
                             document_name = self.truncate(document_data['document_name'])
                             requirements = self.truncate(document_data.get('requirements'))
                             document, created = Document.objects.update_or_create(

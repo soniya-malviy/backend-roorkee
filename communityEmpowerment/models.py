@@ -5,7 +5,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 import uuid
 from datetime import timedelta
+from django.conf import settings
 
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class MediaStorage(S3Boto3Storage):
+    bucket_name = settings.AWS_MEDIA_STORAGE_BUCKET_NAME
+    location = 'media'
+    file_overwrite = False
 
 
 class TimeStampedModel(models.Model):
@@ -31,7 +38,7 @@ class State(TimeStampedModel):
         verbose_name_plural = "States"
         ordering = ['state_name']
     def __str__(self):
-        return self.state_name
+        return self.state_name or "N/A"
 
 
 
@@ -45,10 +52,11 @@ class Department(TimeStampedModel):
         ordering = ['department_name']
 
     def __str__(self):
-        return self.department_name
+        return self.department_name or "N/A"
     
     def get_group(self):
-        department_name = self.department_name.lower()
+        department_name = self.department_name.lower() if self.department_name else ""
+
         
         
         EDUCATION_KEYWORDS = [
@@ -125,7 +133,7 @@ class Organisation(TimeStampedModel):
         ordering = ['organisation_name']
     
     def __str__(self):
-        return self.organisation_name
+        return self.organisation_name or "N/A"
     
 class Tag(TimeStampedModel):
     name = models.CharField(max_length=255, unique=True)
@@ -136,7 +144,7 @@ class Tag(TimeStampedModel):
         ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return self.name or "N/A"
 
 
      
@@ -162,7 +170,7 @@ class Scheme(TimeStampedModel):
         ordering = ['introduced_on']
 
     def __str__(self):
-        return self.title
+        return self.title or "N/A"
     
 class Benefit(TimeStampedModel):
     benefit_type = models.TextField(null=True, blank=True)
@@ -174,7 +182,7 @@ class Benefit(TimeStampedModel):
         ordering = ['benefit_type']
 
     def __str__(self):
-        return self.benefit_type
+        return self.benefit_type or "N/A"
 
 class Beneficiary(TimeStampedModel):
     beneficiary_type = models.CharField(max_length=255, null=True, blank=True)
@@ -185,7 +193,7 @@ class Beneficiary(TimeStampedModel):
         ordering = ['beneficiary_type']
     
     def __str__(self):
-        return self.beneficiary_type
+        return self.beneficiary_type or "N/A"
 
 class SchemeBeneficiary(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='scheme_beneficiaries')
@@ -223,7 +231,7 @@ class Procedure(TimeStampedModel):
         ordering = ['scheme']
 
     def __str__(self):
-        return self.step_description
+        return self.step_description or "N/A"
 
 class Document(TimeStampedModel):
     document_name = models.CharField(max_length=255, null=True, blank=True)
@@ -235,7 +243,7 @@ class Document(TimeStampedModel):
         ordering = ['document_name']
 
     def __str__(self):
-        return self.document_name
+        return self.document_name or "N/A"
 
 class SchemeDocument(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='scheme_documents')
@@ -255,7 +263,7 @@ class Sponsor(TimeStampedModel):
         ordering = ['sponsor_type']
 
     def __str__(self):
-        return self.sponsor_type
+        return self.sponsor_type or "N/A"
 
 class SchemeSponsor(TimeStampedModel):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name='scheme_sponsors')
@@ -277,7 +285,7 @@ class TempState(TimeStampedModel):
         abstract = True
 
     def __str__(self):
-        return self.state_name
+        return self.state_name or "N/A"
 
 class TempDepartment(TimeStampedModel):
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='temp_departments', null=True, blank=True)
@@ -494,17 +502,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
 # BANNER BELOW
     
-
 class Banner(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='banners/',blank=True, null=True)
+    image = models.ImageField(storage=MediaStorage(), upload_to='banners/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
-
     def __str__(self):
         return self.title
     
-
 User = get_user_model()
 
 class SavedFilter(models.Model):

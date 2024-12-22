@@ -10,7 +10,7 @@ s3 = boto3.client('s3',
                   aws_secret_access_key= settings.AWS_SECRET_ACCESS_KEY, 
                   region_name= settings.AWS_S3_REGION_NAME)
 
-BUCKET_NAME = settings.AWS_STORAGE_BUCKET_NAME
+BUCKET_NAME = settings.AWS_PDF_STORAGE_BUCKET_NAME
 
 def list_pdfs_in_directory(state_name):
     try:
