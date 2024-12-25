@@ -519,3 +519,35 @@ class SavedFilter(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.user.username})"
+
+
+class SchemeReport(models.Model):
+    REPORT_CATEGORIES = [
+        ('incorrect_info', 'Incorrect Information'),
+        ('outdated_info', 'Outdated Information'),
+        ('other', 'Other'),
+    ]
+
+    scheme_id = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    report_category = models.CharField(max_length=50, choices=REPORT_CATEGORIES)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Report for Scheme {self.scheme_id} - {self.report_category}"
+
+class WebsiteFeedback(models.Model):
+    FEEDBACK_CATEGORIES = [
+        ('bug', 'Bug Report'),
+        ('improvement', 'Improvement Suggestion'),
+        ('general', 'General Feedback'),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.CharField(max_length=50, choices=FEEDBACK_CATEGORIES)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Feedback - {self.feedback_category}"
