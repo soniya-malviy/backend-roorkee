@@ -58,7 +58,9 @@ from .views import (
     CurrentUserDetailView,
     ResendVerificationEmailView,
     EmploymentChoicesView,
-    UserSavedSchemesFilterView
+    UserSavedSchemesFilterView,
+    SchemeReportViewSet,
+    WebsiteFeedbackViewSet
 
 )
 
@@ -123,5 +125,9 @@ urlpatterns = [
     path('user/me/', CurrentUserDetailView.as_view(), name='current-user-detail'),
     path('resend-verification-email/', ResendVerificationEmailView.as_view(), name='resend-verification-email'),
     path('saved-schemes/filter/', UserSavedSchemesFilterView.as_view(), name='user-saved-schemes-filter'),
+    path('feedback/scheme-reports/', SchemeReportViewSet.as_view({'post': 'create', 'get': 'list'}), name='scheme-reports'),
+    path('feedback/scheme-reports/<int:pk>/', SchemeReportViewSet.as_view({'get': 'retrieve', 'delete': 'destroy'}), name='scheme-report-detail'),
+    path('feedback/website-feedback/', WebsiteFeedbackViewSet.as_view({'post': 'create', 'get': 'list'}), name='website-feedback'),
+    path('feedback/website-feedback/<int:pk>/', WebsiteFeedbackViewSet.as_view({'get': 'retrieve', 'delete': 'destroy'}), name='website-feedback-detail'),
 
 ]
