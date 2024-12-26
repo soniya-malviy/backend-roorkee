@@ -1,112 +1,381 @@
 [
   {
-    "id": "60464b12-cb99-4a92-bd56-f733a37db2c2",
-    "title": "Old Age Samman Allowance",
-    "publishDate": "14/05/2020",
-    "description": "This is a State scheme under which senior citizens of Haryana domicile in the age group of 60 years and above are given Old Age Samman Allowance as per eligibility criteria laid down in the rules of the scheme.",
-    "benefits": "Rate of Allowance: Rs. 1,800 per month (w.e.f. 01-11-2017)",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051417.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/old-age-samman-allowance/"
+      "description": "This is a State scheme under which senior citizens of Haryana domicile in the age group of 60 years and above are given Old Age Samman Allowance as per eligibility criteria laid down in the rules of the scheme.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Senior Citizen"
+          }
+      ],
+      "tags": [
+          "Old Age",
+          "Senior Citizen",
+          "Pension",
+          "Allowance",
+          "Social Welfare"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center"
+          },
+          {
+              "step_description": "Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "State",
+      "scheme_link": "https://haryana.gov.in/scheme/old-age-samman-allowance/",
+      "title": "Old Age Samman Allowance",
+      "introduced_on": "14/05/2020",
+      "criteria": [
+          {
+              "description": "Haryana domicile"
+          },
+          {
+              "description": "Age 60 years and above"
+          }
+      ],
+      "documents": [],
+      "id": "3e200fc6-b0dc-4a2a-968f-6f3923a828cf"
   },
   {
-    "id": "f92f2622-2697-4a62-8c26-bda4c3a50f13",
-    "title": "Widow Pension Scheme",
-    "publishDate": "14/05/2020",
-    "description": "This is a State scheme under which destitute or deserted women and widow of 18 years of age or above are given pension as per eligibility criteria laid down in the rules of the scheme.",
-    "benefits": "Rate of Allowance: Rs. 1,800 per month (w.e.f. 01-11-2017)",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051427-1.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/widow-pension-scheme/"
+      "description": "This is a State scheme under which destitute or deserted women and widow of 18 years of age or above are given pension as per eligibility criteria laid down in the rules of the scheme.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Destitute women"
+          },
+          {
+              "beneficiary_type": "Deserted women"
+          },
+          {
+              "beneficiary_type": "Widows"
+          }
+      ],
+      "tags": [
+          "Widow",
+          "Pension",
+          "Women",
+          "Destitute",
+          "Deserted"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center"
+          },
+          {
+              "step_description": "Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "State",
+      "scheme_link": "https://haryana.gov.in/scheme/widow-pension-scheme/",
+      "title": "Widow Pension Scheme",
+      "introduced_on": "14/05/2020",
+      "criteria": [
+          {
+              "description": "18 years of age or above"
+          }
+      ],
+      "documents": [],
+      "id": "92d41855-e2ec-46cb-92b0-08b3c653b7c7"
   },
   {
-    "id": "a8f5b555-0e03-40a7-a812-573677026f47",
-    "title": "Disability Pension Scheme",
-    "publishDate": "14/05/2020",
-    "description": "This is a State scheme under which disabled person of Haryana domicile with a minimum 60% disability and are 18 years of age and above, are given pension as per eligibility criteria laid down in the rules of the scheme.",
-    "benefits": "Rate of Allowance: Rs. 1,800 per month (w.e.f. 01-11-2017)",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051430.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/disability-pension-scheme/"
+      "description": "This is a State scheme under which disabled person of Haryana domicile with a minimum 60% disability and are 18 years of age and above, are given pension as per eligibility criteria laid down in the rules of the scheme.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "disabled person"
+          }
+      ],
+      "tags": [
+          "Disability",
+          "Pension"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center"
+          },
+          {
+              "step_description": "Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://haryana.gov.in/scheme/disability-pension-scheme/",
+      "funding_pattern": "State",
+      "title": "Disability Pension Scheme",
+      "introduced_on": "14/05/2020",
+      "criteria": [
+          {
+              "description": "Haryana domicile"
+          },
+          {
+              "description": "minimum 60% disability"
+          },
+          {
+              "description": "18 years of age and above"
+          }
+      ],
+      "documents": [],
+      "id": "fd39c44c-627c-4b2d-9bf3-77312e7e1658"
   },
   {
-    "id": "d6f4c3b4-2540-4f41-901e-747cdcbfd920",
-    "title": "Financial Assistance to Destitute Children Scheme(FADC)",
-    "publishDate": "14/05/2020",
-    "description": "This is a State Scheme under which parents/guardians of the children upto the age of 21 years who are deprived of proper care because of the death or long imprisonment of their parents, long illness or mental retardation, are paid financial assistance subject to the maximum for two children of one family as per eligibility criteria laid down in the scheme.",
-    "benefits": "Rate of Allowance: Rs. 900 per month per child subject to the maximum for two children of one family (w.e.f 01-11-2017).",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051447.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/financial-assistance-to-destitute-children-schemefadc/"
+      "description": "This is a State Scheme under which parents/guardians of the children upto the age of 21 years who are deprived of proper care because of the death or long imprisonment of their parents, long illness or mental retardation, are paid financial assistance subject to the maximum for two children of one family as per eligibility criteria laid down in the scheme.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Children up to 21 years old"
+          }
+      ],
+      "tags": [
+          "children",
+          "financial assistance",
+          "destitute",
+          "state scheme",
+          "haryana"
+      ],
+      "procedures": [
+          {
+              "step_description": "Apply through E-disha Center"
+          },
+          {
+              "step_description": "Apply through Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "14/05/2020",
+      "funding_pattern": "State Scheme",
+      "title": "Financial Assistance to Destitute Children Scheme(FADC)",
+      "scheme_link": "https://haryana.gov.in/scheme/financial-assistance-to-destitute-children-schemefadc/",
+      "criteria": [
+          {
+              "description": "Deprived of proper care because of the death or long imprisonment of their parents"
+          },
+          {
+              "description": "Long illness or mental retardation of parents"
+          },
+          {
+              "description": "Maximum two children of one family"
+          }
+      ],
+      "documents": [],
+      "id": "485c1155-3794-433f-a98c-c05043fe07f7"
   },
   {
-    "id": "0a247bf9-6296-4535-b2ec-3b9e8a15eb9d",
-    "title": "Financial Assistance to Non School Going Disabled Children(less than 18 Years)",
-    "publishDate": "14/05/2020",
-    "description": "Under this scheme mentally retarded and multiple disabled children who are in the age group of 0-18 years who are not able to attend formal education, training etc. due to their disability is given financial aid. They are totally dependent on their parents and relatives and need constant supervision and care of their families. Financial Assistance shall be admissible under the scheme to every such disabled child in the family of the applicant.",
-    "benefits": "Rate of Allowance: Rs. 1,200 per month (w.e.f 01-11-2017)",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051440-1.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/financial-assistance-to-non-school-going-disabled-childrenless-than-18-years/"
+      "description": "Under this scheme mentally retarded and multiple disabled children who are in the age group of 0-18 years who are not able to attend formal education, training etc. due to their disability is given financial aid. They are totally dependent on their parents and relatives and need constant supervision and care of their families. Financial Assistance shall be admissible under the scheme to every such disabled child in the family of the applicant.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "mentally retarded and multiple disabled children who are in the age group of 0-18 years"
+          }
+      ],
+      "tags": [
+          "disabled children",
+          "financial assistance",
+          "social welfare"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Rs. 1,200 per month",
+      "introduced_on": "01-11-2017",
+      "title": "Financial Assistance to Non School Going Disabled Children(less than 18 Years)",
+      "scheme_link": "https://haryana.gov.in/scheme/financial-assistance-to-non-school-going-disabled-childrenless-than-18-years/",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "not able to attend formal education"
+          },
+          {
+              "description": "totally dependent on their parents and relatives"
+          }
+      ],
+      "id": "86043940-059c-4aa7-81f1-c38a07916ff9"
   },
   {
-    "id": "4246c623-003a-4b21-94fb-407802a29939",
-    "title": "Allowance to Dwarfs",
-    "publishDate": "14/05/2020",
-    "description": "Dwarf persons who are living in various parts of the State are being given allowance. A male person with 3 feet 8 inches or less height and a female with 3 feet 3 inches or less height (equivalent to 70% handicapped) is entitled to monthly allowance.",
-    "benefits": "Rate of Allowance: Rs. 1,800 per month (w.e.f 01-11-2017)",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051456-1.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/allowance-to-dwarfs/"
+      "description": "Dwarf persons who are living in various parts of the State are being given allowance. A male person with 3 feet 8 inches or less height and a female with 3 feet\\n3 inches or less height (equivalent to 70% handicapped) is entitled to monthly allowance.",
+      "tags": [
+          "Allowance",
+          "Disability",
+          "Dwarf"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Dwarf"
+          }
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://haryana.gov.in/scheme/allowance-to-dwarfs/",
+      "introduced_on": "14/05/2020",
+      "title": "Allowance to Dwarfs",
+      "funding_pattern": "Rs. 1,800 per month (w.e.f 01-11-2017)",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "A male person with 3 feet 8 inches or less height and a female with 3 feet 3 inches or less height (equivalent to 70% handicapped)"
+          }
+      ],
+      "id": "044b40c4-cf7c-425a-ad2e-a9e6b66a12e0"
   },
   {
-    "id": "7102db52-0c3d-467b-a5ca-42379c56e2c1",
-    "title": "Allowance to Eunuchs",
-    "publishDate": "14/05/2020",
-    "description": "Eunuchs who are living in various parts of the State, should not be less than 18 years and provide certificate from the Civil Surgeon in support of being an Eunuch.",
-    "benefits": "Rate of Allowance: Rs. 1,800 per month (w.e.f. 01-11-2017)",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051476.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/allowance-to-eunuchs/"
+      "description": "Eunuchs who are living in various parts of the State, should not be less than 18 years and provide certificate from the Civil Surgeon in support of being an Eunuch.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Eunuchs"
+          }
+      ],
+      "tags": [
+          "Allowance",
+          "Eunuchs",
+          "Social Welfare"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "14/05/2020",
+      "funding_pattern": "Rs. 1,800 per month (w.e.f. 01-11-2017)",
+      "title": "Allowance to Eunuchs",
+      "scheme_link": "https://haryana.gov.in/scheme/allowance-to-eunuchs/",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "Eunuchs who are living in various parts of the State"
+          }
+      ],
+      "id": "98ddafd7-27f3-4fa4-a552-7726175a79e3"
   },
   {
-    "id": "1d898969-2b0e-417f-85d7-810fb0f4a0fc",
-    "title": "Rajiv Gandhi Pariwar Bima Yojna",
-    "publishDate": "14/05/2020",
-    "description": "State Govt. is implementing Rajiv Gandhi Parivar Bima Yojna w.e.f. 1.4.2006. Under this Scheme compensation is given in case of accidental death/ permanent disability to all in the age group of 18-60 years, who are domicile of Haryana and whose name appears in the Voters list or who hold Ration Card issued by the competent authority and are not income Tax Payee and Govt. employee.",
-    "benefits": "Accidental Death/Permanent Disability Rs 1.00 lac. Loss of two Limbs, two eyes, one limb and one eye Rs 50,000. Loss of one eye or one limb Rs 25,000.",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051449.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/rajiv-gandhi-pariwar-bima-yojna/"
+      "description": "State Govt. is implementing Rajiv Gandhi Parivar Bima Yojna w.e.f. 1.4.2006. Under this Scheme compensation is given in case of accidental death/ permanent disability to all in the age group of 18-60 years, who are domicile of Haryana and whose name appears in the Voters list or who hold Ration Card issued by the competent authority and are not income Tax Payee and Govt. employee.",
+      "tags": [
+          "accident",
+          "insurance",
+          "death benefit",
+          "disability benefit",
+          "compensation"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "All in the age group of 18-60 years, who are domicile of Haryana and whose name appears in the Voters list or who hold Ration Card issued by the competent authority and are not income Tax Payee and Govt. employee."
+          }
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "Not available",
+      "funding_pattern": "Not available",
+      "introduced_on": "1.4.2006",
+      "title": "Rajiv Gandhi Pariwar Bima Yojna",
+      "scheme_link": "https://haryana.gov.in/scheme/rajiv-gandhi-pariwar-bima-yojna/",
+      "criteria": [],
+      "documents": [],
+      "id": "4246456e-fef4-45d5-8d9d-3d0af28360fa"
   },
   {
-    "id": "c8343247-1d1f-4168-97c7-7b3070791a17",
-    "title": "Post-Matric Scholarship",
-    "publishDate": "14/05/2020",
-    "description": "The Prime Minister’s New 15 Point Programme for the Welfare of Minorities was announced in June, 2006. It provides that a post-matric scholarship scheme for meritorious  students from minority communities would be implemented.",
-    "benefits": "Beneficiary:",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051426.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/post-matric-scholarship/"
+      "description": "The Prime Minister’s New 15 Point Programme for the Welfare of Minorities was announced in June, 2006. It provides that a post-matric scholarship scheme for meritorious\\nstudents from minority communities would be implemented.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Minorities"
+          }
+      ],
+      "tags": [
+          "scholarship",
+          "minorities",
+          "post-matric",
+          "students"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [
+          {
+              "sponsor_type": "Prime Minister’s New 15 Point Programme"
+          }
+      ],
+      "valid_upto": "",
+      "scheme_link": "https://haryana.gov.in/scheme/post-matric-scholarship/",
+      "funding_pattern": "",
+      "title": "Post-Matric Scholarship",
+      "introduced_on": "June, 2006",
+      "criteria": [
+          {
+              "description": "Meritorious Students"
+          }
+      ],
+      "documents": [],
+      "id": "0a7edd82-ee22-4a80-9433-78e201443e71"
   },
   {
-    "id": "4796f7e2-6d58-4f88-b165-7a2b0eb069c1",
-    "title": "Merit Cum Means",
-    "publishDate": "14/05/2020",
-    "description": "The objective of the Scheme is to provide financial assistance to the poor and meritorious students belonging to minority communities to enable them to pursue professional and technical courses.",
-    "benefits": "Beneficiary:",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051435.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/merit-cum-means/"
+      "description": "The objective of the Scheme is to provide financial assistance to the poor and meritorious students belonging to minority communities to enable them to pursue professional and technical courses.",
+      "tags": [
+          "financial assistance",
+          "minority communities",
+          "professional courses",
+          "technical courses"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "poor and meritorious students belonging to minority communities"
+          }
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "introduced_on": "14/05/2020",
+      "funding_pattern": "Not Available",
+      "title": "Merit Cum Means",
+      "scheme_link": "https://haryana.gov.in/scheme/merit-cum-means/",
+      "documents": [],
+      "criteria": [],
+      "id": "070d0fba-76d8-4660-9d39-aabd6d38ccd3"
   },
   {
-    "id": "9868d146-6e8e-46d8-86cf-699a1ea353bb",
-    "title": "Pre-Matric Scholarship",
-    "publishDate": "14/05/2020",
-    "description": "The Prime Minister’s New 15 Point Programme for the Welfare of Minorities was announced in June, 2006. It provides that a pre-matric scholarship scheme for meritorious students from minority communities would be implemented.",
-    "benefits": "Beneficiary:",
-    "howToApply": "Through E-disha Center, Atal Seva Kendra",
-    "pdfUrl": "https://cdnbbsr.s3waas.gov.in/s37b7a53e239400a13bd6be6c91c4f6c4e/uploads/2020/05/2020051461-1.pdf",
-    "schemeUrl": "https://haryana.gov.in/scheme/pre-matric-scholarship/"
+      "description": "The Prime Minister’s New 15 Point Programme for the Welfare of Minorities was announced in June, 2006. It provides that a pre-matric scholarship scheme for meritorious students from minority communities would be implemented.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Meritorious students from minority communities"
+          }
+      ],
+      "tags": [
+          "scholarship",
+          "minorities",
+          "pre-matric",
+          "education"
+      ],
+      "procedures": [
+          {
+              "step_description": "Through E-disha Center, Atal Seva Kendra"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "introduced_on": "June, 2006",
+      "title": "Pre-Matric Scholarship",
+      "scheme_link": "https://haryana.gov.in/scheme/pre-matric-scholarship/",
+      "criteria": [],
+      "documents": [],
+      "id": "edac8c1d-2153-4e8d-8517-67faaa940846"
   }
 ]

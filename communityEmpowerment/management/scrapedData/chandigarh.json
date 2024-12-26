@@ -1,152 +1,479 @@
 [
     {
-      "id": "080a440c-1b5b-4f50-a181-4db079560deb",
-      "title": "National Programme for Rehabilitation of Persons with Disabilities (NPRPD)",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/national-programme-for-rehabilitation-of-persons-with-disabilities-nprpd",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1620810602-NPRPD_Application_form.pdf",
-      "description": "The aim of the scheme is to extend financial assistance to the NGOs, Trusts and Institutions working for the cause of Persons with Disabilities.",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "The National Programme for Rehabilitation of Persons with Disabilities (NPRPD) is to provide rehabilitation services to the persons with disabilities.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Persons with Disabilities"
+            }
+        ],
+        "tags": [
+            "Persons with Disabilities",
+            "Rehabilitation",
+            "Disability",
+            "Accessibility",
+            "Healthcare"
+        ],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Central Government"
+            }
+        ],
+        "valid_upto": "",
+        "funding_pattern": "Centrally Sponsored",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/national-programme-for-rehabilitation-of-persons-with-disabilities-nprpd",
+        "title": "National Programme for Rehabilitation of Persons with Disabilities (NPRPD)",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Disability"
+            }
+        ],
+        "id": "57986093-28b4-4497-8301-ea4c0c43f8c2"
     },
     {
-      "id": "caffc10d-6fb1-4851-8266-b56496d75392",
-      "title": "Issuing of Identity Cards to Disabled Persons",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/issuing-of-identity-cards-to-disabled-persons",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1604742422-UDID_Form.pdf",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Disabled Persons"
+            }
+        ],
+        "tags": [
+            "Disability",
+            "Identity Cards"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "funding_pattern": "",
+        "title": "Issuing of Identity Cards to Disabled Persons",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/issuing-of-identity-cards-to-disabled-persons",
+        "criteria": [],
+        "documents": [],
+        "id": "6c225fe8-690d-4b29-97fd-1fae45925481"
     },
     {
-      "id": "a47efeaf-ef42-4196-a2ed-651748278ceb",
-      "title": "Unemployment Allowance to Disabled Persons",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/unemployment-allowance-to-disabled-persons",
-      "applyLink": "https://serviceonline.gov.in/",
-      "description": "The aim of the scheme is to given unemployment allowance to the unemployed Handicapped Person waiting for the employment for unduly long period and belongs to poor section of the society and required to be assisted till their gainful employment. The eligibility criteria under the scheme is as under:-",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "Unemployment Allowance to Disabled Persons",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Disabled Persons"
+            }
+        ],
+        "tags": [
+            "Unemployment",
+            "Allowance",
+            "Disabled Persons"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/unemployment-allowance-to-disabled-persons",
+        "funding_pattern": "Not available",
+        "title": "Unemployment Allowance to Disabled Persons",
+        "introduced_on": "Not available",
+        "criteria": [],
+        "documents": [],
+        "id": "22465d3d-1c03-43ea-a45d-35a43374b7cd"
     },
     {
-      "id": "8caf486a-d9ef-47f5-81a0-94b7284b86b2",
-      "title": "Inter-Caste Marriage",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/inter-caste-marriage",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1631247774-icm.pdf",
-      "description": "To remove caste consciousness among the people and to encourage inter-caste marriage.",
-      "eligibility": "Age criteria of marriage as per law; (presently, 18 years for the bride and 21 years for the bridegroom).\nResident should be Citizens Of India and permanent residents of UT Chandigarh..\nOne of the spouses should belong to Schedule Caste family.\nOnly for the first marriage.\n",
-      "requiredDocuments": "Scheduled Caste certificate.\nMarriage Registration certificate.\nResidence proof of three years (Voter Card, Ration Card etc).\nAadhar Card.\nDate of Birth proof of Husband & Wife both.\nPost Card size photograph of marriage.\nAffidavit (shown stay in Chandigarh, Age & Caste of both husband and wife) whether first marriage, certified incentive has not taken earlier.\n"
+        "description": "To remove caste consciousness among the people and to encourage inter-caste marriage.",
+        "tags": [
+            "Inter-caste Marriage",
+            "Marriage",
+            "Social Welfare"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Bride"
+            },
+            {
+                "beneficiary_type": "Bridegroom"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "One-time Incentive",
+        "introduced_on": "",
+        "title": "Inter-Caste Marriage",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/inter-caste-marriage",
+        "criteria": [
+            {
+                "description": "Age criteria of marriage as per law; (presently, 18 years for the bride and 21 years for the bridegroom)."
+            }
+        ],
+        "documents": [],
+        "id": "8f0bf877-d88c-4486-88cc-e02d8c36cee3"
     },
     {
-      "id": "2be206bf-16b2-4b23-b7fa-d1dae9532d0e",
-      "title": "Financial Assistance for the Marriage of Daughters of Widows/Destitute Women belonging to the Scheduled Caste",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/financial-assistance-for-the-marriage-of-daughter-of-widows-destitute-women-belonging-to-schedule-caste",
-      "applyLink": "https://serviceonline.gov.in/",
-      "description": "To provide financial assistance for meeting the marriage expenses of daughters of widow/ destitute women belonging to Schedule Caste.",
-      "eligibility": "Mother of the Bride should belong to the Scheduled Caste community.\nThe assistance is admissible for the marriage of two daughters in a family.\nGirl should be at least be 18 years of age on the date of marriage.\nFor the first marriage only.\nFamily income should not exceed Rs. 2000/- p.m. (To be verified by the Tehsildar)\nResident of UT, Chandigarh for more than 3 years.\nIf both the parents of the bride are dead, the legal guardian will be entitled to this assistance\n",
-      "requiredDocuments": ""
+        "description": "To provide financial assistance for meeting the marriage expenses of daughters of widow/ destitute women belonging to Schedule Caste.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Daughters of Widows/Destitute Women"
+            }
+        ],
+        "tags": [
+            "Financial Assistance",
+            "Marriage",
+            "Widows",
+            "Destitute Women",
+            "Scheduled Caste"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "One-time grant of Rs.20,000/-",
+        "introduced_on": "",
+        "title": "Financial Assistance for the Marriage of Daughters of Widows/Destitute Women belonging to the Scheduled Caste",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/financial-assistance-for-the-marriage-of-daughter-of-widows-destitute-women-belonging-to-schedule-caste",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Mother of the Bride should belong to the Scheduled Caste community."
+            }
+        ],
+        "id": "3b6daf9f-38ee-420b-99a8-570dbcb5fc81"
     },
     {
-      "id": "52585a7e-ab90-4164-967a-547701a22c07",
-      "title": "National Family Benefit Scheme",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/national-family-benefit-scheme",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1604740166-NFBS_0.pdf",
-      "description": "To provide financial assistance to the family on the death of Bread Winner.",
-      "eligibility": "Family living Below Poverty Line.\nThe age limit of the deceased should be 18-59 years death on or after 18.10.2012 & age limit of the deceased should be 18-64 yrs death before 18.10.2012\nResident of UT, Chandigarh for last three years.\n",
-      "requiredDocuments": ""
+        "description": "To provide financial assistance to the family on the death of Bread Winner.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Family"
+            }
+        ],
+        "tags": [
+            "Financial Assistance",
+            "Family",
+            "Poverty"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "None",
+        "introduced_on": "None",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/national-family-benefit-scheme",
+        "title": "National Family Benefit Scheme",
+        "funding_pattern": "None",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Family living Below Poverty Line."
+            }
+        ],
+        "id": "fd8f4538-8af8-4411-9861-ef983b915cfd"
     },
     {
-      "id": "55148fbc-8486-43bc-afe2-f26abce5ae97",
-      "title": "The Financial Assistance To Dependent Children of Widows And Destitute Women",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/the-financial-assistance-to-dependent-children-of-widows-and-destitute-women",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1604739785-THE_FINANCIAL_ASSISTANCE_TO_DEPENDENT_CHILDREN_OF_WIDOWS_AND_DESTITUTE_WOMEN.pdf",
-      "description": "To extend financial assistance to such children who are fatherless or whose parents (both mother and father) have died.",
-      "eligibility": "The Children of widow and destitute women under 18 years of age who have been deprived of parental no support or care after their parent's death or continued absence from home.\nWhose mother is getting pension from Social Welfare Department under the scheme of financial assistance to widow and destitute women.\nChildren who have been given institutional care by government/NGO shall not be eligible for financial assistance.\nIf parents of child have died, the assistance will be provided to legal guardian.\nResident of UT, Chandigarh for more than 3 years.\nThe Child/Children is/are not in receipt of family pension from any State/Central Govt.\n",
-      "requiredDocuments": ""
+        "description": "To extend financial assistance to such children who are fatherless or whose parents (both mother and father) have died.",
+        "tags": [
+            "Financial Assistance",
+            "Children",
+            "Widows",
+            "Destitute Women",
+            "Social Welfare"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Children of widow and destitute women"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not specified",
+        "introduced_on": "Not specified",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/the-financial-assistance-to-dependent-children-of-widows-and-destitute-women",
+        "title": "The Financial Assistance To Dependent Children of Widows And Destitute Women",
+        "funding_pattern": "Not specified",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Under 18 years of age"
+            },
+            {
+                "description": "Deprived of parental support or care"
+            },
+            {
+                "description": "Mother is receiving pension from Social Welfare Department under the scheme of financial assistance to widow and destitute women"
+            },
+            {
+                "description": "Not in institutional care by government/NGO"
+            },
+            {
+                "description": "Resident of UT, Chandigarh for more than 3 years"
+            },
+            {
+                "description": "Not in receipt of family pension from any State/Central Govt."
+            }
+        ],
+        "id": "856e8b0b-7341-40ff-a647-4c21526b8434"
     },
     {
-      "id": "7ab28288-5d7b-41a1-b56e-9424e6047fe4",
-      "title": "Petrol Subsidy To Persons With Disability",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/petrol-subsidy-to-persons-with-disability",
-      "applyLink": "https://serviceonline.gov.in/",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "Provides petrol subsidy to persons with disability.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Persons with Disability"
+            }
+        ],
+        "tags": [
+            "Disability",
+            "Petrol",
+            "Subsidy"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/petrol-subsidy-to-persons-with-disability",
+        "title": "Petrol Subsidy To Persons With Disability",
+        "funding_pattern": "Subsidy",
+        "criteria": [],
+        "documents": [],
+        "id": "cd308798-cf48-4633-ab2d-d1d7f22d0379"
     },
     {
-      "id": "80b5ff52-d68b-4b9d-b1dd-9b1563fcf587",
-      "title": "Assistance For Purchase of Aids/Appliances",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/assistance-for-purchase-of-aids-appliances",
-      "applyLink": "https://serviceonline.gov.in/",
-      "description": "",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "Under this scheme, the financial assistance is being provided to physically handicapped persons for purchase of aids/appliances to increase their mobility in their day to day working. The applicant should be resident of UT, Chandigarh for availing benefit under the scheme. Maximum amount of assistance shall not exceed Rs. 40,000/-. The quantum of assistance is as under:-",
+        "tags": [
+            "Financial Assistance",
+            "Disability",
+            "Accessibility"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Physically handicapped persons"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/assistance-for-purchase-of-aids-appliances",
+        "funding_pattern": "100% cost on purchase of artificial limbs/ aids/ appliances subject to maximum of Rs.40,000/-",
+        "title": "Assistance For Purchase of Aids/Appliances",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Monthly income of the applicant from all sources should not exceed Rs.1.50 Lacs/- p.a."
+            }
+        ],
+        "id": "5f7ab187-c2d3-41e1-8209-356b62330c38"
     },
     {
-      "id": "1d810e6a-5359-4b79-90db-c6a0886a38f4",
-      "title": "Pension To The Disabled Persons",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/pension-to-the-disabled-persons",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1604736707-Pension_Disabled.pdf",
-      "description": "- Disability pension to disabled person is granted to Physically Handicapped person. Persons who are disabled to the extent of 40% and are residents of Union Territory of Chandigarh and fulfill the income criteria i.e. family income does not exceed Rs.1.50 lacs p.a. are eligible for grant of pension. The quantum of assistance is as under",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "- Disability pension to disabled person is granted to Physically Handicapped person. Persons who are disabled to the extent of 40% and are residents of Union Territory of Chandigarh and fulfill the income criteria i.e. family income does not exceed Rs.1.50 lacs p.a. are eligible for grant of pension.",
+        "tags": [
+            "Pension",
+            "Disability"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Physically Handicapped person"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "funding_pattern": "Rs.1000/- p.m.(Disability 40% to 70 %)",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/pension-to-the-disabled-persons",
+        "title": "Pension To The Disabled Persons",
+        "introduced_on": "Not available",
+        "criteria": [
+            {
+                "description": "Disability should be to the extent of 40% and above"
+            },
+            {
+                "description": "Residents of Union Territory of Chandigarh"
+            },
+            {
+                "description": "family income does not exceed Rs.1.50 lacs p.a."
+            }
+        ],
+        "documents": [],
+        "id": "eac4421b-1e68-4ccc-88be-0f4740577f74"
     },
     {
-      "id": "c27eb8f9-a161-46d3-a1ac-17d8457404ae",
-      "title": "Pension To Widows And Destitute Women",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/pension-to-widows-and-destitute-women",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1604736234-Pension_WidowDestitute.pdf",
-      "description": "To provide financial assistance to Widows and Destitute Women.",
-      "eligibility": "The women of age group 18-60.\nResident of UT, Chandigarh for more than 3 years.\nMonthly family income of the applicant should not exceed Rs. 1.50 lacs annually.\n",
-      "requiredDocuments": "Residence proof of three years (Voter Card, Ration Card, Electricity Bill etc).\nDeath certificate of husband (In case of widow).\nAadhar Card.\nMobile Number.\n"
+        "description": "To provide financial assistance to Widows and Destitute Women.",
+        "tags": [
+            "Financial Assistance",
+            "Women Empowerment",
+            "Social Welfare"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Women"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "funding_pattern": "Rs. 1000/- p.m",
+        "title": "Pension To Widows And Destitute Women",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/pension-to-widows-and-destitute-women",
+        "criteria": [
+            {
+                "description": "The women of age group 18-60."
+            }
+        ],
+        "documents": [],
+        "id": "adc0f3d6-8257-4673-8a96-a147fbf6ea5b"
     },
     {
-      "id": "4f62b4a3-f63d-4afa-8636-f51775f043f3",
-      "title": "Old Age Pension",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/old-age-pension",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1602674701-Pension_Old.pdf",
-      "description": "To provide financial assistance to elderly people.",
-      "eligibility": "Monthly family income of the applicant should not exceed Rs. 1.50 lacs annually.\nResident of UT, Chandigarh for more than 3 years.\nAge 60 years and above.\n",
-      "requiredDocuments": "Two passport size photographs.\nResidence proof of three years (Voter Card, Ration Card, Electricity Bill etc).\nAadhar Card.\nMobile Number.\n"
+        "description": "To provide financial assistance to elderly people.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Elderly People"
+            }
+        ],
+        "tags": [
+            "Financial Assistance",
+            "Pension"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "Rs. 1000/- p.m",
+        "introduced_on": "",
+        "title": "Old Age Pension",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/old-age-pension",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Monthly family income of the applicant should not exceed Rs. 1.50 lacs annually."
+            }
+        ],
+        "id": "11fc5637-a2fe-4693-a0b8-9dee66280639"
     },
     {
-      "id": "6e38687d-0799-45fe-aab5-781d8340e5f1",
-      "title": "ICDS (Integrated Child Development Scheme)",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/ICDS",
-      "applyLink": "http://chdsw.gov.in/uploads/media/1626332162-Activity_Book_for_3-4_years_Children_1.pdf",
-      "description": "Integrated Child Development Services (ICDS)",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "Integrated Child Development Services (ICDS) Scheme",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Children"
+            },
+            {
+                "beneficiary_type": "Pregnant Women"
+            },
+            {
+                "beneficiary_type": "Lactating Mothers"
+            }
+        ],
+        "tags": [
+            "ICDS",
+            "Child Development",
+            "Health",
+            "Nutrition"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "Centre Share",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/ICDS",
+        "title": "ICDS (Integrated Child Development Scheme)",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [],
+        "id": "2abc8b00-8cc2-485b-8592-5627df174aa0"
     },
     {
-      "id": "523bfbd1-a76b-4899-94f8-f0d24fa082ef",
-      "title": "Sponsorship Scheme -A financial assistance to promote family based care with a view to improve the quality of life of children",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/Sponsorship-Scheme",
-      "applyLink": "",
-      "description": "Sponsorship is the provision of supplementary support to families to meet the needs of their children to improve their quality of life. The focus of the scheme is to promote family based care & deinstitutionalization of children with financial support of Rs. 4000/- pm per child. Benefits under sponsorship scheme will be provided for maximum upto 18 years of age.",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "A financial assistance to promote family based care with a view to improve the quality of life of children",
+        "tags": [
+            "Family based care",
+            "Children",
+            "Financial assistance",
+            "Quality of life"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Children"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not specified",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/Sponsorship-Scheme",
+        "introduced_on": "Not specified",
+        "title": "Sponsorship Scheme -A financial assistance to promote family based care with a view to improve the quality of life of children",
+        "funding_pattern": "Not specified",
+        "documents": [],
+        "criteria": [],
+        "id": "d783a48e-4357-46e4-ac1a-2f1d775dc729"
     },
     {
-      "id": "6a1f078f-ff5e-409a-a207-32cac8959bbd",
-      "title": "Foster Care Scheme",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/Foster-Care",
-      "applyLink": "",
-      "description": "Foster Care Scheme; “Be a Foster Parent-  Foster  a Child, Foster Dreams”",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "Foster Care Scheme",
+        "beneficiaries": [],
+        "tags": [
+            "Childcare",
+            "Foster Care"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "",
+        "introduced_on": "",
+        "title": "Foster Care Scheme",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/Foster-Care",
+        "criteria": [
+            {
+                "description": "Criteria for Foster Parents:"
+            }
+        ],
+        "documents": [],
+        "id": "514b11fa-27dc-4358-ae72-ed063c7e54b7"
     },
     {
-      "id": "9430c0d5-585b-4b69-8d78-ddb73670aceb",
-      "title": "POSHAN Abhiyaan",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/POSHAN-Abhiyaan",
-      "applyLink": "",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": " Aims to reduce malnutrition in the country",
+        "tags": [
+            "Nutrition",
+            "Healthcare",
+            "Children",
+            "Women"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Children"
+            },
+            {
+                "beneficiary_type": "Pregnant Women"
+            },
+            {
+                "beneficiary_type": "Lactating Mothers"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Ministry of Women and Child Development"
+            }
+        ],
+        "valid_upto": "Present",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/POSHAN-Abhiyaan",
+        "introduced_on": "2018",
+        "title": "POSHAN Abhiyaan",
+        "funding_pattern": "Central Government Scheme",
+        "criteria": [],
+        "documents": [],
+        "id": "c0a22ef6-bd56-47d0-8839-6b82ba66392f"
     },
     {
-      "id": "0a2dba4a-3184-44d9-88a3-52c39dd77f83",
-      "title": "PARVARISH scheme for the development of children affected/orphaned due to COVID.",
-      "scheme_url": "http://chdsw.gov.in/index.php/scheme/PARVARISH_scheme",
-      "applyLink": "",
-      "description": "To ensure holistic development of children affected/orphaned due to COVID and to provide an additional & comprehensive support for their well being.",
-      "eligibility": "",
-      "requiredDocuments": ""
+        "description": "Development of children affected/orphaned due to COVID",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Children affected/orphaned due to COVID"
+            }
+        ],
+        "tags": [
+            "COVID-19",
+            "Children",
+            "Development",
+            "Orphaned"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not specified",
+        "introduced_on": "Not specified",
+        "scheme_link": "http://chdsw.gov.in/index.php/scheme/PARVARISH_scheme",
+        "title": "PARVARISH scheme for the development of children affected/orphaned due to COVID.",
+        "funding_pattern": "Not specified",
+        "documents": [],
+        "criteria": [],
+        "id": "cbd37a56-79ad-44cb-bd4c-ff8214ce1c02"
     }
-  ]
+]
