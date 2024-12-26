@@ -1,255 +1,565 @@
 [
-    {
-      "id": "acce8974-0f1d-4bb8-8414-8107293f7d73",
+  {
+      "description": "",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Workers"
+          }
+      ],
+      "tags": [
+          "housing"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "introduced_on": "24/06/2018",
       "title": "Sparsh Scheme",
-      "scheme_url": "https://ddd.gov.in/scheme/sparsh-scheme/",
-      "publishDate": "24/06/2018",
-      "department": "",
-      "description": "",
-      "beneficiary": "Workers",
-      "benefits": "Affordable and quality housing stock",
-      "howToApply": ""
-    },
-    {
-      "id": "6cb51ba1-8491-448f-bf1c-1bb4f8d07cc8",
+      "scheme_link": "https://ddd.gov.in/scheme/sparsh-scheme/",
+      "criteria": [],
+      "documents": [],
+      "id": "cfe37abf-64a3-46f6-bbd7-9138ce477dfb"
+  },
+  {
+      "description": "• Providing basic services (e.g. water supply, sewerage, urban transport) to households and build amenities in cities which will improve the quality of life for all, especially the poor and the disadvantaged is a national priority. • The purpose of Atal Mission for Rejuvenation and Urban Transformation (AMRUT) is to (i) ensure that every household has access to a tap with assured supply of water and a sewerage connection; (ii) increase the amenity value of cities by developing greenery and well maintained open spaces (e.g. parks); and (iii) reduce pollution by switching to public transport or constructing facilities for non-motorized transport (e.g. walking and cycling).",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "tags": [
+          "water supply",
+          "sewerage",
+          "urban transport",
+          "amenities",
+          "parks",
+          "public transport",
+          "non-motorized transport"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "introduced_on": "15/06/2015",
+      "scheme_link": "https://ddd.gov.in/scheme/atal-mission-for-rejuvenation-and-urban-transformation-amrut/",
       "title": "Atal Mission for Rejuvenation and Urban Transformation (AMRUT)",
-      "scheme_url": "https://ddd.gov.in/scheme/atal-mission-for-rejuvenation-and-urban-transformation-amrut/",
-      "publishDate": "15/06/2015",
-      "department": "",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "• Providing basic services (e.g. water supply, sewerage, urban transport) to households and build amenities in cities which will improve the quality of life for all, especially the poor and the disadvantaged is a national priority. • The purpose of Atal Mission for Rejuvenation and Urban Transformation (AMRUT) is to (i) ensure that every household has access to a tap with assured supply of water and a sewerage connection; (ii) increase the amenity value of cities by developing greenery and well maintained open spaces (e.g. parks); and (iii) reduce pollution by switching to public transport or constructing facilities for non-motorized transport (e.g. walking and cycling).",
-      "howToApply": "http://amrut.gov.in/"
-    },
-    {
-      "id": "24d7f0b5-1930-4742-9d1f-a513132cbb7d",
+      "funding_pattern": "Not Available",
+      "criteria": [],
+      "documents": [],
+      "id": "3ea466e4-ee08-47b5-bafc-f287c570274f"
+  },
+  {
+      "description": "to achieve universal sanitation coverage and focus on sanitation by improving the quality of life in rural areas through promoting cleanliness and eliminating Open Defecation by providing access to toilet facilities to all; adapt sustainable sanitation practices through awareness creation and health education and; improving the levels of cleanliness in villages through Solid and Liquid Waste Management",
+      "tags": [
+          "sanitation",
+          "cleanliness",
+          "Open Defecation",
+          "health education",
+          "Solid and Liquid Waste Management"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "scheme_link": "https://ddd.gov.in/scheme/swachh-bharat-mission-grameen/",
       "title": "Swachh Bharat Mission- (Grameen)",
-      "scheme_url": "https://ddd.gov.in/scheme/swachh-bharat-mission-grameen/",
-      "publishDate": "02/10/2014",
-      "department": "",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "to achieve universal sanitation coverage and focus on sanitation by improving the quality of life in rural areas through promoting cleanliness and eliminating Open Defecation by providing access to toilet facilities to all; adapt sustainable sanitation practices through awareness creation and health education and; improving the levels of cleanliness in villages through Solid and Liquid Waste Management",
-      "howToApply": ""
-    },
-    {
-      "id": "73b34a80-ced1-4f5f-afab-6f6866d77143",
+      "introduced_on": "02/10/2014",
+      "criteria": [],
+      "documents": [],
+      "id": "400139ba-0f28-4a83-ac07-9068f789beac"
+  },
+  {
+      "description": "PMAY-G aims at providing a pucca house, with basic amenities, to all houseless householder and those households living in kutcha and dilapidated house.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "tags": [
+          "pucca house",
+          "basic amenities",
+          "houseless householder",
+          "kutcha and dilapidated house"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "scheme_link": "https://ddd.gov.in/scheme/pradhan-mantri-awas-yojana-grameen/",
       "title": "Pradhan Mantri Awas Yojana (Grameen)",
-      "scheme_url": "https://ddd.gov.in/scheme/pradhan-mantri-awas-yojana-grameen/",
-      "publishDate": "15/06/2015",
-      "department": "Ministry of Rural Development",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "PMAY-G aims at providing a pucca house, with basic amenities, to all houseless householder and those households living in kutcha and dilapidated house.",
-      "howToApply": "https://pmayg.nic.in/netiay/home.aspx"
-    },
-    {
-      "id": "8f2b51dc-d82a-4a0a-9c16-f453b702de76",
+      "introduced_on": "15/06/2015",
+      "documents": [],
+      "criteria": [],
+      "department_name": "Ministry of Rural Development",
+      "id": "22d6fae5-2c86-4e6d-b988-f4cf7db33e55"
+  },
+  {
+      "description": "An accident insurance scheme, PMSBY offers a one-year accidental death and disability cover, which can be renewed annually.",
+      "tags": [
+          "accident insurance",
+          "disability cover",
+          "one-year cover",
+          "renewable"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "People in age group 18 to 70 years with bank account"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "null",
+      "scheme_link": "https://ddd.gov.in/scheme/pradhan-mantri-suraksha-bima-yojana-pmsby/",
+      "funding_pattern": "Annual Renewal",
       "title": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
-      "scheme_url": "https://ddd.gov.in/scheme/pradhan-mantri-suraksha-bima-yojana-pmsby/",
-      "publishDate": "15/02/2015",
-      "department": "",
-      "description": "",
-      "beneficiary": "Available to people in age group 18 to 70 years with bank account",
-      "benefits": "An accident insurance scheme, PMSBY offers a one-year accidental death and disability cover, which can be renewed annually.",
-      "howToApply": "http://www.jansuraksha.gov.in"
-    },
-    {
-      "id": "f40806ee-5c61-4064-b5eb-2954c5d4401d",
+      "introduced_on": "15/02/2015",
+      "criteria": [],
+      "documents": [],
+      "id": "7b60fd91-4bf6-42e8-b0e7-eeca7b6d98fb"
+  },
+  {
+      "description": "Encourage entrepreneurs and small business units to expand their capabilities and operations, to reduce over indebtedness and to provide formal system of credit (finance). Agriculture & Self-employment will be the focus areas of Mudra Bank.",
+      "tags": [
+          "finance",
+          "business",
+          "agriculture",
+          "self-employment"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "08/04/2015",
+      "funding_pattern": "",
       "title": "Pradhan Mantri Mudra Yojana",
-      "scheme_url": "https://ddd.gov.in/scheme/pradhan-mantri-mudra-yojana/",
-      "publishDate": "08/04/2015",
-      "department": "Ministry of Finance",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "Encourage entrepreneurs and small business units to expand their capabilities and operations, to reduce over indebtedness and to provide formal system of credit (finance). Agriculture & Self-employment will be the focus areas of Mudra Bank.",
-      "howToApply": "https://mudramitra.in"
-    },
-    {
-      "id": "eea8cf4f-38ed-419b-879a-17654894e3c6",
+      "scheme_link": "https://ddd.gov.in/scheme/pradhan-mantri-mudra-yojana/",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Ministry of Finance",
+      "id": "b3598d65-9be0-4ce5-b89c-9ce94c4b19e5"
+  },
+  {
+      "description": "This insurance scheme is available to people in the age group of 18 to 50 and having a bank account. People who join the scheme before completing 50 years can, however, continue to have the risk of life cover up to the age of 55 years subject to payment of premium.",
+      "tags": [
+          "Insurance",
+          "Finance",
+          "Citizen"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://ddd.gov.in/scheme/pradhan-mantri-jeevan-jyoti-bima-yojana/",
+      "funding_pattern": "",
       "title": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
-      "scheme_url": "https://ddd.gov.in/scheme/pradhan-mantri-jeevan-jyoti-bima-yojana/",
-      "publishDate": "03/10/2013",
-      "department": "Ministry of Finance",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "This insurance scheme is available to people in the age group of 18 to 50 and having a bank account. People who join the scheme before completing 50 years can, however, continue to have the risk of life cover up to the age of 55 years subject to payment of premium.",
-      "howToApply": "http://www.jansuraksha.gov.in"
-    },
-    {
-      "id": "ba620442-3e09-4770-a0bb-359e27d356ec",
+      "introduced_on": "03/10/2013",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Ministry of Finance",
+      "id": "4656d41c-b6bd-4288-b1b1-f573c55a3ce2"
+  },
+  {
+      "description": "to promote efficient lighting, enhance awareness on using efficient equipment which reduce electricity bills and to help For preserving environment & conservation of energy.",
+      "tags": [
+          "efficient lighting",
+          "reduce electricity bills",
+          "environment conservation",
+          "energy conservation"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "14/10/2015",
+      "funding_pattern": "",
       "title": "Unnat Jyoti by Affordable LEDs (UJALA)",
-      "scheme_url": "https://ddd.gov.in/scheme/unnat-jyoti-by-affordable-leds-ujala/",
-      "publishDate": "14/10/2015",
-      "department": "",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "to promote efficient lighting, enhance awareness on using efficient equipment which reduce electricity bills and to help For preserving environment & conservation of energy.",
-      "howToApply": ""
-    },
-    {
-      "id": "cdd6074b-11b5-4bda-8b75-3a82ca3f3b03",
+      "scheme_link": "https://ddd.gov.in/scheme/unnat-jyoti-by-affordable-leds-ujala/",
+      "documents": [],
+      "criteria": [],
+      "id": "75d704b8-d49a-4fac-adee-c7f42f54975b"
+  },
+  {
+      "description": "provision of quality education and enhancing learning outcomes of students; Bridging Social and Gender Gaps in School Education; Ensuring equity and inclusion at all levels of school education; Ensuring minimum standards in schooling provisions; Promoting Vocationalisation of education; Support States in implementation of Right of Children to Free and Compulsory Education (RTE) Act, 2009; and Strengthening and up-gradation of SCERTs/State Institutes of Education and DIET as a nodal agencies for teacher training",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "tags": [
+          "Education",
+          "Vocational Training",
+          "RTE"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "01/03/2012",
+      "scheme_link": "https://ddd.gov.in/scheme/samagra-shiksha/",
       "title": "Samagra Shiksha",
-      "scheme_url": "https://ddd.gov.in/scheme/samagra-shiksha/",
-      "publishDate": "01/03/2012",
-      "department": "",
+      "funding_pattern": "",
+      "documents": [],
+      "criteria": [],
+      "id": "2eaa2126-ca4c-4a7d-af9b-d1aa5064d182"
+  },
+  {
       "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "provision of quality education and enhancing learning outcomes of students; Bridging Social and Gender Gaps in School Education; Ensuring equity and inclusion at all levels of school education; Ensuring minimum standards in schooling provisions; Promoting Vocationalisation of education; Support States in implementation of Right of Children to Free and Compulsory Education (RTE) Act, 2009; and Strengthening and up-gradation of SCERTs/State Institutes of Education and DIET as a nodal agencies for teacher training",
-      "howToApply": ""
-    },
-    {
-      "id": "6a54e625-4bf9-4553-8b77-5844a9d55e51",
+      "tags": [
+          "Higher Education",
+          "Funding",
+          "Institutions"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Higher Educational Institutions"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "introduced_on": "11/10/2013",
       "title": "Rashtriya Uchchtar Shiksha Abhiyan (RUSA)",
-      "scheme_url": "https://ddd.gov.in/scheme/rashtriya-uchchtar-shiksha-abhiyan-rusa/",
-      "publishDate": "11/10/2013",
-      "department": "",
-      "description": "",
-      "beneficiary": "Higher Educational Institutions",
-      "benefits": "Funding to eligible state higher educational institutions.",
-      "howToApply": ""
-    },
-    {
-      "id": "81642249-0595-487e-93eb-61312e47f9de",
+      "scheme_link": "https://ddd.gov.in/scheme/rashtriya-uchchtar-shiksha-abhiyan-rusa/",
+      "criteria": [],
+      "documents": [],
+      "id": "5010e434-ec69-4171-bc04-606c19e3b57a"
+  },
+  {
+      "description": "Skilling Certificate reward scheme and to mobilize a large number of Indian Youth to take a outcome based skill training and to become employable and earn their livelihood.",
+      "tags": [
+          "Skill Development",
+          "Employment",
+          "Youth Empowerment",
+          "Training"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "01/07/2015",
+      "scheme_link": "https://ddd.gov.in/scheme/pradhan-mantri-kaushal-vikas-yojana-2-0-scheme-pmkvy-2-0/",
       "title": "Pradhan Mantri Kaushal Vikas Yojana 2.0 Scheme (PMKVY 2.0)",
-      "scheme_url": "https://ddd.gov.in/scheme/pradhan-mantri-kaushal-vikas-yojana-2-0-scheme-pmkvy-2-0/",
-      "publishDate": "01/07/2015",
-      "department": "",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "Skilling Certificate reward scheme and to mobilize a large number of Indian Youth to take a outcome based skill training and to become employable and earn their livelihood.",
-      "howToApply": ""
-    },
-    {
-      "id": "cb0e746a-9ecc-48fe-9cc4-e4888e9e782c",
-      "title": "Aadhaar Enrolment and Seeding",
-      "scheme_url": "https://ddd.gov.in/scheme/aadhaar-enrolment-and-seeding/",
-      "publishDate": "08/10/2015",
-      "department": "Ministry of Electronics and Information Technology",
+      "funding_pattern": "",
+      "documents": [],
+      "criteria": [],
+      "id": "3336bad7-5fcd-484f-bb03-fa2c07b3c226"
+  },
+  {
       "description": "The Unique Identification Authority of India (UIDAI) is a statutory authority established under the provisions of the Aadhaar (Targeted Delivery of Financial and Other Subsidies, Benefits and Services) Act, 2016 (“Aadhaar Act 2016”) on 12 July 2016 by the Government of India, under the Ministry of Electronics and Information Technology (MeitY). The Unique Identification Authority of India (UIDAI)",
-      "beneficiary": "Citizen Of India",
-      "benefits": "Aadhaar Enrolment and Seeding",
-      "howToApply": "https://uidai.gov.in/"
-    },
-    {
-      "id": "1878a153-02e5-4bbc-83ab-3b9aa1f2d870",
+      "tags": [
+          "Enrolment",
+          "Seeding",
+          "UIDAI",
+          "Aadhaar"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "introduced_on": "08/10/2015",
+      "funding_pattern": "Not Available",
+      "title": "Aadhaar Enrolment and Seeding",
+      "scheme_link": "https://ddd.gov.in/scheme/aadhaar-enrolment-and-seeding/",
+      "documents": [],
+      "criteria": [],
+      "department_name": "Ministry of Electronics and Information Technology",
+      "id": "921ec114-3090-4c43-b423-edab317bf276"
+  },
+  {
+      "description": "",
+      "tags": [
+          "food",
+          "distribution",
+          "ration"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "National Food Security Act Beneciaries"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://ddd.gov.in/scheme/pds-public-distribution-system/",
+      "introduced_on": "28/10/2016",
       "title": "PDS (Public Distribution System)",
-      "scheme_url": "https://ddd.gov.in/scheme/pds-public-distribution-system/",
-      "publishDate": "28/10/2016",
-      "department": "",
-      "description": "",
-      "beneficiary": "National Food Security Act Beneciaries",
-      "benefits": "Distribution of food grains to Ration card holders.",
-      "howToApply": ""
-    },
-    {
-      "id": "044f96c5-112b-4981-b733-a42aafe97a6c",
+      "funding_pattern": "",
+      "documents": [],
+      "criteria": [],
+      "id": "df0a478f-46ee-4ac4-9a3a-db338e997793"
+  },
+  {
+      "description": "To reduce the anemia level in dierent age groups (women and children) - To provide clear and simple recommendations to use IFA & Vitamin C supplements to the Community - To prevent and treat iron deciency anemia. - To advocate lifestyle modications mainly dietary diversication and food fortication - To test & treat non nutritional anemia (Malaria, Sickle Cell Anemia)",
+      "tags": [
+          "health",
+          "women empowerment",
+          "child development",
+          "anemia"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Children"
+          },
+          {
+              "beneficiary_type": "Women"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "04/10/2018",
+      "funding_pattern": "",
       "title": "4C Project Beti Janmahotsav",
-      "scheme_url": "https://ddd.gov.in/scheme/4c-project-beti-janmahotsav/",
-      "publishDate": "04/10/2018",
-      "department": "",
-      "description": "",
-      "beneficiary": "Appx 1,00,000 Anaemic Children / Womens",
-      "benefits": "To reduce the anemia level in dierent age groups (women and children) - To provide clear and simple recommendations to use IFA & Vitamin C supplements to the Community - To prevent and treat iron deciency anemia. - To advocate lifestyle modications mainly dietary diversication and food fortication - To test & treat non nutritional anemia (Malaria, Sickle Cell Anemia)",
-      "howToApply": ""
-    },
-    {
-      "id": "b7bfb7c3-310e-4cc3-b108-56c5dec8ffdb",
+      "scheme_link": "https://ddd.gov.in/scheme/4c-project-beti-janmahotsav/",
+      "documents": [],
+      "criteria": [],
+      "id": "04b5a851-e71b-47bb-bc41-d668fdce9148"
+  },
+  {
+      "description": "Hygienic and Nutritious High Calorie Food is provided to the workers at their work place at subsidized rate of Rs 5/- per meal.",
+      "tags": [
+          "Mid-Day Meal",
+          "Breakfast",
+          "Food Subsidy",
+          "Construction Workers",
+          "Industrial Workers"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Registration Building & Construction Workers"
+          },
+          {
+              "beneficiary_type": "Industrial Workers"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "introduced_on": "03/10/2018",
       "title": "Shramyogi Prasad (Mid-Day Meal & Breakfast)",
-      "scheme_url": "https://ddd.gov.in/scheme/shramyogi-prasad-mid-day-meal-breakfast/",
-      "publishDate": "03/10/2018",
-      "department": "",
-      "description": "",
-      "beneficiary": "Registration Building & Construction Workers Industrial Workers",
-      "benefits": "Hygienic and Nutritious High Calorie Food is provided to the workers at their work place at subsidized rate of Rs 5/- per meal.",
-      "howToApply": ""
-    },
-    {
-      "id": "1d9339c7-6333-4870-ae3c-fec804fad2f9",
+      "scheme_link": "https://ddd.gov.in/scheme/shramyogi-prasad-mid-day-meal-breakfast/",
+      "documents": [],
+      "criteria": [],
+      "id": "b1645329-f733-445b-b49d-3da249e4768f"
+  },
+  {
+      "description": "Mid Day Meal Distribution to School Children",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Students"
+          }
+      ],
+      "tags": [
+          "Mid Day Meal",
+          "School Children",
+          "Akshaya Patra"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://ddd.gov.in/scheme/mid-day-meal-distribution-through-akshaya-patra-centralized-kitchen/",
+      "introduced_on": "10/05/2017",
       "title": "Mid Day Meal Distribution through Akshaya Patra Centralized Kitchen",
-      "scheme_url": "https://ddd.gov.in/scheme/mid-day-meal-distribution-through-akshaya-patra-centralized-kitchen/",
-      "publishDate": "10/05/2017",
-      "department": "",
-      "description": "",
-      "beneficiary": "Appx 50,000 Students",
-      "benefits": "Mid Day Meal Distribution to School Children",
-      "howToApply": ""
-    },
-    {
-      "id": "0f54f9af-6eb4-4aac-a987-3bd588a0d0fd",
+      "funding_pattern": "",
+      "criteria": [],
+      "documents": [],
+      "id": "532952d0-d846-44d4-8bf9-13972fbc7173"
+  },
+  {
+      "description": "hot cooked meal is to be provided under Anganwadi services to the children in the age group of 3 years to 6 years",
+      "tags": [
+          "children",
+          "food",
+          "AWC"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Childrens (3 years to 6 years)"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "scheme_link": "https://ddd.gov.in/scheme/hot-cooked-meal-through-akshaya-patra-for-awc-childrens/",
       "title": "Hot cooked meal through Akshaya Patra for AWC childrens",
-      "scheme_url": "https://ddd.gov.in/scheme/hot-cooked-meal-through-akshaya-patra-for-awc-childrens/",
-      "publishDate": "08/02/2017",
-      "department": "",
-      "description": "",
-      "beneficiary": "Childrens (3 years to 6 years)",
-      "benefits": "hot cooked meal is to be provided under Anganwadi services to the children in the age group of 3 years to 6 years",
-      "howToApply": ""
-    },
-    {
-      "id": "50b53a62-dcc8-4fc1-ba23-52cd39bd8ecd",
+      "introduced_on": "08/02/2017",
+      "documents": [],
+      "criteria": [],
+      "id": "fb91223f-16eb-4d7e-aa14-c357ffa0f038"
+  },
+  {
+      "description": "To provide a wholesome food and diversied food basket to infants & childrens from age of6 months to 3 year",
+      "tags": [
+          "Children",
+          "Food",
+          "Ration"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Children (6 months to 3 years)"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://ddd.gov.in/scheme/take-home-ration-scheme/",
+      "introduced_on": "01/01/2017",
       "title": "Take Home Ration Scheme",
-      "scheme_url": "https://ddd.gov.in/scheme/take-home-ration-scheme/",
-      "publishDate": "01/01/2017",
-      "department": "",
-      "description": "",
-      "beneficiary": "Children (6 months to 3 years)",
-      "benefits": "To provide a wholesome food and diversied food basket to infants & childrens from age of6 months to 3 year",
-      "howToApply": ""
-    },
-    {
-      "id": "6f21f097-c2e6-402e-bec0-5b66a71c8838",
-      "title": "Swabhimaan Scheme",
-      "scheme_url": "https://ddd.gov.in/scheme/swabhimaan-scheme/",
-      "publishDate": "01/10/2016",
-      "department": "Infants/childrens",
+      "funding_pattern": "",
+      "documents": [],
+      "criteria": [],
+      "id": "ba11126b-f6f8-4ac2-aab2-d368b677ebc2"
+  },
+  {
       "description": "To successfully tackle the problems of Malnutrition, Anemia and other relevant issues the U.Tadministration of Daman & Diu and Dadra & Nagar haveli has launched the Swabhiman Scheme under this scheme 7.5 kg nutritious, Take Home Ration is provided every month to Pregnant Women, Lactating Mothers and Sabla (Adolescent Category in the age group of11-14 years out of school). Approximately 300 extra calories are needed",
-      "beneficiary": "Preganant/ Lactating Women & Adolescent Girls",
-      "benefits": "Improve nutritional status of pregnant women, lactating mothers and adolescent girls | Provide monthly quota of supplementary nutrition to pregnant women, lactating mothers and adolescent girls on a xed day of every month as take home ration. | Increase the number beneficiaries availing the scheme. | Increase attendance of women in the Anganwadis where they can also avail benets of others schemes and made aware of health and hygiene issues. | Reduction in stunting, Premature deliveries and low weight babies. |",
-      "howToApply": ""
-    },
-    {
-      "id": "0f299a2c-22d1-4c72-8c0e-28663de4a30c",
-      "title": "Food Security and Functional ePOS",
-      "scheme_url": "https://ddd.gov.in/scheme/food-security-and-functional-epos/",
-      "publishDate": "09/10/2013",
-      "department": "Food & Civil Supplies",
+      "tags": [
+          "Malnutrition",
+          "Anemia",
+          "Health",
+          "Nutrition",
+          "Women's Health",
+          "Children's Health"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Pregnant Women"
+          },
+          {
+              "beneficiary_type": "Lactating Mothers"
+          },
+          {
+              "beneficiary_type": "Adolescent Girls"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://ddd.gov.in/scheme/swabhimaan-scheme/",
+      "introduced_on": "01/10/2016",
+      "title": "Swabhimaan Scheme",
+      "funding_pattern": "Take Home Ration",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Infants/childrens",
+      "id": "51c2800e-002e-4221-b0d9-ebdf12bb7fa9"
+  },
+  {
       "description": "Under the National food security Act, 2013 with effect from 1st December 2015. The category wise food grains of Daman & Diu districts are entitled of 5 Kgs. To ensure timely and proper distribution of food grains to the Ration Card holders as per their entitlements under the National Food Security Act, 2013.",
-      "beneficiary": "Citizen Of India",
-      "benefits": "To ensure timely and proper distribution of foodgrains to the Ration Card holders as per their entitlements under National Food Security Act, 2013. Food grains i.e. 2.200 kg. Rice @ Rs. 3/- per kg and 2.800 kg. of wheat @ Rs. 2/- per kg. per person per month at subsidized prices",
-      "howToApply": "http://dfpd.nic.in"
-    },
-    {
-      "id": "668554a6-aa72-4c0d-aeb2-7af06b1aacfd",
+      "tags": [
+          "Food Security",
+          "Ration Card",
+          "Subsidized Food Grains"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "introduced_on": "09/10/2013",
+      "funding_pattern": "Not Available",
+      "title": "Food Security and Functional ePOS",
+      "scheme_link": "https://ddd.gov.in/scheme/food-security-and-functional-epos/",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Food & Civil Supplies",
+      "id": "7dbe4af7-f18b-4bb6-b67b-185a88d7394c"
+  },
+  {
+      "description": "Promotion of Digital payments",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "tags": [
+          "Digital payments",
+          "Citizen Of India"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "01/01/2019",
+      "scheme_link": "https://ddd.gov.in/scheme/promotion-of-digital-payments/",
       "title": "Promotion of Digital payments",
-      "scheme_url": "https://ddd.gov.in/scheme/promotion-of-digital-payments/",
-      "publishDate": "01/01/2019",
-      "department": "",
+      "funding_pattern": "",
+      "criteria": [],
+      "documents": [],
+      "id": "62b18834-62a8-449f-9290-e7ed4d4d27c1"
+  },
+  {
       "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "Promotion of Digital payments",
-      "howToApply": "http://cashlessindia.gov.in/"
-    },
-    {
-      "id": "81fac360-24bc-42ea-b4ec-d6b1f1e1319d",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "tags": [
+          "e-Service",
+          "e-Service Platform"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "introduced_on": "01/01/2016",
       "title": "Common Service Centre (CSC/SSK)",
-      "scheme_url": "https://ddd.gov.in/scheme/common-service-centre-csc-ssk/",
-      "publishDate": "01/01/2016",
-      "department": "",
-      "description": "",
-      "beneficiary": "Citizen Of India",
-      "benefits": "e-Service Platform",
-      "howToApply": "https://csc.gov.in/"
-    },
-    {
-      "id": "f70b058d-a0e3-4c42-9baf-ad335257b2d1",
-      "title": "Bharat-Net (NOFN –National Optical Fiber Network)",
-      "scheme_url": "https://ddd.gov.in/scheme/bharat-net/",
-      "publishDate": "25/10/2011",
-      "department": "Telecom Sector",
+      "scheme_link": "https://csc.gov.in/",
+      "documents": [],
+      "criteria": [],
+      "id": "57ee3e45-a4b8-438c-9862-f66761f2488b"
+  },
+  {
       "description": "National Optical Fibre Network (NOFN) is an ambitious initiative to trigger a broadband revolution in rural areas. NOFN was envisaged as an information super-highway through the creation of a robust middle-mile infrastructure for reaching broadband connectivity to Gram Panchayats. The National Optical Fibre Network (NOFN) aims to connect all the 2,50,000 Gram panchayats in the country and provide 100 Mbps connectivity to all gram panchayats (GPs). To achieve this, the existing fibres of PSUs (BSNL, Railtel and Power Grid) were utilised and incremental fibre was laid to connect to Gram Panchayats wherever necessary. Dark fibre network thus created was lit by appropriate technology thus creating sufficient bandwidth at the Gram Panchayats.",
-      "beneficiary": "Citizen Of India",
-      "benefits": "BharatNet is a project of national importance to establish a highly scalable network infrastructure accessible on a non-discriminatory basis, to provide on demand, affordable broadband connectivity of 2 Mbps to 20 Mbps for all households and on demand capacity to all institutions, to realise the vision of Digital India, in partnership with States and the private sector.",
-      "howToApply": "http://bbnl.nic.in/"
-    }
-  ]
+      "tags": [
+          "Telecom",
+          "Broadband",
+          "Rural Development",
+          "Digital India"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Citizen Of India"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "funding_pattern": "Not Available",
+      "scheme_link": "https://ddd.gov.in/scheme/bharat-net/",
+      "title": "Bharat-Net (NOFN –National Optical Fiber Network)",
+      "introduced_on": "25/10/2011",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Telecom Sector",
+      "id": "56e638c0-15cb-4a98-b299-b9b23983f026"
+  }
+]
