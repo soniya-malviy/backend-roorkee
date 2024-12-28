@@ -60,7 +60,8 @@ from .views import (
     EmploymentChoicesView,
     UserSavedSchemesFilterView,
     SchemeReportViewSet,
-    WebsiteFeedbackViewSet
+    WebsiteFeedbackViewSet,
+    RecommendSchemesAPIView
 
 )
 
@@ -129,5 +130,6 @@ urlpatterns = [
     path('feedback/scheme-reports/<int:pk>/', SchemeReportViewSet.as_view({'get': 'retrieve', 'delete': 'destroy'}), name='scheme-report-detail'),
     path('feedback/website-feedback/', WebsiteFeedbackViewSet.as_view({'post': 'create', 'get': 'list'}), name='website-feedback'),
     path('feedback/website-feedback/<int:pk>/', WebsiteFeedbackViewSet.as_view({'get': 'retrieve', 'delete': 'destroy'}), name='website-feedback-detail'),
+    path('scheme/<int:scheme_id>/recommendations/', RecommendSchemesAPIView.as_view(), name='scheme_recommendations')
 
 ]
