@@ -27,6 +27,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.db.models import Q
 import logging
+from communityEmpowerment.utils.utils import recommend_schemes, load_cosine_similarity
 
 logger = logging.getLogger(__name__)
 
@@ -953,3 +954,22 @@ class WebsiteFeedbackViewSet(viewsets.ModelViewSet):
     queryset = WebsiteFeedback.objects.all()
     serializer_class = WebsiteFeedbackSerializer
     permission_classes = [permissions.IsAuthenticated] 
+
+
+class RecommendSchemesAPIView(APIView):
+    def get(self, request, scheme_id):
+        try:
+            scheme = Scheme.objects.get(id=scheme_id)
+        except Scheme.DoesNotExist:
+            return Response({'detail': 'Scheme not found'}, status=404)
+
+        cosine_sim = load_cosine_similarity()
+
+        recommended_schemes = recommend_schemes(scheme.id, cosine_sim, top_n=10)
+
+        serializer = SchemeSerializer(recommended_schemes, many=True)
+        
+        return Response({
+            'scheme': SchemeSerializer(scheme).data, 
+            'recommended_schemes': serializer.data 
+        })
