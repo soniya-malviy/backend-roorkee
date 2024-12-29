@@ -1,0 +1,1152 @@
+[
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "social assistance"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "introduced_on": "Not available",
+        "funding_pattern": "Not available",
+        "title": "Social Assistance Program",
+        "scheme_link": "https://sw.cg.gov.in/social-assistance-program",
+        "documents": [],
+        "criteria": [],
+        "id": "e5fe0336-efdb-4b9d-bcef-8550656099a0"
+    },
+    {
+        "description": "गरीबी रेखा के नीचे जीवन यापन करने वाले दिव्यांग व्यक्तियों तथा बौने व्यक्तियों को आर्थिक सहायता प्रदान कर सम्मानपूर्वक जीवन-यापन करने हेतु सहयोग देना।",
+        "tags": [
+            "Social Security",
+            "Pension",
+            "Disability",
+            "Poverty"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Individuals living below poverty line"
+            },
+            {
+                "beneficiary_type": "Disabled Individuals"
+            },
+            {
+                "beneficiary_type": "Dwarf Individuals"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "Urban bodies/Gram Panchayats will forward the applications with recommendations to the concerned Janpad Panchayats."
+            },
+            {
+                "step_description": "Concerned urban bodies/Janpad Panchayats have the power of approval/rejection."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "introduced_on": "Not Available",
+        "scheme_link": "https://sw.cg.gov.in/social-security-pension-scheme",
+        "title": "Social Security Pension Scheme",
+        "funding_pattern": "State Plan",
+        "criteria": [
+            {
+                "description": "Resident of Chhattisgarh"
+            },
+            {
+                "description": "Disabled children of age group 6-17. Disabled children of age group 6-14 who are not studying will not be eligible."
+            },
+            {
+                "description": "General disabled person of 18 years or above"
+            },
+            {
+                "description": "Dwarf individuals"
+            }
+        ],
+        "documents": [],
+        "id": "1dd942c6-1610-449b-8194-8df85b5d9586"
+    },
+    {
+        "description": "गरीबी रेखा के नीचे जीवन यापन करने वाली विधवा/परित्यक्त महिलाओं को आर्थिक सहायता प्रदान कर सम्मानपूर्वक जीवन यापन करने हेतु सहयोग देना।",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Widow"
+            },
+            {
+                "beneficiary_type": "Deserted Women"
+            }
+        ],
+        "tags": [
+            "Financial Assistance",
+            "Women Empowerment",
+            "Social Welfare"
+        ],
+        "procedures": [
+            {
+                "step_description": "Urban bodies/gram panchayats will forward applications with recommendations to the concerned Janpad Panchayats. The concerned urban bodies/Janpad Panchayats have the right to approve/reject."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "funding_pattern": "State Plan",
+        "title": "Pleasant Support Scheme",
+        "scheme_link": "https://sw.cg.gov.in/pleasant-support-scheme",
+        "criteria": [
+            {
+                "description": "Women aged between 18-39 years."
+            },
+            {
+                "description": "Deserted women aged 18 years or above"
+            }
+        ],
+        "documents": [],
+        "id": "8a3ba363-a14b-4797-87f8-1ef2a513e18f"
+    },
+    {
+        "description": "गरीबी रेखा के नीचे जीवन यापन करने वाले वृद्धजनों को आर्थिक सहायता प्रदान कर सम्मानपूर्वक जीवन-यापन करने हेतु सहयोग देना।",
+        "tags": [
+            "old age",
+            "pension"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Senior Citizen"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "नगरीय निकाय/ग्राम पंचायतें अनुशंसा के साथ आवेदन जनपद पंचायतों को अग्रेषित करेगी। संबंधित नगरीय निकायों/जनपद पंचायतों को स्वीकृति/अस्वीकृति के अधिकार हैं।"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "Center-State Shared",
+        "introduced_on": "",
+        "title": "Indira Gandhi National Old Age Pension Scheme",
+        "scheme_link": "https://sw.cg.gov.in/indira-gandhi-national-old-age-pension-scheme",
+        "criteria": [],
+        "documents": [],
+        "id": "e8c54dbc-64a4-4942-a7dd-52d73b81727a"
+    },
+    {
+        "description": "गरीबी रेखा के नीचे जीवन यापन करने वाले विधवाओं को आर्थिक सहायता प्रदान कर सम्मानपूर्वक जीवन-यापन करने हेतु सहयोग देना।",
+        "tags": [
+            "Financial Assistance",
+            "Widow Welfare"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Widows"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "नगरीय निकाय/ग्राम पंचायतें अनुशंसा के साथ आवेदन जनपद पंचायतों को अग्रेषित करेगी। संबंधित नगरीय निकायों/जनपद पंचायतों को स्वीकृति/अस्वीकृति के अधिकार हैं।"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "रू.500 प्रतिमाह ( केन्द्रांश - रू.300, राज्यांश - रू.200)",
+        "introduced_on": "",
+        "title": "Indira Gandhi National Widow Pension Scheme",
+        "scheme_link": "https://sw.cg.gov.in/indira-gandhi-national-widow-pension-scheme",
+        "criteria": [],
+        "documents": [],
+        "id": "ae03aa01-7ae4-4a57-b4e0-d9f7d207afa1"
+    },
+    {
+        "description": "गरीबी रेखा के नीचे जीवन यापन करने वाले गंभीर एवं बहु दिव्यांग व्यक्ति को आर्थिक सहायता प्रदान कर सम्मानपूर्वक जीवन-यापन करने हेतु सहयोग देना।",
+        "tags": [
+            "disability",
+            "pension",
+            "financial assistance",
+            "poverty"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Individuals living below the poverty line with severe and multiple disabilities"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "Urban bodies/Gram Panchayats will forward the application along with recommendation to Janpad Panchayats. The concerned urban bodies/Janpad Panchayats have the power of approval/rejection."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "Center - Rs.300, State - Rs.200",
+        "introduced_on": "",
+        "title": "Indira Gandhi National Disability Pension Scheme",
+        "scheme_link": "https://sw.cg.gov.in/indira-gandhi-national-disability-pension-scheme",
+        "criteria": [],
+        "documents": [],
+        "id": "cdb48341-3ad2-44ff-a070-338cf54f5b54"
+    },
+    {
+        "description": "गरीबी रेखा के नीचे जीवन यापन करने वाले परिवार के ऐसे सदस्य की मृत्यु होने पर जिसकी कमाई से ही अधिकांश परिवार का गुजारा चलता हो, ऐसे परिवार के वारिस मुखिया को आर्थिक सहायता प्रदान करना।",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "BPL Families"
+            }
+        ],
+        "tags": [
+            "Death Benefit",
+            "Financial Assistance",
+            "One-time payment",
+            "Below Poverty Line",
+            "BPL"
+        ],
+        "procedures": [
+            {
+                "step_description": "नगरीय निकाय/ग्राम पंचायतें अनुशंसा के साथ आवेदन जनपद पंचायतों को अग्रेषित करेगी। संबंधित नगरीय निकायों/जनपद पंचायतों को स्वीकृति/अस्वीकृति के अधिकार हैं।"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "Information not available in the document",
+        "scheme_link": "https://sw.cg.gov.in/national-family-assistance-scheme",
+        "funding_pattern": "One-time payment",
+        "title": "National Family Assistance Scheme",
+        "introduced_on": "Not available in the document",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "गरीबी रेखा के नीचे जीवन यापन करने वाले परिवार के मुखिया की मृत्यु होने पर वारिस मुखिया को आर्थिक सहायता दी जाती है।"
+            },
+            {
+                "description": "मृतक की आयु मृत्यु दिनांक को 18 वर्ष से अधिक तथा 60 वर्ष से कम हो।"
+            }
+        ],
+        "id": "67c82add-8cf1-464a-9ac1-859b33673c10"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "senior citizen",
+            "support scheme"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "introduced_on": "Not available",
+        "funding_pattern": "Not available",
+        "title": "Senior Citizen Support Scheme",
+        "scheme_link": "https://sw.cg.gov.in/senior-citizen-support-scheme",
+        "documents": [],
+        "criteria": [],
+        "id": "c3ac6a9d-c510-4b48-b001-887dbb297729"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "pilgrimage",
+            "senior citizen",
+            "travel"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "introduced_on": "Not available",
+        "funding_pattern": "Not available",
+        "title": "Chhattisgarh Chief Ministers Pilgrimage Plan",
+        "scheme_link": "https://sw.cg.gov.in/chhattisgarh-chief-ministers-pilgrimage-plan",
+        "documents": [],
+        "criteria": [],
+        "id": "c21ec562-35d2-4e81-bcfc-dfcacc3e0507"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "Empowerment",
+            "Third Gender Community"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "introduced_on": "Not Available",
+        "funding_pattern": "Not Available",
+        "title": "Empowerment Individuals Third Gender Community",
+        "scheme_link": "https://sw.cg.gov.in/empowerment-individuals-third-gender-community",
+        "documents": [],
+        "criteria": [],
+        "id": "4799d4c5-4622-44ea-8b48-bcb826ebf736"
+    },
+    {
+        "description": "विभिन्न प्रचार-प्रसार माध्यम से योजना के पक्ष में सकारात्मक वातावरण निर्मित करना।",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Drug Addicts"
+            }
+        ],
+        "tags": [
+            "Drug Addiction Treatment",
+            "Awareness Campaign",
+            "Government Scheme"
+        ],
+        "procedures": [
+            {
+                "step_description": "आवेदक को निर्धारित प्रपत्र में आवेदन जिला के संयुक्त संचालक/उप संचालक, पंचायत एवं समाज कल्याण को प्रस्तुत करना होगा।"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "scheme_link": "https://sw.cg.gov.in/prohibition-program",
+        "funding_pattern": "Not Available",
+        "title": "Prohibition Program",
+        "introduced_on": "Not Available",
+        "criteria": [],
+        "documents": [],
+        "id": "19a5ef6d-d215-43b1-9c97-2e36623830cc"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "alcohol",
+            "addiction",
+            "campaign",
+            "health"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "introduced_on": "Not available",
+        "funding_pattern": "Not available",
+        "title": "Alcohol Addiction Campaign",
+        "scheme_link": "https://sw.cg.gov.in/alcohol-addiction-campaign",
+        "documents": [],
+        "criteria": [],
+        "id": "b7f9582d-7b4f-464c-b85b-82d5da06bc99"
+    },
+    {
+        "description": "सांस्कृतिक कार्यक्रम के माध्यम से शासन की जन कल्याणकारी योजनाओं का प्रचार-प्रसार करना |",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Government Employees"
+            }
+        ],
+        "tags": [
+            "Art",
+            "Culture",
+            "Government Schemes",
+            "Publicity"
+        ],
+        "procedures": [
+            {
+                "step_description": "शासन भर्ती नियम अनुसार |"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://sw.cg.gov.in/art-planning-scheme",
+        "funding_pattern": "Government Funded",
+        "title": "Art Planning Scheme",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [],
+        "id": "4b56a01c-4d73-4707-9a60-78a6e83d97f4"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "welfare",
+            "health",
+            "leprosy"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "funding_pattern": "Not available",
+        "introduced_on": "Not available",
+        "title": "Leprosy Welfare Scheme",
+        "scheme_link": "https://sw.cg.gov.in/leprosy-welfare-scheme",
+        "documents": [],
+        "criteria": [],
+        "id": "eabf7262-b98e-4a8c-834b-e3f92d6de9c0"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "disabled"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Disabled"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "scheme_link": "https://sw.cg.gov.in/commissioner-disabled",
+        "introduced_on": "Not available",
+        "title": "Commissioner Disabled",
+        "funding_pattern": "Not available",
+        "criteria": [],
+        "documents": [],
+        "id": "1a7057d6-38fb-4fd3-bf71-787893a1eb15"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "disabled",
+            "loan",
+            "self-employed"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "funding_pattern": "loan",
+        "title": "Loan Scheme Self Employed Disabled Chhattisgarh Disabled Finance And Development Corporation",
+        "scheme_link": "https://sw.cg.gov.in/loan-scheme-self-employed-disabled-chhattisgarh-disabled-finance-and-development-corporation",
+        "documents": [],
+        "criteria": [],
+        "id": "f4ede316-6d05-4a0b-84cb-001889ff9157"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "Self Reliance"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "",
+        "introduced_on": "",
+        "title": "Self Reliance Center",
+        "scheme_link": "https://sw.cg.gov.in/self-reliance-center",
+        "criteria": [],
+        "documents": [],
+        "id": "fd17bcd8-2aef-4211-b457-c9681ce19d4d"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "disabled",
+            "rehabilitation"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://sw.cg.gov.in/state-source-disabled-institute-and-state-resource-and-rehabilitation-center",
+        "funding_pattern": "",
+        "title": "State Source Disabled Institute And State Resource And Rehabilitation Center",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [],
+        "id": "cc60e9dc-40ba-408e-8106-da754c86be73"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "Rehabilitation",
+            "State Resources"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "introduced_on": "Not Available",
+        "funding_pattern": "Not Available",
+        "title": "State Resources And Rehabilitation Center",
+        "scheme_link": "https://sw.cg.gov.in/state-resources-and-rehabilitation-center",
+        "criteria": [],
+        "documents": [],
+        "id": "308b14cc-77b2-4d90-b4f7-eed54eb9f8d1"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "horizon",
+            "immense",
+            "possibilities"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "introduced_on": "Not Available",
+        "scheme_link": "https://sw.cg.gov.in/en/horizon-immense-possibilities",
+        "title": "Horizon Immense Possibilities",
+        "funding_pattern": "Not Available",
+        "documents": [],
+        "criteria": [],
+        "id": "008809fa-e07f-41d4-b2ea-ea3178728cca"
+    },
+    {
+        "description": "Increasing mobility of PwDs by providing artificial limbs / aid to all the eligible disabled persons of the state.",
+        "tags": [
+            "disability",
+            "mobility",
+            "artificial limbs",
+            "aid"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "PwD"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "Applicants must apply in the prescribed format and must attach medical certificate, income certificate, caste certificate with application form and apply to Joint/Deputy director, Social Welfare department district office,."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "undefined",
+        "funding_pattern": "undefined",
+        "scheme_link": "https://sw.cg.gov.in/en/potency-development-plan",
+        "title": "Potency Development Plan",
+        "introduced_on": "undefined",
+        "criteria": [
+            {
+                "description": "PwD must be a Disability Certificate / UDID Card holder."
+            },
+            {
+                "description": "Any type of disability is 40 percent or more."
+            },
+            {
+                "description": "Be a resident of Chhattisgarh state."
+            },
+            {
+                "description": "Recommendation of BPL family member or Collector / Sub divisional Officer (Revenue)."
+            },
+            {
+                "description": "Income of parents/guardians of PwDs must be less than 8000/- rupee per month."
+            }
+        ],
+        "documents": [],
+        "id": "6366c79a-51c1-427f-b931-1c35c7e6cd1d"
+    },
+    {
+        "description": "Increasing mobility by minimizing disabilities of disabled persons.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Disability Certificate / UDID Card holder"
+            },
+            {
+                "beneficiary_type": "Resident of Chhattisgarh state"
+            },
+            {
+                "beneficiary_type": "BPL family member"
+            }
+        ],
+        "tags": [
+            "Disability",
+            "Accessibility",
+            "Healthcare",
+            "Assistive Devices"
+        ],
+        "procedures": [
+            {
+                "step_description": "Applications must be submitted in prescribed format with Disability Certificate, Income certificate, Caste certificate to the Joint/Deputy Director, Social Welfare, District Office."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "scheme_link": "https://sw.cg.gov.in/en/artificial-limbs-and-accessories-delivery-plans",
+        "title": "Artificial Limbs And Accessories Delivery Plans",
+        "funding_pattern": "If the income of parents / guardian or himself is 5000 rupees per month, he will receive the instruments free and whose income is between Rs 5001 and Rs 8000, resources are provided by depositing 50 percent of the cost.",
+        "criteria": [
+            {
+                "description": "PwD must be a Disability Certificate / UDID Card holder."
+            },
+            {
+                "description": "Any type of disability is 40 percent or more."
+            },
+            {
+                "description": "Be a resident of Chhattisgarh state."
+            },
+            {
+                "description": "Recommendation of BPL family member or Collector / Sub divisional Officer (Revenue)."
+            }
+        ],
+        "documents": [
+            "Disability Certificate",
+            "Income certificate",
+            "Caste certificate"
+        ],
+        "id": "fbd05ecf-2845-4fb8-89ac-5380efa6b28a"
+    },
+    {
+        "description": "Providing assistance and promoting disabled children in education and training.",
+        "tags": [
+            "disabled",
+            "scholarship",
+            "education",
+            "training",
+            "school",
+            "college"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Disabled Children"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "Application will be submitted in the prescribed format, to the District Office of Social Welfare / Janpad Panchayat office through the Head of the institution."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "150 rupees from 1st to 5th class, 170 rupees from 6th to 8th class, 190 rupees from 9th to 12th class",
+        "introduced_on": "",
+        "title": "Disabled Scholarship Scheme",
+        "scheme_link": "https://sw.cg.gov.in/en/disabled-scholarship-scheme",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Residents of Chhattisgarh"
+            },
+            {
+                "description": "Disability of the person must be of 40% or above"
+            },
+            {
+                "description": "Regular student of school/college/Technical course"
+            },
+            {
+                "description": "Income of parents/guardian must be less than 8000- per month"
+            }
+        ],
+        "id": "440e7801-ad60-4cd5-aa34-0b9df4f3f1b9"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "disabilities",
+            "education",
+            "government institutions"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "scheme_link": "https://sw.cg.gov.in/en/government-institutions-teaching-disabilities",
+        "title": "Government Institutions Teaching Disabilities",
+        "funding_pattern": "",
+        "criteria": [],
+        "documents": [],
+        "id": "e6d88c4f-5efc-4e7c-8010-29d5956cbb50"
+    },
+    {
+        "description": "\\n\\nGrants for teaching of disabled children through voluntary institutions\\nRunning various rehabilitation programs.\\nArrangement of institutions under the Juvenile Act.\\nRunning Old Age Home\\nPromotions related to drug de-addiction\\n",
+        "tags": [
+            "disabled",
+            "welfare",
+            "rehabilitation",
+            "education",
+            "drug de-addiction",
+            "old age home"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Disabled Immigrants"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://sw.cg.gov.in/en/grant-aid-voluntary-organizations-working-area-%E2%80%8B%E2%80%8Bdisabled-welfare",
+        "funding_pattern": "Grant",
+        "title": "Grant Aid Voluntary Organizations Working Area disabled Welfare",
+        "introduced_on": "",
+        "criteria": [
+            {
+                "description": "Grants for teaching of disabled children through voluntary institutions"
+            },
+            {
+                "description": "Running various rehabilitation programs."
+            },
+            {
+                "description": "Arrangement of institutions under the Juvenile Act."
+            },
+            {
+                "description": "Running Old Age Home"
+            },
+            {
+                "description": "Promotions related to drug de-addiction"
+            }
+        ],
+        "documents": [],
+        "id": "1d0f2e4c-fec1-45f5-90f1-78cfcbae1d94"
+    },
+    {
+        "description": "In view of social rehabilitation of \\nPwDs lump sum financial assistance are provided after marriage. PwDs who are not \\nincome tax payer are eligible under the scheme.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Residents of Chhattisgarh"
+            },
+            {
+                "beneficiary_type": "Disabled persons of 40% or more disability."
+            },
+            {
+                "beneficiary_type": "PwDs must be a non income tax payer."
+            }
+        ],
+        "tags": [
+            "disabled",
+            "marriage",
+            "financial assistance",
+            "wedding",
+            "incentive"
+        ],
+        "procedures": [
+            {
+                "step_description": "Applicants must submitt their application in prescribed format to Joint/Deputy Director, Social Welfare Deptt of their respective district."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "funding_pattern": "Lump sum amount of Rs. 50,000 / - if either of the couple is PwD and if both are disabled 1,00,000 / - lump sum amount is provided.",
+        "title": "Disabled Wedding Incentive Scheme",
+        "scheme_link": "https://sw.cg.gov.in/en/disabled-wedding-incentive-scheme",
+        "documents": [],
+        "criteria": [
+            {
+                "description": "Age of disabled man must be between age of 21 to 45 years."
+            },
+            {
+                "description": "Age of disabled woman must be between age of 18 to 45 years."
+            },
+            {
+                "description": "It must be first marriage of the person."
+            }
+        ],
+        "id": "7db06de6-744a-403a-8861-cca83809dca5"
+    },
+    {
+        "description": "Consultation related to identification, certification and education, training and rehabilitation for PwDs",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "PwDs"
+            }
+        ],
+        "tags": [
+            "Rehabilitation",
+            "Disability",
+            "Education",
+            "Training",
+            "Aid Distribution"
+        ],
+        "procedures": [
+            {
+                "step_description": "No procedure data available"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "scheme_link": "https://sw.cg.gov.in/en/district-rehabilitation-district-disabled-rehabilitation-center-scheme",
+        "funding_pattern": "Not Available",
+        "title": "District Rehabilitation District Disabled Rehabilitation Center Scheme",
+        "introduced_on": "Not Available",
+        "documents": [],
+        "criteria": [],
+        "id": "53c6e132-b282-44a7-a4c3-3402d5ff5e1d"
+    },
+    {
+        "description": "Issuance of identity card and passbook by authentication of PwDs.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "PwDs"
+            }
+        ],
+        "tags": [
+            "Disability",
+            "Rehabilitation",
+            "Identity Card",
+            "Certification"
+        ],
+        "procedures": [
+            {
+                "step_description": "After certification of PwDs by Medical board in the orgaised camp or district hospital, identity card and passbooks are issued to the PwDs (with disability of 40% or above)"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://sw.cg.gov.in/en/deficit-disabilities-rehabilitation-program",
+        "funding_pattern": "",
+        "title": "Deficit Disabilities Rehabilitation Program",
+        "introduced_on": "",
+        "criteria": [],
+        "documents": [],
+        "id": "f94ff7bc-430b-4cb9-90ad-49a5f79613a1"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "National Trust Act",
+            "Disability"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "disabled"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Government"
+            }
+        ],
+        "valid_upto": "",
+        "scheme_link": "https://sw.cg.gov.in/en/implementation-national-trust-act-1999",
+        "funding_pattern": "",
+        "title": "Implementation National Trust Act 1999",
+        "introduced_on": "",
+        "criteria": [],
+        "documents": [],
+        "id": "3b5aa51c-154a-417e-bc67-049c5cd9faef"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "Cerebral Palsy",
+            "Rehabilitation",
+            "Medical",
+            "Disability",
+            "Healthcare"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not specified",
+        "scheme_link": "https://sw.cg.gov.in/en/cerebral-palsy-gait-labelles-physical-referral-rehabilitation-center",
+        "introduced_on": "Not specified",
+        "title": "Cerebral Palsy Gait Labelles Physical Referral Rehabilitation Center",
+        "funding_pattern": "Not specified",
+        "criteria": [],
+        "documents": [],
+        "id": "79c4a257-24db-47fe-90d9-ef9064aaf7f8"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "rehabilitation",
+            "physical therapy",
+            "referral"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "introduced_on": "",
+        "scheme_link": "https://sw.cg.gov.in/en/physical-referral-rehabilitation-center",
+        "title": "Physical Referral Rehabilitation Center",
+        "funding_pattern": "",
+        "documents": [],
+        "criteria": [],
+        "id": "8988f207-6fb5-4d73-b321-c7ac64f7a27e"
+    },
+    {
+        "description": "Early identification of Disability\\nCooperation in therapeutic services\\nDistribution and maintenance of aid and appliances.\\nProcedure wise assistance for support\\nAssisting Disabled for education\\nTo create hustle free environment for PwDs.\\nTo assure participation of PwDs in community.\\nOrganizing programmes for demonstration of excellence of PwDs.\\nTo coordinate with various departments at various levels.\\nArrangements for rehabilitation of PwDs.\\n",
+        "tags": [
+            "Disability",
+            "Rehabilitation",
+            "Accessibility",
+            "Assistance",
+            "Empowerment"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "PwDs"
+            }
+        ],
+        "procedures": [
+            {
+                "step_description": "By assistance of Viklang Mitan/Multipurpose Rehabilitation Activists, the certified PwDs are benefitted under schemes of various departments."
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "scheme_link": "https://sw.cg.gov.in/en/national-integrated-rehabilitation-program",
+        "funding_pattern": "Not Available",
+        "title": "National Integrated Rehabilitation Program",
+        "introduced_on": "Not Available",
+        "criteria": [
+            {
+                "description": "Early identification of Disability"
+            },
+            {
+                "description": "Cooperation in therapeutic services"
+            },
+            {
+                "description": "Distribution and maintenance of aid and appliances."
+            },
+            {
+                "description": "Procedure wise assistance for support"
+            },
+            {
+                "description": "Assisting Disabled for education"
+            },
+            {
+                "description": "To create hustle free environment for PwDs."
+            },
+            {
+                "description": "To assure participation of PwDs in community."
+            },
+            {
+                "description": "Organizing programmes for demonstration of excellence of PwDs."
+            },
+            {
+                "description": "To coordinate with various departments at various levels."
+            },
+            {
+                "description": "Arrangements for rehabilitation of PwDs."
+            }
+        ],
+        "documents": [],
+        "id": "a232c3c1-d86a-4f2a-9dc8-608d6756b59f"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "housing"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "",
+        "introduced_on": "",
+        "title": "Gharaunda",
+        "scheme_link": "https://sw.cg.gov.in/en/gharaunda",
+        "documents": [],
+        "criteria": [],
+        "id": "7e3e8eb6-6786-4ef8-b93b-2d0329f02f29"
+    },
+    {
+        "description": "This scheme aims to improve the living standards and economic prosperity of disabled individuals in Chhattisgarh, promoting inclusivity, empowerment, and social justice.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Differently-abled individuals"
+            }
+        ],
+        "tags": [
+            "disability",
+            "two-wheeler",
+            "scooter",
+            "scooty",
+            "inclusion",
+            "social justice",
+            "empowerment"
+        ],
+        "procedures": [
+            {
+                "step_description": "Technical examination of beneficiaries after receiving application in prescribed format-I"
+            },
+            {
+                "step_description": "Registration of selected beneficiaries on a dedicated portal after verification"
+            },
+            {
+                "step_description": "District office maintains a register of applications (format-two)"
+            }
+        ],
+        "sponsors": [],
+        "valid_upto": "Not specified",
+        "funding_pattern": "Not specified",
+        "introduced_on": "Not specified",
+        "title": "Petrol Powered Two Wheeler Scooterscooty Two Spare Wheels Divyangjan",
+        "scheme_link": "https://sw.cg.gov.in/en/petrol-powered-two-wheeler-scooterscooty-two-spare-wheels-divyangjan",
+        "criteria": [
+            {
+                "description": "Domicile of Chhattisgarh"
+            },
+            {
+                "description": "Age between 18 and 40 years"
+            },
+            {
+                "description": "Possess a valid driving license"
+            },
+            {
+                "description": "Monthly income of parents/guardians up to Rs.20,000/-"
+            },
+            {
+                "description": "Disability certificate of 60% or more, UDID certificate"
+            },
+            {
+                "description": "Regular students need attested copy from Head of Institution"
+            },
+            {
+                "description": "Disability certificate of 70% or more, UDID certificate"
+            },
+            {
+                "description": "Affidavit of the applicant regarding the certified pay-sleep, workplace etc. from the head of the office concerned to the handicapped working in employment."
+            },
+            {
+                "description": "Copy of payment of self-employment loan bill and certified copy from the head of the concerned bank/department/institution."
+            }
+        ],
+        "documents": [],
+        "id": "0b3749ad-15e2-438a-a397-242bd0bac05f"
+    },
+    {
+        "description": "There will be an increase in the standard of living and economic prosperity of the handicapped. The vision of an inclusive society will be created through this scheme. This scheme will prove to be a milestone for the empowerment, inclusion and social justice of the Divyangjan of the state and it will be an innovation initiative at the national level. To provide equal opportunity to the differently-abled to stand on their feet in every field (going to remote destinations and work according to their capacity), thereby creating new employment by increasing their educational level and means of livelihood and raising the standard of living and economic To bring strength.",
+        "tags": [
+            "Differently-abled",
+            "Economic empowerment",
+            "Social Inclusion",
+            "Motorized Tricycle",
+            "Financial assistance"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Differently-abled individuals"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "introduced_on": "Not available",
+        "funding_pattern": "Not available",
+        "title": "Motorized Tricycle Battery Operated Supply Scheme Divyangjan",
+        "scheme_link": "https://sw.cg.gov.in/en/motorized-tricycle-battery-operated-supply-scheme-divyangjan",
+        "criteria": [
+            {
+                "description": "If tricycle is already available then at least 03 years time interval will be necessary."
+            },
+            {
+                "description": "If pre-motorized tricycle (battery operated) is available then at least 10 years time lag will be required."
+            },
+            {
+                "description": "If petrol powered two wheeler scooter/scooty (with two spare wheels) is already available, a minimum time span of 15 years will be required."
+            },
+            {
+                "description": "Candidate must be a native of Chhattisgarh."
+            },
+            {
+                "description": "The minimum age of the candidate should not be more than 16 years and maximum 55 years."
+            },
+            {
+                "description": "Certified disability certificate of 60% or more, UDID certificate."
+            },
+            {
+                "description": "The monthly income of the parents/guardians from all sources should be up to Rs.20,000/- in case of self or dependent."
+            },
+            {
+                "description": "For regular students, it will be mandatory to have an attested copy from the head of the concerned school/college/university."
+            },
+            {
+                "description": "Certified Disability Certificate of 70 percent or more, UDID certificate."
+            },
+            {
+                "description": "Affidavit of the applicant regarding pay sleep, workplace etc., certified by the head of the office concerned to the handicapped working in employment."
+            },
+            {
+                "description": "Beneficiaries of Chhattisgarh Disabled Finance and Development Corporation, who are capable of running motorized tricycles, will be benefited according to special priority."
+            },
+            {
+                "description": "Copy of payment of self-employment loan bill and certified copy from the concerned bank / department (corporation) / head of the institution."
+            },
+            {
+                "description": "If the applicant does not fall in the above two categories, then after thorough examination regarding his application, the Joint / Deputy Director, District Office of Social Welfare will be presented to the concerned District Collector for decision. The recommendation of the District Collector will be mandatory in the case."
+            }
+        ],
+        "documents": [],
+        "id": "67b37e38-0ba8-4f4f-96fd-4239b16d099a"
+    },
+    {
+        "description": "\\nScheme Name :-  \\\"Aprajita\\\" (Shelter Home for Mental ill Women).\\nObjective of Shelter Home Management :- The department is strongly committed to the care, protection, security and rehabilitation of the disabled. There is no denying the fact that mentally ill persons are looked down upon and are abused and mistreated. They are also abandoned by many families. Such mentally ill women need special care, protection and security. Under Section 5 (2) (b) of the Rights of Persons with Disabilities Act, 2016, the appropriate government will endeavor to. All basic facilities like accommodation/food/medical/legal aid/daily activities items etc. will be provided to the mentally ill women through the home. Initially this centre will operate in district Raipur. After that it will be conducted in the divisional headquarters or other districts as per the requirement.\\n\\n\\n\\nExecution Agency :-   The residential operation of the shelter home operated under district Raipur will be done by the Directorate of Social Welfare. In future, as per the need, after getting the approval from the government for the establishment of such homes in other districts, they will be operated by the concerned district social welfare office.\\n\\n\\n\\nBeneficiary of the Home and Admission Process :- \\n\\nResidential assistance will be provided to adult mentally ill women through the Home.\\nThis center will remain operational 24X7.\\nAny woman who considers herself mentally ill and wants to be admitted for treatment may make a request to the psychiatrist in charge of the shelter home and accordingly the woman may be admitted on the basis of the recommendation of the psychiatrist in charge of the home.\\nOn the basis of the written recommendation of a psychiatrist, women will be able to enter the shelter home. It will be necessary to inform the police station under whose jurisdiction the home operates, of every woman entering. It will be necessary to inform the police station under whose jurisdiction the home operates, of every women entering. It will be necessary to inform the police station under whose jurisdiction the  home operates, of every women entering.\\nAny mentally ill woman who does not express or is unable to express her will for admission in the shelter home, may be admitted to the shelter home on the application made in that behalf by any relative or friend of that woman when the in-charge of the home. The psychiatrist is satisfied that it is necessary to do so in the interest of the mentally ill woman./li>\\nRegarding admission other instructions will be under the provision given in the Mental Health Care Act 2017.",
+        "tags": [
+            "women",
+            "mental health",
+            "shelter",
+            "healthcare",
+            "Raipur"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Adult mentally ill women"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not available",
+        "introduced_on": "Not available",
+        "funding_pattern": "Not available",
+        "title": "Shelter Home Mental Ill Women",
+        "scheme_link": "https://sw.cg.gov.in/en/shelter-home-mental-ill-women",
+        "criteria": [
+            {
+                "description": "Scheme Name :-  \\\"Aprajita\\\" (Shelter Home for Mental ill Women)."
+            },
+            {
+                "description": "Objective of Shelter Home Management :- The department is strongly committed to the care, protection, security and rehabilitation of the disabled. There is no denying the fact that mentally ill persons are looked down upon and are abused and mistreated. They are also abandoned by many families. Such mentally ill women need special care, protection and security. Under Section 5 (2) (b) of the Rights of Persons with Disabilities Act, 2016, the appropriate government will endeavor to. All basic facilities like accommodation/food/medical/legal aid/daily activities items etc. will be provided to the mentally ill women through the home. Initially this centre will operate in district Raipur. After that it will be conducted in the divisional headquarters or other districts as per the requirement."
+            },
+            {
+                "description": "Execution Agency :-   The residential operation of the shelter home operated under district Raipur will be done by the Directorate of Social Welfare. In future, as per the need, after getting the approval from the government for the establishment of such homes in other districts, they will be operated by the concerned district social welfare office."
+            },
+            {
+                "description": "Beneficiary of the Home and Admission Process :- \\n\\nResidential assistance will be provided to adult mentally ill women through the Home.\\nThis center will remain operational 24X7.\\nAny woman who considers herself mentally ill and wants to be admitted for treatment may make a request to the psychiatrist in charge of the shelter home and accordingly the woman may be admitted on the basis of the recommendation of the psychiatrist in charge of the home.\\nOn the basis of the written recommendation of a psychiatrist, women will be able to enter the shelter home. It will be necessary to inform the police station under whose jurisdiction the home operates, of every woman entering. It will be necessary to inform the police station under whose jurisdiction the home operates, of every women entering. It will be necessary to inform the police station under whose jurisdiction the  home operates, of every women entering.\\nAny mentally ill woman who does not express or is unable to express her will for admission in the shelter home, may be admitted to the shelter home on the application made in that behalf by any relative or friend of that woman when the in-charge of the home. The psychiatrist is satisfied that it is necessary to do so in the interest of the mentally ill woman./li>\\nRegarding admission other instructions will be under the provision given in the Mental Health Care Act 2017."
+            }
+        ],
+        "documents": [],
+        "id": "5ff2e73d-477b-4332-9954-d656fba13cf2"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "Accessibility"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "",
+        "scheme_link": "https://sw.cg.gov.in/en/accessibility-options",
+        "title": "Accessibility Options",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [],
+        "id": "3727ccc4-00b2-4bff-8034-854ecd09ba42"
+    },
+    {
+        "description": "No description available",
+        "tags": [
+            "Accessibility",
+            "Web Accessibility",
+            "Digital Inclusion"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "General Public"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not applicable",
+        "scheme_link": "https://sw.cg.gov.in/en/accessibility-statement",
+        "funding_pattern": "Not applicable",
+        "title": "Accessibility Statement",
+        "introduced_on": "Not available",
+        "criteria": [],
+        "documents": [],
+        "id": "849e2636-df46-40c5-a0d4-a40478a23829"
+    },
+    {
+        "description": "No description available",
+        "beneficiaries": [],
+        "tags": [
+            "Accessibility"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "",
+        "introduced_on": "",
+        "title": "Accessibility Options",
+        "scheme_link": "https://sw.cg.gov.in/en/accessibility-options",
+        "criteria": [],
+        "documents": [],
+        "id": "d8935c36-8330-4ab6-995a-04de94a041c5"
+    }
+]

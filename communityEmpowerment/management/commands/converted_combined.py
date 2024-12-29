@@ -40,7 +40,7 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
     for item in original_data:
         state_name = "Meghalaya"
         created_at = "2024-06-25T12:00:00Z"
-        department_name = item.get("Department: ").strip()
+        department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
         if not state:
@@ -68,33 +68,1216 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
             state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        title = remove_leading_numbers(item.get("Title: ").strip())
-        description = item.get("Description: ").strip()
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
         scheme = {
             "title": title,
-            "introduced_on": convert_date_format(item.get("Introduced on: ")),
-            "valid_upto": "2024-12-31T23:59:59Z",
-            "funding_pattern": item.get("Sponsors: ").strip(),
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
             "description": description,
-            "scheme_link": item.get("Scheme Link: ").strip(),
+            "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": item.get("Scheme Beneficiaries: ").strip()}
-            ] if item.get("Scheme Beneficiaries: ") else [],
-            "documents": [],
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
             "sponsors": [
-                {"sponsor_type": item.get("Sponsors: ").strip()}
+                {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": item.get("How to Avail: ").strip(), "value": ""}
-            ] if item.get("How to Avail: ") else [],
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
             "procedures": [
-                {"step_description": item.get("How to Avail: ").strip()}
-            ] if item.get("How to Avail: ") else [],
-            "tags": determine_tags(title, description)
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Arunachal Pradesh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_assam_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Assam"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_chandigarh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Chandigarh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_chhattisgarh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Chhattisgarh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Dadra and Nagar Haveli"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_delhi_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Delhi"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_gujrat_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Gujrat"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_haryana_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Haryana"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Jammu and Kashmir"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_kerala_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Kerala"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_ladakh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Ladakh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_madhya_pradesh_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Madhya Pradesh"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_maharastra_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Maharastra"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_manipur_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Manipur"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_odissa_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Odissa"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_puducherry_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Puducherry"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_punjab_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Punjab"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_sikkim_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Sikkim"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_telangana_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Telangana"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_uttarakhand_data(original_data, combined_data):
+    for item in original_data:
+        state_name = "Uttarakhand"
+        created_at = "2024-06-25T12:00:00Z"
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
+
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
+
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
+
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        title = remove_leading_numbers(item.get("title"))
+        description = item.get("description")
+        scheme = {
+            "title": title,
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
+            "description": description,
+            "scheme_link": item.get("scheme_link"),
+            "beneficiaries": [
+                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+            ],
+            "documents": [
+                {"document_name": doc} for doc in item.get("documents")
+            ],
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
+            ],
+            "criteria": [
+                {"description": criteria_description} for criteria_description in item.get("criteria")
+            ],
+            "procedures": [
+                {"step_description": step_description} for step_description in item.get("procedures")
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
         }
         organisation["schemes"].append(scheme)
 
 # Function to transform and add Tamil Nadu data
+        # END HERE
 def transform_and_add_tamilnadu_data(original_data, combined_data):
     for item in original_data:
         state_name = "Tamil Nadu"
@@ -155,248 +1338,7 @@ def transform_and_add_tamilnadu_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 
 # Function to transform and add Puducherry data
-def transform_and_add_puducherry_data(original_data, combined_data):
-    for item in original_data:
-        state_name = "Puducherry"
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = "Adi Dravidar Welfare Department"
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": department_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        title = remove_leading_numbers(item.get("title").strip())
-        description = " ".join(item["details"].get("Objective", [])).strip()
-        scheme = {
-            "title": title,
-            "introduced_on": "2024-06-25T12:00:00Z",
-            "valid_upto": "2024-12-31T23:59:59Z",
-            "funding_pattern": "State",
-            "description": description,
-            "scheme_link": item.get("link"),
-            "beneficiaries": [
-                {"beneficiary_type": "SC/ST/OEBC"}
-            ],
-            "documents": [
-                {"document_name": doc} for doc in item["details"].get("Required Documents / Enclosures with Application", [])
-            ],
-            "sponsors": [
-                {"sponsor_type": "State"}
-            ],
-            "criteria": [
-                {"description": eligibility, "value": ""} for eligibility in item["details"].get("Eligibility", [])
-            ],
-            "procedures": [],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
-
-# Function to transform and add Jammu and Kashmir data
-def transform_and_add_jammukashmir_data(original_data, combined_data):
-    for program in original_data:
-        state_name = "Jammu and Kashmir"
-        created_at = "2024-06-25T12:00:00Z"
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department_name = program.get("title").strip()
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": department_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        for item in program.get("schemes", []):
-            title = remove_leading_numbers(item.get("name").strip())
-            description = item["details"].get("Description of the Scheme", "").strip()
-            scheme = {
-                "title": title,
-                "introduced_on": "2024-06-25T12:00:00Z",
-                "valid_upto": "2024-12-31T23:59:59Z",
-                "funding_pattern": "Central and State",
-                "description": description,
-                "scheme_link": item.get("url"),
-                "beneficiaries": [
-                    {"beneficiary_type": item["criteria"].get("Category")}
-                ] if item.get("criteria") else [],
-                "documents": [],
-                "sponsors": [
-                    {"sponsor_type": "Central and State"}
-                ],
-                "criteria": [
-                    {"description": key + ": " + value} for key, value in item["criteria"].items()
-                ] if item.get("criteria") else [],
-                "procedures": [
-                    {"step_description": item["details"].get("Procedure", "")}
-                ] if item.get("details") else [],
-                "tags": determine_tags(title, description)
-            }
-            organisation["schemes"].append(scheme)
-
-def transform_and_add_gujarat_data(original_data, combined_data):
-    for item in original_data:
-        state_name = "Gujarat"
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = "Scheduled Caste Welfare Department"
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": department_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        title = remove_leading_numbers(item.get("title").strip())
-        description = item["details"].get("Scheme Name")
-        scheme = {
-            "title": title,
-            "introduced_on": "2024-06-25T12:00:00Z",
-            "valid_upto": "2024-12-31T23:59:59Z",
-            "funding_pattern": "State",
-            "description": description,
-            "scheme_link": item["details"].get("scheme_link"),
-
-            "beneficiaries": [
-                {"beneficiary_type": "SC"}
-            ],
-            "documents": [
-                {"document_name": "Pre-defined Application Form", "description": item["details"].get("Pre-defined Application Form")}
-            ],
-            "sponsors": [
-                {"sponsor_type": "State"}
-            ],
-            "criteria": [
-                {"description": item["details"].get("Eligibility Criteria :"), "value": ""}
-            ],
-            "procedures": [
-                {"step_description": item["details"].get("Assistance Details", "").split("\n")[0]}
-            ],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
-    
-
-def transform_and_add_maharashtra_data(original_data, combined_data):
-    state_name = "Maharashtra"
-    created_at = "2024-06-25T12:00:00Z"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-        title = remove_leading_numbers(item.get("title", "").strip())
-        scheme_id = item.get("id", "")
-
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department_name = item["details"].get("Category of Scheme", "").strip()
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": department_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item["details"].get("Scheme Objective", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": None if item["details"].get("Introduced On", "").strip() == "" else item["details"]["Introduced On"].strip(),
-            "valid_upto": None if item["details"].get("Valid Upto", "").strip() == "" else item["details"]["Valid Upto"].strip(),
-            "funding_pattern": item["details"].get("Funding by", "").strip(),
-            "description": description,
-            "scheme_link": item["details"].get("scheme_link"),  # This data is not provided in the example, adjust as needed
-            "beneficiaries": [
-                {"beneficiary_type": item["details"].get("Beneficiary Category", "").strip()}
-            ],
-            "documents": [],  # You may need to adjust this based on available data
-            "sponsors": [],  # This data is not provided in the example, adjust as needed
-            "criteria": [
-                {"description": item["details"].get("Eligibility Criteria", ""), 
-                 "value": ""}
-            ],
-            "procedures": [
-                {"step_description": item["details"].get("Application Process", "").strip()}
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
 
 
 def transform_and_add_uttar_pradesh_data(original_data, combined_data):
@@ -530,190 +1472,7 @@ def transform_and_add_himachal_pradesh_data(original_data, combined_data):
         }
         organisation["schemes"].append(scheme)
 
-def transform_and_add_manipur_data(original_data, combined_data):
-    state_name = "Manipur"
 
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-        scheme_id = item.get("id", "")
-
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department_name = item.get("Category of Scheme", "").strip()
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "organisations": [
-                    {
-                        "organisation_name": department_name,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("Scheme Objective", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": None,
-            "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
-            "funding_pattern": item.get("Funding by", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [], 
-            "sponsors": [],  
-            "criteria": [
-                {"description": item.get("Eligibility Criteria", ""), 
-                 "value": ""}
-            ],
-            "procedures": [
-                {"step_description": item.get("howToApply", "").strip()}
-            ],
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
-
-def transform_and_add_kerala_data(original_data, combined_data):
-    state_name = "Kerala"
-    created_at = "2024-06-25T12:00:00Z"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department_name = item.get("Category of Scheme", "").strip()
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": department_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": None,
-            "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
-            "funding_pattern": item.get("Funding by", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [], 
-            "sponsors": [],  
-            "criteria": [
-                {"description": item.get("Eligibility Criteria", ""), 
-                 "value": ""}
-            ],
-            "procedures": [
-                {"step_description": item.get("howToApply", "").strip()}
-            ],
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
-
-
-def transform_and_add_madhya_pradesh_data(original_data, combined_data):
-    state_name = "Madhya Pradesh"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
-
-        department_name = item.get("Department", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item["data"].get("Schemes", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": None,
-            "valid_upto": None if item.get("Valid Upto", "").strip() == "" else item["Valid Upto"].strip(),
-            "funding_pattern": item.get("Funding by", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": [
-                {"description": item["data"].get("Information related to schemes", "")}
-            ],
-            "procedures": [
-                {"step_description": item["data"].get("Department", "").strip()}
-            ],
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
 
 def transform_and_add_goa_data(original_data, combined_data):
     state_name = "Goa"
@@ -807,6 +1566,7 @@ def transform_and_add_jharkhand_data(original_data, combined_data):
             "funding_pattern": item.get("funding_pattern", "").strip(),
             "description": description,
             "scheme_link": item.get("scheme_url"),  
+            "pdf_url": item.get("pdfUrl"),  
             "beneficiaries": [
                 {"beneficiary_type": item.get("beneficiary", "").strip()}
             ],
@@ -821,6 +1581,60 @@ def transform_and_add_jharkhand_data(original_data, combined_data):
             ],
             "tags": item.get("tags"),  # Implement determine_tags function
             "statistical_summary": []  # Exclude 'year' field from statistical summary
+        }
+        organisation["schemes"].append(scheme)
+def transform_and_add_rajasthan_data(original_data, combined_data):
+    state_name = "Rajasthan"
+
+    for item in original_data:
+        title = remove_leading_numbers(item.get("title", "").strip())
+
+
+        state = {
+            "state_name": state_name,
+            "departments": []
+        }
+        combined_data["states"].append(state)
+
+        department_name = item.get("department_name", "").strip()
+
+
+        department = {
+            "department_name": department_name,
+            "organisations": [
+                {
+                    "organisation_name": department_name,
+                    "schemes": []
+                }
+            ]
+        }
+        state["departments"].append(department)
+
+        organisation = department["organisations"][0]
+        description = item.get("description", "").strip()
+
+        scheme = {
+            "title": title,
+            "introduced_on": item.get("introduced_on","").strip(),
+            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
+            "funding_pattern": item.get("funding_pattern", "").strip(),
+            "description": description,
+            "scheme_link": item.get("scheme_url"),  
+            "pdf_url": item.get("pdfUrl"),  
+            "beneficiaries": [
+                {"beneficiary_type": item.get("beneficiary", "").strip()}
+            ],
+            "documents": [
+                {"document_name": document} for document in item.get("documents", [])
+            ], 
+            "sponsors": [],  
+            "criteria": item.get("criteria",""),
+            "procedures": item.get("procedures",""),
+            "benefits": [
+                {"benefit_type": item.get("benefits", [])} 
+            ],
+            "tags": item.get("tags"),  
+            "statistical_summary": []  
         }
         organisation["schemes"].append(scheme)
 
@@ -860,7 +1674,7 @@ def transform_and_add_tripura_data(original_data, combined_data):
             "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
             "funding_pattern": item.get("funding_pattern", "").strip(),
             "description": description,
-            "scheme_link": item.get("schemeUrl"),  
+            "scheme_link": item.get("schemeUrl"),
             "beneficiaries": [
                 {"beneficiary_type": item.get("beneficiary", "").strip()}
             ],
@@ -880,276 +1694,7 @@ def transform_and_add_tripura_data(original_data, combined_data):
 
 
 
-def transform_and_add_sikkim_data(original_data, combined_data):
-    state_name = "Sikkim"
 
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
-
-        department_name = item.get("department", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": item.get("introduced_on","").strip(),
-            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
-            "funding_pattern": item.get("funding_pattern", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": item.get("criteria",""),
-            "procedures": item.get("procedures",""),
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
-
-def transform_and_add_telangana_data(original_data, combined_data):
-    state_name = "Telangana"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
-
-        department_name = item.get("department", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": item.get("introduced_on","").strip(),
-            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
-            "funding_pattern": item.get("funding_pattern", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": item.get("criteria",""),
-            "procedures": item.get("procedures",""),
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
-        
-def transform_and_add_uttarakhand_data(original_data, combined_data):
-    state_name = "Uttarakhand"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
-
-        department_name = item.get("department", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": item.get("introduced_on","").strip(),
-            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
-            "funding_pattern": item.get("funding_pattern", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": item.get("criteria",""),
-            "procedures": item.get("procedures",""),
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
-
-
-def transform_and_add_delhi_data(original_data, combined_data):
-    state_name = "Delhi"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
-
-        department_name = item.get("department", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": item.get("introduced_on","").strip(),
-            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
-            "funding_pattern": item.get("funding_pattern", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": item.get("criteria",""),
-            "procedures": item.get("procedures",""),
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
-
-def transform_and_add_ladakh_data(original_data, combined_data):
-    state_name = "Ladakh"
-
-    for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
-
-
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
-
-        department_name = item.get("department", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
-        scheme = {
-            "title": title,
-            "introduced_on": item.get("introduced_on","").strip(),
-            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
-            "funding_pattern": item.get("funding_pattern", "").strip(),
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),  
-            "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
-            ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": item.get("criteria",""),
-            "procedures": item.get("procedures",""),
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
-            ],
-            "tags": determine_tags(title, description),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
-        }
-        organisation["schemes"].append(scheme)
 
 def transform_and_add_andhra_pradesh_data(original_data, combined_data):
     for item in original_data:
@@ -1213,245 +1758,7 @@ def transform_and_add_andhra_pradesh_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
         
 
-def transform_and_add_assam_data(original_data, combined_data):
-    for item in original_data:
-        state_name = 'Assam'
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = ''
-        organisation_name = ''
-        state = next((s for s in combined_data['states'] 
-            if s['state_name'] == state_name),None)
 
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-        
-        department = next((d for d in state['departments']
-            if d["department_name"] == department_name ), None)
-        
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": organisation_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-        organisation = department["organisations"][0]
-        title = item.get("title").strip()
-        description = item.get("description").strip()
-        scheme = {
-            "id" : item.get("id", ""),
-            "title": title,
-            "introduced_on":"2024-06-25T12:00:00Z",
-            "valid_upto": '2024-12-31T23:59:59Z',
-            "funding_pattern":"",
-            "description": description,
-            "scheme_link": item.get('scheme_url',''),
-            "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
-            "documents": [],
-            "sponsors": [
-                {"sponsor_type":  ""}
-            ],
-            "criteria": [
-                {"description": item.get("How To Avail"), "value": ""}
-            ] if item.get("How To Avail") else [],
-            "procedures": [
-                {"step_description": item.get("How To Avail")}
-            ] if item.get("How To Avail") else [],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
-    
-def transform_and_add_haryana_data(original_data, combined_data):
-    for item in original_data:
-        state_name = "Haryana"
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = ''
-        organisation_name = ''
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-        
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": organisation_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-
-        organisation = department["organisations"][0]
-        title = item.get("title").strip()
-        description = item.get("description").strip()
-        scheme = {
-        'id':item.get('id',''),
-        "title": title,
-        "introduced_on": convert_date_format(item.get("publishDate")),
-        "valid_upto": "2024-12-31T23:59:59Z",
-        "funding_pattern": '',
-        "description": description + '\n' + item.get('benefits'),
-        "scheme_link": item.get("schemeUrl"),
-        "beneficiaries": [
-            {"beneficiary_type": item.get("Beneficiaries")}
-        ] if item.get("Beneficiaries") else [],
-        "documents": [{"document_name": "More details", "description": item.get("pdfUrl")}],
-            "sponsors": [
-            {"sponsor_type": item.get("Sponsored By")}
-        ],
-        "criteria": [
-            {"description": item.get("howToApply"), "value": ""}
-        ] if item.get("howToApply") else [],
-        "procedures": [
-            {"step_description": item.get("howToApply")}
-        ] if item.get("howToApply") else [],
-        "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
-
-def transform_and_add_punjab_data(original_data, combined_data):
-    for item in original_data:
-        state_name = "Punjab"
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = ''
-        organisation_name = ''
-        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-
-        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
-
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": organisation_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-        organisation = department["organisations"][0]
-        title = item.get("title").strip()
-        description = item.get("Description").strip()
-        scheme = {
-            'id':item.get('id',''),
-            "title": title,
-            "introduced_on": "2024-06-25T12:00:00Z",
-            "valid_upto": "2024-12-31T23:59:59Z",
-            "funding_pattern": item.get("FUNDING PATTERN"),
-            "description": description,
-            "scheme_link": item.get('scheme_url',''),
-            "beneficiaries": [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
-            "documents": [],
-            "sponsors": [
-                {"sponsor_type": item.get("SOURCES OF FUNDS")}
-            ],
-            "criteria": [
-                {"description": item.get("ELIGIBILITY"), "value": ""}
-            ] if item.get("ELIGIBILITYl") else [],
-            "procedures": [
-                {"step_description": item.get("PROCEDURE FOR TAKING LOAN")}
-            ] if item.get("PROCEDURE FOR TAKING LOAN") else [],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
-
-def transform_and_add_odisha_data(original_data, combined_data):
-    for item in original_data:
-        state_name = 'Odisha'
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = ''
-        organisation_name = ''
-        state = next((s for s in combined_data['states'] 
-            if s['state_name'] == state_name),None)
-
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-        
-        department = next((d for d in state['departments']
-            if d["department_name"] == department_name ), None)
-        
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": organisation_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-        organisation = department["organisations"][0]
-        title = item.get("title").strip()
-        description = item.get("description").strip() if item.get("description") else ''
-        scheme = {
-            "title": title,
-            "introduced_on":"2024-06-25T12:00:00Z",
-            "valid_upto": '2024-12-31T23:59:59Z',
-            "funding_pattern":"",
-            "description": description,
-            "scheme_link": item.get("schemeUrl"),
-            "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
-            "documents": [],
-            "sponsors": [
-                {"sponsor_type":  "Yet to be updated"}
-            ],
-            "criteria": [
-                {"description": item.get("How To Avail"), "value": ""}
-            ] if item.get("How To Avail") else [],
-            "procedures": [
-                {"step_description": item.get("How To Avail")}
-            ] if item.get("How To Avail") else [],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
 
 def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
     for item in original_data:
@@ -1488,7 +1795,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
             state["departments"].append(department)
         organisation = department["organisations"][0]
         title = item.get("title").strip()
-        description = item.get("objective").strip()
+        description = item.get("objective")
         if item.get('benefits'):
             for it in item.get('benefits'):
                 description += it +'\n'
@@ -1517,67 +1824,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
         }
         organisation["schemes"].append(scheme)
 
-def transform_and_add_dadar_nagar_haveli_data(original_data, combined_data):
-    for item in original_data:
-        state_name = 'Dadar and Nagar Haveli'
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = ''
-        organisation_name = ''
-        state = next((s for s in combined_data['states'] 
-            if s['state_name'] == state_name),None)
 
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-        
-        department = next((d for d in state['departments']
-            if d["department_name"] == department_name ), None)
-        
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": organisation_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-        organisation = department["organisations"][0]
-        title = item.get("title").strip()
-        description = item.get("description").strip()
-        description += '\n'+ item.get('benefits') 
-        scheme = {
-            "id" : item.get("id", ""),
-            "title": title,
-            "introduced_on":"2024-06-25T12:00:00Z",
-            "valid_upto": '2025-12-31T23:59:59Z',
-            "funding_pattern":"",
-            "description": description,
-            "scheme_link": item.get('scheme_url',''),
-            "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
-            "documents": item.get('documents',[]),
-            "sponsors": [
-                {"sponsor_type":  ""}
-            ],
-            "criteria": [
-                {"description": item.get("How To Avail"), "value": ""}
-            ] if item.get("How To Avail") else [],
-            "procedures": [
-                {"step_description": item.get("How To Avail")}
-            ] if item.get("How To Avail") else [],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
 
 def transform_and_add_andaman_nicobar_data(original_data, combined_data):
     for item in original_data:
@@ -1640,66 +1887,7 @@ def transform_and_add_andaman_nicobar_data(original_data, combined_data):
         }
         organisation["schemes"].append(scheme)
 
-def transform_and_add_chandigarh_data(original_data, combined_data):
-    for item in original_data:
-        state_name = 'Chandigarh'
-        created_at = "2024-06-25T12:00:00Z"
-        department_name = ''
-        organisation_name = ''
-        state = next((s for s in combined_data['states'] 
-            if s['state_name'] == state_name),None)
 
-        if not state:
-            state = {
-                "state_name": state_name,
-                "created_at": created_at,
-                "departments": []
-            }
-            combined_data["states"].append(state)
-        
-        department = next((d for d in state['departments']
-            if d["department_name"] == department_name ), None)
-        
-        if not department:
-            department = {
-                "department_name": department_name,
-                "created_at": created_at,
-                "organisations": [
-                    {
-                        "organisation_name": organisation_name,
-                        "created_at": created_at,
-                        "schemes": []
-                    }
-                ]
-            }
-            state["departments"].append(department)
-        organisation = department["organisations"][0]
-        title = item.get("title").strip()
-        description = item.get("description",'')
-        scheme = {
-            "id" : item.get("id", ""),
-            "title": title,
-            "introduced_on":"2024-06-25T12:00:00Z",
-            "valid_upto": '2025-12-31T23:59:59Z',
-            "funding_pattern":"",
-            "description": description,
-            "scheme_link": item.get('scheme_url',''),
-            "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("beneficiary") else [],
-            "documents": item.get('documents',[]),
-            "sponsors": [
-                {"sponsor_type":  ""}
-            ],
-            "criteria": [
-                {"description": item.get("How To Avail"), "value": ""}
-            ] if item.get("How To Avail") else [],
-            "procedures": [
-                {"step_description": item.get("How To Avail")}
-            ] if item.get("How To Avail") else [],
-            "tags": determine_tags(title, description)
-        }
-        organisation["schemes"].append(scheme)
 
 # Read data from JSON files
 with open(base_file_path+"/meghalaya.json", "r") as file:
@@ -1727,7 +1915,7 @@ with open(base_file_path+"/up/up_youth_welfare.json", "r") as file:
 with open(base_file_path+"/himachalPradesh.json", "r") as file:
     himachal_data = json.load(file)
 
-with open(base_file_path+"/madhyaPradesh.json", "r") as file:
+with open(base_file_path+"/madhya_pradesh.json", "r") as file:
     madhyaPradesh_data = json.load(file)
 
 with open(base_file_path+"/kerala.json", "r") as file:
@@ -1787,6 +1975,9 @@ with open(base_file_path+"/nicobar.json", "r") as file:
 with open(base_file_path+"/chandigarh.json", "r") as file:
     chandigarh_data = json.load(file)
 
+with open(base_file_path+"/chhattisgarh.json", "r") as file:
+    chhattisgarh_data = json.load(file)
+
 # Initialize the combined data structure
 combined_data = {
     "states": []
@@ -1797,9 +1988,9 @@ combined_data = {
 transform_and_add_meghalaya_data(meghalaya_data, combined_data)
 transform_and_add_tamilnadu_data(tamilnadu_data, combined_data)
 transform_and_add_puducherry_data(puducherry_data, combined_data)
-transform_and_add_jammukashmir_data(jammukashmir_data, combined_data)
-transform_and_add_gujarat_data(gujarat_data, combined_data)
-transform_and_add_maharashtra_data(maharashtra_data, combined_data)
+transform_and_add_jammu_and_kashmir_data(jammukashmir_data, combined_data)
+transform_and_add_gujrat_data(gujarat_data, combined_data)
+transform_and_add_maharastra_data(maharashtra_data, combined_data)
 transform_and_add_uttar_pradesh_data(up_data,combined_data)
 transform_and_add_himachal_pradesh_data(himachal_data,combined_data)
 transform_and_add_madhya_pradesh_data(madhyaPradesh_data,combined_data)
@@ -1817,11 +2008,12 @@ transform_and_add_andhra_pradesh_data(andhra_pradesh_data,combined_data)
 transform_and_add_assam_data(assam_data, combined_data)
 transform_and_add_haryana_data(haryana_data, combined_data)
 transform_and_add_punjab_data(punjab_data, combined_data)
-transform_and_add_odisha_data(odisha_data, combined_data)
+transform_and_add_odissa_data(odisha_data, combined_data)
 transform_and_add_arunachal_pradesh_data(arunachal_pradesh_data,combined_data)
-transform_and_add_dadar_nagar_haveli_data(dadar_nagar_haveli_data,combined_data)
+transform_and_add_dadra_and_nagar_haveli_data(dadar_nagar_haveli_data,combined_data)
 transform_and_add_andaman_nicobar_data(nicobar_data,combined_data)
 transform_and_add_chandigarh_data(chandigarh_data, combined_data)
+transform_and_add_chhattisgarh_data(chhattisgarh_data, combined_data)
 
 # Save the combined data to a new JSON file
 with open(base_file_path+"/combined_schemes_data.json", "w") as file:

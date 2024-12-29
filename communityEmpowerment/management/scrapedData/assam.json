@@ -1,284 +1,1214 @@
 [
   {
-    "id": "d4e8fe3d-daa4-4d07-9927-e11413fea8e9",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "Family Oriented Income Generating Scheme",
-    "description": "Under this scheme inputs are provided to BPL OBC families for upliftment of their economic condition and to create self employment."
+      "description": "Under this scheme inputs are provided to BPL OBC families for upliftment of their economic condition and to create self employment.",
+      "tags": [
+          "economic upliftment",
+          "self employment"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "BPL OBC families"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "title": "Family Oriented Income Generating Scheme",
+      "funding_pattern": "",
+      "criteria": [],
+      "documents": [],
+      "id": "c3ae4bcd-5040-4d19-8384-5cfdb56a9f4e"
   },
   {
-    "id": "61b44547-8ac5-401b-882e-a8489303abca",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "Development Council",
-    "description": "Fund is released to various development councils as GIA under state plan for implementation of various development schemes."
+      "description": "Fund is released to various development councils as GIA under state plan for implementation of various development schemes.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Development Councils"
+          }
+      ],
+      "tags": [
+          "Development",
+          "GIA",
+          "State Plan"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "introduced_on": "",
+      "title": "Development Council",
+      "funding_pattern": "GIA",
+      "documents": [],
+      "criteria": [],
+      "id": "57ff1e87-bed9-4c2e-83d3-b365f697f203"
   },
   {
-    "id": "252b45e0-ca3a-4f21-a5aa-e5b8dbeea6a7",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "Assam Bikash Yojana & CM’s Special Employment Generation Programme ",
-    "description": "Under the scheme, fund Programme were allocated for self employment of OBC unemployed youths. Various schemes are taken up for generating self employment to OBC unemployed youths."
+      "description": "Under the scheme, fund Programme were allocated for self employment of OBC unemployed youths. Various schemes are taken up for generating self employment to OBC unemployed youths.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "OBC unemployed youths"
+          }
+      ],
+      "tags": [
+          "self employment",
+          "OBC",
+          "unemployed youths"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "title": "Assam Bikash Yojana & CM’s Special Employment Generation Programme ",
+      "funding_pattern": "Programme funds allocated for self-employment.",
+      "documents": [],
+      "criteria": [],
+      "id": "a3dc021d-36c7-4672-b0e9-c6afc3208b67"
   },
   {
-    "id": "8d1a0a9d-2100-4bee-961e-7da9bb0f3cb2",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "No Title",
-    "description": "Self Employment for the trainees under Skill Development Programme belonging to OBC."
+      "description": "Self Employment for the trainees under Skill Development Programme belonging to OBC.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "OBC"
+          }
+      ],
+      "tags": [
+          "Skill Development",
+          "Self Employment",
+          "OBC"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "funding_pattern": "",
+      "title": "No Title",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "documents": [],
+      "criteria": [],
+      "id": "4a945757-4ff3-478c-a05d-a48c928d1e34"
   },
   {
-    "id": "162c60a3-bc3d-4a14-84a2-8b44c3873478",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "No Title",
-    "description": "Coaching facilities to OBC students."
+      "description": "Coaching facilities to OBC students.",
+      "tags": [
+          "OBC",
+          "Coaching",
+          "Students",
+          "Education"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "OBC students"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not specified",
+      "funding_pattern": "Not specified",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "title": "Coaching facilities to OBC students",
+      "introduced_on": "Not specified",
+      "documents": [],
+      "criteria": [],
+      "id": "9933352a-42ec-4a93-b605-f41601a4249a"
   },
   {
-    "id": "450b32ba-0718-4f47-b6c3-3db6fbe1abee",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "Pre-matric Scholarship ",
-    "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between Govt. of India and the State Govt."
+      "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between Govt. of India and the State Govt.",
+      "tags": [
+          "scholarship",
+          "obc",
+          "pre-matric"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "OBC"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Central"
+          }
+      ],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "funding_pattern": "50:50 cost sharing basis between Govt. of India and the State Govt.",
+      "title": "Pre-matric Scholarship ",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "7a574898-2e81-4381-a129-58d3585f5d25"
   },
   {
-    "id": "a50f114d-768b-44f6-8493-feb2b472d319",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "Post-matric Scholarship ",
-    "description": "It is a centrally sponsored scheme where 100% fund is provided by the Govt. of India."
+      "description": "It is a centrally sponsored scheme where 100% fund is provided by the Govt. of India.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "OBC"
+          }
+      ],
+      "tags": [
+          "scholarship",
+          "obc"
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "central government"
+          }
+      ],
+      "valid_upto": "",
+      "funding_pattern": "100% fund is provided by the Govt. of India.",
+      "introduced_on": "",
+      "title": "Post-matric Scholarship ",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "documents": [],
+      "criteria": [],
+      "id": "ffd7fd06-9ccb-428a-aca0-801b25197e7a"
   },
   {
-    "id": "f94f159b-0038-4537-8f06-6f0e004c664f",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
-    "title": "Construction of Boys & Girls Hostel",
-    "description": "It is centrally sponsored scheme on 50:50 cost sharing basis between Govt. of India and the State Govt."
+      "description": "It is centrally sponsored scheme on 50:50 cost sharing basis between Govt. of India and the State Govt.",
+      "beneficiaries": [],
+      "tags": [
+          "Hostel",
+          "Construction",
+          "Boys",
+          "Girls",
+          "Centrally Sponsored"
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Central Government"
+          },
+          {
+              "sponsor_type": "State Government"
+          }
+      ],
+      "valid_upto": "",
+      "funding_pattern": "50:50 cost sharing basis",
+      "introduced_on": "",
+      "title": "Construction of Boys & Girls Hostel",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/schemes-for-welfare-of-obc",
+      "criteria": [],
+      "documents": [],
+      "id": "bdb04b58-f32b-4c8f-b048-b6f3f5693bd7"
   },
   {
-    "id": "c41b712c-0862-4a32-89d8-9a6813b49241",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Pre-matric Scholarship",
-    "description": "This is a state plan scheme where 100% fund is provided by the Govt. of Assam."
+      "description": "This is a state plan scheme where 100% fund is provided by the Govt. of Assam.",
+      "beneficiaries": [],
+      "tags": [
+          "Pre-matric",
+          "Scholarship",
+          "Assam",
+          "State Plan Scheme"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "funding_pattern": "100% fund is provided by the Govt. of Assam.",
+      "title": "Pre-matric Scholarship",
+      "introduced_on": "",
+      "criteria": [],
+      "documents": [],
+      "id": "ad4a38a0-82b7-4afa-bd8c-177b449c1ea4"
   },
   {
-    "id": "f6aa1823-1fcb-47fd-a9b0-6fc93d85c358",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Stipend for Craftsman Training in ITI",
-    "description": "This is a state plan scheme and stipend is provided to the students of Scheduled Castes people in Assam as per Govt. Rules and Procedures who are admitted in the different ITI’s of Assam."
+      "description": "This is a state plan scheme and stipend is provided to the students of Scheduled Castes people in Assam as per Govt. Rules and Procedures who are admitted in the different ITI’s of Assam.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Castes"
+          }
+      ],
+      "tags": [
+          "Stipend",
+          "Craftsman Training",
+          "ITI",
+          "Scheduled Castes",
+          "Assam"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "funding_pattern": "State Plan",
+      "title": "Stipend for Craftsman Training in ITI",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "426f4ef8-fce9-4c5f-825f-04cf8be7fa8f"
   },
   {
-    "id": "e0ccfa3a-8be3-4520-8ed7-75cd17581872",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Grants to Non-Government Educational Institutions :",
-    "description": "Under this state plan scheme, financial assistance to Non-Govt. Institutions are given for purchase of furniture, repairing, construction of school building etc. which are engaged in development and promotion of education for SC people."
+      "description": "Under this state plan scheme, financial assistance to Non-Govt. Institutions are given for purchase of furniture, repairing, construction of school building etc. which are engaged in development and promotion of education for SC people.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC"
+          }
+      ],
+      "tags": [
+          "education",
+          "furniture",
+          "repairing",
+          "construction",
+          "Non-Government Educational Institutions"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "state plan scheme",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "title": "Grants to Non-Government Educational Institutions :",
+      "introduced_on": "",
+      "criteria": [],
+      "documents": [],
+      "id": "c15a3f59-140f-4ae2-ac68-ce4d5f945770"
   },
   {
-    "id": "dfabf783-f8f8-4ddd-a59c-f56eff549f89",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Grants to cultural activities including educational tour",
-    "description": "This is a state plan scheme. The objective of the scheme is for promotion of cultural interest and provide opportunities to SC students for acquiring knowledge by undertaking educational tours within and outside the state."
+      "description": "This is a state plan scheme. The objective of the scheme is for promotion of cultural interest and provide opportunities to SC students for acquiring knowledge by undertaking educational tours within and outside the state.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC students"
+          }
+      ],
+      "tags": [
+          "cultural activities",
+          "educational tour",
+          "SC students"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "funding_pattern": "State Plan",
+      "title": "Grants to cultural activities including educational tour",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "documents": [],
+      "criteria": [],
+      "id": "91974462-9359-4309-a847-fe30dbd6f824"
   },
   {
-    "id": "fa8d2857-de52-4555-96b9-519b54635f99",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Grants to Non-Official organization :",
-    "description": "The purpose of the scheme is to encourage non-official organization doing welfare works amongst SC people"
+      "description": "The purpose of the scheme is to encourage non-official organization doing welfare works amongst SC people",
+      "tags": [
+          "welfare",
+          "non-official organization",
+          "SC"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC people"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "",
+      "title": "Grants to Non-Official organization :",
+      "funding_pattern": "Grants",
+      "documents": [],
+      "criteria": [],
+      "id": "d7bd7ed7-7158-43c7-aafe-67d0c09e256b"
   },
   {
-    "id": "02c745d7-2aeb-4ce2-b2b7-c2ba3098e433",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Financial incentive to inter-castes marriage",
-    "description": "The objective of the scheme is to eliminate caste discrimination in society. Cash award is given to each married couple and their parents when such marriages take place in between general castes and scheduled castes people."
+      "description": "The objective of the scheme is to eliminate caste discrimination in society. Cash award is given to each married couple and their parents when such marriages take place in between general castes and scheduled castes people.",
+      "tags": [
+          "Caste Discrimination",
+          "Inter-caste Marriage",
+          "Financial Incentive",
+          "Social Welfare"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "General Castes Married Couple"
+          },
+          {
+              "beneficiary_type": "Scheduled Castes Married Couple"
+          },
+          {
+              "beneficiary_type": "Parents of Married Couple"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Cash award",
+      "introduced_on": "",
+      "title": "Financial incentive to inter-castes marriage",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "criteria": [
+          {
+              "description": "Inter-caste marriage between general castes and scheduled castes people."
+          }
+      ],
+      "documents": [],
+      "id": "da259423-b9f9-4524-80b9-447eea561d1a"
   },
   {
-    "id": "54cb35a1-4dc9-4351-8b72-7b3f35389782",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Computer Training to SC youth",
-    "description": "Under the scheme, computer training is provided to the unemployed educated SC youths for their self employment."
+      "description": "Under the scheme, computer training is provided to the unemployed educated SC youths for their self employment.",
+      "tags": [
+          "welfare",
+          "employment",
+          "training",
+          "SC"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not available",
+      "funding_pattern": "Not available",
+      "introduced_on": "Not available",
+      "title": "Computer Training to SC youth",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "Unemployed"
+          }
+      ],
+      "id": "9f9c2731-1795-4328-9457-8972cf45d0a6"
   },
   {
-    "id": "7a5d4395-6924-4e71-b1ed-75cc70f0f61a",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Self Help scheme for SC unemployed youth :",
-    "description": "The aim of the scheme is to provide equipments to SC unemployed youth for their self employment."
+      "description": "The aim of the scheme is to provide equipments to SC unemployed youth for their self employment.",
+      "tags": [
+          "self employment",
+          "equipments",
+          "SC",
+          "unemployed",
+          "youth"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC unemployed youth"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not available",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "Not available",
+      "title": "Self Help scheme for SC unemployed youth :",
+      "funding_pattern": "Not available",
+      "criteria": [],
+      "documents": [],
+      "id": "c2582ed4-6a4c-4b51-8269-4269f9d881dd"
   },
   {
-    "id": "4028d15e-7e69-4fc4-bf19-fb721842febb",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Self Help scheme for SC Women :",
-    "description": "The aim of the scheme is to uplift the economic condition of the BPL SC Women by providing Sewing Machine, Embroidery Machine, Cotton Yarn etc. free of cost amongst the SC unemployed women for their self employment."
+      "description": "The aim of the scheme is to uplift the economic condition of the BPL SC Women by providing Sewing Machine, Embroidery Machine, Cotton Yarn etc. free of cost amongst the SC unemployed women for their self employment.",
+      "tags": [
+          "sc welfare",
+          "women empowerment",
+          "self employment",
+          "economic upliftment"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "BPL SC Women"
+          },
+          {
+              "beneficiary_type": "SC unemployed women"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "",
+      "title": "Self Help scheme for SC Women :",
+      "funding_pattern": "free of cost",
+      "criteria": [
+          {
+              "description": "BPL SC Women"
+          },
+          {
+              "description": "SC unemployed women"
+          }
+      ],
+      "documents": [],
+      "id": "5bd6485a-07aa-433f-ac88-25f0b719e9f2"
   },
   {
-    "id": "df7213fa-f1d5-4443-99d0-4afc5b1edc0c",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Grants to patients suffering from TB/Cancer and other malignant diseases :",
-    "description": "The aim of the scheme is to provide financial assistance to those poor scheduled caste patient was who are suffering from TB/Cancer and other malignant diseases and unable to bear the cost of medicines for their treatment."
+      "description": "The aim of the scheme is to provide financial assistance to those poor scheduled caste patient was who are suffering from TB/Cancer and other malignant diseases and unable to bear the cost of medicines for their treatment.",
+      "tags": [
+          "TB",
+          "Cancer",
+          "Medical Grant",
+          "Scheduled Caste",
+          "Financial Assistance",
+          "Healthcare"
+      ],
+      "beneficiaries": [],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "title": "Grants to patients suffering from TB/Cancer and other malignant diseases :",
+      "funding_pattern": "grant",
+      "criteria": [],
+      "documents": [],
+      "id": "153fc445-5ed6-4e99-8a5e-023c6dd95a00"
   },
   {
-    "id": "8a384082-4a6c-4695-b59a-ecd89c31d8ab",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Construction of School Building/Community Hall ",
-    "description": "The objective of the scheme is for social upliftment of SC pre-dominant areas providing grants for construction of school building and community hall."
+      "description": "The objective of the scheme is for social upliftment of SC pre-dominant areas providing grants for construction of school building and community hall.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC"
+          }
+      ],
+      "tags": [
+          "Social Upliftment",
+          "SC Welfare",
+          "Infrastructure Development",
+          "Education",
+          "Community Development"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "funding_pattern": "Grants",
+      "title": "Construction of School Building/Community Hall ",
+      "introduced_on": "",
+      "criteria": [],
+      "documents": [],
+      "id": "11932049-a293-4028-8e15-9bff43e60771"
   },
   {
-    "id": "3e3afa8a-c79f-472e-bde3-4d5469572f92",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Financial incentive to meritorious SC Girls students",
-    "description": "The aim of the scheme is to encourage higher education among SC women. Financial incentive @ Rs.10,000/- (ten thousand) are provided to SC Girls students who are securing 60% and above marks in HSLC or HS Examination."
+      "description": "The aim of the scheme is to encourage higher education among SC women. Financial incentive @ Rs.10,000/- (ten thousand) are provided to SC Girls students who are securing 60% and above marks in HSLC or HS Examination.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC Girls"
+          }
+      ],
+      "tags": [
+          "Financial Incentive",
+          "Meritorious Students",
+          "SC",
+          "Girls",
+          "Education"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "title": "Financial incentive to meritorious SC Girls students",
+      "funding_pattern": "Rs.10,000/-",
+      "criteria": [
+          {
+              "description": "SC Girls students who are securing 60% and above marks in HSLC or HS Examination"
+          }
+      ],
+      "documents": [],
+      "id": "0cb643d3-e69d-4e66-a345-4628bad4fe7f"
   },
   {
-    "id": "a2c86d88-6ef1-4f0e-abfd-66022df95924",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Assam Bikash Yojana & CM’s Special Employment Generation Programme",
-    "description": "Under the scheme, fund Programme were allocated for self employment of SC unemployed youths. Various schemes are taken up for generating self employment to SC unemployed youths."
+      "description": "Under the scheme, fund Programme were allocated for self employment of SC unemployed youths. Various schemes are taken up for generating self employment to SC unemployed youths.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC unemployed youths"
+          }
+      ],
+      "tags": [
+          "Employment",
+          "Self-employment",
+          "Welfare of SC",
+          "Unemployed Youths"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Government Funding",
+      "introduced_on": "",
+      "title": "Assam Bikash Yojana & CM’s Special Employment Generation Programme",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "criteria": [],
+      "documents": [],
+      "id": "6923191b-f1d7-46d0-af0a-5677bb6b47f4"
   },
   {
-    "id": "a6f552d5-4299-4168-8e46-af58ebca2ce8",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Construction of Dr.B.R.Ambedkar Bhawan ",
-    "description": "The scheme was introduced for construction of Dr.BR Ambedkar Bhawan in all District/Sub-Division HQ with a facility of Conference Hall and Guest House for SC people."
+      "description": "The scheme was introduced for construction of Dr.BR Ambedkar Bhawan in all District/Sub-Division HQ with a facility of Conference Hall and Guest House for SC people.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC people"
+          }
+      ],
+      "tags": [
+          "Conference Hall",
+          "Guest House"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not specified",
+      "introduced_on": "Not specified",
+      "funding_pattern": "Not specified",
+      "title": "Construction of Dr.B.R.Ambedkar Bhawan ",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "documents": [],
+      "criteria": [],
+      "id": "9290dbc5-cdb3-4d6e-8266-59eac281c31e"
   },
   {
-    "id": "bdc58699-40f1-45f3-894e-86ee0b3adfde",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Computer to SC Trainees",
-    "description": "This scheme is newly adopted by this Directorate during the year 2010-11 for providing computer sets to SC Trainees."
+      "description": "This scheme is newly adopted by this Directorate during the year 2010-11 for providing computer sets to SC Trainees.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC Trainees"
+          }
+      ],
+      "tags": [
+          "Computer",
+          "SC",
+          "Training"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not specified",
+      "funding_pattern": "Not specified",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "title": "Computer to SC Trainees",
+      "introduced_on": "2010-11",
+      "documents": [],
+      "criteria": [],
+      "id": "185e67e9-3ce0-4c42-9afc-1f1f00d760bb"
   },
   {
-    "id": "9b6363bd-3cfc-4aa6-8ab8-5dcb10974b1b",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Share capital contribution to Assam State Dev. Corporation for SC Ltd",
-    "description": ".:-Assam State Dev. Corporation for SC Ltd. is jointly owned by the State and Central Govt. under share capital contribution to this corporation on 51%: 49%."
+      "description": ".:-Assam State Dev. Corporation for SC Ltd. is jointly owned by the State and Central Govt. under share capital contribution to this corporation on 51%: 49%.",
+      "tags": [
+          "Share Capital",
+          "Development",
+          "SC"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "State Govt."
+          },
+          {
+              "sponsor_type": "Central Govt."
+          }
+      ],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "",
+      "title": "Share capital contribution to Assam State Dev. Corporation for SC Ltd",
+      "funding_pattern": "Share capital contribution",
+      "documents": [],
+      "criteria": [],
+      "id": "8d8987d0-66a8-40cd-bb56-4f4f69e7bbcc"
   },
   {
-    "id": "065d91c2-633b-423c-8451-1ea27e92bfcd",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Self Employment schemes for manual scavengers",
-    "description": "The aim of the scheme is to provide equipments to family of the manual scavengers for their self employment."
+      "description": "The aim of the scheme is to provide equipments to family of the manual scavengers for their self employment.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Manual Scavengers"
+          }
+      ],
+      "tags": [
+          "Self Employment",
+          "Manual Scavengers",
+          "Equipment",
+          "Welfare"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "funding_pattern": "",
+      "title": "Self Employment schemes for manual scavengers",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "debc255e-7a37-4b5e-b5a5-c108604b1943"
   },
   {
-    "id": "6ab3117a-7b11-4ee0-815b-0e99d5f4c8eb",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Construction of Boys Hostel",
-    "description": "This is a centrally sponsored scheme on 50:50 cost share basis. Objective of the scheme is to provide hostel facilities for SC Boys student. The scheme is presently named as “Babu Jagjiban Ram CChatrabas Yojana."
+      "description": "This is a centrally sponsored scheme on 50:50 cost share basis. Objective of the scheme is to provide hostel facilities for SC Boys student. The scheme is presently named as “Babu Jagjiban Ram CChatrabas Yojana.",
+      "tags": [
+          "Hostel",
+          "SC",
+          "Centrally Sponsored Scheme",
+          "Students"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC Boys student"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "",
+      "title": "Construction of Boys Hostel",
+      "funding_pattern": "50:50 cost share basis",
+      "documents": [],
+      "criteria": [],
+      "id": "8a829b39-e974-458d-8e8c-b2813055bbe5"
   },
   {
-    "id": "9a643263-8475-41d3-8b8d-ae23c4800f7f",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Construction of Girls Hostel :",
-    "description": "It is a centrally sponsored scheme with 100% central assistance. The scheme is now name as “ Babu Jagjiban Ram Chatrabas Yojana."
+      "description": "It is a centrally sponsored scheme with 100% central assistance. The scheme is now name as “ Babu Jagjiban Ram Chatrabas Yojana.",
+      "beneficiaries": [],
+      "tags": [
+          "Hostel",
+          "Girls Hostel",
+          "Babu Jagjiban Ram Chatrabas Yojana",
+          "Welfare of SC"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "N/A",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "N/A",
+      "title": "Construction of Girls Hostel :",
+      "funding_pattern": "Centrally Sponsored",
+      "documents": [],
+      "criteria": [],
+      "id": "c94ba943-7812-4aef-810f-0233736aaf34"
   },
   {
-    "id": "60f1c15e-8878-437c-81cc-8255ad686747",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Pre-matric Scholarship for the Children of those parents engaged in cleaning related occupations having health hazard ",
-    "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between State and Central Government."
+      "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between State and Central Government.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Children of parents engaged in cleaning related occupations having health hazard"
+          }
+      ],
+      "tags": [
+          "Pre-matric",
+          "Scholarship",
+          "Cleaning Occupations",
+          "Health Hazard",
+          "Centrally Sponsored Scheme"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "",
+      "title": "Pre-matric Scholarship for the Children of those parents engaged in cleaning related occupations having health hazard ",
+      "funding_pattern": "50:50 cost sharing basis between State and Central Government",
+      "documents": [],
+      "criteria": [],
+      "id": "2c34fc2e-4bf4-4644-afd2-530ca47914d0"
   },
   {
-    "id": "eb4841c3-3a13-4e86-8ab6-329e6ea50997",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Prevention of Atrocities on SC and STs:",
-    "description": "The scheme is aimed to aware and monitor the atrocities on SC & STs under Prevention of Atrocities Act, 1989."
+      "description": "The scheme is aimed to aware and monitor the atrocities on SC & STs under Prevention of Atrocities Act, 1989.",
+      "tags": [
+          "atrocities",
+          "SC",
+          "ST",
+          "Prevention of Atrocities Act",
+          "1989"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC"
+          },
+          {
+              "beneficiary_type": "ST"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "title": "Prevention of Atrocities on SC and STs:",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "22b8f692-735d-469b-a22b-d7fb9a562803"
   },
   {
-    "id": "321f8abf-84bb-41a5-9baf-f1fbfe491157",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Coaching and Allied scheme for SC :",
-    "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between central & State Govt. The objective of the scheme is to provide coaching facilities to SC candidates who are going to appear in all India level competitive examination."
+      "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between central & State Govt. The objective of the scheme is to provide coaching facilities to SC candidates who are going to appear in all India level competitive examination.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC"
+          }
+      ],
+      "tags": [
+          "Competitive Exams",
+          "Coaching"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "",
+      "funding_pattern": "50:50 cost sharing basis between central & State Govt.",
+      "title": "Coaching and Allied scheme for SC :",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "criteria": [],
+      "documents": [],
+      "id": "c4521ee4-bda3-4065-85a8-83b366413250"
   },
   {
-    "id": "6dbadca7-788e-4b1b-ba57-483464ac1752",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "No Title",
-    "description": ""
+      "description": "",
+      "beneficiaries": [],
+      "tags": [
+          "welfare",
+          "sc"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "introduced_on": "",
+      "title": "No Title",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "criteria": [],
+      "documents": [],
+      "id": "7a052b8c-e923-4cae-8694-ecce340a974b"
   },
   {
-    "id": "9548fb89-b5c5-4b1d-ba08-92aba20c41f3",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Post-Matric Scholarship & Book-Bank",
-    "description": "The scheme is single largest intervention by the Govt. of India for educational empowerment of the scheduled caste students."
+      "description": "The scheme is single largest intervention by the Govt. of India for educational empowerment of the scheduled caste students.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Caste Students"
+          }
+      ],
+      "tags": [
+          "scholarship",
+          "education",
+          "scheduled caste",
+          "students"
+      ],
+      "procedures": [
+          {
+              "step_description": "Details about procedures"
+          }
+      ],
+      "sponsors": [
+          {
+              "sponsor_type": "Government of India"
+          }
+      ],
+      "valid_upto": "Not Available",
+      "introduced_on": "Not Available",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "title": "Post-Matric Scholarship & Book-Bank",
+      "funding_pattern": "Government of India",
+      "criteria": [
+          {
+              "description": "Details about criteria"
+          }
+      ],
+      "documents": [],
+      "id": "45995862-f02d-4970-8735-d4e23b1cb342"
   },
   {
-    "id": "6ee1f266-4df0-4ce1-a75a-2c1fda1fb517",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "No Title",
-    "description": "The objective of the scheme is to provide financial assistance to scheduled caste students of post-matric and secondary stages. To enable them to complete their education who are eligible as per guide line. The scholarship includes maintenance, allowances, and reimbursement of non-refundable compulsory fee, book-bank facilities and other allowances. The scholarships are paid through the bank account to the students."
+      "description": "The objective of the scheme is to provide financial assistance to scheduled caste students of post-matric and secondary stages. To enable them to complete their education who are eligible as per guide line. The scholarship includes maintenance, allowances, and reimbursement of non-refundable compulsory fee, book-bank facilities and other allowances. The scholarships are paid through the bank account to the students.",
+      "tags": [
+          "Financial Assistance",
+          "Education",
+          "Post-Matric",
+          "Secondary",
+          "Scheduled Caste",
+          "Scholarship",
+          "Maintenance Allowance",
+          "Compulsory Fee Reimbursement",
+          "Book-bank Facilities"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Caste Students"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "introduced_on": "",
+      "title": "No Title",
+      "funding_pattern": "scholarship",
+      "criteria": [],
+      "documents": [],
+      "id": "f08e2a2d-3f32-4f27-80b7-f7d6c70081a3"
   },
   {
-    "id": "16325faa-e1a3-4e6c-9275-0e2159268574",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
-    "title": "Up-gradation of merit of SC students :",
-    "description": "This is a central sector scheme with 100% central assistance from Govt. of India. The objective of the scheme is to up-grade the merit of Sc student through special tuition in various Educational Institutions in Assam."
+      "description": "This is a central sector scheme with 100% central assistance from Govt. of India. The objective of the scheme is to up-grade the merit of Sc student through special tuition in various Educational Institutions in Assam.",
+      "tags": [
+          "Education",
+          "SC Welfare"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "SC students"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Central Government"
+          }
+      ],
+      "valid_upto": "",
+      "funding_pattern": "100% central assistance",
+      "introduced_on": "",
+      "title": "Up-gradation of merit of SC students :",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/scheme-for-welfare-of-sc",
+      "documents": [],
+      "criteria": [],
+      "id": "3833dbb3-1d94-41bf-a123-a5fdd730e8b9"
   },
   {
-    "id": "20bda3af-e9c5-40be-bbad-94ca7a226d70",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Pre-matric Scholarship for ST",
-    "description": "This is a State Govt. scheme where 100% fund is provided by the Govt. of Assam."
+      "description": "This is a State Govt. scheme where 100% fund is provided by the Govt. of Assam.",
+      "tags": [
+          "Education",
+          "Scholarship",
+          "Pre-matric",
+          "ST"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "ST students"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Assam Government"
+          }
+      ],
+      "valid_upto": "",
+      "introduced_on": "",
+      "funding_pattern": "100% state funded",
+      "title": "Pre-matric Scholarship for ST",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "criteria": [
+          {
+              "description": "Student must belong to Scheduled Tribe (ST) category."
+          }
+      ],
+      "documents": [],
+      "id": "1dbf378b-ed73-4eae-af25-b263745ae3e3"
   },
   {
-    "id": "2c439b6d-fd1f-4d01-96f6-6b0511efa341",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Assam Bikash Yojana & CM’s Special Employment Generation Programme",
-    "description": "Under the scheme, fund Programme were allocated for self employment of ST unemployed youths. Various schemes are taken up for generating self employment to ST unemployed youths."
+      "description": "Under the scheme, fund Programme were allocated for self employment of ST unemployed youths. Various schemes are taken up for generating self employment to ST unemployed youths.",
+      "tags": [
+          "self employment",
+          "ST unemployed youths"
+      ],
+      "beneficiaries": [],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "null",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "introduced_on": "null",
+      "title": "Assam Bikash Yojana & CM’s Special Employment Generation Programme",
+      "funding_pattern": "null",
+      "criteria": [],
+      "documents": [],
+      "id": "b20dcf94-b353-471d-9342-04c11d2e5e4a"
   },
   {
-    "id": "f39200c2-9b96-468a-a480-a23a5ec07650",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Grants to patients suffering from TB/Cancer and other malignant diseases",
-    "description": "The aim of the scheme is to provide financial assistance to those poor scheduled tribe patient was who are suffering from TB/Cancer and other malignant diseases and unable to bear the cost of medicines for their treatment."
+      "description": "The aim of the scheme is to provide financial assistance to those poor scheduled tribe patient was who are suffering from TB/Cancer and other malignant diseases and unable to bear the cost of medicines for their treatment.",
+      "tags": [
+          "Health",
+          "Financial Assistance",
+          "Scheduled Tribes"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Patients suffering from TB/Cancer and other malignant diseases"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Grants",
+      "introduced_on": "",
+      "title": "Grants to patients suffering from TB/Cancer and other malignant diseases",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "Poor scheduled tribe patient"
+          }
+      ],
+      "id": "4c5820fd-f1d6-4ac6-918b-d1430c4416f8"
   },
   {
-    "id": "c9f87259-142c-441c-b4bf-ea9739ea8fcd",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Grants to ST meritorious students:",
-    "description": "under this scheme financial incentive is provided to meritorious ST students who have secured 60% and above in HSLC and HSSLC examinations."
+      "description": "under this scheme financial incentive is provided to meritorious ST students who have secured 60% and above in HSLC and HSSLC examinations.",
+      "tags": [
+          "Financial Incentive",
+          "Meritorious Students",
+          "Education",
+          "HSLC",
+          "HSSLC"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "ST students"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Grants",
+      "introduced_on": "",
+      "title": "Grants to ST meritorious students:",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "criteria": [
+          {
+              "description": "secured 60% and above in HSLC and HSSLC examinations"
+          }
+      ],
+      "documents": [],
+      "id": "0556da41-e8b1-4102-8388-3b9c4abd689d"
   },
   {
-    "id": "0defb6b0-d000-4f40-b8b3-2a9d1c794c85",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Stipend for Craftsman Training:",
-    "description": "This is a state scheme and stipend is provided to the students of Scheduled Tribes who are admitted in the ITI’s of Assam."
+      "description": "This is a state scheme and stipend is provided to the students of Scheduled Tribes who are admitted in the ITI’s of Assam.",
+      "tags": [
+          "Stipend",
+          "Craftsman Training",
+          "Scheduled Tribes",
+          "ITI"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Tribes"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "funding_pattern": "State",
+      "title": "Stipend for Craftsman Training:",
+      "introduced_on": "",
+      "criteria": [],
+      "documents": [],
+      "id": "2d01efa9-1829-4d6f-b956-f7e5623f584f"
   },
   {
-    "id": "f91b61f7-6964-412a-b5b0-1bc5bccf7cfe",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Post-matric Scholarship",
-    "description": "The scheme is meant for ST(P) students. It is a centrally sponsored scheme fully funded by the Govt. of India."
+      "description": "The scheme is meant for ST(P) students. It is a centrally sponsored scheme fully funded by the Govt. of India.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "ST(P) students"
+          }
+      ],
+      "tags": [
+          "scholarship",
+          "students"
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Govt. of India"
+          }
+      ],
+      "valid_upto": "",
+      "funding_pattern": "fully funded by the Govt. of India",
+      "introduced_on": "",
+      "title": "Post-matric Scholarship",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "documents": [],
+      "criteria": [],
+      "id": "708b22fc-2893-4e55-97d9-69cfef4c7d42"
   },
   {
-    "id": "74fda8a4-7746-4987-af00-79b9ae020de0",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Book Bank for Medical, Engineering and Agriculture etc. students:",
-    "description": "Scheduled Tribe student studying in various technical institution are provided books under this scheme on 50:50 cost sharing basis between Govt. of India and Govt. of Assam."
+      "description": "Scheduled Tribe student studying in various technical institution are provided books under this scheme on 50:50 cost sharing basis between Govt. of India and Govt. of Assam.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Tribe student"
+          }
+      ],
+      "tags": [
+          "Education",
+          "Books",
+          "Financial Assistance",
+          "Students"
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Govt. of India"
+          },
+          {
+              "sponsor_type": "Govt. of Assam"
+          }
+      ],
+      "valid_upto": "",
+      "introduced_on": "",
+      "funding_pattern": "50:50 cost sharing basis between Govt. of India and Govt. of Assam",
+      "title": "Book Bank for Medical, Engineering and Agriculture etc. students:",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "criteria": [],
+      "documents": [],
+      "id": "72e5dd2d-7f2e-4425-a428-954b3be72b3a"
   },
   {
-    "id": "6d172652-7910-4a9b-820f-ae8821344352",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Construction of Boy’s Hostel",
-    "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between Govt. of India and the State Govt."
+      "description": "This is a centrally sponsored scheme on 50:50 cost sharing basis between Govt. of India and the State Govt.",
+      "tags": [
+          "Hostel",
+          "Centrally Sponsored Scheme",
+          "Education",
+          "Infrastructure",
+          "50:50 Cost Sharing"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Boys"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Central Government"
+          },
+          {
+              "sponsor_type": "State Government"
+          }
+      ],
+      "valid_upto": "",
+      "introduced_on": "",
+      "funding_pattern": "50:50 cost sharing basis between Govt. of India and the State Govt.",
+      "title": "Construction of Boy’s Hostel",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "criteria": [],
+      "documents": [],
+      "id": "01ad6c8d-b7ba-49cd-a042-5df804550bbd"
   },
   {
-    "id": "2a817c2f-54ea-49cb-a4ce-94f9ae925d91",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Construction of Girls Hostel:",
-    "description": "This is a centrally sponsored scheme with 100% central fund."
+      "description": "This is a centrally sponsored scheme with 100% central fund.",
+      "beneficiaries": [],
+      "tags": [
+          "Hostel",
+          "Girls",
+          "Construction",
+          "Centrally Sponsored"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Centrally Sponsored",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "title": "Construction of Girls Hostel:",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "568e4874-86e1-4949-8465-6a7e60f34ec6"
   },
   {
-    "id": "5dceae7b-8ee1-4971-86cd-c96b70308d13",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Minor Forest produce",
-    "description": "Under this scheme, fund is released by Govt. of India to State Tribal Development Corporations i.e. APTDC Ltd. to provide incentives to tribal who are engaged in procuring and sale of minor forest produce."
+      "description": "Under this scheme, fund is released by Govt. of India to State Tribal Development Corporations i.e. APTDC Ltd. to provide incentives to tribal who are engaged in procuring and sale of minor forest produce.",
+      "tags": [
+          "tribal",
+          "minor forest produce",
+          "incentives"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "tribal"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "funding_pattern": "fund is released by Govt. of India",
+      "title": "Minor Forest produce",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "76a2f890-68d3-4155-bb1b-b5fa37899815"
   },
   {
-    "id": "0f75346c-854b-48ab-90d2-fe58c37ea328",
-    "scheme_url": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
-    "title": "Coaching to ST for Central/State Civil Service Examination & other allied services.",
-    "description": "Vocational Training through VTCs (Central Sector Scheme)- There are 10 Nos. of VTC in different district which are run by the ATDA, where training is provided to 1000 nos. of trainees in five nos. of trades every year. - Up-gradation of merit of ST students :- This is a central sector scheme with 100% central assistance from Govt. of India. The objective of the scheme is to up-grade the merit of ST student through special tuition in various Educational Institutions in Assam."
+      "description": "Vocational Training through VTCs (Central Sector Scheme)- There are 10 Nos. of VTC in different district which are run by the ATDA, where training is provided to 1000 nos. of trainees in five nos. of trades every year. - Up-gradation of merit of ST students :- This is a central sector scheme with 100% central assistance from Govt. of India. The objective of the scheme is to up-grade the merit of ST student through special tuition in various Educational Institutions in Assam.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "ST"
+          }
+      ],
+      "tags": [
+          "Coaching",
+          "Civil Service Examination",
+          "Vocational Training",
+          "Education",
+          "ST"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Central Sector Scheme with 100% central assistance",
+      "introduced_on": "",
+      "title": "Coaching to ST for Central/State Civil Service Examination & other allied services.",
+      "scheme_link": "https://wptbc.assam.gov.in/frontimpotentdata/welfare-schemes-for-st",
+      "documents": [],
+      "criteria": [],
+      "id": "66f8a054-eb95-456b-abfa-0313850497f1"
   },
   {
-    "id": "6ee672b9-3684-4fb9-8dbf-e6e9f1469108",
-    "scheme_url": "https://wptbc.assam.gov.in/information-services/central-earmarked-scheme-to-sc",
-    "title": "SCA to SCSP:",
-    "description": "Special central assistance is a 100% additive grant given by the Govt. of India for economic up-liftment of BPL scheduled caste families and to take up infrastructure development schemes to fill up the critical gap. With this aim in view the Directorate of Welfare of Scheduled Castes is giving financial assistance of Rs.10,000.00 (ten thousand) to each of the SC BPL Families Oriented Income Generation Schemes (FOIGS) and 10% of the released amount is utilized for infrastructure Dev. Schemes."
+      "description": "Special central assistance is a 100% additive grant given by the Govt. of India for economic up-liftment of BPL scheduled caste families and to take up infrastructure development schemes to fill up the critical gap. With this aim in view the Directorate of Welfare of Scheduled Castes is giving financial assistance of Rs.10,000.00 (ten thousand) to each of the SC BPL Families Oriented Income Generation Schemes (FOIGS) and 10% of the released amount is utilized for infrastructure Dev. Schemes.",
+      "tags": [
+          "economic upliftment",
+          "BPL",
+          "scheduled caste",
+          "infrastructure development",
+          "Income Generation Schemes"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "BPL Scheduled Caste families"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [
+          {
+              "sponsor_type": "Govt. of India"
+          },
+          {
+              "sponsor_type": "Directorate of Welfare of Scheduled Castes"
+          }
+      ],
+      "valid_upto": "",
+      "funding_pattern": "100% additive grant",
+      "introduced_on": "",
+      "title": "SCA to SCSP",
+      "scheme_link": "https://wptbc.assam.gov.in/information-services/central-earmarked-scheme-to-sc",
+      "criteria": [],
+      "documents": [],
+      "id": "dc38584f-24c7-46be-b681-95b41c015c86"
   },
   {
-    "id": "f5e5ddfd-3244-46a2-bc0e-b8316f6164c3",
-    "scheme_url": "https://wptbc.assam.gov.in/information-services/central-earmarked-scheme-to-sc",
-    "title": "Scheme for AIRT & SC",
-    "description": "The main function of the Directorate of Assam Institute of Research for Tribals and Scheduled Castes are :- Research, Evaluation, Training and Planning. Moreover there are some subsidiary scheme like publication of books. Annual Research Bulletin, Seminar workshop on ST problems for the State. Grants-in-aid to authors for publication of books on SC/ST. Award of Doctoral and Post-Doctoral fellowship, maintenance of well equipped reference library."
+      "description": "The main function of the Directorate of Assam Institute of Research for Tribals and Scheduled Castes are :- Research, Evaluation, Training and Planning. Moreover there are some subsidiary scheme like publication of books. Annual Research Bulletin, Seminar workshop on ST problems for the State. Grants-in-aid to authors for publication of books on SC/ST. Award of Doctoral and Post-Doctoral fellowship, maintenance of well equipped reference library.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Castes"
+          },
+          {
+              "beneficiary_type": "Tribals"
+          }
+      ],
+      "tags": [
+          "Research",
+          "Evaluation",
+          "Training",
+          "Planning",
+          "Publication",
+          "Seminar",
+          "Workshop",
+          "Grants-in-aid",
+          "Fellowship",
+          "Library"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "https://wptbc.assam.gov.in/information-services/central-earmarked-scheme-to-sc",
+      "introduced_on": "",
+      "title": "Scheme for AIRT & SC",
+      "funding_pattern": "Central Earmarked Scheme",
+      "criteria": [],
+      "documents": [],
+      "id": "1367341e-019c-4b24-912c-f1e1f53dbb86"
   }
 ]

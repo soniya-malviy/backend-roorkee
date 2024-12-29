@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import (State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria
-                     , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter )
+                     , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter,
+                      SchemeReport, WebsiteFeedback, Tag )
 from django.utils import timezone
 from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
@@ -85,11 +86,17 @@ class BenefitSerializer(TimeStampedModelSerializer):
         model = Benefit
         fields = '__all__'
 
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ['id', 'name']
+
 class SchemeSerializer(TimeStampedModelSerializer):
     department = DepartmentSerializer()
     beneficiaries = BeneficiarySerializer(many=True)
     sponsors = SponsorSerializer(many=True)
     benefits = BenefitSerializer(many=True, read_only=True)
+    tags = TagSerializer(many=True)
     class Meta:
         model = Scheme
         fields = '__all__'
@@ -378,3 +385,21 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
         user.save()
     
 
+class SchemeReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SchemeReport
+        fields = ['id', 'scheme_id', 'report_category', 'description', 'created_at']
+        read_only_fields = ['created_at']
+
+    def create(self, validated_data):
+        return SchemeReport.objects.create(**validated_data)
+
+
+class WebsiteFeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WebsiteFeedback
+        fields = ['id', 'category', 'description', 'created_at']
+        read_only_fields = ['created_at']
+
+    def create(self, validated_data):
+        return WebsiteFeedback.objects.create(**validated_data)
