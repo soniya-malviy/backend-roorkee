@@ -74,7 +74,7 @@ class Command(BaseCommand):
                             scheme.save()
 
                         for beneficiary_data in scheme_data['beneficiaries']:
-                            beneficiary_type = self.truncate(beneficiary_data.get('beneficiary_type'))
+                            beneficiary_type = self.truncate(beneficiary_data)
                             if beneficiary_type is not None:
                                 beneficiary, created = Beneficiary.objects.get_or_create(
                                     beneficiary_type=beneficiary_type
@@ -110,21 +110,19 @@ class Command(BaseCommand):
                             )
                             
                         for criteria_data in scheme_data['criteria']:
-                            description = self.truncate(criteria_data['description'])
-                            value = self.truncate(criteria_data.get('value'))
-                            criteria_data_json = criteria_data.get('criteria_data', {})
+                            description = self.truncate(criteria_data)
 
                             criteria, created = Criteria.objects.update_or_create(
                                 scheme=scheme,
                                 description=description,
                                 defaults={
-                                    'value': value,
-                                    'criteria_data': criteria_data_json
+                                    'value': None,
+                                    'criteria_data': description
                                 }
                             )
 
                         for procedure_data in scheme_data['procedures']:
-                            step_description = self.truncate(procedure_data['step_description'])
+                            step_description = self.truncate(procedure_data)
                             Procedure.objects.update_or_create(
                                 scheme=scheme,
                                 step_description=step_description
