@@ -41,3 +41,6 @@ urllib3==2.2.3
 vine==5.1.0
 wcwidth==0.2.13
 whitenoise==6.8.2
+scipy==1.14.1
+scikit-learn==1.6.0
+pandas==2.2.3

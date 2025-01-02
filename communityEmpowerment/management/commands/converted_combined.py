@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 import re
 import os
 from django.core.management.base import BaseCommand
+from datetime import datetime
+import pytz
 base_file_path = os.path.join(os.path.dirname(__file__), '..','scrapedData')
 
 class Command(BaseCommand):
@@ -39,7 +41,8 @@ def determine_tags(title, description):
 def transform_and_add_meghalaya_data(original_data, combined_data):
     for item in original_data:
         state_name = "Meghalaya"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -78,19 +81,17 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -98,7 +99,8 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
 def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Arunachal Pradesh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -137,19 +139,17 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -157,7 +157,8 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
 def transform_and_add_assam_data(original_data, combined_data):
     for item in original_data:
         state_name = "Assam"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -196,19 +197,17 @@ def transform_and_add_assam_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -216,7 +215,8 @@ def transform_and_add_assam_data(original_data, combined_data):
 def transform_and_add_chandigarh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Chandigarh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -255,19 +255,17 @@ def transform_and_add_chandigarh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -275,7 +273,8 @@ def transform_and_add_chandigarh_data(original_data, combined_data):
 def transform_and_add_chhattisgarh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Chhattisgarh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -314,19 +313,17 @@ def transform_and_add_chhattisgarh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -334,7 +331,8 @@ def transform_and_add_chhattisgarh_data(original_data, combined_data):
 def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
     for item in original_data:
         state_name = "Dadra and Nagar Haveli"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -373,19 +371,17 @@ def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -393,7 +389,8 @@ def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
 def transform_and_add_delhi_data(original_data, combined_data):
     for item in original_data:
         state_name = "Delhi"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -432,19 +429,17 @@ def transform_and_add_delhi_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -452,7 +447,8 @@ def transform_and_add_delhi_data(original_data, combined_data):
 def transform_and_add_gujrat_data(original_data, combined_data):
     for item in original_data:
         state_name = "Gujrat"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -491,19 +487,17 @@ def transform_and_add_gujrat_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -511,7 +505,8 @@ def transform_and_add_gujrat_data(original_data, combined_data):
 def transform_and_add_haryana_data(original_data, combined_data):
     for item in original_data:
         state_name = "Haryana"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -550,19 +545,17 @@ def transform_and_add_haryana_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -570,7 +563,8 @@ def transform_and_add_haryana_data(original_data, combined_data):
 def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
     for item in original_data:
         state_name = "Jammu and Kashmir"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -609,19 +603,17 @@ def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -629,7 +621,8 @@ def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
 def transform_and_add_kerala_data(original_data, combined_data):
     for item in original_data:
         state_name = "Kerala"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -668,19 +661,17 @@ def transform_and_add_kerala_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -688,7 +679,8 @@ def transform_and_add_kerala_data(original_data, combined_data):
 def transform_and_add_ladakh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Ladakh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -727,19 +719,17 @@ def transform_and_add_ladakh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -747,7 +737,8 @@ def transform_and_add_ladakh_data(original_data, combined_data):
 def transform_and_add_madhya_pradesh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Madhya Pradesh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -786,19 +777,17 @@ def transform_and_add_madhya_pradesh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -806,7 +795,8 @@ def transform_and_add_madhya_pradesh_data(original_data, combined_data):
 def transform_and_add_maharastra_data(original_data, combined_data):
     for item in original_data:
         state_name = "Maharastra"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -845,19 +835,17 @@ def transform_and_add_maharastra_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -865,7 +853,8 @@ def transform_and_add_maharastra_data(original_data, combined_data):
 def transform_and_add_manipur_data(original_data, combined_data):
     for item in original_data:
         state_name = "Manipur"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -904,19 +893,17 @@ def transform_and_add_manipur_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -924,7 +911,8 @@ def transform_and_add_manipur_data(original_data, combined_data):
 def transform_and_add_odissa_data(original_data, combined_data):
     for item in original_data:
         state_name = "Odissa"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -963,19 +951,17 @@ def transform_and_add_odissa_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -983,7 +969,8 @@ def transform_and_add_odissa_data(original_data, combined_data):
 def transform_and_add_puducherry_data(original_data, combined_data):
     for item in original_data:
         state_name = "Puducherry"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1022,19 +1009,17 @@ def transform_and_add_puducherry_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -1042,7 +1027,8 @@ def transform_and_add_puducherry_data(original_data, combined_data):
 def transform_and_add_punjab_data(original_data, combined_data):
     for item in original_data:
         state_name = "Punjab"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1081,19 +1067,17 @@ def transform_and_add_punjab_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -1101,7 +1085,8 @@ def transform_and_add_punjab_data(original_data, combined_data):
 def transform_and_add_sikkim_data(original_data, combined_data):
     for item in original_data:
         state_name = "Sikkim"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1140,19 +1125,17 @@ def transform_and_add_sikkim_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -1160,7 +1143,8 @@ def transform_and_add_sikkim_data(original_data, combined_data):
 def transform_and_add_telangana_data(original_data, combined_data):
     for item in original_data:
         state_name = "Telangana"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1199,19 +1183,17 @@ def transform_and_add_telangana_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -1219,7 +1201,8 @@ def transform_and_add_telangana_data(original_data, combined_data):
 def transform_and_add_uttarakhand_data(original_data, combined_data):
     for item in original_data:
         state_name = "Uttarakhand"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("department_name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1258,19 +1241,17 @@ def transform_and_add_uttarakhand_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
-                {"beneficiary_type": beneficiary_type} for beneficiary_type in item.get("beneficiaries")
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": doc} for doc in item.get("documents")
-            ],
+            "documents": item.get("documents",[]),
             "sponsors": [
                 {"sponsor_type": item.get("sponsors")}
             ],
             "criteria": [
-                {"description": criteria_description} for criteria_description in item.get("criteria")
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
             ],
             "procedures": [
-                {"step_description": step_description} for step_description in item.get("procedures")
+                step_description["step_description"] for step_description in item.get("procedures",[])
             ],
             "tags": determine_tags(title, description) + item.get("tags",[])
         }
@@ -1281,7 +1262,8 @@ def transform_and_add_uttarakhand_data(original_data, combined_data):
 def transform_and_add_tamilnadu_data(original_data, combined_data):
     for item in original_data:
         state_name = "Tamil Nadu"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = item.get("Concerned Department").strip()
         organisation_name = item.get("Organisation Name")
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
@@ -1321,8 +1303,8 @@ def transform_and_add_tamilnadu_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get("URL"),
             "beneficiaries": [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
+                {"beneficiary_type": item.get("beneficiaries",[])}
+            ] if item.get("beneficiaries",[]) else [],
             "documents": [],
             "sponsors": [
                 {"sponsor_type": item.get("Sponsored By")}
@@ -1344,7 +1326,8 @@ def transform_and_add_tamilnadu_data(original_data, combined_data):
 def transform_and_add_uttar_pradesh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Uttar Pradesh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = "उत्तर प्रदेश सरकार"
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1417,7 +1400,8 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
 def transform_and_add_himachal_pradesh_data(original_data, combined_data):
     for item in original_data:
         state_name = "Himachal Pradesh"
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = "other"
         state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
@@ -1529,60 +1513,67 @@ def transform_and_add_goa_data(original_data, combined_data):
         }
         organisation["schemes"].append(scheme)
 
+
 def transform_and_add_jharkhand_data(original_data, combined_data):
-    state_name = "Jharkhand"
-
     for item in original_data:
-        title = remove_leading_numbers(item.get("title", "").strip())
+        state_name = "Jharkhand"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
+        department_name = item.get("department_name")
+        state = next((s for s in combined_data["states"] if s["state_name"] == state_name), None)
 
+        if not state:
+            state = {
+                "state_name": state_name,
+                "created_at": created_at,
+                "departments": []
+            }
+            combined_data["states"].append(state)
 
-        state = {
-            "state_name": state_name,
-            "departments": []
-        }
-        combined_data["states"].append(state)
+        department = next((d for d in state["departments"] if d["department_name"] == department_name), None)
 
-        department_name = item.get("department_name", "").strip()
-
-
-        department = {
-            "department_name": department_name,
-            "organisations": [
-                {
-                    "organisation_name": department_name,
-                    "schemes": []
-                }
-            ]
-        }
-        state["departments"].append(department)
+        if not department:
+            department = {
+                "department_name": department_name,
+                "created_at": created_at,
+                "organisations": [
+                    {
+                        "organisation_name": department_name,
+                        "created_at": created_at,
+                        "schemes": []
+                    }
+                ]
+            }
+            state["departments"].append(department)
 
         organisation = department["organisations"][0]
-        description = item.get("description", "").strip()
-
+        title = remove_leading_numbers(item.get("title",""))
+        description = item.get("description")
         scheme = {
             "title": title,
-            "introduced_on": item.get("introduced_on","").strip(),
-            "valid_upto": None if item.get("valid_upto", "").strip() == "" else item["valid_upto"].strip(),
-            "funding_pattern": item.get("funding_pattern", "").strip(),
+            "introduced_on": convert_date_format(item.get("introduced_on")),
+            "valid_upto": item.get("valid_upto"),
+            "funding_pattern": item.get("sponsors"),
             "description": description,
-            "scheme_link": item.get("scheme_url"),  
-            "pdf_url": item.get("pdfUrl"),  
+            "scheme_link": item.get("scheme_link"),
+            "pdf_url": item.get("pdfUrl"),
             "beneficiaries": [
-                {"beneficiary_type": item.get("beneficiary", "").strip()}
+                beneficiary_type["beneficiary_type"] for beneficiary_type in item.get("beneficiaries",[])
             ],
-            "documents": [
-                {"document_name": document} for document in item.get("documents", [])
-            ], 
-            "sponsors": [],  
-            "criteria": item.get("criteria",""),
-            "procedures": item.get("procedures",""),
-            "benefits": [
-                {"benefit_type": item.get("benefits", [])} 
+            "documents": item.get("documents",[]),
+            "sponsors": [
+                {"sponsor_type": item.get("sponsors")}
             ],
-            "tags": item.get("tags"),  # Implement determine_tags function
-            "statistical_summary": []  # Exclude 'year' field from statistical summary
+            "criteria": [
+                criteria_description["description"] for criteria_description in item.get("criteria",[])
+            ],
+            "procedures": [
+                step_description["step_description"] for step_description in item.get("procedures",[])
+            ],
+            "tags": determine_tags(title, description) + item.get("tags",[])
         }
         organisation["schemes"].append(scheme)
+
 def transform_and_add_rajasthan_data(original_data, combined_data):
     state_name = "Rajasthan"
 
@@ -1699,7 +1690,8 @@ def transform_and_add_tripura_data(original_data, combined_data):
 def transform_and_add_andhra_pradesh_data(original_data, combined_data):
     for item in original_data:
         state_name = 'Andhra Pradesh'
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = ''
         organisation_name = ''
         state = next((s for s in combined_data['states'] 
@@ -1741,8 +1733,8 @@ def transform_and_add_andhra_pradesh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get('scheme_url',''),
             "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
+                {"beneficiary_type": item.get("beneficiaries",[])}
+            ] if item.get("beneficiaries",[]) else [],
             "documents": [],
             "sponsors": [
                 {"sponsor_type":  ""}
@@ -1763,7 +1755,8 @@ def transform_and_add_andhra_pradesh_data(original_data, combined_data):
 def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
     for item in original_data:
         state_name = 'Arunachal Pradesh'
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = ''
         organisation_name = ''
         state = next((s for s in combined_data['states'] 
@@ -1808,8 +1801,8 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get('schemeUrl',''),
             "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
-            ] if item.get("Beneficiaries") else [],
+                {"beneficiary_type": item.get("beneficiaries",[])}
+            ] if item.get("beneficiaries",[]) else [],
             "documents": item.get('documents',[]),
             "sponsors": [
                 {"sponsor_type":  ""}
@@ -1829,7 +1822,8 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
 def transform_and_add_andaman_nicobar_data(original_data, combined_data):
     for item in original_data:
         state_name = 'Andaman and Nicobar'
-        created_at = "2024-06-25T12:00:00Z"
+        ist = pytz.timezone('Asia/Kolkata')
+        created_at = datetime.now(ist).replace(microsecond=0).isoformat()
         department_name = ''
         organisation_name = ''
         state = next((s for s in combined_data['states'] 
@@ -1873,7 +1867,7 @@ def transform_and_add_andaman_nicobar_data(original_data, combined_data):
             "description": description,
             "scheme_link": item.get('scheme_url',''),
             "beneficiaries":  [
-                {"beneficiary_type": item.get("Beneficiaries")}
+                {"beneficiary_type": item.get("beneficiaries",[])}
             ] if item.get("beneficiary") else [],
             "documents": item.get('documents',[]),
             "sponsors": [

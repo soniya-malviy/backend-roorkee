@@ -27,14 +27,14 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.db.models import Q
 import logging
-from communityEmpowerment.utils.utils import recommend_schemes, load_cosine_similarity
+from communityEmpowerment.utils.utils import recommend_schemes, load_cosine_similarity, collaborative_recommendations
 
 logger = logging.getLogger(__name__)
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner, SavedFilter, SchemeReport, WebsiteFeedback
+    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
@@ -42,7 +42,8 @@ from .serializers import (
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
     SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
-    PasswordResetConfirmSerializer, PasswordResetRequestSerializer, SchemeReportSerializer, WebsiteFeedbackSerializer
+    PasswordResetConfirmSerializer, PasswordResetRequestSerializer, SchemeReportSerializer, WebsiteFeedbackSerializer,
+    UserInteractionSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -973,3 +974,69 @@ class RecommendSchemesAPIView(APIView):
             'scheme': SchemeSerializer(scheme).data, 
             'recommended_schemes': serializer.data 
         })
+    
+
+class HybridRecommendationView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        top_n = int(request.query_params.get('top_n', 5))
+
+        collaborative_schemes = collaborative_recommendations(user.id, top_n=top_n)
+
+        state_based_schemes = Scheme.objects.filter(department__state=user.state_of_residence)
+
+        final_recommendations = list(set(collaborative_schemes) | set(state_based_schemes))[:top_n]
+
+        serializer = SchemeSerializer(final_recommendations, many=True)
+        return Response(serializer.data)
+    
+
+class SaveSchemeInteractionView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, scheme_id, *args, **kwargs):
+        user = request.user
+        scheme = Scheme.objects.get(id=scheme_id)
+        
+        interaction, created = UserInteraction.objects.get_or_create(
+            user=user,
+            scheme=scheme,
+            defaults={'interaction_value': 2.0}
+        )
+        
+        if not created:
+            interaction.interaction_value = 2.0 if interaction.interaction_value != 2.0 else 0.0
+            interaction.save()
+
+        serializer = UserInteractionSerializer(interaction)
+        
+        return Response(
+            {"message": "Scheme saved" if interaction.interaction_value == 2.0 else "Save removed", "interaction": serializer.data},
+            status=status.HTTP_200_OK
+        )
+    
+
+class ViewSchemeInteractionView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, scheme_id, *args, **kwargs):
+        user = request.user
+        scheme = Scheme.objects.get(id=scheme_id)
+
+        interaction, created = UserInteraction.objects.get_or_create(
+            user=user,
+            scheme=scheme,
+            defaults={'interaction_value': 1.0}
+        )
+
+        if not created:
+            interaction.interaction_value += 1.0
+            interaction.save()
+
+        serializer = UserInteractionSerializer(interaction)
+        return Response(
+            {"message": "Interaction recorded", "interaction": serializer.data},
+            status=status.HTTP_200_OK
+        )

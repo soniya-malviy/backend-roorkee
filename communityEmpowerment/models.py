@@ -551,3 +551,9 @@ class WebsiteFeedback(models.Model):
 
     def __str__(self):
         return f"Feedback - {self.feedback_category}"
+    
+class UserInteraction(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE)
+    interaction_value = models.FloatField(default=1.0)
+    created_at = models.DateTimeField(auto_now_add=True)
