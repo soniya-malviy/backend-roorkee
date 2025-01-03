@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import (State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria
                      , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter,
-                      SchemeReport, WebsiteFeedback, Tag, UserInteraction )
+                      SchemeReport, WebsiteFeedback, Tag, UserInteraction, SchemeFeedback )
 from django.utils import timezone
 from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
@@ -408,3 +408,9 @@ class UserInteractionSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserInteraction
         fields = ['user', 'scheme', 'interaction_value', 'created_at']
+
+class SchemeFeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SchemeFeedback
+        fields = ['id', 'user', 'scheme', 'feedback', 'rating', 'created_at']
+        read_only_fields = ['id','user', 'created_at']
