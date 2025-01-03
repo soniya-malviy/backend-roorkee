@@ -17,7 +17,7 @@ phases:
       - echo Building Docker image...
       
       - docker build \
-        --build-arg DATABASE_NAME=postgres \
+        --build-arg DATABASE_NAME=${DATABASE_USER} \
         --build-arg DATABASE_USER=${DATABASE_USER} \
         --build-arg DATABASE_PASSWORD=${DATABASE_PASSWORD} \
         --build-arg DATABASE_HOST=${DATABASE_HOST} \
