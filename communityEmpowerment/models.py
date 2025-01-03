@@ -557,3 +557,13 @@ class UserInteraction(models.Model):
     scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE)
     interaction_value = models.FloatField(default=1.0)
     created_at = models.DateTimeField(auto_now_add=True)
+
+class SchemeFeedback(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="scheme_feedbacks")
+    scheme = models.ForeignKey(Scheme, on_delete=models.CASCADE, related_name="feedbacks")
+    feedback = models.TextField()
+    rating = models.IntegerField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Feedback by {self.user.username} on {self.scheme.title}"

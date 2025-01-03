@@ -5,7 +5,7 @@ from import_export.admin import ImportExportModelAdmin
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor,
-    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback
+    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback
 )
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
@@ -74,3 +74,9 @@ class SchemeReportAdmin(admin.ModelAdmin):
 class WebsiteFeedbackAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'description', 'created_at'] 
     list_filter = ['created_at']
+
+@admin.register(SchemeFeedback)
+class SchemeFeedbackAdmin(admin.ModelAdmin):
+    list_display = ('user', 'scheme', 'feedback', 'rating', 'created_at')
+    search_fields = ('user__username', 'scheme__title', 'feedback')
+    list_filter = ('created_at', 'rating')

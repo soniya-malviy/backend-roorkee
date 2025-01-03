@@ -64,7 +64,9 @@ from .views import (
     RecommendSchemesAPIView,
     HybridRecommendationView,
     SaveSchemeInteractionView,
-    ViewSchemeInteractionView
+    ViewSchemeInteractionView,
+    SchemeFeedbackCreateView,
+    SchemeFeedbackListView
 
 )
 
@@ -137,5 +139,6 @@ urlpatterns = [
     path('recommendations/', HybridRecommendationView.as_view(), name='hybrid-recommendations'),
     path('schemes/<int:scheme_id>/save/', SaveSchemeInteractionView.as_view(), name='save-scheme'),
     path('schemes/<int:scheme_id>/view/', ViewSchemeInteractionView.as_view(), name='view-scheme-interaction'),
-
+    path('schemes/<int:scheme_id>/feedback/', SchemeFeedbackListView.as_view(), name='scheme-feedback-list'),
+    path('feedback/create/', SchemeFeedbackCreateView.as_view(), name='scheme-feedback-create'),
 ]
