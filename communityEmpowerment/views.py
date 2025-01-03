@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction
+    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
@@ -43,7 +43,7 @@ from .serializers import (
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
     SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
     PasswordResetConfirmSerializer, PasswordResetRequestSerializer, SchemeReportSerializer, WebsiteFeedbackSerializer,
-    UserInteractionSerializer
+    UserInteractionSerializer, SchemeFeedbackSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -1040,3 +1040,20 @@ class ViewSchemeInteractionView(APIView):
             {"message": "Interaction recorded", "interaction": serializer.data},
             status=status.HTTP_200_OK
         )
+    
+
+class SchemeFeedbackCreateView(generics.CreateAPIView):
+    queryset = SchemeFeedback.objects.all()
+    serializer_class = SchemeFeedbackSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class SchemeFeedbackListView(generics.ListAPIView):
+    serializer_class = SchemeFeedbackSerializer
+    permission_classes = [permissions.AllowAny]
+
+    def get_queryset(self):
+        scheme_id = self.kwargs['scheme_id']
+        return SchemeFeedback.objects.filter(scheme_id=scheme_id)
