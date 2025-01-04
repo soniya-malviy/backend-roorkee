@@ -38,8 +38,18 @@ def determine_tags(title, description):
         tags.append("job")
     return tags
 
+def clean_field(field):
+    if isinstance(field, str):
+        return field.replace("\\n", "").replace("\\", "").strip()
+    elif isinstance(field, list):
+        return [clean_field(item) for item in field]
+    elif isinstance(field, dict):
+        return {key: clean_field(value) for key, value in field.items()}
+    return field 
+
 def transform_and_add_meghalaya_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Meghalaya"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -77,7 +87,7 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -85,7 +95,7 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -98,6 +108,7 @@ def transform_and_add_meghalaya_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Arunachal Pradesh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -135,7 +146,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -143,7 +154,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -156,6 +167,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_assam_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Assam"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -193,7 +205,7 @@ def transform_and_add_assam_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -201,7 +213,7 @@ def transform_and_add_assam_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -214,6 +226,7 @@ def transform_and_add_assam_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_chandigarh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Chandigarh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -251,7 +264,7 @@ def transform_and_add_chandigarh_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -259,7 +272,7 @@ def transform_and_add_chandigarh_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -272,6 +285,7 @@ def transform_and_add_chandigarh_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_chhattisgarh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Chhattisgarh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -309,7 +323,7 @@ def transform_and_add_chhattisgarh_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -317,7 +331,7 @@ def transform_and_add_chhattisgarh_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -330,6 +344,7 @@ def transform_and_add_chhattisgarh_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Dadra and Nagar Haveli"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -367,7 +382,7 @@ def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -375,7 +390,7 @@ def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -388,6 +403,7 @@ def transform_and_add_dadra_and_nagar_haveli_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_delhi_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Delhi"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -425,7 +441,7 @@ def transform_and_add_delhi_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -433,7 +449,7 @@ def transform_and_add_delhi_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -446,6 +462,7 @@ def transform_and_add_delhi_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_gujrat_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Gujrat"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -483,7 +500,7 @@ def transform_and_add_gujrat_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -491,7 +508,7 @@ def transform_and_add_gujrat_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -504,6 +521,7 @@ def transform_and_add_gujrat_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_haryana_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Haryana"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -541,7 +559,7 @@ def transform_and_add_haryana_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -549,7 +567,7 @@ def transform_and_add_haryana_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -562,6 +580,7 @@ def transform_and_add_haryana_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Jammu and Kashmir"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -599,7 +618,7 @@ def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -607,7 +626,7 @@ def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -620,6 +639,7 @@ def transform_and_add_jammu_and_kashmir_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_kerala_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Kerala"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -657,7 +677,7 @@ def transform_and_add_kerala_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -665,7 +685,7 @@ def transform_and_add_kerala_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -678,6 +698,7 @@ def transform_and_add_kerala_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_ladakh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Ladakh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -715,7 +736,7 @@ def transform_and_add_ladakh_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -723,7 +744,7 @@ def transform_and_add_ladakh_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -736,6 +757,7 @@ def transform_and_add_ladakh_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_madhya_pradesh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Madhya Pradesh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -773,7 +795,7 @@ def transform_and_add_madhya_pradesh_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -781,7 +803,7 @@ def transform_and_add_madhya_pradesh_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -794,6 +816,7 @@ def transform_and_add_madhya_pradesh_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_maharastra_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Maharastra"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -831,7 +854,7 @@ def transform_and_add_maharastra_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -839,7 +862,7 @@ def transform_and_add_maharastra_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -852,6 +875,7 @@ def transform_and_add_maharastra_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_manipur_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Manipur"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -889,7 +913,7 @@ def transform_and_add_manipur_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -897,7 +921,7 @@ def transform_and_add_manipur_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -910,6 +934,7 @@ def transform_and_add_manipur_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_odissa_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Odissa"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -947,7 +972,7 @@ def transform_and_add_odissa_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -955,7 +980,7 @@ def transform_and_add_odissa_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -968,6 +993,7 @@ def transform_and_add_odissa_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_puducherry_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Puducherry"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1005,7 +1031,7 @@ def transform_and_add_puducherry_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -1013,7 +1039,7 @@ def transform_and_add_puducherry_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -1026,6 +1052,7 @@ def transform_and_add_puducherry_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_punjab_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Punjab"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1063,7 +1090,7 @@ def transform_and_add_punjab_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -1071,7 +1098,7 @@ def transform_and_add_punjab_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -1084,6 +1111,7 @@ def transform_and_add_punjab_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_sikkim_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Sikkim"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1121,7 +1149,7 @@ def transform_and_add_sikkim_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -1129,7 +1157,7 @@ def transform_and_add_sikkim_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -1142,6 +1170,7 @@ def transform_and_add_sikkim_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_telangana_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Telangana"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1179,7 +1208,7 @@ def transform_and_add_telangana_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -1187,7 +1216,7 @@ def transform_and_add_telangana_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -1200,6 +1229,7 @@ def transform_and_add_telangana_data(original_data, combined_data):
         organisation["schemes"].append(scheme)
 def transform_and_add_uttarakhand_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Uttarakhand"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1237,7 +1267,7 @@ def transform_and_add_uttarakhand_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "beneficiaries": [
@@ -1245,7 +1275,7 @@ def transform_and_add_uttarakhand_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -1261,6 +1291,7 @@ def transform_and_add_uttarakhand_data(original_data, combined_data):
         # END HERE
 def transform_and_add_tamilnadu_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Tamil Nadu"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1325,6 +1356,7 @@ def transform_and_add_tamilnadu_data(original_data, combined_data):
 
 def transform_and_add_uttar_pradesh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Uttar Pradesh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1399,6 +1431,7 @@ def transform_and_add_uttar_pradesh_data(original_data, combined_data):
 
 def transform_and_add_himachal_pradesh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Himachal Pradesh"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1462,6 +1495,7 @@ def transform_and_add_goa_data(original_data, combined_data):
     state_name = "Goa"
 
     for item in original_data:
+        item = clean_field(item)
         title = remove_leading_numbers(item.get("title", "").strip())
 
 
@@ -1516,6 +1550,7 @@ def transform_and_add_goa_data(original_data, combined_data):
 
 def transform_and_add_jharkhand_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = "Jharkhand"
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1553,7 +1588,7 @@ def transform_and_add_jharkhand_data(original_data, combined_data):
             "title": title,
             "introduced_on": convert_date_format(item.get("introduced_on")),
             "valid_upto": item.get("valid_upto"),
-            "funding_pattern": item.get("sponsors"),
+            "funding_pattern": item.get("funding_pattern"),
             "description": description,
             "scheme_link": item.get("scheme_link"),
             "pdf_url": item.get("pdfUrl"),
@@ -1562,7 +1597,7 @@ def transform_and_add_jharkhand_data(original_data, combined_data):
             ],
             "documents": item.get("documents",[]),
             "sponsors": [
-                {"sponsor_type": item.get("sponsors")}
+                sponsor_type["sponsor_type"] for sponsor_type in item.get("sponsors",[])
             ],
             "criteria": [
                 criteria_description["description"] for criteria_description in item.get("criteria",[])
@@ -1578,6 +1613,7 @@ def transform_and_add_rajasthan_data(original_data, combined_data):
     state_name = "Rajasthan"
 
     for item in original_data:
+        item = clean_field(item)
         title = remove_leading_numbers(item.get("title", "").strip())
 
 
@@ -1633,6 +1669,7 @@ def transform_and_add_tripura_data(original_data, combined_data):
     state_name = "Tripura"
 
     for item in original_data:
+        item = clean_field(item)
         title = remove_leading_numbers(item.get("title", "").strip())
 
 
@@ -1689,6 +1726,7 @@ def transform_and_add_tripura_data(original_data, combined_data):
 
 def transform_and_add_andhra_pradesh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = 'Andhra Pradesh'
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1754,6 +1792,7 @@ def transform_and_add_andhra_pradesh_data(original_data, combined_data):
 
 def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = 'Arunachal Pradesh'
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
@@ -1821,6 +1860,7 @@ def transform_and_add_arunachal_pradesh_data(original_data, combined_data):
 
 def transform_and_add_andaman_nicobar_data(original_data, combined_data):
     for item in original_data:
+        item = clean_field(item)
         state_name = 'Andaman and Nicobar'
         ist = pytz.timezone('Asia/Kolkata')
         created_at = datetime.now(ist).replace(microsecond=0).isoformat()
