@@ -550,7 +550,7 @@ class WebsiteFeedback(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Feedback - {self.feedback_category}"
+        return f"Feedback - {self.category}"
     
 class UserInteraction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
