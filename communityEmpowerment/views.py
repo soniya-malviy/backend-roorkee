@@ -27,7 +27,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.db.models import Q
 import logging
-from communityEmpowerment.utils.utils import recommend_schemes, load_cosine_similarity, collaborative_recommendations
+from communityEmpowerment.utils.utils import recommend_schemes, load_cosine_similarity, collaborative_recommendations, extract_keywords_from_feedback
 
 logger = logging.getLogger(__name__)
 
@@ -983,7 +983,15 @@ class HybridRecommendationView(APIView):
         user = request.user
         top_n = int(request.query_params.get('top_n', 5))
 
-        collaborative_schemes = collaborative_recommendations(user.id, top_n=top_n)
+        # Get the user's latest feedback
+        feedback = WebsiteFeedback.objects.filter(user=user).order_by('-created_at').first()
+
+        # Extract keywords from feedback if it exists
+        keywords = None
+        if feedback:
+            keywords = extract_keywords_from_feedback(feedback.description)
+
+        collaborative_schemes = collaborative_recommendations(user.id, top_n=top_n, keywords=keywords)
 
         state_based_schemes = Scheme.objects.filter(department__state=user.state_of_residence)
 
