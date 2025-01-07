@@ -66,7 +66,8 @@ from .views import (
     SaveSchemeInteractionView,
     ViewSchemeInteractionView,
     SchemeFeedbackCreateView,
-    SchemeFeedbackListView
+    SchemeFeedbackListView,
+    TrackEventView
 
 )
 
@@ -141,4 +142,5 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/view/', ViewSchemeInteractionView.as_view(), name='view-scheme-interaction'),
     path('schemes/<int:scheme_id>/feedback/', SchemeFeedbackListView.as_view(), name='scheme-feedback-list'),
     path('feedback/create/', SchemeFeedbackCreateView.as_view(), name='scheme-feedback-create'),
+    path('track-event/', TrackEventView.as_view(), name='track_event'),
 ]

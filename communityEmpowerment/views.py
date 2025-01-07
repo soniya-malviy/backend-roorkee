@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback
+    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
@@ -43,7 +43,7 @@ from .serializers import (
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
     SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
     PasswordResetConfirmSerializer, PasswordResetRequestSerializer, SchemeReportSerializer, WebsiteFeedbackSerializer,
-    UserInteractionSerializer, SchemeFeedbackSerializer
+    UserInteractionSerializer, SchemeFeedbackSerializer, UserEventSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -1065,3 +1065,18 @@ class SchemeFeedbackListView(generics.ListAPIView):
     def get_queryset(self):
         scheme_id = self.kwargs['scheme_id']
         return SchemeFeedback.objects.filter(scheme_id=scheme_id)
+
+class TrackEventView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        data = request.data
+        serializer = UserEventSerializer(data=data)
+        if serializer.is_valid():
+            UserEvent.objects.create(
+                user=request.user,
+                scheme_id=serializer.validated_data['scheme'].id,
+                event_type=serializer.validated_data['event_type']
+            )
+            return Response({"message": "Event tracked successfully"}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
