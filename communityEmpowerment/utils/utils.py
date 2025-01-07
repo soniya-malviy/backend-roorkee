@@ -5,6 +5,8 @@ from scipy.sparse import csr_matrix
 from sklearn.decomposition import TruncatedSVD
 import numpy as np
 import pandas as pd
+import spacy
+from django.db.models import Q
 
 def load_cosine_similarity():
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -32,7 +34,7 @@ def recommend_schemes(scheme_id, cosine_sim, top_n=5):
         return []
 
 
-def collaborative_recommendations(user_id, top_n=5):
+def collaborative_recommendations(user_id, top_n=5, keywords=None):
     # Fetch user-scheme interactions
     interactions = UserInteraction.objects.values('user_id', 'scheme_id', 'interaction_value')
     
@@ -78,4 +80,22 @@ def collaborative_recommendations(user_id, top_n=5):
     recommended_scheme_ids = [scheme_ids[idx] for idx in recommended_indices]
 
     # Fetch Scheme objects for recommendations
-    return list(Scheme.objects.filter(id__in=recommended_scheme_ids))
+    recommended_schemes = list(Scheme.objects.filter(id__in=recommended_scheme_ids))
+    if keywords:
+        keyword_matched_schemes = Scheme.objects.filter(
+            Q(tags__name__icontains=keywords) | Q(description__icontains=keywords)
+        ).distinct()
+        recommended_schemes = list(set(recommended_schemes) | set(keyword_matched_schemes))[:top_n]
+
+    return recommended_schemes
+
+
+nlp = spacy.load("en_core_web_sm")  # Load SpaCy's English model
+
+def extract_keywords_from_feedback(description):
+    """
+    Extracts keywords from feedback descriptions using NLP.
+    """
+    doc = nlp(description)
+    keywords = [token.text.lower() for token in doc if token.pos_ in ["NOUN", "PROPN"]]
+    return keywords
