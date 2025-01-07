@@ -22,10 +22,11 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from django.contrib.auth import get_user_model
 from django.http import HttpResponse
-
+from rest_framework.exceptions import ValidationError
 from django.utils.text import slugify
 import random
 import string
+import requests
 
 User = get_user_model()
 class TimeStampedModelSerializer(serializers.ModelSerializer):
@@ -402,7 +403,41 @@ class WebsiteFeedbackSerializer(serializers.ModelSerializer):
         read_only_fields = ['created_at']
 
     def create(self, validated_data):
-        return WebsiteFeedback.objects.create(**validated_data)
+        feedback = WebsiteFeedback.objects.create(**validated_data)
+        if validated_data['category'] == 'bug':
+            try:
+                self.create_github_issue(feedback)
+            except Exception as e:
+                raise ValidationError(f"Failed to create GitHub issue: {str(e)}")
+
+        return feedback
+    def create_github_issue(self, feedback):
+        issue_title = f"Bug Report: {feedback.id}"
+        issue_body = (
+            f"### Bug Report\n\n"
+            f"**Description:**\n{feedback.description}\n\n"
+            f"**Submitted by User ID:** {feedback.user.id if feedback.user else 'Anonymous'}\n"
+            f"**Category:** {feedback.category}\n"
+            f"**Created At:** {feedback.created_at}\n"
+        )
+
+        github_api_url = f"https://api.github.com/repos/{settings.GITHUB_REPO}/issues"
+
+        # Make the API call to create the GitHub issue
+        response = requests.post(
+            github_api_url,
+            json={
+                "title": issue_title,
+                "body": issue_body
+            },
+            headers={
+                "Authorization": f"Bearer {settings.GITHUB_TOKEN}",
+                "Accept": "application/vnd.github+json"
+            },
+        )
+
+        if response.status_code != 201:
+            raise Exception(f"GitHub API error: {response.status_code} - {response.text}")
     
 class UserInteractionSerializer(serializers.ModelSerializer):
     class Meta:

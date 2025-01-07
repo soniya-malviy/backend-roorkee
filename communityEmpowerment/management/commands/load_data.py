@@ -100,7 +100,7 @@ class Command(BaseCommand):
 
 
                         for sponsor_data in scheme_data['sponsors']:
-                            sponsor_type = self.truncate(sponsor_data['sponsor_type'])
+                            sponsor_type = self.truncate(sponsor_data)
                             sponsor, created = Sponsor.objects.get_or_create(
                                 sponsor_type=sponsor_type
                             )
