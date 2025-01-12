@@ -191,3 +191,8 @@ class DocumentModelTest(TestCase):
         with self.assertRaises(ValidationError):
             document.full_clean()
 
+class DocumentModelTest(TestCase):
+    def test_create_document(self):
+        document = Document.objects.create(document_name="Aadhar Card", requirements="Valid Aadhar Number")
+        self.assertEqual(document.document_name, "Aadhar Card")
+        self.assertEqual(document.requirements, "Valid Aadhar Number")
