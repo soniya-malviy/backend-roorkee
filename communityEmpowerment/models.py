@@ -7,6 +7,7 @@ import uuid
 from datetime import timedelta
 from django.conf import settings
 from django.core.exceptions import ValidationError
+import re
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -32,7 +33,19 @@ class TimeStampedModel(models.Model):
     
 # Existing models
 class State(TimeStampedModel):
-    state_name = models.CharField(max_length=255, null=True, blank=True)
+    state_name = models.CharField(max_length=255, null=False, blank=False)
+
+    def clean(self):
+        if not self.state_name.strip():  # Disallow empty or whitespace-only names
+            raise ValidationError("State name cannot be empty or whitespace.")
+        if re.search(r'\d', self.state_name):  # Check if state_name contains any digit
+            raise ValidationError("State name cannot contain numeric characters.")
+        
+    def save(self, *args, **kwargs):
+        # Strip whitespace before saving
+        if self.state_name is not None:
+            self.state_name = self.state_name.strip().title()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "State"
@@ -44,8 +57,8 @@ class State(TimeStampedModel):
 
 
 class Department(TimeStampedModel):
-    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=True, blank=True)
-    department_name = models.CharField(max_length=255, null=True, blank=True)
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=False, blank=False, unique=True)
+    department_name = models.CharField(max_length=255, null=False, blank=False)
 
     class Meta:
         verbose_name = "Department"
