@@ -84,7 +84,7 @@ async function scrapper() {
 
     console.log(response);
     const targetDir = path.join(__dirname, '..', '..','scrapedData');
-    const filePath = path.join(targetDir, 'jammukashmir.json');
+    const filePath = path.join(targetDir, 'jammuAndKashmir.json');
     
     fs.writeFileSync(filePath, JSON.stringify(response, null, 2), 'utf-8');
     console.log('Data has been saved to jammuKashmir.json');

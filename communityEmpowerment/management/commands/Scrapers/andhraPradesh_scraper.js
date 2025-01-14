@@ -41,7 +41,7 @@ async function scrapeData() {
 
     // Save data to a JSON file
     const targetDir = path.join(__dirname, '..','..','scrapedData');
-    const filePath = path.join(targetDir, 'andhra.json');
+    const filePath = path.join(targetDir, 'andhraPradesh.json');
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
     
     await browser.close();

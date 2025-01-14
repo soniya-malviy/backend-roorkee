@@ -17,6 +17,7 @@ from trackScheme import (
 )
 import os
 from dotenv import load_dotenv
+from commands.listDownloadFromS3 import process_pdfs_for_state
 
 
 load_dotenv()
@@ -40,8 +41,7 @@ api_keys = [
 
 # print("ye dekhna:",absolute_file_path)
 
-with open(absolute_file_path, "r") as file:
-    goaPdfText = json.load(file)
+
 
 def parse_pdf(pdf_url):
     pdfText = ''
@@ -139,11 +139,13 @@ def process_with_api_key_rotation(extractedSchemeText, api_keys, retries=5):
     return None
 
 
-def main():
-    previous_state = load_previous_state(state_file)
+def process_schemes(state_pdf_text, output_file_path):
 
-    new_schemes, updated_schemes = identify_changes(goaPdfText, previous_state)
-    schemes_to_process = new_schemes + updated_schemes
+    schemes_to_process = state_pdf_text
+    # previous_state = load_previous_state(state_file)
+
+    # new_schemes, updated_schemes = identify_changes(statePdfText, previous_state)
+    # schemes_to_process = new_schemes + updated_schemes
 
     final_results = []
 
@@ -268,9 +270,20 @@ def main():
                             
     with open(output_file, 'a') as f:
         f.write("\n]")
-    current_state = {scheme["id"]: calculate_hash(scheme) for scheme in goaPdfText}
-    save_current_state(state_file, current_state)
+    # current_state = {scheme["id"]: calculate_hash(scheme) for scheme in statePdfText}
+    # save_current_state(state_file, current_state)
+
+
+pdfStates = [
+    "goa",
+    "jharkhand",
+    "tripura",
+    "rajasthan"
+]
 
 if __name__ == "__main__":
-    main()
+    for state_name in pdfStates:
+        output_file_path = os.path.join(os.path.dirname(__file__),'..', '..', 'structuredData', f'{state_name}_structured_results.json')
+        statePdfData = process_pdfs_for_state(state_name)
+        process_schemes(statePdfData, output_file_path)
 
