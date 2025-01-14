@@ -18,7 +18,6 @@ class Command(BaseCommand):
         base_dir = os.path.abspath(os.path.dirname(__file__))
         scripts = [
             "node maharastra_scraper.js",
-            "python maharastra_gemini.py",
             "node gujarat_scraper.js",
             "node jammu_kashmir_scraper.js",
             "node meghalaya_scraper.js",
@@ -27,7 +26,31 @@ class Command(BaseCommand):
             "node up_youthWelfare.js",
             "node madhyaPradesh_scraper.js",
             "node kerela_scraper.js",
-            "node manipur_scraper.js"
+            "node manipur_scraper.js",
+            "node punjab_scraper.js",
+            "node andhraPradesh_scraper.js",
+            "node haryana_scraper.js",
+            "node assam_scraper.js",
+            "node odisha_scraper.js",
+            "node rajasthan_scraper.js", #PDF
+            "node goa_scraper.js", #PDF,
+            "node tripura_scraper.js", #PDF
+            "node jharkhand_scraper.js", #PDF
+            "node uttarakhand_scraper.js",
+            "node sikkim_scraper.js",
+            "node telangana_scraper.js",
+            "node chhattisgarh_scraper.js",
+            "node arunachalPradesh_scraper.js",
+            "node delhi_scraper.js",
+            "node ladakh_scraper.js",
+            "node himachalPradesh_scraper.js"
+            "node dadraAndNagarHaveli_scraper.js",
+            "node nagaland_scraper.js",
+            "node chandigarh_scraper.js",
+            "node andamanAndNicobar_scraper.js",
+            f"python {os.path.join(base_dir, '../downloadAndUploadPdfs.py')}",
+            f"python {os.path.join(base_dir, '../geminiAndParsingScripts/pdfParser.py')}",
+            f"python {os.path.join(base_dir, '../geminiAndParsingScripts/structureScrapedSchemes.py')}",
             f"python {os.path.join(base_dir, '../converted_combined.py')}",
             f"python {os.path.join(base_dir, '../../../../manage.py load_data')}"
         ]
