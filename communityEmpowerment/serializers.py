@@ -404,11 +404,11 @@ class WebsiteFeedbackSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         feedback = WebsiteFeedback.objects.create(**validated_data)
-        if validated_data['category'] == 'bug':
-            try:
-                self.create_github_issue(feedback)
-            except Exception as e:
-                raise ValidationError(f"Failed to create GitHub issue: {str(e)}")
+        # if validated_data['category'] == 'bug':
+        #     try:
+        #         self.create_github_issue(feedback)
+        #     except Exception as e:
+        #         raise ValidationError(f"Failed to create GitHub issue: {str(e)}")
 
         return feedback
     def create_github_issue(self, feedback):
