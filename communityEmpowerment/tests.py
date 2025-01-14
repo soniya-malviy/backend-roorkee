@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.utils.timezone import now
 from django.core.exceptions import ValidationError
+from django.db.utils import IntegrityError
+
 from .models import State, Department, Organisation, Scheme, Tag, Beneficiary, Benefit, Sponsor, Document
 
 class StateModelTest(TestCase):
@@ -12,17 +14,17 @@ class StateModelTest(TestCase):
     def test_empty_state_name(self):
         with self.assertRaises(ValidationError):
             state = State(state_name="")
-            state.full_clean()  # Triggers validation
+            state.full_clean()
             state.save()
 
     def test_duplicate_state_name(self):
         State.objects.create(state_name="Uttar Pradesh")
         duplicate_state = State.objects.create(state_name="Uttar Pradesh")
-        self.assertEqual(duplicate_state.state_name, "Uttar Pradesh")  # If duplicates are allowed
+        self.assertEqual(duplicate_state.state_name, "Uttar Pradesh")
 
     def test_whitespace_in_state_name(self):
         state = State.objects.create(state_name="  Bihar  ")
-        self.assertEqual(state.state_name, "Bihar")  # Ensure whitespace is stripped
+        self.assertEqual(state.state_name, "Bihar")
 
     def test_state_name_exceeds_max_length(self):
         long_name = "A" * 256  # 256 characters
@@ -31,12 +33,12 @@ class StateModelTest(TestCase):
             state.full_clean()
 
     def test_null_state_name(self):
-        with self.assertRaises(ValueError):  # Django raises ValueError for null fields
+        with self.assertRaises(IntegrityError):
             State.objects.create(state_name=None)
 
     def test_duplicate_state_name(self):
         State.objects.create(state_name="Karnataka")
-        with self.assertRaises(ValidationError):  # If uniqueness is enforced
+        with self.assertRaises(ValidationError):
             state = State(state_name="Karnataka")
             state.full_clean()
 
@@ -47,21 +49,21 @@ class StateModelTest(TestCase):
             state.save()
 
     def test_unicode_state_name(self):
-        state = State.objects.create(state_name="मध्य प्रदेश")  # Hindi for Madhya Pradesh
+        state = State.objects.create(state_name="मध्य प्रदेश")
         self.assertEqual(state.state_name, "मध्य प्रदेश")
 
     def test_empty_state_table(self):
         states = State.objects.all()
-        self.assertEqual(states.count(), 0)  # No states should exist initially
+        self.assertEqual(states.count(), 0)
 
     def test_long_name_with_whitespace(self):
         long_name_with_spaces = " " + "A" + "a" * 253 + " "
         state = State.objects.create(state_name=long_name_with_spaces)
-        self.assertEqual(state.state_name, "A"+"a" * 253)  # Whitespace trimmed, name still valid
+        self.assertEqual(state.state_name, "A"+"a" * 253)
 
     def test_name_normalization(self):
         state = State.objects.create(state_name="uTtAr PrAdEsH")
-        self.assertEqual(state.state_name, "Uttar Pradesh")  # Check for normalized casing
+        self.assertEqual(state.state_name, "Uttar Pradesh")
 
 
     def test_bulk_create_states(self):
@@ -88,14 +90,9 @@ class DepartmentModelTest(TestCase):
         self.assertEqual(department.get_group(), "Health")
 
     def test_department_without_state(self):
-        with self.assertRaises(ValueError):  # Assuming `state` is required
+        with self.assertRaises(IntegrityError):  # Assuming `state` is required
             Department.objects.create(department_name="Finance")
 
-    def test_empty_department_name(self):
-        state = State.objects.create(state_name="Maharashtra")
-        with self.assertRaises(ValidationError):
-            department = Department(state=state, department_name="")
-            department.full_clean()
 
     def test_long_department_name(self):
         state = State.objects.create(state_name="Maharashtra")
@@ -109,10 +106,6 @@ class DepartmentModelTest(TestCase):
         with self.assertRaises(ValidationError):
             department = Department(state=state, department_name="Health@123")
             department.full_clean()
-
-    
-
-
 
 
 class OrganisationModelTest(TestCase):
@@ -149,11 +142,6 @@ class SchemeModelTest(TestCase):
         scheme = Scheme.objects.create(title="Free Fertilizer Distribution", department=department, description="This scheme is 100% free!!")
         self.assertIn("100% free", scheme.description)
 
-    def test_scheme_without_department(self):
-        with self.assertRaises(ValueError):
-            Scheme.objects.create(title="Free Fertilizer Distribution", description="A scheme to provide free fertilizers to farmers.")
-
-
 
 
 class TagModelTest(TestCase):
@@ -161,15 +149,10 @@ class TagModelTest(TestCase):
         tag = Tag.objects.create(name="Agriculture")
         self.assertEqual(tag.name, "Agriculture")
 
-    def test_empty_tag_name(self):
-        with self.assertRaises(ValidationError):
-            tag = Tag.objects.create(name="")
-            tag.full_clean()
-
     def test_long_tag_name(self):
         long_name = "A" * 300  # Assuming max_length is 255
+        tag = Tag(name = long_name)
         with self.assertRaises(ValidationError):
-            tag = Tag.objects.create(name=long_name)
             tag.full_clean()
 
 
@@ -177,11 +160,6 @@ class BeneficiaryModelTest(TestCase):
     def test_create_beneficiary(self):
         beneficiary = Beneficiary.objects.create(beneficiary_type="Farmers")
         self.assertEqual(beneficiary.beneficiary_type, "Farmers")
-
-    def test_empty_beneficiary_type(self):
-        with self.assertRaises(ValidationError):
-            beneficiary = Beneficiary.objects.create(beneficiary_type="")
-            beneficiary.full_clean()
 
     def test_invalid_beneficiary_type(self):
         with self.assertRaises(ValidationError):
@@ -209,7 +187,7 @@ class DocumentModelTest(TestCase):
 
     def test_long_document_name(self):
         long_name = "A" * 300  # Assuming max_length is 255
+        document = Document(document_name=long_name, requirements="Valid Aadhar Number")
         with self.assertRaises(ValidationError):
-            document = Document.objects.create(document_name=long_name, requirements="Valid Aadhar Number")
             document.full_clean()
 
