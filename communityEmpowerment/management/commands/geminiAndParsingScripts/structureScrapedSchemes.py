@@ -3,14 +3,13 @@ import json
 from pdfParser import process_with_api_key_rotation
 
 api_keys = [
-     "AIzaSyCx6SfkUW-OV4H_9eDXI6EaLcRxnNXNc8k",
-    "AIzaSyAtMYT6cBvYXUbBoomMlPRhvh4ff2Y5LBY",
-    "AIzaSyBuE7BohUwPRYWfzMVIO-QhAOMHPxsFPLI",
-    "AIzaSyCx6SfkUW-OV4H_9eDXI6EaLcRxnNXNc8k",
-    # os.getenv("API_KEY_4"),
-    # os.getenv("API_KEY_5"),
-    # os.getenv("API_KEY_6"),
-    
+    os.getenv("API_KEY_1"),
+    os.getenv("API_KEY_2"),
+    os.getenv("API_KEY_3"),
+    os.getenv("API_KEY_4"),
+    os.getenv("API_KEY_5"),
+    os.getenv("API_KEY_6"),
+    os.getenv("API_KEY_7")
 ]
 
 
