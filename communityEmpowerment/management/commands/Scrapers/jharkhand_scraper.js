@@ -31,8 +31,8 @@ async function main() {
         const res = await get_pdf_link(`https://jharkhand.gov.in/Home/SearchSchemes?department=${item.value}`, item.departmentName)
         allResults.push(...res)
     }))
-    const targetDir = path.join(__dirname, '..','..','scrapedData');
-    const filePath = path.join(targetDir, 'jharkhandpdf.json');
+    const targetDir = path.join(__dirname, '..','..','scrapedData', 'scrapedPdfs');
+    const filePath = path.join(targetDir, 'jharkhandPdf.json');
     await fs.writeFile(filePath, JSON.stringify(allResults, null, 2))
 }
 main()

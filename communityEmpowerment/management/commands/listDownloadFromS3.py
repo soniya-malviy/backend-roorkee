@@ -3,6 +3,7 @@ import io
 from pdfminer.high_level import extract_text
 import json
 from django.conf import settings
+import urllib.parse
 
 # AWS S3 Configuration
 s3 = boto3.client('s3', 
@@ -10,7 +11,7 @@ s3 = boto3.client('s3',
                   aws_secret_access_key= settings.AWS_SECRET_ACCESS_KEY, 
                   region_name= settings.AWS_S3_REGION_NAME)
 
-BUCKET_NAME = settings.AWS_PDF_STORAGE_BUCKET_NAME
+BUCKET_NAME = settings.AWS_STORAGE_BUCKET_NAME
 
 def list_pdfs_in_directory(state_name):
     try:
@@ -64,13 +65,16 @@ def process_pdfs_for_state(state_name):
         pdf_file = pdf_data["pdf_key"]
         pdfUrl = pdf_data["pdfUrl"]
         title = pdf_data["metadata"]["title"]
+        schemeUrl = pdf_data["metadata"]["schemeUrl"]
+        schemeId = pdf_data["metadata"]["id"]
+        decoded_title = urllib.parse.unquote(title)
         jsonData = {
-            'title': title,
+            'id': schemeId,
+            'title': decoded_title,
             'pdfUrl': pdfUrl,
-            'pdfFile': pdf_file
+            'pdfFile': pdf_file,
+            'schemeUrl': schemeUrl
         }
+        lst.append(jsonData)
     return lst
-        
-
-# process_pdfs_for_state('goa')
 

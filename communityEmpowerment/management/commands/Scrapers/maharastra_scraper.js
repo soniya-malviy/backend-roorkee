@@ -151,7 +151,7 @@ async function main() {
       fs.mkdirSync(targetDir, { recursive: true });
     }
 
-    const filepath = path.join(targetDir, "maharastra.json");
+    const filepath = path.join(targetDir, "maharashtra.json");
     fs.writeFileSync(filepath, JSON.stringify(allSchemes, null, 2));
     console.log(`Data saved to ${filepath}`);
   } catch (error) {
