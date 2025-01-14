@@ -1,0 +1,113 @@
+[
+  {
+      "description": "Pradhan Mantri Jan-Dhan Yojana (PMJDY) is National Mission for Financial Inclusion to ensure access to financial services, namely, Banking/ Savings & Deposit Accounts, Remittance, Credit, Insurance, Pension in an affordable manner. Account can be opened in any bank branch or Business Correspondent (Bank Mitr) outlet. Accounts opened under PMJDY are being opened with Zero balance. However, if the account-holder wishes to get cheque book, he/she will have to fulfill minimum balance criteria.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "People"
+          }
+      ],
+      "tags": [
+          "Financial Inclusion",
+          "Banking",
+          "Savings",
+          "Deposit Accounts",
+          "Remittance",
+          "Credit",
+          "Insurance",
+          "Pension"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "28/08/2014",
+      "funding_pattern": "Government Scheme",
+      "title": "Pradhan Mantri Jan Dhan Yojana",
+      "scheme_link": "https://nicobars.andaman.nic.in/scheme/atal-mission-for-rejuvenation-and-urban-transformation-amrut/",
+      "documents": [],
+      "criteria": [],
+      "id": "84c2491b-1aaf-4fee-bcf3-fbea78b1e6d5"
+  },
+  {
+      "description": "The MGNREGA was initiated with the objective of “enhancing livelihood security in rural areas by providing at least 100 days of guaranteed wage employment in a financial year, to every household whose adult members volunteer to do unskilled manual work”. Another aim of MGNREGA is to create durable assets (such as roads, canals, ponds and wells). Employment is to be provided within 5 km of an applicant’s residence, and minimum wages are to be paid. If work is not provided within 15 days of applying, applicants are entitled to an unemployment allowance. Thus, employment under MGNREGA is a legal entitlement.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Rural household"
+          }
+      ],
+      "tags": [
+          "Guaranteed Wage Employment",
+          "Rural Employment",
+          "Unskilled Manual Work",
+          "Durable Assets",
+          "Unemployment Allowance"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "introduced_on": "01/04/2008",
+      "funding_pattern": "Monetary Gain",
+      "title": "Mahatma Gandhi National Rural Employment Guarantee Act",
+      "scheme_link": "https://nicobars.andaman.nic.in/scheme/mahatma-gandhi-national-rural-employment-guarantee-act-mgnrega/",
+      "criteria": [],
+      "documents": [],
+      "department_name": "RURAL EMPLOYMENT",
+      "id": "e02916f2-931a-4a60-94bd-cdb7bb7d028a"
+  },
+  {
+      "description": "The National Rural Health Mission (NRHM), now under National Health Mission[1] is an initiative undertaken by the government of India to address the health needs of under-served rural areas. Basic objectives for implementation of NRHM are: To reduce infant mortality rate and maternal mortality rate To ensure population stabilization To prevent and control of communicable and non-communicable diseases To upgrade AYUSH(Aurvedic Yoga Unani Siddh and Homopath) for promotion of healthy life style",
+      "tags": [
+          "Health",
+          "Rural Development",
+          "Maternal Health",
+          "Child Health",
+          "Communicable Diseases",
+          "Non-Communicable Diseases"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Community"
+          },
+          {
+              "beneficiary_type": "Women"
+          },
+          {
+              "beneficiary_type": "Children"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Government of India",
+      "introduced_on": "12/04/2005",
+      "title": "National Rural Health Mission (NRHM)",
+      "scheme_link": "https://nicobars.andaman.nic.in/scheme/sarva-shiksha-abhiyan/",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Health Care",
+      "id": "85deecc5-01ec-44f3-9c7f-feddb9080058"
+  },
+  {
+      "description": "The Overall Goal of the Beti Bachao, Beti Padhao(BBBP) Scheme is to Celebrate the Girl Child & Enable her Education . The objectives of the Scheme are as under :- – Prevent gender biased sex selective elimination Ensure survival & protection of the girl child Ensure education of the girl child",
+      "tags": [
+          "girl child",
+          "education",
+          "gender equality"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Girl Child"
+          }
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not available",
+      "funding_pattern": "Not available",
+      "introduced_on": "22/01/2015",
+      "title": "Beti Bachao Beti Padhao",
+      "scheme_link": "https://nicobars.andaman.nic.in/scheme/beti-bachao-beti-padhao-yojana/",
+      "criteria": [],
+      "documents": [],
+      "department_name": "Education",
+      "id": "f4fe77bc-4c37-4e5f-9dd9-fb0a1d69c46f"
+  }
+]
