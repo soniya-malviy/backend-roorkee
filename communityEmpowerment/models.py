@@ -33,7 +33,7 @@ class TimeStampedModel(models.Model):
     
 # Existing models
 class State(TimeStampedModel):
-    state_name = models.CharField(max_length=255, null=False, blank=False)
+    state_name = models.CharField(max_length=255, null=False, blank=False, unique = True)
 
     def clean(self):
         if not self.state_name.strip():  # Disallow empty or whitespace-only names
@@ -57,9 +57,12 @@ class State(TimeStampedModel):
 
 
 class Department(TimeStampedModel):
-    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=False, blank=False, unique=True)
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=False, blank=False)
     department_name = models.CharField(max_length=255, null=False, blank=False)
 
+    def clean(self):
+        if re.search(r'\d', self.department_name):
+            raise ValidationError("Department name cannot contain numeric characters.")
     class Meta:
         verbose_name = "Department"
         verbose_name_plural = "Departments"
@@ -178,6 +181,10 @@ class Scheme(TimeStampedModel):
     tags = models.ManyToManyField('Tag', related_name='schemes', blank=True)  # Add this line
     benefits = models.ManyToManyField('Benefit', related_name='schemes', blank=True)
 
+    def clean(self):
+        if not self.title.strip():  # Disallow empty or whitespace-only names
+            raise ValidationError("Title name cannot be empty or whitespace.")
+        
     class Meta:
         verbose_name = "Scheme"
         verbose_name_plural = "Schemes"
@@ -201,6 +208,9 @@ class Benefit(TimeStampedModel):
 class Beneficiary(TimeStampedModel):
     beneficiary_type = models.CharField(max_length=255, null=True, blank=True)
 
+    def clean(self):
+        if re.search(r'\d', self.beneficiary_type):
+            raise ValidationError("Beneficiary cannot contain numeric characters.")
     class Meta:
         verbose_name = "Beneficiary"
         verbose_name_plural = "Beneficiaries"
