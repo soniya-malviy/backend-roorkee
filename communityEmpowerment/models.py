@@ -58,7 +58,7 @@ class State(TimeStampedModel):
 
 class Department(TimeStampedModel):
     state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=False, blank=False)
-    department_name = models.CharField(max_length=255, null=False, blank=False)
+    department_name = models.CharField(max_length=255, null=True, blank=True)
 
     def clean(self):
         if re.search(r'\d', self.department_name):
