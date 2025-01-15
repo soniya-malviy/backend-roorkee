@@ -67,7 +67,8 @@ from .views import (
     ViewSchemeInteractionView,
     SchemeFeedbackCreateView,
     SchemeFeedbackListView,
-    TrackEventView
+    TrackEventView,
+    DisabilityChoicesView
 
 )
 
@@ -122,7 +123,8 @@ urlpatterns = [
     path('choices/state/', StateChoicesView.as_view(), name='state-choices'),
     path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
     path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
-    path('choices/employment/', EmploymentChoicesView.as_view(), name='category-choices'),
+    path('choices/employment/', EmploymentChoicesView.as_view(), name='employment-choices'),
+    path('choices/disability/', DisabilityChoicesView.as_view(), name='disability-choices'),
     path('password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('password-reset-confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('schemes/<int:scheme_id>/benefits/', SchemeBenefitListAPIView.as_view(), name='scheme-benefits'),

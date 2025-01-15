@@ -34,7 +34,8 @@ logger = logging.getLogger(__name__)
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent
+    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent,
+    EducationChoice, DisabilityChoice
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
@@ -562,7 +563,13 @@ class StateChoicesView(APIView):
 
 class EducationChoicesView(APIView):
     def get(self, request):
-        return Response(CustomUser._meta.get_field('education').choices, status=status.HTTP_200_OK)
+        active_choices = EducationChoice.objects.filter(is_active=True).values('id', 'name')
+        return Response(active_choices, status=status.HTTP_200_OK)
+    
+class DisabilityChoicesView(APIView):
+    def get(self, request):
+        active_choices = DisabilityChoice.objects.filter(is_active=True).values('id', 'name')
+        return Response(active_choices, status=status.HTTP_200_OK)
 
 class CategoryChoicesView(APIView):
     def get(self, request):

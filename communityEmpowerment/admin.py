@@ -4,8 +4,8 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
-    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor,
-    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback
+    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, DisabilityChoice,
+    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback, EducationChoice
 )
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
@@ -80,3 +80,15 @@ class SchemeFeedbackAdmin(admin.ModelAdmin):
     list_display = ('user', 'scheme', 'feedback', 'rating', 'created_at')
     search_fields = ('user__username', 'scheme__title', 'feedback')
     list_filter = ('created_at', 'rating')
+
+@admin.register(EducationChoice)
+class EducationChoiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_active')
+    list_filter = ('is_active',)
+    search_fields = ('name',)
+
+@admin.register(DisabilityChoice)
+class DisabilityChoiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_active')
+    list_filter = ('is_active',)
+    search_fields = ('name',)
