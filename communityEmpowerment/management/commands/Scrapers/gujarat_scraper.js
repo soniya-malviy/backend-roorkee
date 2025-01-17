@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const fs = require('fs/promises');
 const path = require('path');
 const targetDir = path.join(__dirname, '..','..','scrapedData');
-const filePath = path.join(targetDir, 'gujratschemes.json');
+const filePath = path.join(targetDir, 'gujarat.json');
 
 
 const config = {

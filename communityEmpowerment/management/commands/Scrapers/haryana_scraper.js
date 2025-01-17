@@ -57,7 +57,9 @@ async function main(){
         await browser.close()
     }
     const resultWithUUID = schemes.map((it)=>({id:uuidv4(),...it}))
-    fs.writeFileSync('haryanaSchemes.json', JSON.stringify(resultWithUUID, null, 2), 'utf-8');
+    const targetDir = path.join(__dirname, '..','..','scrapedData');
+    const filePath = path.join(targetDir, 'haryana.json');
+    fs.writeFileSync(filePath, JSON.stringify(resultWithUUID, null, 2), 'utf-8');
 
     // console.log('Data has been saved to schemes.json');
 }
