@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import (State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria
                      , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter,
-                      SchemeReport, WebsiteFeedback, Tag, UserInteraction, SchemeFeedback, UserEvent )
+                      SchemeReport, WebsiteFeedback, Tag, UserInteraction, SchemeFeedback, UserEvent, DynamicField, DynamicFieldChoice, DynamicFieldValue )
 from django.utils import timezone
 from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
@@ -302,18 +302,66 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     
 
     
+# class UserProfileSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = CustomUser
+#         fields = [
+#             'name', 'gender', 'age', 'category', 'minority', 'state_of_residence', 
+#             'disability', 'bpl_card_holder', 'occupation', 'income', 'education', 
+#             'government_employee', 'employment_status'
+#         ]
+
+#     def update(self, instance, validated_data):
+#         for attr, value in validated_data.items():
+#             setattr(instance, attr, value)
+#         instance.save()
+#         return instance
+    
 class UserProfileSerializer(serializers.ModelSerializer):
+    # Dynamic fields will be handled separately
+    dynamic_fields = serializers.SerializerMethodField()
+
     class Meta:
         model = CustomUser
         fields = [
-            'name', 'gender', 'age', 'category', 'minority', 'state_of_residence', 
-            'disability', 'bpl_card_holder', 'occupation', 'income', 'education', 
-            'government_employee', 'employment_status'
+            'id', 'username', 'email', 'name', 'dynamic_fields'
+            # 'name', 'gender', 'age', 'category', 'minority', 'state_of_residence', 
+            # 'bpl_card_holder', 'occupation', 'income', 'government_employee', 
+            # 'employment_status', 'dynamic_fields'
         ]
+        # Exclude dynamic fields from being part of standard validation
+    def get_dynamic_fields(self, obj):
+        dynamic_fields = DynamicField.objects.filter(is_active=True)
+        user_field_values = DynamicFieldValue.objects.filter(user=obj)
+        field_value_map = {fv.field.name: fv.value for fv in user_field_values}
+
+        result = []
+        for field in dynamic_fields:
+            result.append({
+                'name': field.name,
+                'type': field.field_type,
+                'is_required': field.is_required,
+                'value': field_value_map.get(field.name, None),
+                'choices': [
+                    choice.value for choice in field.choices.filter(is_active=True)
+                ] if field.field_type == 'choice' else None,
+            })
+
+        return result
 
     def update(self, instance, validated_data):
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
+        # Handle standard fields
+        static_fields = ['name']
+        for field in static_fields:
+            if field in validated_data:
+                setattr(instance, field, validated_data[field])
+
+        # Handle dynamic fields
+        dynamic_fields = validated_data.get('dynamic_field_value', {})
+        if dynamic_fields:
+            instance.dynamic_field_value = instance.dynamic_field_value or {}
+            instance.dynamic_field_value.update(dynamic_fields)
+
         instance.save()
         return instance
 
@@ -454,3 +502,81 @@ class UserEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserEvent
         fields = ['scheme', 'event_type']
+
+class DynamicFieldChoiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DynamicFieldChoice
+        fields = ['id', 'value', 'is_active']
+
+
+class DynamicFieldSerializer(serializers.ModelSerializer):
+    choices = DynamicFieldChoiceSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = DynamicField
+        fields = ['id', 'name', 'field_type', 'is_required', 'is_active', 'choices']
+
+
+class CustomUserSerializer(serializers.ModelSerializer):
+    dynamic_fields = serializers.SerializerMethodField()
+    dynamic_field_values = serializers.JSONField(write_only=True, required=False)
+
+    class Meta:
+        model = CustomUser
+        fields = ['id', 'username', 'email', 'name', 'dynamic_fields']
+
+    def get_dynamic_fields(self, obj):
+        dynamic_fields = DynamicField.objects.filter(is_active=True)
+        user_field_values = DynamicFieldValue.objects.filter(user=obj)
+        field_value_map = {fv.field.name: fv.value for fv in user_field_values}
+
+        result = []
+        for field in dynamic_fields:
+            result.append({
+                'name': field.name,
+                'type': field.field_type,
+                'is_required': field.is_required,
+                'value': field_value_map.get(field.name, None),
+                'choices': [
+                    choice.value for choice in field.choices.filter(is_active=True)
+                ] if field.field_type == 'choice' else None,
+            })
+
+        return result
+
+    def validate_dynamic_field_values(self, value):
+        dynamic_fields = {field.name: field for field in DynamicField.objects.filter(is_active=True)}
+
+        for field_name, field_value in value.items():
+            if field_name not in dynamic_fields:
+                raise serializers.ValidationError(f"Invalid field: {field_name}")
+
+            field = dynamic_fields[field_name]
+            if field.field_type == 'choice':
+                valid_choices = [choice.value for choice in field.choices.filter(is_active=True)]
+                if field_value not in valid_choices:
+                    raise serializers.ValidationError(f"Invalid choice for {field_name}: {field_value}")
+
+        return value
+
+    def create(self, validated_data):
+        dynamic_field_values = validated_data.pop('dynamic_field_values', {})
+        user = super().create(validated_data)
+
+        for field_name, field_value in dynamic_field_values.items():
+            field = DynamicField.objects.get(name=field_name)
+            DynamicFieldValue.objects.create(user=user, field=field, value=field_value)
+
+        return user
+
+    def update(self, instance, validated_data):
+        dynamic_field_values = validated_data.pop('dynamic_field_values', {})
+        user = super().update(instance, validated_data)
+
+        for field_name, field_value in dynamic_field_values.items():
+            field = DynamicField.objects.get(name=field_name)
+            dynamic_field_value, _ = DynamicFieldValue.objects.get_or_create(user=user, field=field)
+            dynamic_field_value.value = field_value
+            dynamic_field_value.save()
+
+        return user

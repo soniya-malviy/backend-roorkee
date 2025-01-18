@@ -3,6 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.filters import OrderingFilter
 from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework import serializers
 from django.utils.decorators import method_decorator
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
@@ -33,18 +34,18 @@ logger = logging.getLogger(__name__)
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
-    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,
-    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent,
-    EducationChoice, DisabilityChoice
+    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser, DynamicField,
+    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent, DynamicFieldValue
+    
 )
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
     CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
-    SaveSchemeSerializer, UserProfileSerializer, LoginSerializer, BannerSerializer, SavedFilterSerializer,
+    SaveSchemeSerializer,  LoginSerializer, BannerSerializer, SavedFilterSerializer,
     PasswordResetConfirmSerializer, PasswordResetRequestSerializer, SchemeReportSerializer, WebsiteFeedbackSerializer,
-    UserInteractionSerializer, SchemeFeedbackSerializer, UserEventSerializer
+    UserInteractionSerializer, SchemeFeedbackSerializer, UserEventSerializer, UserProfileSerializer
 )
 
 from rest_framework.exceptions import NotFound
@@ -347,15 +348,73 @@ class UserProfileView(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         user = self.get_object()
         serializer = self.get_serializer(user)
-        return Response(serializer.data)
+        response_data = serializer.data
+        dynamic_field_values = DynamicFieldValue.objects.filter(user=user, field__is_active=True)
+        dynamic_fields = {
+        value.field.name: value.value for value in dynamic_field_values
+    }
+        response_data["dynamic_fields"] = dynamic_fields
+
+        return Response(response_data)
+    
+    def update_dynamic_fields(self, user, dynamic_fields_data):
+        """
+        Handles updating dynamic field values for the user.
+        """
+        for field_name, field_value in dynamic_fields_data.items():
+            try:
+                field = DynamicField.objects.get(name=field_name, is_active=True)
+                dynamic_field_value, _ = DynamicFieldValue.objects.get_or_create(
+                    user=user, field=field
+                )
+                dynamic_field_value.value = field_value
+                dynamic_field_value.save()
+            except DynamicField.DoesNotExist:
+                raise serializers.ValidationError(f"Invalid dynamic field: {field_name}")
 
     def put(self, request, *args, **kwargs):
+        """
+        Handles updating the user profile, including both static and dynamic fields.
+        """
         user = self.get_object()
-        serializer = self.get_serializer(user, data=request.data, partial=True)
+        static_data = {key: value for key, value in request.data.items() if key != "dynamic_fields"}
+        dynamic_fields_data = request.data.get("dynamic_fields", {})
+
+        # Validate and update static fields
+        serializer = self.get_serializer(user, data=static_data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
 
+        # Validate and update dynamic fields
+        if isinstance(dynamic_fields_data, dict):
+            self.update_dynamic_fields(user, dynamic_fields_data)
+
+        # Return updated data
+        response_data = self.get_serializer(user).data
+        return Response(response_data)
+
+class AllDynamicFieldsView(generics.GenericAPIView):
+    def get(self, request, *args, **kwargs):
+        # Fetch all active dynamic fields
+        dynamic_fields = DynamicField.objects.filter(is_active=True)
+
+        # Build the response data for each dynamic field
+        dynamic_field_data = []
+        for field in dynamic_fields:
+            dynamic_field_info = {
+                'id': field.id,
+                'name': field.name,
+                'type': field.field_type,
+                'is_required': field.is_required,
+                'choices': [
+                    choice.value for choice in field.choices.filter(is_active=True)
+                ] if field.field_type == 'choice' else None,
+            }
+            dynamic_field_data.append(dynamic_field_info)
+
+        return Response({
+            "choice_fields": dynamic_field_data
+        })
 
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
@@ -561,23 +620,24 @@ class StateChoicesView(APIView):
     def get(self, request):
         return Response(CustomUser._meta.get_field('state_of_residence').choices, status=status.HTTP_200_OK)
 
-class EducationChoicesView(APIView):
-    def get(self, request):
-        active_choices = EducationChoice.objects.filter(is_active=True).values('id', 'name')
-        return Response(active_choices, status=status.HTTP_200_OK)
+# class EducationChoicesView(APIView):
+#     def get(self, request):
+#         active_choices = Choice.objects.filter(category='education', is_active=True).values('id', 'name')
+#         return Response(active_choices, status=status.HTTP_200_OK)
     
-class DisabilityChoicesView(APIView):
-    def get(self, request):
-        active_choices = DisabilityChoice.objects.filter(is_active=True).values('id', 'name')
-        return Response(active_choices, status=status.HTTP_200_OK)
+# class DisabilityChoicesView(APIView):
+#     def get(self, request):
+#         active_choices = Choice.objects.filter(category='disability', is_active=True).values('id', 'name')
+#         return Response(active_choices, status=status.HTTP_200_OK)
 
 class CategoryChoicesView(APIView):
     def get(self, request):
         return Response(CustomUser._meta.get_field('category').choices, status=status.HTTP_200_OK)
 
-class EmploymentChoicesView(APIView):
-    def get(self, request):
-        return Response(CustomUser._meta.get_field('employment_status').choices, status=status.HTTP_200_OK)
+# class EmploymentChoicesView(APIView):
+#     def get(self, request):
+#         active_choices = Choice.objects.filter(category='employment', is_active=True).values('id', 'name')
+#         return Response(active_choices, status=status.HTTP_200_OK)
 
 
 def verify_email(request, uidb64, token):

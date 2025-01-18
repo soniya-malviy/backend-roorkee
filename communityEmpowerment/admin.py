@@ -4,10 +4,10 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
-    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, DisabilityChoice,
-    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback, EducationChoice
+    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, DynamicField, DynamicFieldChoice, DynamicFieldValue, CustomUser,
+    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback,
 )
-from .forms import CustomUserCreationForm, CustomUserChangeForm
+# from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 admin.site.site_header = "Community Empowerment Portal Admin Panel"
 admin.site.site_title = "Admin Portal"
@@ -24,28 +24,28 @@ admin.site.register(Procedure)
 admin.site.register(SchemeDocument)
 admin.site.register(SchemeSponsor)
 
-class CustomUserAdmin(UserAdmin):
-    add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
-    model = CustomUser
-    list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
-    list_filter = ('is_staff', 'is_active')
-    fieldsets = (
-        (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined')}),
-    )
-    add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
-        ),
-    )
-    readonly_fields = ('date_joined',)
-    search_fields = ('username', 'email')
-    ordering = ('username',)
+# class CustomUserAdmin(UserAdmin):
+#     add_form = CustomUserCreationForm
+#     form = CustomUserChangeForm
+#     model = CustomUser
+#     list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
+#     list_filter = ('is_staff', 'is_active')
+#     fieldsets = (
+#         (None, {'fields': ('username', 'email', 'password')}),
+#         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser')}),
+#         ('Important dates', {'fields': ('last_login', 'date_joined')}),
+#     )
+#     add_fieldsets = (
+#         (None, {
+#             'classes': ('wide',),
+#             'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
+#         ),
+#     )
+#     readonly_fields = ('date_joined',)
+#     search_fields = ('username', 'email')
+#     ordering = ('username',)
 
-admin.site.register(CustomUser, CustomUserAdmin)
+# admin.site.register(CustomUser, CustomUserAdmin)
 
 @admin.register(Banner)
 class BannerAdmin(ImportExportModelAdmin):
@@ -80,15 +80,25 @@ class SchemeFeedbackAdmin(admin.ModelAdmin):
     list_display = ('user', 'scheme', 'feedback', 'rating', 'created_at')
     search_fields = ('user__username', 'scheme__title', 'feedback')
     list_filter = ('created_at', 'rating')
+    
+# @admin.register(Choice)
+# class ChoiceAdmin(admin.ModelAdmin):
+#     list_display = ('category', 'name', 'is_active')
+#     list_filter = ('category', 'is_active')  # Filter by category
+#     search_fields = ('name',)
+    
+class DynamicFieldChoiceInline(admin.TabularInline):
+    model = DynamicFieldChoice
+    extra = 1
 
-@admin.register(EducationChoice)
-class EducationChoiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'is_active')
-    list_filter = ('is_active',)
-    search_fields = ('name',)
 
-@admin.register(DisabilityChoice)
-class DisabilityChoiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'is_active')
-    list_filter = ('is_active',)
-    search_fields = ('name',)
+@admin.register(DynamicField)
+class DynamicFieldAdmin(admin.ModelAdmin):
+    list_display = ('name', 'field_type', 'is_required', 'is_active')
+    list_filter = ('field_type', 'is_active')
+    inlines = [DynamicFieldChoiceInline]
+
+
+@admin.register(DynamicFieldValue)
+class DynamicFieldValueAdmin(admin.ModelAdmin):
+    list_display = ('user', 'field', 'value')

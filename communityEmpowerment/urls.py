@@ -43,7 +43,6 @@ from .views import (
     SavedFilterListCreateView,
     GenderChoicesView,
     StateChoicesView,
-    EducationChoicesView, 
     CategoryChoicesView,
     verify_email,
     PasswordResetRequestView,
@@ -57,7 +56,7 @@ from .views import (
     SchemesByMultipleStatesAndDepartmentsAPIView,
     CurrentUserDetailView,
     ResendVerificationEmailView,
-    EmploymentChoicesView,
+    # EmploymentChoicesView,
     UserSavedSchemesFilterView,
     SchemeReportViewSet,
     WebsiteFeedbackViewSet,
@@ -68,7 +67,8 @@ from .views import (
     SchemeFeedbackCreateView,
     SchemeFeedbackListView,
     TrackEventView,
-    DisabilityChoicesView
+    AllDynamicFieldsView
+    
 
 )
 
@@ -121,10 +121,10 @@ urlpatterns = [
     path('saved_filters/<int:pk>/', SavedFilterDetailView.as_view(), name='saved_filter_detail'),
     path('choices/gender/', GenderChoicesView.as_view(), name='gender-choices'),
     path('choices/state/', StateChoicesView.as_view(), name='state-choices'),
-    path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
+    # path('choices/education/', EducationChoicesView.as_view(), name='education-choices'),
     path('choices/category/', CategoryChoicesView.as_view(), name='category-choices'),
-    path('choices/employment/', EmploymentChoicesView.as_view(), name='employment-choices'),
-    path('choices/disability/', DisabilityChoicesView.as_view(), name='disability-choices'),
+    # path('choices/employment/', EmploymentChoicesView.as_view(), name='employment-choices'),
+    # path('choices/disability/', DisabilityChoicesView.as_view(), name='disability-choices'),
     path('password-reset/', PasswordResetRequestView.as_view(), name='password_reset_request'),
     path('password-reset-confirm/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('schemes/<int:scheme_id>/benefits/', SchemeBenefitListAPIView.as_view(), name='scheme-benefits'),
@@ -145,4 +145,5 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/feedback/', SchemeFeedbackListView.as_view(), name='scheme-feedback-list'),
     path('feedback/create/', SchemeFeedbackCreateView.as_view(), name='scheme-feedback-create'),
     path('track-event/', TrackEventView.as_view(), name='track_event'),
+    path('dynamic-fields/', AllDynamicFieldsView.as_view(), name='all_dynamic_fields'),
 ]
