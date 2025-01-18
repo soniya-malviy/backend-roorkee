@@ -94,7 +94,7 @@ class DynamicFieldChoiceInline(admin.TabularInline):
 
 @admin.register(DynamicField)
 class DynamicFieldAdmin(admin.ModelAdmin):
-    list_display = ('name', 'field_type', 'is_required', 'is_active')
+    list_display = ('name', 'field_type', 'is_required', 'is_active', 'placeholder')
     list_filter = ('field_type', 'is_active')
     inlines = [DynamicFieldChoiceInline]
 

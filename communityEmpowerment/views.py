@@ -405,7 +405,10 @@ class AllDynamicFieldsView(generics.GenericAPIView):
                 'id': field.id,
                 'name': field.name,
                 'type': field.field_type,
+                'placeholder': field.placeholder,
                 'is_required': field.is_required,
+                'min_value': field.min_value,
+                'max_value': field.max_value,
                 'choices': [
                     choice.value for choice in field.choices.filter(is_active=True)
                 ] if field.field_type == 'choice' else None,

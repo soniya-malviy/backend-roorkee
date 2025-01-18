@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 import uuid
 from datetime import timedelta
 from django.conf import settings
+from django.core.exceptions import ValidationError
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -459,7 +460,16 @@ class DynamicField(models.Model):
     name = models.CharField(max_length=100, unique=True)
     field_type = models.CharField(max_length=50, choices=FIELD_TYPE_CHOICES)
     is_required = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
+    placeholder = models.CharField(max_length=255, blank=True, null=True)
+    min_value = models.IntegerField(blank=True, null=True, help_text="Minimum value for integer fields.")
+    max_value = models.IntegerField(blank=True, null=True, help_text="Maximum value for integer fields.")
+
+    def clean(self):
+        # Ensure min_value is less than max_value if both are set
+        if self.field_type == 'integer' and self.min_value is not None and self.max_value is not None:
+            if self.min_value > self.max_value:
+                raise ValidationError("Minimum value cannot be greater than the maximum value.")
 
     def __str__(self):
         return self.name
@@ -468,7 +478,7 @@ class DynamicField(models.Model):
 class DynamicFieldChoice(models.Model):
     field = models.ForeignKey(DynamicField, on_delete=models.CASCADE, related_name='choices')
     value = models.CharField(max_length=100)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.field.name} - {self.value}"
