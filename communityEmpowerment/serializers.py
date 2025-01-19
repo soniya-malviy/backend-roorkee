@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import (State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria
                      , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter,
-                      SchemeReport, WebsiteFeedback, Tag, UserInteraction, SchemeFeedback, UserEvent, DynamicField, DynamicFieldChoice, DynamicFieldValue )
+                      SchemeReport, WebsiteFeedback, Tag, UserInteraction, SchemeFeedback, UserEvent, ProfileField, ProfileFieldChoice, ProfileFieldValue )
 from django.utils import timezone
 from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
@@ -331,8 +331,8 @@ class UserProfileSerializer(serializers.ModelSerializer):
         ]
         # Exclude dynamic fields from being part of standard validation
     def get_dynamic_fields(self, obj):
-        dynamic_fields = DynamicField.objects.filter(is_active=True)
-        user_field_values = DynamicFieldValue.objects.filter(user=obj)
+        dynamic_fields = ProfileField.objects.filter(is_active=True)
+        user_field_values = ProfileFieldValue.objects.filter(user=obj)
         field_value_map = {fv.field.name: fv.value for fv in user_field_values}
 
         result = []
@@ -503,17 +503,17 @@ class UserEventSerializer(serializers.ModelSerializer):
         model = UserEvent
         fields = ['scheme', 'event_type']
 
-class DynamicFieldChoiceSerializer(serializers.ModelSerializer):
+class ProfileFieldChoiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DynamicFieldChoice
+        model = ProfileFieldChoice
         fields = ['id', 'value', 'is_active']
 
 
-class DynamicFieldSerializer(serializers.ModelSerializer):
-    choices = DynamicFieldChoiceSerializer(many=True, read_only=True)
+class ProfileFieldSerializer(serializers.ModelSerializer):
+    choices = ProfileFieldChoiceSerializer(many=True, read_only=True)
 
     class Meta:
-        model = DynamicField
+        model = ProfileField
         fields = ['id', 'name', 'field_type', 'is_required', 'is_active', 'choices']
 
 
@@ -526,8 +526,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'name', 'dynamic_fields']
 
     def get_dynamic_fields(self, obj):
-        dynamic_fields = DynamicField.objects.filter(is_active=True)
-        user_field_values = DynamicFieldValue.objects.filter(user=obj)
+        dynamic_fields = ProfileField.objects.filter(is_active=True)
+        user_field_values = ProfileFieldValue.objects.filter(user=obj)
         field_value_map = {fv.field.name: fv.value for fv in user_field_values}
 
         result = []
@@ -545,7 +545,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
         return result
 
     def validate_dynamic_field_values(self, value):
-        dynamic_fields = {field.name: field for field in DynamicField.objects.filter(is_active=True)}
+        dynamic_fields = {field.name: field for field in ProfileField.objects.filter(is_active=True)}
 
         for field_name, field_value in value.items():
             if field_name not in dynamic_fields:
@@ -564,8 +564,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
         user = super().create(validated_data)
 
         for field_name, field_value in dynamic_field_values.items():
-            field = DynamicField.objects.get(name=field_name)
-            DynamicFieldValue.objects.create(user=user, field=field, value=field_value)
+            field = ProfileField.objects.get(name=field_name)
+            ProfileFieldValue.objects.create(user=user, field=field, value=field_value)
 
         return user
 
@@ -574,8 +574,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
         user = super().update(instance, validated_data)
 
         for field_name, field_value in dynamic_field_values.items():
-            field = DynamicField.objects.get(name=field_name)
-            dynamic_field_value, _ = DynamicFieldValue.objects.get_or_create(user=user, field=field)
+            field = ProfileField.objects.get(name=field_name)
+            dynamic_field_value, _ = ProfileFieldValue.objects.get_or_create(user=user, field=field)
             dynamic_field_value.value = field_value
             dynamic_field_value.save()
 

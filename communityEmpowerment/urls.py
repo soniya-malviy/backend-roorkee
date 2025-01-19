@@ -67,7 +67,7 @@ from .views import (
     SchemeFeedbackCreateView,
     SchemeFeedbackListView,
     TrackEventView,
-    AllDynamicFieldsView
+    AllProfileFieldsView
     
 
 )
@@ -145,5 +145,5 @@ urlpatterns = [
     path('schemes/<int:scheme_id>/feedback/', SchemeFeedbackListView.as_view(), name='scheme-feedback-list'),
     path('feedback/create/', SchemeFeedbackCreateView.as_view(), name='scheme-feedback-create'),
     path('track-event/', TrackEventView.as_view(), name='track_event'),
-    path('dynamic-fields/', AllDynamicFieldsView.as_view(), name='all_dynamic_fields'),
+    path('dynamic-fields/', AllProfileFieldsView.as_view(), name='all_dynamic_fields'),
 ]

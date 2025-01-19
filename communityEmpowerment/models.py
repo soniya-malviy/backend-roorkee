@@ -447,7 +447,7 @@ def default_verification_token_expiry():
 #         return f"{self.category} - {self.name}"
 
 
-class DynamicField(models.Model):
+class ProfileField(models.Model):
     FIELD_TYPE_CHOICES = [
         ('char', 'Text'),
         ('integer', 'Integer'),
@@ -475,8 +475,8 @@ class DynamicField(models.Model):
         return self.name
 
 
-class DynamicFieldChoice(models.Model):
-    field = models.ForeignKey(DynamicField, on_delete=models.CASCADE, related_name='choices')
+class ProfileFieldChoice(models.Model):
+    field = models.ForeignKey(ProfileField, on_delete=models.CASCADE, related_name='choices')
     value = models.CharField(max_length=100)
     is_active = models.BooleanField(default=False)
 
@@ -484,9 +484,9 @@ class DynamicFieldChoice(models.Model):
         return f"{self.field.name} - {self.value}"
 
 
-class DynamicFieldValue(models.Model):
-    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='dynamic_field_values')
-    field = models.ForeignKey(DynamicField, on_delete=models.CASCADE)
+class ProfileFieldValue(models.Model):
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='profile_field_values')
+    field = models.ForeignKey(ProfileField, on_delete=models.CASCADE)
     value = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -541,7 +541,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     saved_schemes = models.ManyToManyField('Scheme', related_name='saved_by_users')
     # DETAILS BELOW
     name = models.CharField(max_length=100, blank=True, null=True)
-    dynamic_field_value = models.JSONField(blank=True, null=True)
+    profile_field_value = models.JSONField(blank=True, null=True)
     # gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], blank=True, null=True)
     # age = models.PositiveIntegerField(blank=True, null=True)
     # occupation = models.CharField(max_length=100, blank=True, null=True)

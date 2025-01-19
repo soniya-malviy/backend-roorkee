@@ -4,7 +4,7 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
-    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, DynamicField, DynamicFieldChoice, DynamicFieldValue, CustomUser,
+    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
     SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback,
 )
 # from .forms import CustomUserCreationForm, CustomUserChangeForm
@@ -87,18 +87,18 @@ class SchemeFeedbackAdmin(admin.ModelAdmin):
 #     list_filter = ('category', 'is_active')  # Filter by category
 #     search_fields = ('name',)
     
-class DynamicFieldChoiceInline(admin.TabularInline):
-    model = DynamicFieldChoice
+class ProfileFieldChoiceInline(admin.TabularInline):
+    model = ProfileFieldChoice
     extra = 1
 
 
-@admin.register(DynamicField)
-class DynamicFieldAdmin(admin.ModelAdmin):
+@admin.register(ProfileField)
+class ProfileFieldAdmin(admin.ModelAdmin):
     list_display = ('name', 'field_type', 'is_required', 'is_active', 'placeholder')
     list_filter = ('field_type', 'is_active')
-    inlines = [DynamicFieldChoiceInline]
+    inlines = [ProfileFieldChoiceInline]
 
 
-@admin.register(DynamicFieldValue)
-class DynamicFieldValueAdmin(admin.ModelAdmin):
+@admin.register(ProfileFieldValue)
+class ProfileFieldValueAdmin(admin.ModelAdmin):
     list_display = ('user', 'field', 'value')

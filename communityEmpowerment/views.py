@@ -34,8 +34,8 @@ logger = logging.getLogger(__name__)
 
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
-    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser, DynamicField,
-    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent, DynamicFieldValue
+    Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser, ProfileField,
+    Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent, ProfileFieldValue
     
 )
 from .serializers import (
@@ -349,7 +349,7 @@ class UserProfileView(generics.GenericAPIView):
         user = self.get_object()
         serializer = self.get_serializer(user)
         response_data = serializer.data
-        dynamic_field_values = DynamicFieldValue.objects.filter(user=user, field__is_active=True)
+        dynamic_field_values = ProfileFieldValue.objects.filter(user=user, field__is_active=True)
         dynamic_fields = {
         value.field.name: value.value for value in dynamic_field_values
     }
@@ -363,13 +363,13 @@ class UserProfileView(generics.GenericAPIView):
         """
         for field_name, field_value in dynamic_fields_data.items():
             try:
-                field = DynamicField.objects.get(name=field_name, is_active=True)
-                dynamic_field_value, _ = DynamicFieldValue.objects.get_or_create(
+                field = ProfileField.objects.get(name=field_name, is_active=True)
+                dynamic_field_value, _ = ProfileFieldValue.objects.get_or_create(
                     user=user, field=field
                 )
                 dynamic_field_value.value = field_value
                 dynamic_field_value.save()
-            except DynamicField.DoesNotExist:
+            except ProfileField.DoesNotExist:
                 raise serializers.ValidationError(f"Invalid dynamic field: {field_name}")
 
     def put(self, request, *args, **kwargs):
@@ -393,10 +393,10 @@ class UserProfileView(generics.GenericAPIView):
         response_data = self.get_serializer(user).data
         return Response(response_data)
 
-class AllDynamicFieldsView(generics.GenericAPIView):
+class AllProfileFieldsView(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         # Fetch all active dynamic fields
-        dynamic_fields = DynamicField.objects.filter(is_active=True)
+        dynamic_fields = ProfileField.objects.filter(is_active=True)
 
         # Build the response data for each dynamic field
         dynamic_field_data = []
