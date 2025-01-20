@@ -6,6 +6,8 @@ from django.contrib.auth import get_user_model
 import uuid
 from datetime import timedelta
 from django.conf import settings
+from django.core.exceptions import ValidationError
+import re
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -31,7 +33,19 @@ class TimeStampedModel(models.Model):
     
 # Existing models
 class State(TimeStampedModel):
-    state_name = models.CharField(max_length=255, null=True, blank=True)
+    state_name = models.CharField(max_length=255, null=False, blank=False, unique = True)
+
+    def clean(self):
+        if not self.state_name.strip():  # Disallow empty or whitespace-only names
+            raise ValidationError("State name cannot be empty or whitespace.")
+        if re.search(r'\d', self.state_name):  # Check if state_name contains any digit
+            raise ValidationError("State name cannot contain numeric characters.")
+        
+    def save(self, *args, **kwargs):
+        # Strip whitespace before saving
+        if self.state_name is not None:
+            self.state_name = self.state_name.strip().title()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "State"
@@ -43,9 +57,12 @@ class State(TimeStampedModel):
 
 
 class Department(TimeStampedModel):
-    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=True, blank=True)
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='departments', null=False, blank=False)
     department_name = models.CharField(max_length=255, null=True, blank=True)
 
+    def clean(self):
+        if re.search(r'\d', self.department_name):
+            raise ValidationError("Department name cannot contain numeric characters.")
     class Meta:
         verbose_name = "Department"
         verbose_name_plural = "Departments"
@@ -164,6 +181,10 @@ class Scheme(TimeStampedModel):
     tags = models.ManyToManyField('Tag', related_name='schemes', blank=True)  # Add this line
     benefits = models.ManyToManyField('Benefit', related_name='schemes', blank=True)
 
+    def clean(self):
+        if not self.title.strip():  # Disallow empty or whitespace-only names
+            raise ValidationError("Title name cannot be empty or whitespace.")
+        
     class Meta:
         verbose_name = "Scheme"
         verbose_name_plural = "Schemes"
@@ -187,6 +208,9 @@ class Benefit(TimeStampedModel):
 class Beneficiary(TimeStampedModel):
     beneficiary_type = models.CharField(max_length=255, null=True, blank=True)
 
+    def clean(self):
+        if re.search(r'\d', self.beneficiary_type):
+            raise ValidationError("Beneficiary cannot contain numeric characters.")
     class Meta:
         verbose_name = "Beneficiary"
         verbose_name_plural = "Beneficiaries"

@@ -1,20 +1,16 @@
 .env
 node_modules
-communityEmpowerment/migrations/
 communityEmpowerment/__pycache__/
 mysite/*
 __pycache__/
 
-communityEmpowerment/migrations/
 communityEmpowerment/__pycache__/
 mysite/__pycache__/
 
 __pycache__/
 
-communityEmpowerment/migrations/
 communityEmpowerment/__pycache__/
 
-communityEmpowerment/migrations/
 communityEmpowerment/__pycache__/
 mysite/__pycache__/
 
