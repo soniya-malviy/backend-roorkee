@@ -416,7 +416,7 @@ class AllProfileFieldsView(generics.GenericAPIView):
             dynamic_field_data.append(dynamic_field_info)
 
         return Response({
-            "choice_fields": dynamic_field_data
+            "profile_fields": dynamic_field_data
         })
 
 class LoginView(APIView):
