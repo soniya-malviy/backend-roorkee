@@ -305,8 +305,8 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_FROM = os.getenv('EMAIL_FROM')
 
-SITE_URL = "http://65.0.122.213:8000/api"
-FRONTEND_URL = "http://65.0.122.213:80"
+SITE_URL = os.getenv('SITE_URL')
+FRONTEND_URL = os.getenv('FRONTEND_URL')
 
 
 AUTH_USER_MODEL = 'communityEmpowerment.CustomUser'

@@ -1,11 +1,18 @@
 .env
+communityEmpowerment/migrations/
+myapp/migrations/
 node_modules
 communityEmpowerment/__pycache__/
 mysite/*
 __pycache__/
 
 communityEmpowerment/__pycache__/
+communityEmpowerment/migrations/
+communityEmpowerment/migrations/
+migrations
+
 mysite/__pycache__/
+*/migrations/*
 
 __pycache__/
 
