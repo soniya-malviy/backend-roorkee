@@ -5,10 +5,10 @@ from import_export.admin import ImportExportModelAdmin
 from django.contrib.auth.models import Group, Permission
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
-    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor,
-    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback
+    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
+    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback,
 )
-from .forms import CustomUserCreationForm, CustomUserChangeForm
+# from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 admin.site.site_header = "Community Empowerment Portal Admin Panel"
 admin.site.site_title = "Admin Portal"
@@ -24,6 +24,7 @@ admin.site.register(Criteria)
 admin.site.register(Procedure)
 admin.site.register(SchemeDocument)
 admin.site.register(SchemeSponsor)
+
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
@@ -46,7 +47,8 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ('username', 'email')
     ordering = ('username',)
 
-admin.site.register(CustomUser, CustomUserAdmin)
+
+# admin.site.register(CustomUser, CustomUserAdmin)
 
 @admin.register(Banner)
 class BannerAdmin(ImportExportModelAdmin):
@@ -83,4 +85,29 @@ class SchemeFeedbackAdmin(admin.ModelAdmin):
     list_filter = ('created_at', 'rating')
 
 
+
 admin.site.register(Permission)
+
+    
+# @admin.register(Choice)
+# class ChoiceAdmin(admin.ModelAdmin):
+#     list_display = ('category', 'name', 'is_active')
+#     list_filter = ('category', 'is_active')  # Filter by category
+#     search_fields = ('name',)
+    
+class ProfileFieldChoiceInline(admin.TabularInline):
+    model = ProfileFieldChoice
+    extra = 1
+
+
+@admin.register(ProfileField)
+class ProfileFieldAdmin(admin.ModelAdmin):
+    list_display = ('name', 'field_type', 'is_required', 'is_active', 'placeholder')
+    list_filter = ('field_type', 'is_active')
+    inlines = [ProfileFieldChoiceInline]
+
+
+@admin.register(ProfileFieldValue)
+class ProfileFieldValueAdmin(admin.ModelAdmin):
+    list_display = ('user', 'field', 'value')
+

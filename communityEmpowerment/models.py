@@ -453,6 +453,69 @@ class CustomUserManager(BaseUserManager):
 def default_verification_token_expiry():
     return timezone.now() + timedelta(days=1)
 
+
+# class Choice(models.Model):
+#     CATEGORY_CHOICES = [
+#         ('education', 'Education'),
+#         ('disability', 'Disability'),
+#         ('employment', 'Employment'),
+#     ]
+
+#     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
+#     name = models.CharField(max_length=100)  # The actual choice value
+#     description = models.TextField(blank=True, null=True)  # Optional field for additional details
+#     is_active = models.BooleanField(default=True)  # To allow enabling/disabling specific choices
+
+#     def __str__(self):
+#         return f"{self.category} - {self.name}"
+
+
+class ProfileField(models.Model):
+    FIELD_TYPE_CHOICES = [
+        ('char', 'Text'),
+        ('integer', 'Integer'),
+        ('boolean', 'Boolean'),
+        ('decimal', 'Decimal'),
+        ('date', 'Date'),
+        ('choice', 'Choice'),
+    ]
+
+    name = models.CharField(max_length=100, unique=True)
+    field_type = models.CharField(max_length=50, choices=FIELD_TYPE_CHOICES)
+    is_required = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
+    placeholder = models.CharField(max_length=255, blank=True, null=True)
+    min_value = models.IntegerField(blank=True, null=True, help_text="Minimum value for integer fields.")
+    max_value = models.IntegerField(blank=True, null=True, help_text="Maximum value for integer fields.")
+
+    def clean(self):
+        # Ensure min_value is less than max_value if both are set
+        if self.field_type == 'integer' and self.min_value is not None and self.max_value is not None:
+            if self.min_value > self.max_value:
+                raise ValidationError("Minimum value cannot be greater than the maximum value.")
+
+    def __str__(self):
+        return self.name
+
+
+class ProfileFieldChoice(models.Model):
+    field = models.ForeignKey(ProfileField, on_delete=models.CASCADE, related_name='choices')
+    value = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.field.name} - {self.value}"
+
+
+class ProfileFieldValue(models.Model):
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='profile_field_values')
+    field = models.ForeignKey(ProfileField, on_delete=models.CASCADE)
+    value = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.field.name}: {self.value}"
+    
+
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     CATEGORY_CHOICES = [
         ('General', 'General'),
@@ -501,18 +564,44 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     saved_schemes = models.ManyToManyField('Scheme', related_name='saved_by_users')
     # DETAILS BELOW
     name = models.CharField(max_length=100, blank=True, null=True)
-    gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], blank=True, null=True)
-    age = models.PositiveIntegerField(blank=True, null=True)
-    occupation = models.CharField(max_length=100, blank=True, null=True)
-    income = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    education = models.CharField(max_length=100, choices=[('None', 'None'), ('High School', 'High School'), ('Undergraduate', 'Undergraduate'), ('Postgraduate', 'Postgraduate'), ('Doctoral', 'Doctoral'),('Pre-primary', 'Pre-primary'), ('Secondary', 'Secondary'), ('Higher Secondary', 'Higher Secondary'), ('Diploma/Certification', 'Diploma/Certification')], blank=True, null=True)
-    employment_status = models.CharField(max_length=100, choices=[('Employed', 'Employed'), ('Self-employed', 'Business'), ('Unemployed', 'Unemployed')], blank=True, null=True)
-    government_employee = models.BooleanField(default=False)
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, blank=True, null=True)
-    minority = models.BooleanField(default=False)
-    state_of_residence = models.CharField(max_length=50, choices=STATE_CHOICES, blank=True, null=True)
-    disability = models.BooleanField(default=False)
-    bpl_card_holder = models.CharField(max_length=255, default = "NO")
+    profile_field_value = models.JSONField(blank=True, null=True)
+    # gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], blank=True, null=True)
+    # age = models.PositiveIntegerField(blank=True, null=True)
+    # occupation = models.CharField(max_length=100, blank=True, null=True)
+    # income = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    # education = models.CharField(max_length=100, choices=[('None', 'None'), ('High School', 'High School'), ('Undergraduate', 'Undergraduate'), ('Postgraduate', 'Postgraduate'), ('Doctoral', 'Doctoral'),('Pre-primary', 'Pre-primary'), ('Secondary', 'Secondary'), ('Higher Secondary', 'Higher Secondary'), ('Diploma/Certification', 'Diploma/Certification')], blank=True, null=True)
+    # education = models.ForeignKey(EducationChoice, on_delete=models.SET_NULL, blank=True, null=True)
+    # employment_status = models.CharField(max_length=100, choices=[('Employed', 'Employed'), ('Self-employed', 'Business'), ('Unemployed', 'Unemployed')], blank=True, null=True)
+    # education = models.ForeignKey(
+    #     Choice,
+    #     on_delete=models.SET_NULL,
+    #     limit_choices_to={'category': 'education'},
+    #     null=True,
+    #     blank=True,
+    #     related_name='education_choices'
+    # )
+    # disability = models.ForeignKey(
+    #     Choice,
+    #     on_delete=models.SET_NULL,
+    #     limit_choices_to={'category': 'disability'},
+    #     null=True,
+    #     blank=True,
+    #     related_name='disability_choices'
+    # )
+    # employment_status = models.ForeignKey(
+    #     Choice,
+    #     on_delete=models.SET_NULL,
+    #     limit_choices_to={'category': 'employment'},
+    #     null=True,
+    #     blank=True,
+    #     related_name='employment_choices'
+    # )
+    # government_employee = models.BooleanField(default=False)
+    # category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, blank=True, null=True)
+    # minority = models.BooleanField(default=False)
+    # state_of_residence = models.CharField(max_length=50, choices=STATE_CHOICES, blank=True, null=True)
+    # disability = models.ForeignKey(DisabilityChoice, on_delete=models.SET_NULL, blank=True, null=True)
+    # bpl_card_holder = models.CharField(max_length=255, default = "NO")
 
     is_email_verified = models.BooleanField(default=False)
     objects = CustomUserManager()
