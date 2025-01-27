@@ -1,0 +1,311 @@
+[
+    {
+        "description": "Mission Shakti",
+        "tags": [
+            "Women Empowerment"
+        ],
+        "beneficiaries": [],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Not Available",
+        "funding_pattern": "Not Available",
+        "introduced_on": "Not Available",
+        "title": "Mission Shakti",
+        "scheme_link": "https://dsw.nagaland.gov.in/mission-shakti/",
+        "criteria": [],
+        "documents": [],
+        "id": "ac96f941-bde6-44de-a33f-982b684dfaee"
+    },
+    {
+        "description": "Grants-in-aid provided to states in need of assistance from the Union's Consolidated Fund of India, with special provisions for development schemes aimed at promoting the welfare of Scheduled Tribes and raising the level of administration in scheduled areas.",
+        "tags": [
+            "grants-in-aid",
+            "scheduled tribes",
+            "development schemes",
+            "administration",
+            "consolidated fund"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Scheduled Tribes"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Central Government"
+            }
+        ],
+        "valid_upto": "",
+        "funding_pattern": "Grants-in-aid",
+        "introduced_on": "1949",
+        "title": "Grants from the Union to certain States",
+        "scheme_link": "https://dsw.nagaland.gov.in/article-2751-in-the-constitution-of-india-1949/",
+        "criteria": [],
+        "documents": [],
+        "id": "9e1c799f-38d8-4c20-bd2e-fa2d8abab2d9"
+    },
+    {
+        "description": "The objective of EMRS is to provide quality middle and high level education to Scheduled Tribe (ST) students in remote areas, not only to enable them to avail of reservation in high and professional educational courses and as jobs in government and public and private sectors but also to have access to the best opportunities in education at par with the non ST population.",
+        "tags": [
+            "Education",
+            "Residential School",
+            "Tribal Welfare",
+            "scholarship"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Scheduled Tribe (ST) students"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://dsw.nagaland.gov.in/eklvya-model-residential-school/",
+        "introduced_on": "1997-98",
+        "title": "Eklvya Model Residential school",
+        "funding_pattern": "The maintenance cost of recurring and non recurring expenditure of the schools are borne 100% by the Ministry of Tribal Affairs, Government of India under the provision of the Article 275(1) of the constitution of India.",
+        "documents": [],
+        "criteria": [],
+        "id": "157da81e-dc28-42e1-9e41-7cc8cc8823f1"
+    },
+    {
+        "description": "Grants under Article 275(1) of the Constitution of India provides financial assistance to States in need, especially for schemes promoting the welfare of Scheduled Tribes and raising the level of administration in Scheduled Areas.  The scheme covers various states with Scheduled Tribe populations. It follows a Central Sector Scheme with 100% grants to States based on their ST population percentage. Funds are released for specific projects, including Eklavya Model residential Schools. Revised guidelines were issued on 2.7.2002 and minor modifications followed in January 2008. Key features include additionality to Normal Central Assistance, project approach, micro-plan preparations for each ITDA/MADA, focus on thrust areas, provision for project management, maintenance, women's coverage, and innovative projects. Proposed activities include infrastructure improvements in sectors like education, health, and agriculture, as well as community welfare assets like residential schools and water facilities.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Scheduled Tribes"
+            }
+        ],
+        "tags": [
+            "Grants",
+            "Scheduled Tribes",
+            "Welfare",
+            "Eklavya Model Residential Schools",
+            "Article 275(1)",
+            "Constitution of India",
+            "Central Sector Scheme",
+            "Financial Assistance to States"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://dsw.nagaland.gov.in/grants-under-article-2751-of-the-constitution-of-india/",
+        "introduced_on": "2000-2001",
+        "title": "Grants under Article 275(1) of the Constitution of India",
+        "funding_pattern": "Central Sector Scheme with 100% grants to States",
+        "criteria": [],
+        "documents": [],
+        "id": "1cee6c37-5656-4377-bb00-54bad14ce4e0"
+    },
+    {
+        "description": "The scheme aims to provide financial assistance for the construction and extension of hostels for Scheduled Tribe (ST) boys and girls, including Primitive Tribal Groups, to create a conducive study environment and encourage them to pursue education.  The scheme is implemented through State Governments/UT Administrations and Central/other Universities. Hostels are constructed near educational institutions, preferably as part of the institutions or in close vicinity. They can be constructed for middle, secondary, college, university level education, and Vocational Training Centres.  Funding patterns vary based on the beneficiary (ST Boys or ST Girls) and the implementing agency.  100% central assistance is provided for ST Girls' hostels. For ST Boys' hostels, funding is on a 50:50 matching basis with state governments, except for Naxal-affected states and UT Administrations, which receive 100% central assistance. Central Universities receive 90%, while other universities receive 45% with the remaining 55% shared between the state government and the university.  Maintenance of the hostels is the responsibility of the implementing agencies.  The scheme includes provisions for barrier-free rooms and facilities for students with disabilities. Construction costs are based on State/UT PWD/CPWD schedule of rates. Preference is given to State Governments who commit to annual maintenance expenditure.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "ST boys and girls (including Primitive Tribal Groups)"
+            }
+        ],
+        "tags": [
+            "Education",
+            "Scheduled Tribes",
+            "Hostels",
+            "Central Assistance",
+            "State Governments",
+            "UT Administrations",
+            "Universities"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "Information not available in document.",
+        "scheme_link": "https://dsw.nagaland.gov.in/centrally-sponsored-scheme-of-hostels-for-st-boys-and-st-girls/",
+        "introduced_on": "The scheme for ST Girls hostels has been in operation since the 3rd Five Year Plan, while the scheme for ST Boys hostels started in 1989-90. The two schemes were merged during the 10th Five Year Plan.",
+        "title": "Centrally Sponsored Scheme of Hostels for ST Boys and ST Girls",
+        "funding_pattern": "The funding pattern varies depending on the type of hostel and the implementing agency. Hostels for ST Girls receive 100% central assistance. Hostels for ST Boys receive central assistance on a 50:50 matching basis with the State Government, except in Naxal-affected districts where 100% central assistance is provided. UT Administrations also receive 100% central assistance. Central Universities receive 90% central assistance, while other universities receive 45% central assistance, with the remaining 45% coming from the State Government and 10% from the university itself.",
+        "criteria": [],
+        "documents": [],
+        "id": "8a308aed-3305-4992-bb8e-c3ca45e40bdd"
+    },
+    {
+        "description": "Tribal welfare complex is a multi-purpose hall/enclave which can be use for different activities/purposes such as recreational parks for children and older persons, community hall, conference hall, office accommodations etc.\nFacilities at tribal complex : Conference Hall, community Hall, recreational parks, library, audio-visual room, distance education & E learning through internet facilities, games and recreational sport facilities for children and older persons, office accommodations, and other allied services.\n\nAims & Objectives:\n\nTo safeguard and preserve the identities of tribal populations by inculcating pride among the constituent groups of their rich cultural heritage and to uphold the tribal ethos.\nCreate facilities for tribal folk to showcase their indigenous artefacts, handicrafts and handloom products.\nProvide platform for the local people to display their tribal dances and native sports and other activities.\nTo provide a healthy, joyful environment for children to play, the youth and elderly members of the community to relax, read, learn and interact.\nProvide suitable opportunities for recreation and leisure so as to wean away the youth from the path of violence, immorality etc…and create a conducive atmosphere to divert the restless youth to more constructive and meaningful activities.\nFacilitate career counselling and vocational training for the tribal youth by involving the NGOs, allied departments, specialists etc, conduct workshops and seminars to enhance capacity building.\nInculcate a sense of work ethics and dignity of labour, sense of accountability and to contribute to the tribal community as a productive member with the long term view of fostering the traditional, cultural and ethical values of our tribal forbearers.\n\nActivities:\nThe following activities are proposed to be taken up at the tribal complex.\n\nDisplay of various tribal artefacts like costumes, handloom, handicrafts, tribal ornaments. Hold seminars and workshops relating to tribal heritage as well as related subjects.\nOrganise cultural programmes to showcase indigenous dances and tribal musical instruments of Nagaland including other NE States as well as other communities of the country.\nTraining in various community based activities, vocational trades, handicraft production etc. including options and career guidance for youth.\nOrganise youth camps for generation of awareness on various subjects like HIV/AIDS, drug abuse and alcoholism etc.\nFun recreational activities penny-farthing cycle, roller-skating, trampoline, pogo sticks for children and indoor games like table tennis, snooker/billiards, pool, chess etc for the older.\n‘Kids Fests’ for children where kids will have the opportunity to play games, listen to outstanding music, and participate in activities all around the park, concerts at amphitheatre and performance theatre.\nFacilitate access to the internet, interactive distance ‘e’ learning for the benefit of the youth etc.\n\nTHE DEPT OF SOCIAL WELFARE, GOVT OF NAGALAND HAS SO FAR ESTABLISHED SIX (6) NOS OF TRIBAL WELFARE COMPLEX IN THE DIFFERENT PARTS OF THE STATE.",
+        "beneficiaries": [],
+        "tags": [
+            "tribal welfare",
+            "recreational parks",
+            "community hall",
+            "conference hall",
+            "library",
+            "audio-visual room",
+            "distance education",
+            "E learning",
+            "games and sports",
+            "office accommodations",
+            "cultural heritage",
+            "artefacts",
+            "handicrafts",
+            "handloom products",
+            "tribal dances",
+            "career counselling",
+            "vocational training",
+            "capacity building",
+            "seminars",
+            "workshops"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "scheme_link": "https://dsw.nagaland.gov.in/tribal-welfare-complex/",
+        "introduced_on": "",
+        "title": "Tribal Welfare Complex",
+        "funding_pattern": "",
+        "criteria": [],
+        "documents": [],
+        "id": "97fe6fb8-9c7b-4e04-8d9c-bfc284467a88"
+    },
+    {
+        "description": "The Ministry of Social Justice and Empowerment, and the Nagaland Department of Social Welfare, offer several schemes for the differently abled, blind, and other marginalized sections. Among them, the Indira Gandhi National Disability Pension Scheme (IGNDPS) provides monthly pensions to 1276 differently abled persons. A scholarship scheme supports 208 differently abled students from Class-A to Class-VIII. Financial assistance is also given to 1625 blind individuals.  The department further facilitates loans for differently abled persons to pursue various trades and provides Grant-in-Aid to several NGOs working for the welfare of differently abled. A District Disability Rehabilitation Centre (DDRC) in Dimapur offers comprehensive rehabilitation services.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Differently abled"
+            },
+            {
+                "beneficiary_type": "Blind"
+            }
+        ],
+        "tags": [
+            "Differently abled",
+            "Blind",
+            "Pension",
+            "Scholarship",
+            "Financial Assistance",
+            "Loan",
+            "Rehabilitation",
+            "NGO Grant-in-Aid"
+        ],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Ministry of Social Justice and Empowerment"
+            },
+            {
+                "sponsor_type": "Nagaland Department of Social Welfare"
+            }
+        ],
+        "valid_upto": "N/A",
+        "scheme_link": "https://dsw.nagaland.gov.in/the-ministry-of-social-justice-and-empowerment/",
+        "funding_pattern": "State Plan and Non-Plan",
+        "title": "Social Welfare Schemes for Differently Abled and Blind in Nagaland",
+        "introduced_on": "N/A",
+        "documents": [],
+        "criteria": [],
+        "id": "69a42ae8-5ef2-45e1-aa35-6bc01d0da7d8"
+    },
+    {
+        "description": "",
+        "beneficiaries": [],
+        "tags": [
+            "Social Welfare"
+        ],
+        "procedures": [],
+        "sponsors": [],
+        "valid_upto": "",
+        "funding_pattern": "",
+        "scheme_link": "https://dsw.nagaland.gov.in/circular-notifications-nsap/",
+        "title": "",
+        "introduced_on": "",
+        "documents": [],
+        "criteria": [],
+        "id": "8b6021e6-821b-45db-90e7-7e62665d9abd"
+    },
+    {
+        "description": "List of NSAP beneficiaries district-wise for the year 2014-15",
+        "tags": [
+            "NSAP",
+            "Beneficiaries",
+            "Social Welfare",
+            "Senior Citizens"
+        ],
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Senior Citizens"
+            }
+        ],
+        "procedures": [],
+        "sponsors": [
+            {
+                "sponsor_type": "Government"
+            }
+        ],
+        "valid_upto": "Not available",
+        "funding_pattern": "Not available",
+        "introduced_on": "Not available",
+        "title": "List of NSAP Beneficiaries District-wise for the year 2014-15",
+        "scheme_link": "https://dsw.nagaland.gov.in/list-of-nsap-beneficiaries-district-wise-for-the-year-2014-15/",
+        "criteria": [],
+        "documents": [],
+        "id": "317a6180-aa9a-417e-ab91-88b105c2ad60"
+    },
+    {
+        "description": "The National Social Assistance Programme (NSAP) is a centrally sponsored scheme launched by the Government of India on August 15, 1995. It provides financial assistance to the elderly, widows, and persons with disabilities in the form of social pensions. The program aims to ensure a minimum national standard of social assistance.  The NSAP consists of four sub-schemes:\n\n1. Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Provides pensions to individuals aged 60 and above living below the poverty line.\n2. Indira Gandhi National Widow Pension Scheme (IGNWPS): Provides pensions to widows aged 40 and above living below the poverty line.\n3. Indira Gandhi National Disability Pension Scheme (IGNDPS): Provides pensions to individuals aged 18 and above with more than 80% disability living below the poverty line.\n4. National Family Benefit Scheme (NFBS): Provides a one-time lump sum assistance to bereaved households in the event of the death of the bread-winner.",
+        "beneficiaries": [
+            {
+                "beneficiary_type": "Elderly"
+            },
+            {
+                "beneficiary_type": "Widows"
+            },
+            {
+                "beneficiary_type": "Persons with Disabilities"
+            }
+        ],
+        "tags": [
+            "social assistance",
+            "pension",
+            "elderly",
+            "widows",
+            "disability",
+            "poverty",
+            "bereaved families",
+            "NSAP",
+            "IGNOAPS",
+            "IGNWPS",
+            "IGNDPS",
+            "NFBS"
+        ],
+        "procedures": [
+            {
+                "step_description": "Selection of beneficiaries by the District Level Committee headed by the Deputy Commissioner."
+            },
+            {
+                "step_description": "Approval from appropriate authority."
+            },
+            {
+                "step_description": "Disbursement of funds by the District Welfare Officer (DWO) in cash."
+            }
+        ],
+        "sponsors": [
+            {
+                "sponsor_type": "Central Government"
+            }
+        ],
+        "valid_upto": "",
+        "introduced_on": "1995-08-15",
+        "scheme_link": "https://dsw.nagaland.gov.in/about-the-national-social-assistance-programme-nsap/",
+        "title": "National Social Assistance Programme (NSAP)",
+        "funding_pattern": "Centrally Sponsored",
+        "criteria": [
+            {
+                "description": "Age 60 years and above living below poverty line (for IGNOAPS)"
+            },
+            {
+                "description": "Widows aged 40 years and above living below poverty line (for IGNWPS)"
+            },
+            {
+                "description": "Individuals aged 18 years and above with more than 80% disability and living below poverty line (for IGNDPS)"
+            },
+            {
+                "description": "Death of the bread-winner between the ages of 18 and 60 (for NFBS)"
+            }
+        ],
+        "documents": [],
+        "id": "89973e5b-fe93-4930-b548-bce181fec374"
+    }
+]

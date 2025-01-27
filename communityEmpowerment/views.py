@@ -63,7 +63,7 @@ class StateListAPIView(generics.ListAPIView):
     serializer_class = StateSerializer 
     filter_backends = [OrderingFilter]
     ordering_fields = ['created_at', 'state_name']
-    ordering = ['-created_at']
+    ordering = ['state_name']
 
 class StateSchemesListAPIView(generics.ListAPIView):
     serializer_class = SchemeSerializer

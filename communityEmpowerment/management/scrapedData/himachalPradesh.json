@@ -1,82 +1,385 @@
 [
-    {
-      "name": "स्वर्ण जयंती आश्रय योजना (Swaran Jayanti Ashray Yojna)",
-      "objective": "मकान निर्माण के लिए वित्तीय सहायता  उपलब्ध करवाना ।",
-      "assistance": "नये मकान निर्माण के लिए 1,50000/-रू0",
-      "eligibility": "अनुसूचित जाति, अनुसूचित जन-जाति, अन्य पिछड़े वर्गों, से सम्बन्धित हिमाचल प्रदेश के स्थाई निवासी जिनकी वार्षिक आय 50,000/- रू0 से अधिक न हो तथा जिनके नाम राजस्व रिकार्ड में मकान बनाने हेतु भूमि उपलब्ध हो तथा जिनके पास अपना मकान न हो।",
-      "process": "पात्र व्यक्ति निर्धारित प्रपत्र पर आवेदन कर सकता है, जिसके साथ वार्षिक आय प्रमाण-पत्र, जाति प्रमाण पत्र, हिमाचली प्रमाण पत्र कार्यकारी दण्डाधिकारी से जारी किया गया हो तथा जिस भूमि पर मकान बनाना प्रस्तावित है की जमाबन्दी नकल व ततीमा प्रस्तुत करना अनिवार्य है व ग्राम सभा का प्रस्ताव।",
-      "contactOfficer": "सम्बन्धित जिला कल्याण अधिकारी/तहसील कल्याण अधिकारी",
-      "formDownloadLink": "http://esomsa.hp.gov.in/sites/default/files/Swarn%20Jayanti%20Ashray%20Yojna.pdf",
-      "applyOnlineLink": "https://kalyan.hp.gov.in/"
-    },
-    {
-      "name": "अनुसूचित जाति /जनजाति/अन्य पिछड़ा वर्ग/अल्प संख्यक वर्ग/एकल नारी/विधवा एवं विशेष रूप से सक्षम, से सम्बन्धित अभ्यार्थियों को कम्पयूटर उपयोग व समवर्गीय क्रियाकलापो  में प्रशिक्षण एवं दक्षता योजना\n\n(Training and Proficiency in Computer Applications & allied activities to the candidates belonging to Scheduled Caste/Scheduled Tribe/Other Backward Classes and Minorities /Single Woman/Widow & Person with Disabilities)",
-      "objective": "अनुसूचित जाति/जनजाति/अन्य पिछड़ा वर्ग, अल्प संख्यक,विशेष रूप से सक्षम,विधवा,एकल नारी से सम्बन्धित अभ्यार्थियों को मान्यता प्राप्त संस्थानों से एक वर्ष की अवधि के कम्पयूटर उपयोग व समवर्गीय क्रियाकलापो  में प्रशिक्षण दिलाना ताकि वे सरकारी/निजी क्षेत्रा में नौकरी हेतु सक्षम बन सकें।",
-      "assistance": "प्रशिक्षण फीस 1350/- रू0 प्रति माह तक(1500/- रू0 (विशेष रूप से सक्षम के लिये) प्रशिक्षण के दौरान 1000/- रू0 प्रतिमाह छात्रावृति (विशेष रूप से सक्षम के लिए 1200/- रू0 प्रति माह) प्रशिक्षण उपरान्त 6 माह तक दक्षता अवधि के दौरान 1500/- रू0 प्रति माह छात्रावृति (विशेष रूप से सक्षम के लिये 1800/- प्रति माह)",
-      "eligibility": "अनुसूचित जाति/जनजाति/अन्य पिछड़ा वर्ग व अल्प संख्यको से सम्बन्धित हिमाचल प्रदेश के स्थाई निवासी जिनकी आयु सीमा 18 वर्ष से  35 वर्ष  के मध्य हो तथा  बी0पी0एल0 परिवार से सम्बन्धित हों,  कम्प्यूटर प्रशिक्षण हेतु निर्धारित न्यूनतम शैक्षणिक योग्यता रखते हो। बी0पी0एल0 के उम्मीदवार न मिलने की स्थिति में वे उम्मीदवार जिनके परिवार की वार्षिक आय 2,00,000/- रूपये से कम हो पात्रा होंगे।",
-      "process": "समाचार पत्रों में विज्ञापन के 30 दिनो के भीतर उम्मीदवार को  सम्बन्धित जिला कल्याण अधिकारी को वांछित दस्तावेज सहित आवेदन करना होगा।",
-      "contactOfficer": "जिला कल्याण अधिकारी/ तहसील कल्याण अधिकारी।",
-      "formDownloadLink": null,
-      "applyOnlineLink": null
-    },
-    {
-      "name": "अंतरजातीय विवाह पुरस्कार (Award for Inter-Caste Marriage Award)",
-      "objective": null,
-      "assistance": "अन्य जातियों के युवक/युवती को अनुसूचित जाति के युवक/युवती के साथ विवाह करने पर 50,000/-रू0 अथवा समय - समय  पर सरकार द्वारा निर्धारित पुरस्कार राशि स्वीकृृत की जाएगी ।",
-      "eligibility": "अंतरजातीय विवाह पुरस्कार प्राप्त करने के लिए अन्य जातियों के निम्नलिखित व्यक्ति पात्र होंगेः-\n\nप्रार्थी हिमाचल प्रदेश के स्थाई निवासी हो। दम्पति की आयु 50 वर्ष से अधिक न हो। विवाह उचित अधिनियम/नियम के अन्तर्गत पंजीकृत हुआ हो। प्रार्थी द्वारा इससे पहले अंतरजातीय विवाह पुरस्कार प्राप्त न किया हो।",
-      "process": "इस योजना के अन्तर्गत पुरस्कार राशि प्राप्त करने के लिए पात्र दम्पति को निर्धारित प्रार्थना पत्र पर निम्नलिखित दस्तावेजों सहित सम्बन्धित पंचायत/नगर निकायों के माध्यम से सम्बन्धित तहसील कल्याण अधिकारी/ जिला कल्याण अधिकारी को प्रस्तुत करना । \n\nदम्पति का आयु प्रमाण-पत्र। दम्पति को जाति प्रमाण पत्र । हिमाचली प्रमाण पत्र जो कार्यकारी दण्डाधिकारी से जारी हुआ हो। विवाह पंजीकरण अधिकारी से विवाह पंजीकरण प्रमाण पत्र प्रस्तुत करना अनिवार्य है । दम्पति के फोटो।",
-      "contactOfficer": "जिला कल्याण अधिकारी/ तहसील कल्याण अधिकारी।",
-      "formDownloadLink": "http://esomsa.hp.gov.in/sites/default/files/Inter%20Caste%20%20Marriage%20Form_0.pdf",
-      "applyOnlineLink": null
-    },
-    {
-      "name": "अत्याचार से पीड़ित अनुसूचित जाति व अनुसूचित जनजाति के व्यक्तियों को राहत (Compensation to  victims of atrocities belonging to SCs/STs)",
-      "objective": null,
-      "assistance": "85,000/-रू0 से लेकर 8,25,000/- रू0 तक",
-      "eligibility": "अनुसूचित जाति/जनजाति के व्यक्ति जो जातीय भेदभाव के कारण अत्याचार से पीड़ित हों तथा अनुसूचित जाति/जनजाति (अत्याचार निवारण) अधिनियम 1989 की धारा 3  के अन्तर्गत पुलिस में मामला दर्ज हो।",
-      "process": "घटना  के तुरन्त बाद प्रभावित/पीड़ित व्यक्ति  को किसी भी पुलिस थाना में प्रथम सूचना रिर्पोट दर्ज करवानी होगी। जिला प्रशासन द्वारा पुलिस से प्रथम सूचना रिर्पोटप्राप्त होने पर राहत राशि दी जाती है ।",
-      "contactOfficer": "जिला कल्याण अधिकारी/ तहसील कल्याण अधिकारी।",
-      "formDownloadLink": null,
-      "applyOnlineLink": null
-    },
-    {
-      "name": "हिमाचल प्रदेश अनुसूचित जाति/जन जाति विकास निगम की योजनाएं (Schemes of H.P. Scheduled Castes/ Scheduled Tribes Development Corporation)",
-      "objective": "अनुसूचित जाति एवं अनुसूचित जनजाति के परिवारों की आर्थिक स्थिति में सुधार लाने हेतु उनके कारोबार को बढ़ाने तथा अन्य स्वयं रोजगार धन्घे स्थापित करने हेतु प्रशिक्षण तथा ऋण उपलब्ध करवाना।",
-      "assistance": null,
-      "eligibility": "पात्र व्यक्ति को अपना आवेदन निर्धारित प्रपत्र पर जाति प्रमाण पत्र, हिमाचली प्रमाण पत्र जो कार्यकारी दण्डाधिकारी सेे जारी किया हो, सहित प्रस्तुत करना अनिवार्य है।",
-      "process": "पात्र व्यक्ति निर्धारित प्रपत्र पर आवेदन कर सकता है, जिसके साथ वार्षिक आय प्रमाण-पत्र, जाति प्रमाण पत्र, हिमाचली प्रमाण पत्रा कार्यकारी दण्डाधिकारी से जारी किया गया हो तथा जिस भूमि पर मकान बनाना प्रस्तावित है की जमाबन्दी नकल व ततीमा प्रस्तुत करना अनिवार्य है व ग्राम सभा का प्रस्ताव।",
-      "contactOfficer": "प्रबन्ध निदेशक हि0प्र0 अनुसूचित जाति/जन जाति विकास निगम  सोलन, सम्बन्धित निगम के  जिला के जिला प्रबन्धक।",
-      "formDownloadLink": "http://himachalservices.nic.in/hpscstdc/DownLoadFormsEng.htm",
-      "applyOnlineLink": null
-    },
-    {
-      "name": "हिमाचल प्रदेश पिछड़ा वर्ग वित्त एवं विकास निगम की योजनाएं(Schemes of H.P. Backward Classes Finance & Develpoment Corporation)",
-      "objective": "गरीबी रेखा से नीचे रह रहे अधिसूचित पिछडे़ वर्गोे के व्यक्तियों का सामाजिक, शैक्षणिक एवं आर्थिक उत्थान करना ।",
-      "assistance": "कृषि, दस्तकारी, पैतृक व्यवसाय, लघु तथा कुटीर उद्योग , परिवहन सेवाओं इत्यादि के क्षेत्रा में विभिन्न परियोजनाओं हेतु 50,000/-रू0 से 5.00 लाख रू0 तक 6 प्रतिशत ब्याज की दर से  तथा 5,00 लाख रू0 से ऊपर पर  7 प्रतिशत की दर से  ऋण उपलब्ध करवाये जाते हैं। स्वर्णिमा योजना के तहत पिछडे वर्गो की गरीबी रेखा से नीचे रह रही महिलाआंे को स्ंवय  रोजगार हेतु 5 प्रतिशत ब्याज की दर से ऋण उपलब्ध करवाये जाते है। उच्च शिक्षा हेतु 75,000/- रू तक  ब्याज मुक्त ऋण  ऐसे छात्रा/ छात्राआंे, जिन के परिवार की वार्षिक आय 98,000/- रू0 से कम हो, को उपलब्ध करवाए जाते है । तकनीकी एवं व्यवसायिक शिक्षा हेतु 5.00 लाख रू तक लड़कों  के लिये  ऋण 4 प्रतिशत ब्याज  दर पर और लड़कियों के लिये 350 प्रतिशत ब्याज दर पर ऋण  उपलब्ध करवाए जाते है ।",
-      "eligibility": "18 से 55 वर्ष के आयु के पिछडे़ वर्गो  के ग्रामीण क्षेत्रों में रहने वाले व्यक्ति जिनकी वार्षिक आय 98,000/-तथा शहरी क्षेत्रो में रहने वाले व्यक्ति जिनकी वार्षिक आय 1,20,000/-रू0 से कम हो ।",
-      "process": "पात्र व्यक्ति को अपना आवेदन निर्धारित प्रपत्र पर जाति प्रमाण पत्र, आय प्रमाण पत्र, आयु प्रमाण पत्र तथा हिमाचली प्रमाण पत्र जो कार्यकारी दण्डाधिकारी ने जारी किया हो सहित प्रस्तुत करना अनिवार्य हैं ।",
-      "contactOfficer": "प्रबन्ध निदेशक, हिमाचल प्रदेश पिछड़ा वर्ग वित्त एवं विकास निगम कांगडा /सम्बन्धित  जिला कल्याण अधिकारी/तहसील कल्याण अधिकारी ।",
-      "formDownloadLink": "http://himachalservices.nic.in/hbcfdc/forms.htm",
-      "applyOnlineLink": null
-    },
-    {
-      "name": "हिमाचल प्रदेश अल्प संख्यक वित्त एवं विकास निगम की योजनाएं(Schemes of H.P. Minorities Finance & Development Corporation)",
-      "objective": "प्रदेश के गरीबी रेखा के नीचे रह रहे अल्प-संख्यक वर्ग के लोगों का सामाजिक , शैक्षणिक एवं आर्थिक उत्थान करना।",
-      "assistance": "5.00 लाख रू0 तक 6 प्रतिशत ब्याज दर पर 5 वर्ष के लिए स्वरोजगार हेतु ऋण दिये जाते है।\nव्यवसायिक एवं तकनीकी शिक्षा जैसेः- जे0 बी0 टी0, नर्सिग, होटल मैनेजमैंट,    एम0बी0 ए0, एम0 बी0 बी0 एस0,  इंजिनियरिंग , एल0 एल0 बी0 तथा बी0 एड0  इत्यादि हेतु ऋण 10,00 लाख रू0 तक 3 प्रतिशत ब्याज दर पर दिये जाते है। आवेदक  की आयु 16 वर्ष से 32 बर्ष के मध्य होनी चाहिए।",
-      "eligibility": "18 वर्ष से 55 वर्ष की आयु वर्ग के अल्प संख्यक समुदाय से सम्बन्धित व्यक्ति (सिख , मुस्लिम , ईसाइ , बौद्ध, जैन व पारसी) जिनकी वार्षिक आय 98.000/- रू0 (ग्रामीण क्षेत्रा ) तथा 1.20.000/-रू0 (शहरी क्षेत्रा) से कम हो।",
-      "process": "पात्र व्यक्ति को अपना आवेदन निर्धारित प्रपत्र पर जाति प्रमाण पत्र, आय प्रमाण पत्र, आयु प्रमाण पत्र तथा हिमाचली प्रमाण पत्र जो कार्यकारी दण्डाधिकारी ने जारी किया हो सहित प्रस्तुत करना अनिवार्य  है।",
-      "contactOfficer": "प्रबन्ध निदेशक , हिमाचल प्रदेश अल्प संख्यक वित्त एवं विकास निगम  शिमला / सम्बन्धित  जिला कल्याण अधिकारी / तहसील कल्याण अधिकारी ।",
-      "formDownloadLink": "http://minority.hp.gov.in/",
-      "applyOnlineLink": null
-    },
-    {
-      "name": "हिमाचल प्रदेश अन्य पिछड़ा वर्ग आयोग (H.P. Backward Classes Commission)",
-      "objective": null,
-      "assistance": null,
-      "eligibility": null,
-      "process": null,
-      "contactOfficer": "निदेशक, अनुसूचित जाति, अन्य पिछड़ा वर्ग, अल्पसंख्यक एवं विशेष रूप से सक्षम का सशक्तिकरण हिमाचल प्रदेश।",
-      "formDownloadLink": "http://esomsa.hp.gov.in/sites/default/files/Civil%20Services%20Coaching%20Assistance.pdf",
-      "applyOnlineLink": null
-    }
-  ]
+  {
+      "description": "Provides financial assistance for house construction.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Caste"
+          },
+          {
+              "beneficiary_type": "Scheduled Tribe"
+          },
+          {
+              "beneficiary_type": "Other Backward Classes"
+          }
+      ],
+      "tags": [
+          "house construction",
+          "financial assistance",
+          "scheduled caste",
+          "scheduled tribe",
+          "other backward classes",
+          "himachal pradesh"
+      ],
+      "procedures": [
+          {
+              "step_description": "Eligible individuals can apply using the prescribed form."
+          },
+          {
+              "step_description": "Required documents include annual income certificate, caste certificate, Himachali certificate issued by Executive Magistrate, land ownership document, and Gram Sabha resolution."
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "introduced_on": "",
+      "title": "स्वर्ण जयंती आश्रय योजना (Swaran Jayanti Ashray Yojna)",
+      "funding_pattern": "₹1,50,000 for new house construction",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "Permanent resident of Himachal Pradesh"
+          },
+          {
+              "description": "Annual income not exceeding ₹50,000"
+          },
+          {
+              "description": "Ownership of land for house construction"
+          },
+          {
+              "description": "No existing house ownership"
+          }
+      ],
+      "id": "414d2e51-4a00-4e0d-a1de-4bd1533d43ce"
+  },
+  {
+      "description": "This scheme aims to provide training and proficiency in computer applications and allied activities to candidates belonging to Scheduled Caste/Scheduled Tribe/Other Backward Classes, Minorities, Persons with Disabilities, Widows, and Single Women.  The training will be imparted by recognized institutions for a duration of one year, enabling them to become employable in government/private sectors.",
+      "tags": [
+          "computer training",
+          "skill development",
+          "scheduled caste",
+          "scheduled tribe",
+          "other backward classes",
+          "minorities",
+          "person with disabilities",
+          "widow",
+          "single woman",
+          "BPL",
+          "Himachal Pradesh"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Caste"
+          },
+          {
+              "beneficiary_type": "Scheduled Tribe"
+          },
+          {
+              "beneficiary_type": "Other Backward Classes"
+          },
+          {
+              "beneficiary_type": "Minorities"
+          },
+          {
+              "beneficiary_type": "Single Woman"
+          },
+          {
+              "beneficiary_type": "Widow"
+          },
+          {
+              "beneficiary_type": "Person with Disabilities"
+          }
+      ],
+      "procedures": [
+          {
+              "step_description": "Candidate needs to apply to the concerned District Welfare Officer along with required documents within 30 days of advertisement in newspapers."
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "Training fees up to Rs. 1350/- per month (Rs. 1500/- for Person with Disabilities). Stipend of Rs. 1000/- per month during training (Rs. 1200/- per month for Person with Disabilities). Stipend of Rs. 1500/- per month for 6 months post-training during proficiency period (Rs. 1800/- per month for Person with Disabilities).",
+      "introduced_on": "",
+      "title": "Training and Proficiency in Computer Applications & allied activities to the candidates belonging to Scheduled Caste/Scheduled Tribe/Other Backward Classes and Minorities /Single Woman/Widow & Person with Disabilities",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "Applicant must be a permanent resident of Himachal Pradesh."
+          },
+          {
+              "description": "Applicant must belong to Scheduled Caste/Scheduled Tribe/Other Backward Classes and Minorities."
+          },
+          {
+              "description": "Applicant's age must be between 18 and 35 years."
+          },
+          {
+              "description": "Applicant must belong to a BPL family. In case of non-availability of BPL candidates, those with an annual family income less than Rs. 2,00,000/- will be eligible."
+          },
+          {
+              "description": "Applicant must possess the minimum educational qualification prescribed for computer training."
+          }
+      ],
+      "id": "a62a413f-99f2-459a-a5fc-f4e4a6af16df"
+  },
+  {
+      "description": "Provides a financial reward to couples where one partner belongs to a Scheduled Caste and the other belongs to a different caste.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Other Castes"
+          },
+          {
+              "beneficiary_type": "Scheduled Castes"
+          }
+      ],
+      "tags": [
+          "Inter-caste Marriage",
+          "Financial Assistance",
+          "Social Welfare",
+          "Marriage Incentive",
+          "Scheduled Castes"
+      ],
+      "procedures": [
+          {
+              "step_description": "Apply through the concerned Panchayat/Municipalities along with the required documents."
+          }
+      ],
+      "sponsors": [
+          {
+              "sponsor_type": "Government of Himachal Pradesh"
+          }
+      ],
+      "valid_upto": "",
+      "funding_pattern": "INR 50,000 or the amount fixed by the government from time to time.",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "title": "अंतरजातीय विवाह पुरस्कार (Award for Inter-Caste Marriage Award)",
+      "introduced_on": "",
+      "documents": [
+          "Age proof of the couple",
+          "Caste certificate of both partners",
+          "Himachali Bonafide Certificate issued by Executive Magistrate",
+          "Marriage registration certificate",
+          "Photos of the couple"
+      ],
+      "criteria": [
+          {
+              "description": "Applicant must be a permanent resident of Himachal Pradesh."
+          },
+          {
+              "description": "The couple should not be older than 50 years."
+          },
+          {
+              "description": "Marriage should be registered under the relevant Act/Rules."
+          },
+          {
+              "description": "The applicant should not have previously received this award."
+          }
+      ],
+      "id": "3de65578-7d99-4961-a9c0-e685049223bc"
+  },
+  {
+      "description": "Provides relief and compensation to individuals belonging to Scheduled Castes (SCs) and Scheduled Tribes (STs) who are victims of atrocities.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Individuals belonging to Scheduled Castes (SCs) and Scheduled Tribes (STs) who are victims of atrocities."
+          }
+      ],
+      "tags": [
+          "SC",
+          "ST",
+          "atrocities",
+          "compensation",
+          "relief",
+          "caste discrimination",
+          "prevention of atrocities act"
+      ],
+      "procedures": [
+          {
+              "step_description": "Immediately after the incident, the affected/victim person must file a First Information Report (FIR) at any police station."
+          },
+          {
+              "step_description": "The district administration provides relief amount upon receiving the FIR from the police."
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "introduced_on": "Not Available",
+      "funding_pattern": "Compensation ranges from ₹85,000 to ₹8,25,000.",
+      "title": "Compensation to victims of atrocities belonging to SCs/STs",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "criteria": [
+          {
+              "description": "The victim must belong to a Scheduled Caste (SC) or Scheduled Tribe (ST)."
+          },
+          {
+              "description": "The victim must have suffered atrocities due to caste discrimination."
+          },
+          {
+              "description": "A case must be registered with the police under Section 3 of the Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, 1989."
+          }
+      ],
+      "documents": [],
+      "id": "7301560e-9054-40e4-b8fd-9599795b0659"
+  },
+  {
+      "description": "अनुसूचित जाति एवं अनुसूचित जनजाति के परिवारों की आर्थिक स्थिति में सुधार लाने हेतु उनके कारोबार को बढ़ाने तथा अन्य स्वयं रोजगार धन्घे स्थापित करने हेतु प्रशिक्षण तथा ऋण उपलब्ध करवाना।",
+      "tags": [
+          "Loan",
+          "Training",
+          "Self-employment",
+          "Economic Development"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Scheduled Castes"
+          },
+          {
+              "beneficiary_type": "Scheduled Tribes"
+          }
+      ],
+      "procedures": [
+          {
+              "step_description": "पात्र व्यक्ति निर्धारित प्रपत्र पर आवेदन कर सकता है, जिसके साथ वार्षिक आय प्रमाण-पत्र, जाति प्रमाण पत्र, हिमाचली प्रमाण पत्रा कार्यकारी दण्डाधिकारी से जारी किया गया हो तथा जिस भूमि पर मकान बनाना प्रस्तावित है की जमाबन्दी नकल व ततीमा प्रस्तुत करना अनिवार्य है व ग्राम सभा का प्रस्ताव।"
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "introduced_on": "Not Available",
+      "title": "हिमाचल प्रदेश अनुसूचित जाति/जन जाति विकास निगम की योजनाएं (Schemes of H.P. Scheduled Castes/ Scheduled Tribes Development Corporation)",
+      "funding_pattern": "Loan",
+      "documents": [],
+      "criteria": [
+          {
+              "description": "पात्र व्यक्ति को अपना आवेदन निर्धारित प्रपत्र पर जाति प्रमाण पत्र, हिमाचली प्रमाण पत्र जो कार्यकारी दण्डाधिकारी सेे जारी किया हो, सहित प्रस्तुत करना अनिवार्य है।"
+          }
+      ],
+      "id": "cf41e867-d56d-465b-9768-cd2d7c6de69e"
+  },
+  {
+      "description": "This scheme aims to uplift the social, educational, and economic status of individuals belonging to Scheduled Backward Classes living below the poverty line. It provides loans for various projects in agriculture, handicrafts, traditional occupations, small and cottage industries, transport services, etc., at interest rates of 6% for loans up to ₹5 lakh and 7% for loans above ₹5 lakh. Under the Swarna Jayanti Swarojgar Yojana, women from backward classes living below the poverty line can avail loans for self-employment at a 5% interest rate. Interest-free loans up to ₹75,000 are provided for higher education to students whose family income is less than ₹98,000. Loans up to ₹5 lakh are available for technical and vocational education at 4% interest for boys and 3.5% for girls.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Individuals below the poverty line belonging to Scheduled Backward Classes"
+          }
+      ],
+      "tags": [
+          "Scheduled Backward Classes",
+          "Poverty Upliftment",
+          "Education Loan",
+          "Self-Employment",
+          "Loan Scheme",
+          "Himachal Pradesh"
+      ],
+      "procedures": [
+          {
+              "step_description": "Submit the application form along with the required documents."
+          }
+      ],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "introduced_on": "Not Available",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "title": "Schemes of H.P. Backward Classes Finance & Develpoment Corporation",
+      "funding_pattern": "Loan based",
+      "criteria": [
+          {
+              "description": "Age between 18 and 55 years."
+          },
+          {
+              "description": "Belonging to Scheduled Backward Classes."
+          },
+          {
+              "description": "Annual income less than ₹98,000 for rural areas and ₹1,20,000 for urban areas."
+          }
+      ],
+      "documents": [
+          "Caste Certificate",
+          "Income Certificate",
+          "Age Certificate",
+          "Domicile Certificate issued by Executive Magistrate"
+      ],
+      "id": "be80b587-bd91-428d-818e-b2a7a5909a31"
+  },
+  {
+      "description": "This scheme aims to uplift the socio-economic status of minorities in Himachal Pradesh living below the poverty line by providing financial assistance for self-employment and professional/technical education.",
+      "tags": [
+          "minority welfare",
+          "financial assistance",
+          "education",
+          "self-employment",
+          "loan"
+      ],
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Individuals belonging to minority communities (Sikh, Muslim, Christian, Buddhist, Jain, and Parsi)"
+          }
+      ],
+      "procedures": [
+          {
+              "step_description": "Eligible individuals need to submit an application in the prescribed format along with required documents to the concerned authorities."
+          }
+      ],
+      "sponsors": [
+          {
+              "sponsor_type": "Himachal Pradesh Minorities Finance & Development Corporation"
+          }
+      ],
+      "valid_upto": "",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "funding_pattern": "Loans up to Rs. 5 lakhs at 6% interest for 5 years for self-employment. Loans up to Rs. 10 lakhs at 3% interest for professional/technical education (JBT, Nursing, Hotel Management, MBA, MBBS, Engineering, LLB, B.Ed, etc.).",
+      "title": "हिमाचल प्रदेश अल्प संख्यक वित्त एवं विकास निगम की योजनाएं(Schemes of H.P. Minorities Finance & Development Corporation)",
+      "introduced_on": "",
+      "documents": [
+          "Caste certificate",
+          "Income certificate",
+          "Age certificate",
+          "Domicile certificate issued by Executive Magistrate"
+      ],
+      "criteria": [
+          {
+              "description": "Age between 18 and 55 years."
+          },
+          {
+              "description": "Annual income less than Rs. 98,000 (rural areas) or Rs. 1,20,000 (urban areas)."
+          }
+      ],
+      "id": "36e4a699-6627-40a3-94ec-a74ded3d9128"
+  },
+  {
+      "description": "Provides assistance and support to Other Backward Classes in Himachal Pradesh.",
+      "beneficiaries": [
+          {
+              "beneficiary_type": "Other Backward Classes"
+          }
+      ],
+      "tags": [
+          "OBC",
+          "Himachal Pradesh",
+          "Backward Classes"
+      ],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "Not Available",
+      "funding_pattern": "Not Available",
+      "introduced_on": "Not Available",
+      "title": "हिमाचल प्रदेश अन्य पिछड़ा वर्ग आयोग (H.P. Backward Classes Commission)",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "criteria": [],
+      "documents": [],
+      "id": "77f402ba-7da9-41d2-bda7-aa769334867c"
+  },
+  {
+      "description": "",
+      "tags": [],
+      "beneficiaries": [],
+      "procedures": [],
+      "sponsors": [],
+      "valid_upto": "",
+      "funding_pattern": "",
+      "scheme_link": "http://esomsa.hp.gov.in/?q=schemes-3",
+      "title": "1",
+      "introduced_on": "",
+      "documents": [],
+      "criteria": [],
+      "id": "1420904f-47a4-42d1-8a2a-c5267bc9e413"
+  }
+]
