@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
+from django.contrib.auth.models import Group, Permission
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
@@ -24,26 +25,28 @@ admin.site.register(Procedure)
 admin.site.register(SchemeDocument)
 admin.site.register(SchemeSponsor)
 
-# class CustomUserAdmin(UserAdmin):
-#     add_form = CustomUserCreationForm
-#     form = CustomUserChangeForm
-#     model = CustomUser
-#     list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
-#     list_filter = ('is_staff', 'is_active')
-#     fieldsets = (
-#         (None, {'fields': ('username', 'email', 'password')}),
-#         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser')}),
-#         ('Important dates', {'fields': ('last_login', 'date_joined')}),
-#     )
-#     add_fieldsets = (
-#         (None, {
-#             'classes': ('wide',),
-#             'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
-#         ),
-#     )
-#     readonly_fields = ('date_joined',)
-#     search_fields = ('username', 'email')
-#     ordering = ('username',)
+
+class CustomUserAdmin(UserAdmin):
+    add_form = CustomUserCreationForm
+    form = CustomUserChangeForm
+    model = CustomUser
+    list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
+    list_filter = ('is_staff', 'is_active','groups')
+    fieldsets = (
+        (None, {'fields': ('username', 'email', 'password')}),
+        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser','user_permissions', 'groups')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
+        ),
+    )
+    readonly_fields = ('date_joined',)
+    search_fields = ('username', 'email')
+    ordering = ('username',)
+
 
 # admin.site.register(CustomUser, CustomUserAdmin)
 
@@ -80,6 +83,11 @@ class SchemeFeedbackAdmin(admin.ModelAdmin):
     list_display = ('user', 'scheme', 'feedback', 'rating', 'created_at')
     search_fields = ('user__username', 'scheme__title', 'feedback')
     list_filter = ('created_at', 'rating')
+
+
+
+admin.site.register(Permission)
+
     
 # @admin.register(Choice)
 # class ChoiceAdmin(admin.ModelAdmin):
@@ -102,3 +110,4 @@ class ProfileFieldAdmin(admin.ModelAdmin):
 @admin.register(ProfileFieldValue)
 class ProfileFieldValueAdmin(admin.ModelAdmin):
     list_display = ('user', 'field', 'value')
+
