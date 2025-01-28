@@ -4,7 +4,7 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from django.contrib.auth.models import Group, Permission
 from .models import (
-    State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary,
+    State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, 
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
     SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback,
 )
@@ -26,26 +26,26 @@ admin.site.register(SchemeDocument)
 admin.site.register(SchemeSponsor)
 
 
-class CustomUserAdmin(UserAdmin):
-    add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
-    model = CustomUser
-    list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
-    list_filter = ('is_staff', 'is_active','groups')
-    fieldsets = (
-        (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser','user_permissions', 'groups')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined')}),
-    )
-    add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
-        ),
-    )
-    readonly_fields = ('date_joined',)
-    search_fields = ('username', 'email')
-    ordering = ('username',)
+# class CustomUserAdmin(UserAdmin):
+#     add_form = CustomUserCreationForm
+#     form = CustomUserChangeForm
+#     model = CustomUser
+#     list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
+#     list_filter = ('is_staff', 'is_active','groups')
+#     fieldsets = (
+#         (None, {'fields': ('username', 'email', 'password')}),
+#         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser','user_permissions', 'groups')}),
+#         ('Important dates', {'fields': ('last_login', 'date_joined')}),
+#     )
+#     add_fieldsets = (
+#         (None, {
+#             'classes': ('wide',),
+#             'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
+#         ),
+#     )
+#     readonly_fields = ('date_joined',)
+#     search_fields = ('username', 'email')
+#     ordering = ('username',)
 
 
 # admin.site.register(CustomUser, CustomUserAdmin)
@@ -97,17 +97,66 @@ admin.site.register(Permission)
     
 class ProfileFieldChoiceInline(admin.TabularInline):
     model = ProfileFieldChoice
-    extra = 1
+    extra = 0
+    fields = ('value', 'is_active')
+    readonly_fields = ('value',)
+    can_delete = False
+    def has_add_permission(self, request, obj=None):
+        """Prevent adding new choices inline."""
+        return False
 
 
 @admin.register(ProfileField)
 class ProfileFieldAdmin(admin.ModelAdmin):
-    list_display = ('name', 'field_type', 'is_required', 'is_active', 'placeholder')
-    list_filter = ('field_type', 'is_active')
+    list_display = ('name', 'field_type', 'is_active','position',)
+    list_filter = ['is_active', 'field_type']
+    list_editable = ['is_active', 'position']
+    readonly_fields = ['name', 'field_type', 'placeholder', 'min_value', 'max_value']
     inlines = [ProfileFieldChoiceInline]
+    def has_add_permission(self, request):
+        """Disallow adding new fields."""
+        return False
 
+    def has_delete_permission(self, request, obj=None):
+        """Disallow deleting fields."""
+        return False
 
 @admin.register(ProfileFieldValue)
 class ProfileFieldValueAdmin(admin.ModelAdmin):
     list_display = ('user', 'field', 'value')
 
+class ProfileFieldInline(admin.TabularInline):
+    model = ProfileFieldValue
+    extra = 0
+    readonly_fields = ('field', 'value') 
+
+    def has_add_permission(self, request, obj):
+        return False 
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+    list_display = ('username', 'email', 'is_active', 'is_staff', 'is_email_verified')
+    list_filter = ('is_active', 'is_staff', 'is_email_verified')
+    search_fields = ('username', 'email')
+    ordering = ('username',)
+
+    fieldsets = (
+        (None, {'fields': ('username', 'email', 'password')}),
+        ('Personal Info', {'fields': ['name']}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_email_verified', 'groups', 'user_permissions')}),
+        ('Important Dates', {'fields': ['last_login']}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'password1', 'password2', 'is_active', 'is_staff'),
+        }),
+    )
+    inlines = [ProfileFieldInline]
+
+
+
+admin.site.register(CustomUser, CustomUserAdmin)

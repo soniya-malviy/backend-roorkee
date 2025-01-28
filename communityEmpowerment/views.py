@@ -353,8 +353,13 @@ class UserProfileView(generics.GenericAPIView):
         dynamic_fields = {
         value.field.name: value.value for value in dynamic_field_values
     }
+        profile_fields = ProfileField.objects.all()
+        ordered_profile_fields = sorted(profile_fields, key=lambda field: field.position)
         response_data["dynamic_fields"] = dynamic_fields
-
+        response_data["ordered_profile_fields"] = [
+            {"name": field.name, "field_type": field.field_type, "position": field.position}
+            for field in ordered_profile_fields
+        ]
         return Response(response_data)
     
     def update_dynamic_fields(self, user, dynamic_fields_data):
@@ -397,10 +402,10 @@ class AllProfileFieldsView(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         # Fetch all active dynamic fields
         dynamic_fields = ProfileField.objects.filter(is_active=True)
-
+        ordered_profile_fields = sorted(dynamic_fields, key=lambda field: field.position-1)
         # Build the response data for each dynamic field
         dynamic_field_data = []
-        for field in dynamic_fields:
+        for field in ordered_profile_fields:
             dynamic_field_info = {
                 'id': field.id,
                 'name': field.name,

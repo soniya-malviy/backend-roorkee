@@ -487,12 +487,33 @@ class ProfileField(models.Model):
     placeholder = models.CharField(max_length=255, blank=True, null=True)
     min_value = models.IntegerField(blank=True, null=True, help_text="Minimum value for integer fields.")
     max_value = models.IntegerField(blank=True, null=True, help_text="Maximum value for integer fields.")
+    position = models.IntegerField(default=1)
 
     def clean(self):
         # Ensure min_value is less than max_value if both are set
         if self.field_type == 'integer' and self.min_value is not None and self.max_value is not None:
             if self.min_value > self.max_value:
                 raise ValidationError("Minimum value cannot be greater than the maximum value.")
+        
+    def save(self, *args, **kwargs):
+        if self.pk:
+            original_field = ProfileField.objects.get(pk=self.pk)
+            if original_field.position != self.position:
+                self.shift_positions(original_field.position, self.position)
+
+        super(ProfileField, self).save(*args, **kwargs)
+    
+    def shift_positions(self, old_position, new_position):
+        if old_position < new_position:
+            ProfileField.objects.filter(
+                position__gt=old_position, position__lte=new_position
+            ).update(position=models.F('position') - 1)
+        elif old_position > new_position:
+            ProfileField.objects.filter(
+                position__gte=new_position, position__lt=old_position
+            ).update(position=models.F('position') + 1)
+
+        self.position = new_position
 
     def __str__(self):
         return self.name
