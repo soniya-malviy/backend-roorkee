@@ -315,7 +315,7 @@ state_data_files = {
     "Jammu and Kashmir": "jammuAndKashmir.json",
     "Gujarat": "gujarat.json",
     "Maharashtra": "maharashtra.json",
-    # "Himachal Pradesh": "himachalPradesh.json",
+    "Himachal Pradesh": "himachalPradesh.json",
     "Madhya Pradesh": "madhyaPradesh.json",
     "Kerala": "kerala.json",
     "Manipur": "manipur.json",
@@ -336,7 +336,8 @@ state_data_files = {
     "Chandigarh": "chandigarh.json",
     "Chhattisgarh": "chhattisgarh.json",
     "Rajasthan": "rajasthan.json",
-    "Tamilnadu": "tamilnadu.json"
+    "Tamilnadu": "tamilnadu.json",
+    "Nagaland": "nagaland.json"
 }
 
 # Initialize the combined data structure
