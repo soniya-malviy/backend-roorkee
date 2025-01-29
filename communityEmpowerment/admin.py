@@ -139,7 +139,7 @@ class ProfileFieldInline(admin.TabularInline):
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
     list_display = ('username', 'email', 'is_active', 'is_staff', 'is_email_verified')
-    list_filter = ('is_active', 'is_staff', 'is_email_verified')
+    list_filter = ('is_active', 'is_staff', 'is_email_verified','groups')
     search_fields = ('username', 'email')
     ordering = ('username',)
 
