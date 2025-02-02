@@ -8,6 +8,7 @@ from datetime import timedelta
 from django.conf import settings
 from django.core.exceptions import ValidationError
 import re
+from dirtyfields import DirtyFieldsMixin
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -152,9 +153,9 @@ class Organisation(TimeStampedModel):
     def __str__(self):
         return self.organisation_name or "N/A"
     
-class Tag(TimeStampedModel):
+class Tag(DirtyFieldsMixin,TimeStampedModel):
     name = models.CharField(max_length=255, unique=True)
-
+    weight = models.FloatField(default=1.0)
     class Meta:
         verbose_name = "Tag"
         verbose_name_plural = "Tags"

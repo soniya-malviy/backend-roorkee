@@ -16,6 +16,8 @@ admin.site.index_title = "Welcome to your Admin Panel"
 
 admin.site.register(State)
 admin.site.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name', 'weight')
 admin.site.register(Department)
 admin.site.register(Organisation)
 admin.site.register(SchemeBeneficiary)
