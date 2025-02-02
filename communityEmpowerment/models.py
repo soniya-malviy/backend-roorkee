@@ -154,12 +154,55 @@ class Organisation(TimeStampedModel):
         return self.organisation_name or "N/A"
     
 class Tag(DirtyFieldsMixin,TimeStampedModel):
+    CATEGORY_CHOICES = [
+        ("scholarship", "Scholarship"),
+        ("job", "Job Opening"),
+        ("sc", "Scheduled Caste (SC)"),
+        ("st", "Scheduled Tribe (ST)"),
+        ("obc", "Other Backward Classes (OBC)"),
+        ("minority", "Minority Community"),
+        ("general", "General"),
+    ]
     name = models.CharField(max_length=255, unique=True)
     weight = models.FloatField(default=1.0)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="general")
     class Meta:
         verbose_name = "Tag"
         verbose_name_plural = "Tags"
         ordering = ['name']
+
+    def save(self, *args, **kwargs):
+        scholarship_keywords = ["scholarship", "fellowship", "grant"]
+        job_keywords = ["job", "employment", "recruitment", "vacancy", "career"]
+        sc_keywords = ["sc", "scheduled caste"]
+        st_keywords = ["st", "scheduled tribe"]
+        obc_keywords = ["obc", "other backward classes"]
+        minority_keywords = ["minority", "muslim", "christian", "sikh", "buddhist", "jain", "parsi"]
+
+        tag_lower = self.name.lower()
+
+        if any(keyword in tag_lower for keyword in scholarship_keywords):
+            self.category = "scholarship"
+        elif any(keyword in tag_lower for keyword in job_keywords):
+            self.category = "job"
+        elif any(keyword in tag_lower for keyword in sc_keywords):
+            self.category = "sc"
+        elif any(keyword in tag_lower for keyword in st_keywords):
+            self.category = "st"
+        elif any(keyword in tag_lower for keyword in obc_keywords):
+            self.category = "obc"
+        elif any(keyword in tag_lower for keyword in minority_keywords):
+            self.category = "minority"
+        else:
+            self.category = "general"
+
+        if self.pk: 
+            old_tag = Tag.objects.get(pk=self.pk)
+            if old_tag.weight != self.weight:
+                related_tags = Tag.objects.filter(category=self.category)
+                related_tags.update(weight=self.weight)
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name or "N/A"
