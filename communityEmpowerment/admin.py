@@ -7,7 +7,8 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.models import Group, Permission
-
+from django.db.models import Count
+from django.db.models import Min
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, 
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser, SchemeSponsor, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback
@@ -119,7 +120,6 @@ admin_site.register(Group, CustomGroupAdmin)
 
 
 
-
 class BannerAdmin(ImportExportModelAdmin):
     list_display = ['title', 'is_active']
     search_fields = ['title']
@@ -223,12 +223,37 @@ class CustomUserAdmin(UserAdmin):
     inlines = [ProfileFieldInline]
 
 
-
 admin_site.register(CustomUser, CustomUserAdmin)
 
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('category_display', 'tag_count', 'weight')
+    list_filter = ('category',)
+    search_fields = ('category',)
+    ordering = ["category"]
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+
+        valid_categories = ["scholarship", "job", "sc", "st", "obc", "minority"]
+        return (
+            queryset.filter(category__in=valid_categories)
+            .order_by('category')
+            .distinct('category')  
+        )
+
+    def category_display(self, obj):
+        return obj.category
+
+    category_display.admin_order_field = 'category'
+    category_display.short_description = 'Category'
+
+    def tag_count(self, obj):
+        return obj.__class__.objects.filter(category=obj.category).count()
+    
+    tag_count.short_description = "Tag Count"
+
+admin_site.register(Tag, TagAdmin)
 
 admin_site.register(State)
-admin_site.register(Tag)
 admin_site.register(Department)
 admin_site.register(Organisation)
 admin_site.register(SchemeBeneficiary)
