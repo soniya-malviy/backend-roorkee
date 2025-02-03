@@ -8,14 +8,44 @@ from .models import (
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
     SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback,
 )
-# from .forms import CustomUserCreationForm, CustomUserChangeForm
+from django.db.models import Count
+from django.db.models import Min
+
 
 admin.site.site_header = "Community Empowerment Portal Admin Panel"
 admin.site.site_title = "Admin Portal"
 admin.site.index_title = "Welcome to your Admin Panel"
 
 admin.site.register(State)
-admin.site.register(Tag)
+ 
+
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('category_display', 'tag_count', 'weight')
+    list_filter = ('category',)
+    search_fields = ('category',)
+    ordering = ["category"]
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+
+        valid_categories = ["scholarship", "job", "sc", "st", "obc", "minority"]
+        return (
+            queryset.filter(category__in=valid_categories)
+            .order_by('category')
+            .distinct('category')  
+        )
+
+    def category_display(self, obj):
+        return obj.category
+
+    category_display.admin_order_field = 'category'
+    category_display.short_description = 'Category'
+
+    def tag_count(self, obj):
+        return obj.__class__.objects.filter(category=obj.category).count()
+    
+    tag_count.short_description = "Tag Count"
+
+admin.site.register(Tag, TagAdmin)
 admin.site.register(Department)
 admin.site.register(Organisation)
 admin.site.register(SchemeBeneficiary)
