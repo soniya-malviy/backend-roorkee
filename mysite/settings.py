@@ -207,7 +207,7 @@ AWS_S3_MEDIA_CUSTOM_DOMAIN = f'https://{AWS_MEDIA_STORAGE_BUCKET_NAME}.s3.amazon
 AWS_S3_PDF_CUSTOM_DOMAIN = f'https://{AWS_PDF_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(ROOT_DIR, 'static_files')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 

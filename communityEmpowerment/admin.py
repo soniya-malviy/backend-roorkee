@@ -1,7 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django_celery_beat.models import (ClockedSchedule, CrontabSchedule, 
+IntervalSchedule, PeriodicTask, SolarSchedule)
+from rest_framework_simplejwt.token_blacklist.models import (BlacklistedToken, OutstandingToken)
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
+from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.models import Group, Permission
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, 
@@ -11,79 +15,114 @@ from .models import (
 from django.db.models import Count
 from django.db.models import Min
 from orderable.admin import OrderableAdmin
+# Custom Admin Site
+class CustomAdminSite(admin.AdminSite):
+    site_header = "Community Empowerment Portal Admin Panel"
+    site_title = "Admin Portal"
+    index_title = "Welcome to your Admin Panel"
+    def get_app_list(self, request,app_label="None"):
+        app_dict = self._build_app_dict(request)
+        app_list = [
+            {
+                'name': 'Access Management',
+                'app_label': 'auth',
+                'models': [
+                    {'name': 'Users', 'object_name': 'CustomUser', 'admin_url': '/admin/communityEmpowerment/customuser/'},
+                    {'name': 'Groups', 'object_name': 'Group', 'admin_url': '/admin/auth/group/'},
+                    {'name': 'Permissions', 'object_name': 'Permission', 'admin_url': '/admin/auth/permission/'},
+                ]
+            },
+            {
+                'name': 'Layouts',
+                'app_label': 'layouts',
+                'models': [
+                    {'name': 'Profile Fields', 'object_name': 'ProfileField', 'admin_url': '/admin/communityEmpowerment/profilefield/'},
+                    {'name': 'Profile Field Values', 'object_name': 'ProfileFieldValue', 'admin_url': '/admin/communityEmpowerment/profilefieldvalue/'},
+                    {'name': 'Layout items', 'object_name':'LayoutItem','admin_url': '/admin/communityEmpowerment/layoutitem/' }
+                ]
+            },
+            {
+                'name': 'All Schemes',
+                'app_label': 'schemes',
+                'models': [
+                    {'name': 'Schemes', 'object_name': 'Scheme', 'admin_url': '/admin/communityEmpowerment/scheme/'},
+                    {'name': 'Benefits', 'object_name': 'Benefit', 'admin_url': '/admin/communityEmpowerment/benefit/'},
+                    {'name': 'Criteria', 'object_name': 'Criteria', 'admin_url': '/admin/communityEmpowerment/criteria/'},
+                    {'name': 'Departments', 'object_name': 'Department', 'admin_url': '/admin/communityEmpowerment/department/'},
+                    {'name': 'Organizations', 'object_name': 'Organisation', 'admin_url': '/admin/communityEmpowerment/organisation/'},
+                    {'name': 'Procedures', 'object_name': 'Procedure', 'admin_url': '/admin/communityEmpowerment/procedure/'},
+                    {'name': 'Scheme Beneficiaries', 'object_name': 'SchemeBeneficiary', 'admin_url': '/admin/communityEmpowerment/schemebeneficiary/'},
+                    {'name': 'Scheme Documents', 'object_name': 'SchemeDocument', 'admin_url': '/admin/communityEmpowerment/schemedocument/'},
+                    {'name': 'Scheme Sponsors', 'object_name': 'SchemeSponsor', 'admin_url': '/admin/communityEmpowerment/schemesponsor/'},
+                    {'name': 'States', 'object_name': 'State', 'admin_url': '/admin/communityEmpowerment/state/'},
+                    {'name': 'Tags', 'object_name': 'Tag', 'admin_url': '/admin/communityEmpowerment/tag/'},
+                ]
+            },
+            {
+                'name': 'Feedback & Reports',
+                'app_label': 'feedback',
+                'models': [
+                    {'name': 'Scheme Feedbacks', 'object_name': 'SchemeFeedback', 'admin_url': '/admin/communityEmpowerment/schemefeedback/'},
+                    {'name': 'Scheme Reports', 'object_name': 'SchemeReport', 'admin_url': '/admin/communityEmpowerment/schemereport/'},
+                    {'name': 'Website Feedbacks', 'object_name': 'WebsiteFeedback', 'admin_url': '/admin/communityEmpowerment/websitefeedback/'},
+                ]
+            },
+            {
+                'name': 'Assets',
+                'app_label': 'assets',
+                'models': [
+                    {'name': 'Banners', 'object_name': 'Banner', 'admin_url': '/admin/communityEmpowerment/banner/'},
+                ]
+            },
+            {
+                'name': 'Periodic Tasks',
+                'app_label': 'Periodic Tasks',
+                'models': [
+                    {'name': 'Clocked', 'object_name': 'Clocked', 'admin_url': '/admin/django_celery_beat/clockedschedule/'},
+                    {'name': 'Crontabs', 'object_name': 'Crontabs', 'admin_url': '/admin/django_celery_beat/crontabschedule/'},
+                    {'name': 'Intervals', 'object_name': 'Intervals', 'admin_url': '/admin/django_celery_beat/intervalschedule/'},
+                    {'name': 'Periodic tasks', 'object_name': 'Periodic tasks', 'admin_url': '/admin/django_celery_beat/periodictask/'},
+                    {'name': 'Solar events', 'object_name': 'Solar events', 'admin_url': '/admin/django_celery_beat/solarschedule/'}
+                ]
+            },
+            {
+                'name': 'Token Blacklist',
+                'app_label': 'Token Blacklist',
+                'models': [
+                    {'name': 'Blacklisted tokens', 'object_name': 'Blacklisted tokens', 'admin_url': '/admin/token_blacklist/blacklistedtoken/'},
+                    {'name': 'Outstanding tokens', 'object_name': 'Outstanding tokens', 'admin_url': '/admin/token_blacklist/outstandingtoken/'}
+                ]
+            },
+        ]
 
-admin.site.site_header = "Community Empowerment Portal Admin Panel"
-admin.site.site_title = "Admin Portal"
-admin.site.index_title = "Welcome to your Admin Panel"
+        # Sort the models inside each app by 'name'
+        for app in app_list:
+            app['models'] = sorted(app['models'], key=lambda model: model['name'])
 
-admin.site.register(State)
- 
+        # Sort the app list by 'name'
+        sorted_app_list = sorted(app_list, key=lambda app: app['name'])
 
-class TagAdmin(admin.ModelAdmin):
-    list_display = ('category_display', 'tag_count', 'weight')
-    list_filter = ('category',)
-    search_fields = ('category',)
-    ordering = ["category"]
-    def get_queryset(self, request):
-        queryset = super().get_queryset(request)
+        return sorted_app_list
+        
+# Create custom admin instance
+admin_site = CustomAdminSite(name='admin')
 
-        valid_categories = ["scholarship", "job", "sc", "st", "obc", "minority"]
-        return (
-            queryset.filter(category__in=valid_categories)
-            .order_by('category')
-            .distinct('category')  
-        )
+class CustomGroupAdmin(GroupAdmin):
+    fieldsets = (
+        (None, {'fields': ('name','permissions')}),
+    )
+    list_display = ('name',) 
+    search_fields = ('name',) 
+    list_filter = ('name',) 
 
-    def category_display(self, obj):
-        return obj.category
-
-    category_display.admin_order_field = 'category'
-    category_display.short_description = 'Category'
-
-    def tag_count(self, obj):
-        return obj.__class__.objects.filter(category=obj.category).count()
-    
-    tag_count.short_description = "Tag Count"
-
-admin.site.register(Tag, TagAdmin)
-admin.site.register(Department)
-admin.site.register(Organisation)
-admin.site.register(SchemeBeneficiary)
-admin.site.register(Benefit)
-admin.site.register(Criteria)
-admin.site.register(Procedure)
-admin.site.register(SchemeDocument)
-admin.site.register(SchemeSponsor)
+admin_site.register(Group, CustomGroupAdmin)
 
 
-# class CustomUserAdmin(UserAdmin):
-#     add_form = CustomUserCreationForm
-#     form = CustomUserChangeForm
-#     model = CustomUser
-#     list_display = ('username', 'email', 'is_staff', 'is_active', 'date_joined')
-#     list_filter = ('is_staff', 'is_active','groups')
-#     fieldsets = (
-#         (None, {'fields': ('username', 'email', 'password')}),
-#         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser','user_permissions', 'groups')}),
-#         ('Important dates', {'fields': ('last_login', 'date_joined')}),
-#     )
-#     add_fieldsets = (
-#         (None, {
-#             'classes': ('wide',),
-#             'fields': ('username', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'is_superuser')}
-#         ),
-#     )
-#     readonly_fields = ('date_joined',)
-#     search_fields = ('username', 'email')
-#     ordering = ('username',)
 
-
-# admin.site.register(CustomUser, CustomUserAdmin)
-
-@admin.register(Banner)
 class BannerAdmin(ImportExportModelAdmin):
     list_display = ['title', 'is_active']
     search_fields = ['title']
+admin_site.register(Banner)
 
 class SchemeResource(resources.ModelResource):
     class Meta:
@@ -91,39 +130,32 @@ class SchemeResource(resources.ModelResource):
         fields = ('id', 'title', 'department__department_name', 'introduced_on', 'valid_upto', 'funding_pattern', 'description', 'scheme_link')
         export_order = ('id', 'title', 'department__department_name', 'introduced_on', 'valid_upto', 'funding_pattern', 'description', 'scheme_link')
 
-@admin.register(Scheme)
+
 class SchemeAdmin(ImportExportModelAdmin):
     resource_class = SchemeResource
     list_display = ('title', 'department', 'introduced_on', 'valid_upto', 'funding_pattern')
     search_fields = ('title', 'description')
     list_filter = ('department', 'introduced_on', 'valid_upto', 'funding_pattern')
+admin_site.register(Scheme)
 
-@admin.register(SchemeReport)
 class SchemeReportAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'scheme_id', 'created_at'] 
     list_filter = ['created_at'] 
+admin_site.register(SchemeReport)
 
-@admin.register(WebsiteFeedback)
 class WebsiteFeedbackAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'description', 'created_at'] 
     list_filter = ['created_at']
+admin_site.register(WebsiteFeedback)
 
-@admin.register(SchemeFeedback)
 class SchemeFeedbackAdmin(admin.ModelAdmin):
     list_display = ('user', 'scheme', 'feedback', 'rating', 'created_at')
     search_fields = ('user__username', 'scheme__title', 'feedback')
     list_filter = ('created_at', 'rating')
+admin_site.register(SchemeFeedback)
 
 
-
-admin.site.register(Permission)
-
-    
-# @admin.register(Choice)
-# class ChoiceAdmin(admin.ModelAdmin):
-#     list_display = ('category', 'name', 'is_active')
-#     list_filter = ('category', 'is_active')  # Filter by category
-#     search_fields = ('name',)
+admin_site.register(Permission)
     
 class ProfileFieldChoiceInline(admin.TabularInline):
     model = ProfileFieldChoice
@@ -135,8 +167,8 @@ class ProfileFieldChoiceInline(admin.TabularInline):
         """Prevent adding new choices inline."""
         return False
 
+admin_site.register(ProfileField)
 
-@admin.register(ProfileField)
 class ProfileFieldAdmin(admin.ModelAdmin):
     list_display = ('name', 'field_type', 'is_active','position',)
     list_filter = ['is_active', 'field_type']
@@ -151,9 +183,11 @@ class ProfileFieldAdmin(admin.ModelAdmin):
         """Disallow deleting fields."""
         return False
 
-@admin.register(ProfileFieldValue)
+
 class ProfileFieldValueAdmin(admin.ModelAdmin):
     list_display = ('user', 'field', 'value')
+
+admin_site.register(ProfileFieldValue)
 
 class ProfileFieldInline(admin.TabularInline):
     model = ProfileFieldValue
@@ -188,7 +222,54 @@ class CustomUserAdmin(UserAdmin):
     inlines = [ProfileFieldInline]
 
 
+admin_site.register(CustomUser, CustomUserAdmin)
 
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('category_display', 'tag_count', 'weight')
+    list_filter = ('category',)
+    search_fields = ('category',)
+    ordering = ["category"]
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+
+        valid_categories = ["scholarship", "job", "sc", "st", "obc", "minority"]
+        return (
+            queryset.filter(category__in=valid_categories)
+            .order_by('category')
+            .distinct('category')  
+        )
+
+    def category_display(self, obj):
+        return obj.category
+
+    category_display.admin_order_field = 'category'
+    category_display.short_description = 'Category'
+
+    def tag_count(self, obj):
+        return obj.__class__.objects.filter(category=obj.category).count()
+    
+    tag_count.short_description = "Tag Count"
+
+admin_site.register(Tag, TagAdmin)
+
+admin_site.register(State)
+admin_site.register(Department)
+admin_site.register(Organisation)
+admin_site.register(SchemeBeneficiary)
+admin_site.register(Benefit)
+admin_site.register(Criteria)
+admin_site.register(Procedure)
+admin_site.register(SchemeDocument)
+admin_site.register(SchemeSponsor)
+
+admin_site.register(ClockedSchedule)
+admin_site.register(CrontabSchedule)
+admin_site.register(IntervalSchedule)
+admin_site.register(PeriodicTask)
+admin_site.register(SolarSchedule)
+
+admin_site.register(BlacklistedToken)
+admin_site.register(OutstandingToken)
 admin.site.register(CustomUser, CustomUserAdmin)
 
 
@@ -196,6 +277,6 @@ class LayoutItemAdmin(admin.ModelAdmin):
     list_display = ("column_name", "order")
     ordering = ("order",)
 
-admin.site.register(LayoutItem, LayoutItemAdmin)
+admin_site.register(LayoutItem, LayoutItemAdmin)
 
 
