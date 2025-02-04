@@ -67,8 +67,8 @@ from .views import (
     SchemeFeedbackCreateView,
     SchemeFeedbackListView,
     TrackEventView,
-    AllProfileFieldsView
-    
+    AllProfileFieldsView,
+    LayoutItemViewSet
 
 )
 
@@ -146,4 +146,6 @@ urlpatterns = [
     path('feedback/create/', SchemeFeedbackCreateView.as_view(), name='scheme-feedback-create'),
     path('track-event/', TrackEventView.as_view(), name='track_event'),
     path('dynamic-fields/', AllProfileFieldsView.as_view(), name='all_dynamic_fields'),
+    path("layout-items/", LayoutItemViewSet.as_view({"get": "list"}), name="layout-items-list"),
+    path("layout-items/update-order/", LayoutItemViewSet.as_view({"post": "update_order"}), name="layout-items-update"),
 ]

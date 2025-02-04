@@ -6,11 +6,11 @@ from django.contrib.auth.models import Group, Permission
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, 
     Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
-    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback,
+    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback, LayoutItem
 )
 from django.db.models import Count
 from django.db.models import Min
-
+from orderable.admin import OrderableAdmin
 
 admin.site.site_header = "Community Empowerment Portal Admin Panel"
 admin.site.site_title = "Admin Portal"
@@ -190,3 +190,12 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
+
+class LayoutItemAdmin(admin.ModelAdmin):
+    list_display = ("column_name", "order")
+    ordering = ("order",)
+
+admin.site.register(LayoutItem, LayoutItemAdmin)
+
+
