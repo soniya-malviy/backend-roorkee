@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework import serializers
 from django.utils.decorators import method_decorator
 from rest_framework.exceptions import PermissionDenied
+from rest_framework.decorators import action
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
@@ -33,7 +34,7 @@ from communityEmpowerment.utils.utils import recommend_schemes, load_cosine_simi
 logger = logging.getLogger(__name__)
 
 from .models import (
-    State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, 
+    State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, LayoutItem,
     Criteria, Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser, ProfileField,
     Banner, SavedFilter, SchemeReport, WebsiteFeedback, UserInteraction, SchemeFeedback, UserEvent, ProfileFieldValue
     
@@ -41,7 +42,7 @@ from .models import (
 from .serializers import (
     StateSerializer, DepartmentSerializer, OrganisationSerializer, SchemeSerializer, 
     BeneficiarySerializer, SchemeBeneficiarySerializer, BenefitSerializer, 
-    CriteriaSerializer, ProcedureSerializer, DocumentSerializer, 
+    CriteriaSerializer, ProcedureSerializer, DocumentSerializer, LayoutItemSerializer,
     SchemeDocumentSerializer, SponsorSerializer, SchemeSponsorSerializer, UserRegistrationSerializer,
     SaveSchemeSerializer,  LoginSerializer, BannerSerializer, SavedFilterSerializer,
     PasswordResetConfirmSerializer, PasswordResetRequestSerializer, SchemeReportSerializer, WebsiteFeedbackSerializer,
@@ -1155,3 +1156,27 @@ class TrackEventView(APIView):
             )
             return Response({"message": "Event tracked successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class LayoutItemViewSet(viewsets.ViewSet):
+
+    def list(self, request):
+        """Return the current layout order."""
+        layout_items = LayoutItem.objects.order_by("order")
+        serializer = LayoutItemSerializer(layout_items, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=["POST"])
+    def update_order(self, request):
+        """Update the column order."""
+        data = request.data 
+        
+        for item in data:
+            try:
+                layout_item = LayoutItem.objects.get(id=item["id"])
+                layout_item.order = item["order"]
+                layout_item.save()
+            except LayoutItem.DoesNotExist:
+                return Response({"error": f"LayoutItem with id {item['id']} not found"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({"message": "Order updated successfully"})
