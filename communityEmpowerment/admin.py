@@ -7,21 +7,19 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from django.contrib.auth.admin import GroupAdmin
 from django.contrib.auth.models import Group, Permission
-from django.db.models import Count
-from django.db.models import Min
 from .models import (
     State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, 
-    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser, SchemeSponsor, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback
+    Benefit, Criteria, Procedure, Document, SchemeDocument, Sponsor, ProfileField, ProfileFieldChoice, ProfileFieldValue, CustomUser,
+    SchemeSponsor, CustomUser, Banner, Tag, SchemeReport, WebsiteFeedback, SchemeFeedback, LayoutItem
 )
-
-
-
+from django.db.models import Count
+from django.db.models import Min
+from orderable.admin import OrderableAdmin
 # Custom Admin Site
 class CustomAdminSite(admin.AdminSite):
     site_header = "Community Empowerment Portal Admin Panel"
     site_title = "Admin Portal"
     index_title = "Welcome to your Admin Panel"
-
     def get_app_list(self, request,app_label="None"):
         app_dict = self._build_app_dict(request)
         app_list = [
@@ -40,6 +38,7 @@ class CustomAdminSite(admin.AdminSite):
                 'models': [
                     {'name': 'Profile Fields', 'object_name': 'ProfileField', 'admin_url': '/admin/communityEmpowerment/profilefield/'},
                     {'name': 'Profile Field Values', 'object_name': 'ProfileFieldValue', 'admin_url': '/admin/communityEmpowerment/profilefieldvalue/'},
+                    {'name': 'Layout items', 'object_name':'LayoutItem','admin_url': '/admin/communityEmpowerment/layoutitem/' }
                 ]
             },
             {
@@ -271,3 +270,13 @@ admin_site.register(SolarSchedule)
 
 admin_site.register(BlacklistedToken)
 admin_site.register(OutstandingToken)
+admin.site.register(CustomUser, CustomUserAdmin)
+
+
+class LayoutItemAdmin(admin.ModelAdmin):
+    list_display = ("column_name", "order")
+    ordering = ("order",)
+
+admin_site.register(LayoutItem, LayoutItemAdmin)
+
+

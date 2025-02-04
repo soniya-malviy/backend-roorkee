@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import (State, Department, Organisation, Scheme, Beneficiary, SchemeBeneficiary, Benefit, Criteria
-                     , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter,
+                     , Procedure, Document, SchemeDocument, Sponsor, SchemeSponsor, CustomUser,Banner, SavedFilter, LayoutItem,
                       SchemeReport, WebsiteFeedback, Tag, UserInteraction, SchemeFeedback, UserEvent, ProfileField, ProfileFieldChoice, ProfileFieldValue )
 from django.utils import timezone
 from django.core.mail import EmailMessage
@@ -580,3 +580,9 @@ class CustomUserSerializer(serializers.ModelSerializer):
             dynamic_field_value.save()
 
         return user
+
+
+class LayoutItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LayoutItem
+        fields = ["id", "column_name", "order"]

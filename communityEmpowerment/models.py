@@ -9,6 +9,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 import re
 from dirtyfields import DirtyFieldsMixin
+from orderable.models import Orderable
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -754,3 +755,21 @@ class UserEvent(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.event_type} - {self.scheme.title}"
+
+
+class LayoutItem(models.Model):
+    COLUMN_CHOICES = [
+        ("schemes", "Schemes"),
+        ("scholarships", "Scholarships"),
+        ("jobs", "Jobs"),
+    ]
+    
+    column_name = models.CharField(max_length=20, choices=COLUMN_CHOICES, unique=True)
+    order = models.IntegerField(default=0)  
+
+    class Meta:
+        ordering = ["order"] 
+
+    def __str__(self):
+        return self.get_column_name_display()
+
