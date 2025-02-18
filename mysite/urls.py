@@ -15,17 +15,24 @@ Including another URLconf
 """
 
 # from django.contrib import admin
-from communityEmpowerment.admin import admin_site 
+from communityEmpowerment.admin import admin_site
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('admin/', admin_site.urls),
-    path('api/', include('communityEmpowerment.urls')),
-
+    path("admin/", admin_site.urls),
+    path("api/", include("communityEmpowerment.urls")),
+    path("analytics/", include("analytics.urls")),
+    path(
+        "logout/",
+        auth_views.LogoutView.as_view(next_page="/analytics/login/"),
+        name="logout",
+    ),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
